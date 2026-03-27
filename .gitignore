@@ -1,0 +1,13 @@
+# OS
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Claude Code local
+.claude/settings.local.json
+
+# Eval workspace (not project artifacts)
+release-notes-tracker-workspace/
+
+# Temp
+*.tmp

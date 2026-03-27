@@ -1,0 +1,23 @@
+{
+  "skill_name": "release-notes-tracker",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Ось реліз-ноти для Claude Code версії 2.2.0:\n\n## 2.2.0\n### New Features\n- Added `/translate` command for in-chat translation (supports 40+ languages)\n- New `claude --translate-file <path>` flag for file translation\n- `translation.language` setting in settings.json for default translation language\n- `CLAUDE_TRANSLATION_ENGINE` env var to choose between 'claude' and 'external' providers\n- Ctrl+Shift+T shortcut for quick translate selected text\n\n### Bug Fixes\n- Fixed MCP connection timeout on slow networks (Windows)\n- Fixed rendering glitch in PowerShell tool output\n\n### Deprecations\n- `/export` command is deprecated, use `/export-v2` instead\n\nProcess these release notes and update the knowledge base.",
+      "expected_output": "KB files updated: core.md (new /translate command), cli.md (new --translate-file flag), settings.md (new translation.language key), env-vars.md (new CLAUDE_TRANSLATION_ENGINE), keybindings.md (new Ctrl+Shift+T), windows.md (MCP timeout fix, PowerShell rendering fix). Deprecated /export marked in skills-agents.md. meta.md updated to 2.2.0. Release snapshot created in releases/2026-03-27_v2.2.0.md. All descriptions in Ukrainian.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Я щойно оновив Claude Code і бачу нову версію 2.2.1 в /release-notes. Основні зміни:\n\n2.2.1:\n- New hook type: `ModelSwitch` fires when model is changed mid-session\n- `hooks.modelSwitchTimeout` setting for configuring timeout\n- `CLAUDE_CODE_DISABLE_MODEL_SWITCH_HOOKS` env var to disable\n\n2.2.2:\n- Plugin marketplace now supports private registries via `--registry-url`\n- `claude plugin list --json` for machine-readable output\n- Fixed credential leak in subprocess env scrub on macOS\n\nОнови базу знань з цими двома версіями.",
+      "expected_output": "Two versions processed (2.2.1 and 2.2.2). hooks.md updated with ModelSwitch event and modelSwitchTimeout setting. env-vars.md gets CLAUDE_CODE_DISABLE_MODEL_SWITCH_HOOKS. plugins.md gets private registry support and --json flag for list. cli.md gets claude plugin list --json. Two release snapshots created. meta.md updated to 2.2.2. All Ukrainian.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Онови базу знань. Ось що нового в Claude Code 2.2.3:\n\n- `claude --session-timeout <seconds>` CLI flag to auto-end idle sessions\n- `CLAUDE_CODE_SESSION_TIMEOUT_MS` environment variable (same feature, env-based)\n- `sessionTimeout` in settings.json\n- New built-in command `/timer` to show remaining session time\n- Vim mode: `gi` now goes to first line of file in insert mode (like real vim)\n- Windows: fixed PATH inheritance when launched from cmd.exe (not just Git Bash)\n- The old `--no-interactive` flag has been completely removed from the codebase\n\nМені цікаво що саме зміниться у файлах бази.",
+      "expected_output": "cli.md: --session-timeout flag added. env-vars.md: CLAUDE_CODE_SESSION_TIMEOUT_MS. settings.md: sessionTimeout key. skills-agents.md: /timer command added, --no-interactive marked [ВИДАЛЕНО]. keybindings.md: vim gi motion added. windows.md: PATH inheritance fix from cmd.exe. meta.md updated to 2.2.3. Release snapshot created. User gets summary of changes per file. All Ukrainian.",
+      "files": []
+    }
+  ]
+}
