@@ -82,3 +82,4 @@
 | `pluginTrustMessage` | Повідомлення довіри плагінів | 2.1.69 |
 | `allowedChannelPlugins` | Allowlist канал-плагінів | 2.1.80 |
 | `permissions.defaultMode` | Не застосовується в Remote Control | 2.1.70 |
+| Statusline модель іншої сесії | Виправлено відображення моделі при кількох інстансах | 2.1.86 |

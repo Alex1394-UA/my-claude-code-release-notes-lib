@@ -16,6 +16,7 @@
 | `claude --from-pr <N>` | Сесія пов'язана з PR | 2.1.27 |
 | `claude --worktree` / `-w` | Ізольований git worktree | 2.1.49 |
 | `claude --bare -p` | Скриптовий режим без hooks/MCP/skills | 2.1.81 |
+| `--bare` виправлення MCP tools | Не викидає MCP інструменти в інтерактивному режимі | 2.1.86 |
 | `claude --session-timeout <seconds>` | Автозавершення сесії при бездіяльності | 2.2.3 |
 
 ## Запуск та аутентифікація
@@ -74,6 +75,7 @@
 | ~~`claude config`~~ | [ЗАСТАРІЛО] використовуйте settings.json | 1.0.7 |
 | `claude install` | Встановлення/оновлення | — |
 | `claude install --force` | Примусове оновлення | 2.1.0 |
+| `c` shortcut OAuth URL | Виправлено копіювання повного URL | 2.1.86 |
 | `claude doctor` | Діагностика | 1.0.51 |
 | `claude update` | Оновлення | — |
 | `claude remote-control` | Remote Control підсистема | 2.1.51 |

@@ -50,3 +50,5 @@
 | `FORCE_AUTOUPDATE_PLUGINS` | Примусове автооновлення | 2.1.2 |
 | `pluginTrustMessage` | Повідомлення довіри (managed) | 2.1.69 |
 | Managed block | Блокування організаційною політикою | 2.1.85 |
+| Виправлення "Permission denied" | Marketplace скрипти на macOS/Linux | 2.1.86 |
+| `/plugin` uninstall `n` | `n` тепер видаляє плагін, зберігаючи data | 2.1.86 |

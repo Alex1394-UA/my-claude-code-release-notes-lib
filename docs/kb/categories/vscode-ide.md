@@ -29,6 +29,8 @@
 | `chat.fontSize` / `chat.fontFamily` | Шрифти інтерфейсу | 2.0.35 |
 | `vscode://anthropic.claude-code/open` | URI handler | 2.1.72 |
 | `/remote-control` | Remote Control з VS Code | 2.1.79 |
+| "Not responding" fix | Виправлено хибне повідомлення при довгих операціях | 2.1.86 |
+| Max plan default fix | Не скидає на Sonnet після OAuth refresh | 2.1.86 |
 
 ## Win32 ARM64
 
