@@ -30,6 +30,7 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | `os.EOL` (`\r\n`) rendering | Виправлення display на Windows | 2.1.47 |
+| CRLF doubling fix | Edit/Write більше не подвоює CRLF | 2.1.89 |
 | Виправлення підрахунку рядків | Правильний line counting | 2.1.47 |
 | Виправлення bold/color shift | Вирівнювання стилів тексту | 2.1.47 |
 | Виправлення Right Alt key | `[25~` escape sequences | 2.1.47 |
@@ -38,6 +39,8 @@
 | RTL текст | Виправлення Arabic/Hebrew в терміналі | 2.1.74 |
 | CJK timestamp | Виправлення відображення | 2.1.47 |
 | Line-by-line streaming вимкнено | Через проблеми рендерингу | 2.1.81 |
+| Shift+Enter Win Terminal 1.25 | Виправлення замість newline | 2.1.89 |
+| `cmd+delete` fix | Виправлено видалення до початку рядка на Windows Terminal (та інших терміналах) | 2.1.91 |
 | Keyboard mode exit | Виправлення залипання Enhanced Keyboard | 2.1.85 |
 | Виправлення input lag | Затримка вводу | 1.0.117, 1.0.119, 1.0.120 |
 
@@ -54,7 +57,12 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | PowerShell tool | Opt-in preview | 2.1.84 |
+| PS 5.1 failure reporting fix | Виправлення помилкових невдач при записі в stderr | 2.1.89 |
+| `/env` для PowerShell | `/env` тепер застосовується до PowerShell tool | 2.1.89 |
+| Version-specific prompt | Підказки синтаксису PS 5.1 vs 7+ | 2.1.89 |
 | Виявлення небезпечних команд | Dangerous command detection | 2.1.84, 2.1.85 |
+| Hardened permission checks | Виправлено trailing `&` bypass, `-ErrorAction Break` hang, archive-extraction TOCTOU, parse-fail fallback | 2.1.90 |
+| Видалено DNS auto-allow | `Get-DnsClientCache` та `ipconfig /displaydns` прибрані з auto-allow (приватність) | 2.1.90 |
 | Підтримка MSYS2/Cygwin | Виправлення втрати output | 2.1.47 |
 
 ## Git Bash / Shell
@@ -99,6 +107,7 @@
 | Sidebar view container | Race condition fix | 1.0.89 |
 | `/extra-usage` | Підтримка в VS Code | 2.1.50 |
 | Session diff button | Виправлення | 2.1.33 |
+| VSCode "requires git-bash" fix | Виправлено хибне повідомлення на Windows при встановленому Git за замовч. | 2.1.98 |
 
 ## Інше Windows-специфічне
 
@@ -128,3 +137,7 @@
 | Input method (IME) | Покращена підтримка | 1.0.108 |
 | File write permissions | Write tool з umask | 2.1.0 |
 | Symlink escape | Захист від bypass через symlinks | 2.1.47 |
+| Version cleanup rollback fix | Cleanup більше не видаляє rollback копію активної версії | 2.1.91 |
+| NO_FLICKER повільне mouse-wheel | Виправлено на Windows Terminal | 2.1.97 |
+| NO_FLICKER CJK/Unicode | Виправлено пошкодження Korean/Japanese/Unicode при копіюванні | 2.1.97 |
+| VSCode "requires git-bash" [Win] | Виправлено хибне повідомлення коли `CLAUDE_CODE_GIT_BASH_PATH` встановлено | 2.1.98 |

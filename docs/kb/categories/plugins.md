@@ -52,3 +52,21 @@
 | Managed block | Блокування організаційною політикою | 2.1.85 |
 | Виправлення "Permission denied" | Marketplace скрипти на macOS/Linux | 2.1.86 |
 | `/plugin` uninstall `n` | `n` тепер видаляє плагін, зберігаючи data | 2.1.86 |
+| `bin/` executables | Плагіни можуть постачати виконувані файли під `bin/` та викликати як голі команди | 2.1.91 |
+| `keep-coding-instructions` output styles | Підтримка frontmatter поля для plugin output styles | 2.1.94 |
+| Plugin skills frontmatter name | `"skills": ["./"]` використовує `name` з frontmatter замість basename директорії | 2.1.94 |
+| Plugin skill hooks YAML fix | Виправлено мовчазне ігнорування хуків з YAML frontmatter | 2.1.94 |
+| Plugin hooks `CLAUDE_PLUGIN_ROOT` fix | Виправлено "No such file" коли `CLAUDE_PLUGIN_ROOT` не встановлено | 2.1.94 |
+| `${CLAUDE_PLUGIN_ROOT}` marketplace fix | Результатує до installed cache, не marketplace source для local-marketplace plugins | 2.1.94 |
+| Plugin update stale git | `claude plugin update` більше не повідомляє "already latest" для git marketplace | 2.1.97 |
+| Slash command YAML boolean fix | Picker не ламається коли `name` є YAML boolean keyword | 2.1.97 |
+| `/reload-plugins` skills | Тепер підхоплює plugin-provided skills без рестарту | 2.1.98 |
+| Plugin hooks managed settings | Хуки з force-enabled плагінів працюють з `allowManagedHooksOnly` | 2.1.101 |
+| `/plugin update` stale warning | Попередження коли marketplace не оновився | 2.1.101 |
+| Plugin issues fix (2.1.101) | Виправлено: duplicate `name:`, `ENAMETOOLONG`, Discover вже встановлених, stale version cache, skills `context: fork`/`agent` | 2.1.101 |
+| `monitors` manifest key | Background monitors для плагінів через top-level `monitors` key — auto-arm при старті сесії або при виклику skill | 2.1.105 |
+| Marketplace dependencies fix | Виправлено автоматичне встановлення залежностей для marketplace плагінів з `package.json` та lockfile | 2.1.105 |
+| Marketplace auto-update broken fix | Виправлено пошкодження marketplace при auto-update коли plugin process тримає файли відкритими | 2.1.105 |
+| `/plugin` Installed tab | Покращено: items needing attention та favorites зверху, disabled за fold, `f` для favorites | 2.1.110 |
+| Plugin install dependencies fix | `/plugin` install тепер встановлює залежності з `plugin.json` коли marketplace їх не вказує | 2.1.110 |
+| Policy-managed plugins auto-update fix | Виправлено відсутність автооновлення policy-managed плагінів при запуску з іншого проекту | 2.1.108 |

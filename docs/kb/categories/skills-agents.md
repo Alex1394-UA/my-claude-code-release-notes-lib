@@ -19,8 +19,12 @@
 | Вкладені `.claude/skills/` | Автодискаверія в піддиректоріях | 2.1.6 |
 | `paths:` frontmatter | Умовне завантаження | 2.1.0 |
 | Описи skill обмежені 250 символів | Зменшення контексту в `/skills` списку | 2.1.86 |
+| Описи skill cap 1536 символи | Ліміт listing піднято з 250 до 1536 символів; попередження при старті якщо описи обрізаються | 2.1.105 |
 | `/skills` алфавітний порядок | Посортовано для зручного пошуку | 2.1.86 |
 | Виправлення disk writes | Немає зайвих записів на диск при виклику skill | 2.1.86 |
+| `/reload-plugins` skills | Підхоплює plugin-provided skills без рестарту | 2.1.98 |
+| `disable-model-invocation` fix | Виправлено помилку при виклику skills з `disable-model-invocation: true` через `/<skill>` mid-message | 2.1.110 |
+| `/skills` menu scroll fix | Виправлено відсутність скролінгу списку `/skills` в fullscreen mode | 2.1.110 |
 
 ## Поля frontmatter
 
@@ -59,6 +63,9 @@
 | Agent teams | Багатоагентна співпраця (research preview) | 2.1.32 |
 | Кастомізація моделі | Кастомна модель для агента | 1.0.64 |
 | Фонові агенти | Агенти працюють у фоні | 2.0.60 |
+| Named subagents в @-mention | Typeahead підказки для іменованих агентів | 2.1.89 |
+| `/agents` running indicator | `● N running` поруч з типами агентів що мають живі subagent instances | 2.1.97 |
+| `/agents` tabbed layout | Running tab (живі subagents) + Library tab (Run agent, View running) | 2.1.98 |
 
 ## Slash команди
 
@@ -104,7 +111,7 @@
 | `/resume` | Відновити сесію | — |
 | `/rename` | Перейменувати сесію | 2.0.64 |
 | `/todos` | Список задач | 1.0.94 |
-| `/vim` | Vim mode | 0.2.34 |
+| ~~`/vim`~~ | [ВИДАЛЕНО] — перемикайте через `/config` → Editor mode | 0.2.34, 2.1.92 |
 | `/theme` | Вибір теми | — |
 | `/color` | Колір панелі | 2.1.70 |
 | `/keybindings` | Кастомні скорочення | 2.1.18 |
@@ -132,3 +139,11 @@
 | `/translate` | Переклад в чаті (40+ мов) | 2.2.0 |
 | `/export-v2` | Експорт розмови (новий) | 2.2.0 |
 | `/release-notes` | Реліз-ноти | 0.2.37 |
+| `/powerup` | Інтерактивні уроки з анімованими демо для вивчення можливостей Claude Code | 2.1.90 |
+| `/team-onboarding` | Генерація teammate ramp-up guide з локального використання Claude Code | 2.1.101 |
+| `/proactive` | Аліас для `/loop` | 2.1.105 |
+| `/recap` | Контекст при поверненні до сесії; також configurable через `/config` | 2.1.108 |
+| `/undo` | Аліас для `/rewind` | 2.1.108 |
+| `/focus` | Окремий toggle focus view (відокремлено від `Ctrl+O`) | 2.1.110 |
+| Вбудовані команди через Skill tool | Модель може викликати вбудовані slash-команди (`/init`, `/review`, `/security-review`) через Skill tool | 2.1.108 |
+| ~~`/tag`~~ | [ВИДАЛЕНО] | 2.1.92 |

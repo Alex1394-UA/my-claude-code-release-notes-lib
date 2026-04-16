@@ -20,6 +20,7 @@
 | `SessionStart` | При старті нової сесії | 1.0.59 |
 | `SessionEnd` | При завершенні сесії | 1.0.85 |
 | `PreCompact` | Перед стисненням контексту | 1.0.48 |
+| `PreCompact` block | Хуки можуть блокувати compact через exit code 2 або `{"decision":"block"}` | 2.1.105 |
 | `PostCompact` | Після стиснення | 2.1.76 |
 | `ConfigChange` | При зміні конфігурації | 2.1.49 |
 | `Setup` | При --init/--init-only/--maintenance | 2.1.10 |
@@ -34,6 +35,7 @@
 | `TeammateIdle` | При idle teammate | 2.1.33 |
 | `TaskCompleted` | При завершенні задачі | 2.1.33 |
 | `SubagentStart` | При старті субагента | 2.0.43 |
+| `PermissionDenied` | При відмові auto mode класифікатора; `retry: true` для повтору | 2.1.89 |
 | `WorktreeCreate` | При створенні worktree | 2.1.50 |
 | `WorktreeRemove` | При видаленні worktree | 2.1.50 |
 | `ModelSwitch` | При зміні моделі під час сесії | 2.2.1 |
@@ -46,7 +48,7 @@
 | `timeout` | Таймаут хука (за замовч. 10 хв) | 1.0.41 |
 | `modelSwitchTimeout` | Таймаут для ModelSwitch хуків | 2.2.1 |
 | `once: true` | Одноразовий хук | 2.1.0 |
-| `if` | Умова запуску (правила дозволів) | 2.1.85 |
+| `if` | Умова запуску (правила дозволів; compound commands з 2.1.89) | 2.1.85, 2.1.89 |
 | `model` | Кастомна модель для хука | 2.0.41 |
 | `systemMessage` | Системне повідомлення хука | 1.0.64 |
 | `type: "http"` | HTTP хук замість shell | 2.1.63 |
@@ -55,7 +57,7 @@
 
 | Поле | Опис | Версія |
 |------|------|--------|
-| `permissionDecision` | "allow" / "deny" / "ask" | 1.0.59 |
+| `permissionDecision` | "allow" / "deny" / "ask" / "defer" | 1.0.59, 2.1.89 |
 | `updatedInput` | Модифіковані інпути інструментів | 2.0.10 |
 | `additionalContext` | Додатковий контекст для моделі | 2.1.9 |
 | `hook_event_name` | Ім'я події хука | 1.0.41 |
@@ -63,3 +65,15 @@
 | `agent_id` / `agent_type` | Ідентифікатор агента | 2.1.69 |
 | `transcript_path` | Шлях до транскрипту | — |
 | `last_assistant_message` | Остання відповідь Claude | 2.1.47 |
+| `file_path` (абсолютний) | `Read`/`Write`/`Edit` передають абсолютний шлях | 2.1.89 |
+| Вивід >50K на диск | Hook output зберігається з файл-путем + прев'ю замість прямої ін'єкції | 2.1.89 |
+| PostToolUse format-on-save fix | `Edit`/`Write` більше не помиляються коли hook перемальовує файл між редагуваннями | 2.1.90 |
+| PreToolUse JSON stdout block | Хуки що видають JSON в stdout з exit code 2 коректно блокують інструмент | 2.1.90 |
+| Stop hooks `ok:false` fix | Prompt-type Stop хуки більше не помиляються при `ok:false` від fast model; `preventContinuation:true` відновлено | 2.1.92 |
+| Stop/SubagentStop long sessions fix | Виправлено помилки Stop/SubagentStop хуків на довгих сесіях; hook evaluator показує реальне повідомлення замість "JSON validation failed" | 2.1.97 |
+| Hook errors stderr | Помилки хуків в транскрипті включають перший рядок stderr для самодіагностики | 2.1.98 |
+| Unrecognized hook event resilience | Нерозпізнане ім'я хука в `settings.json` більше не ігнорує весь файл | 2.1.101 |
+| `permissions.deny` override hook ask | `deny` правила тепер мають пріоритет над `permissionDecision: "ask"` від PreToolUse хука | 2.1.101 |
+| `PermissionRequest deny re-check` | `PermissionRequest` хуки з `updatedInput` тепер перевіряються повторно проти `permissions.deny`; `setMode:'bypassPermissions'` поважає `disableBypassPermissionsMode` | 2.1.110 |
+| `PreToolUse additionalContext drop fix` | Виправлено втрату `additionalContext` від `PreToolUse` хука коли tool call помиляється | 2.1.110 |
+| `hookSpecificOutput.sessionTitle` | `UserPromptSubmit` хуки можуть встановлювати заголовок сесії | 2.1.94 |

@@ -20,6 +20,7 @@
 | `ANTHROPIC_CUSTOM_MODEL_OPTION_DESCRIPTION` | Опис кастомного запису | 2.1.78 |
 | `AWS_BEARER_TOKEN_BEDROCK` | Bedrock API ключ | 1.0.51 |
 | `ANTHROPIC_BEDROCK_BASE_URL` | Bedrock базовий URL | 2.1.32 |
+| `CLAUDE_CODE_USE_MANTLE` | Bedrock через Mantle (`1`) | 2.1.94 |
 | `CLOUD_ML_REGION` | Vertex AI регіон | 1.0.8 |
 | `NODE_EXTRA_CA_CERTS` | Додаткові CA сертифікати | 1.0.40 |
 
@@ -31,6 +32,7 @@
 | `BASH_MAX_TIMEOUT_MS` | Максимальний таймаут bash | 1.0.108 |
 | `MCP_TIMEOUT` | Таймаут MCP сервера | 0.2.41 |
 | `MCP_TOOL_TIMEOUT` | Таймаут MCP інструменту | 1.0.8 |
+| `API_TIMEOUT_MS` | Таймаут API запитів (виправлено ігнорування hardcoded 5хв) | 2.1.101 |
 | `CLAUDE_CODE_API_KEY_HELPER_TTL_MS` | TTL для apiKeyHelper | 0.2.117 |
 | `CLAUDE_CODE_EXIT_AFTER_STOP_DELAY` | Автовихід SDK після idle | 2.1.35 |
 | `CLAUDE_STREAM_IDLE_TIMEOUT_MS` | Стрімінговий idle watchdog (90s) | 2.1.84 |
@@ -46,9 +48,12 @@
 | `XDG_CONFIG_HOME` | XDG директорія конфігурації | 1.0.28 |
 | `CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR` | Фіксувати робочу директорію | 1.0.18 |
 | `CLAUDE_BASH_NO_LOGIN` | Пропустити login shell (за замовч. з 2.1.51) | 1.0.124 |
+| `CLAUDE_ENV_FILE` trailing comment fix | Виправлено відсутність Bash tool output коли env file (напр. `~/.zprofile`) закінчується на `#` comment | 2.1.108 |
 | `CLAUDE_CODE_SHELL` | Перевизначити auto-detected shell | 2.0.65 |
 | `CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS` | Прибрати git інструкції з промпту | 2.1.69 |
 | `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` | Вимкнути release notes, telemetry | 2.0.17 |
+| `DISABLE_NONESSENTIAL_TRAFFIC` cross-project fix | Виправлено глобальне вимкнення usage metrics коли змінна встановлена в одному проекті | 2.1.105 |
+| `DISABLE_TELEMETRY` cache TTL fix | Виправлено fallback до 5-хв TTL замість 1 год для підписників з `DISABLE_TELEMETRY` | 2.1.108 |
 | `CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK` | Вимкнути non-streaming fallback | 2.1.83 |
 | `CLAUDE_CODE_DISABLE_1M_CONTEXT` | Вимкнути 1M контекст | 2.1.50 |
 | `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS` | Прибрати beta заголовки | 2.1.25 |
@@ -57,6 +62,7 @@
 | `CLAUDE_CODE_DISABLE_CRON` | Зупинити cron задачі | 2.1.72 |
 | `CLAUDE_CODE_DISABLE_AUTOUPDATER` | Вимкнути автооновлення | 2.0.36 |
 | `CLAUDE_CODE_DISABLE_DEEP_LINK_REGISTRATION` | Не реєструвати claude-cli:// | 2.1.83 |
+| `CLAUDE_CODE_NO_FLICKER` | Flicker-free alt-screen rendering з virtualized scrollback (`1`) | 2.1.89 |
 | `CLAUDE_CODE_SIMPLE` | Мінімальний режим (без skills/MCP/hooks) | 2.1.49 |
 | `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB` | Прибрати credential-їз subprocess | 2.1.83 |
 | `CLAUDE_CODE_AUTO_CONNECT_IDE` | Вимкнути IDE auto-connect (false) | 1.0.61 |
@@ -65,6 +71,16 @@
 | `CLAUDE_CODE_FILE_READ_MAX_OUTPUT_TOKENS` | Ліміт файл читання | 2.1.0 |
 | `CLAUDE_CODE_MAX_OUTPUT_TOKENS` | Макс output tokens | — |
 | `ENABLE_TOOL_SEARCH` | Ввімкнути ToolSearch з BASE_URL | 2.1.72 |
+| `MCP_CONNECTION_NONBLOCKING` | Пропустити очікування MCP з'єднання в `-p` mode (`true`) | 2.1.89 |
+| `CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE` | Зберегти marketplace кеш при `git pull` помилці (офлайн) | 2.1.90 |
+| `FORCE_HYPERLINK` | Виправлено ігнорування через `settings.json` env | 2.1.94 |
+| `CLAUDE_CODE_PERFORCE_MODE` | Edit/Write/NotebookEdit помиляються на read-only файлах з `p4 edit` підказкою | 2.1.98 |
+| `CLAUDE_CODE_SCRIPT_CAPS` | Обмеження скрипт-викликів за сесію (PID namespace sandbox на Linux з `CLAUDE_CODE_SUBPROCESS_ENV_SCRUB`) | 2.1.98 |
+| `CLAUDE_CODE_CERT_STORE` | OS CA certificate store за замовч. (`bundled` для тільки bundled CAs) | 2.1.101 |
+| `ENABLE_PROMPT_CACHING_1H` | Opt-in 1-годинний prompt cache TTL для API key, Bedrock, Vertex, Foundry | 2.1.108 |
+| `FORCE_PROMPT_CACHING_5M` | Примусовий 5-хвилинний prompt cache TTL | 2.1.108 |
+| `ENABLE_PROMPT_CACHING_1H_BEDROCK` | [ЗАСТАРІЛО] → `ENABLE_PROMPT_CACHING_1H` (працює для зворотної сумісності) | 2.1.108 |
+| `CLAUDE_CODE_ENABLE_AWAY_SUMMARY` | Примусове ввімкнення session recap коли телеметрія вимкнена (`0` для opt-out) | 2.1.108 |
 | `ENABLE_CLAUDEAI_MCP_SERVERS` | Opt-out від claude.ai MCP (false) | 2.1.63 |
 | `CLAUDE_CODE_ENABLE_TASKS` | Старі system задачі (false) | 2.1.19 |
 | `NO_PROXY` | Bypass proxy для вказаних hostnames | 1.0.93 |
@@ -84,4 +100,5 @@
 | Змінна | Опис | Версія |
 |--------|------|--------|
 | `OTEL_LOG_TOOL_DETAILS` | Деталі інструментів в OTEL (`1`) | 2.1.85 |
+| `OTEL_LOG_USER_PROMPTS` / `OTEL_LOG_TOOL_CONTENT` | Beta tracing тепер враховує ці змінні (sensitive span attributes не емітяться без opt-in) | 2.1.101 |
 | `HTTP_PROXY` / `HTTPS_PROXY` | Proxy для OTEL | 2.0.17 |

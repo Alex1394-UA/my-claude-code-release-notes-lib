@@ -17,6 +17,37 @@
 | `claude --worktree` / `-w` | Ізольований git worktree | 2.1.49 |
 | `claude --bare -p` | Скриптовий режим без hooks/MCP/skills | 2.1.81 |
 | `--bare` виправлення MCP tools | Не викидає MCP інструменти в інтерактивному режимі | 2.1.86 |
+| `-p --resume` deferred tools | Re-evaluation deferred tools + `--mcp-config` bounded at 5s | 2.1.89 |
+| `--resume` prompt-cache fix | Виправлено повний cache-miss для deferred tools/MCP (регресія з 2.1.69) | 2.1.90 |
+| `/resume` паралельне завантаження | Проєктні сесії завантажуються паралельно в режимі всіх проєктів | 2.1.90 |
+| `--resume` hidding `-p`/SDK | Picker не показує сесії створені через `-p` або SDK | 2.1.90 |
+| `--resume` transcript fix | Виправлено розрив ланцюжка транскриптів при async writes | 2.1.91 |
+| `--resume` worktree direct | Пряме відновлення сесій з інших worktrees того ж repo | 2.1.94 |
+| `--resume` picker fixes (2.1.97) | Виправлено: uneditable при `<name>`, Ctrl+A wipe, empty list, task-status замість summary | 2.1.97 |
+| `--resume` >10KB diff fix | Виправлено зникнення file-edit diffs для файлів >10KB | 2.1.97 |
+| `--resume` cache misses | Виправлено через attachment messages не збережених в транскрипт | 2.1.97 |
+| `/resume` filter hints | Покращено labels з project/worktree/branch іменами | 2.1.98 |
+| `/resume` picker expanded fixes | Виправлено: Windows Terminal preview, cwd в worktrees, session-not-found в stderr, terminal title | 2.1.98 |
+| `--resume` dead-end branch | Виправлено втрату контексту на великих сесіях при anchor на dead-end branch | 2.1.101 |
+| `--resume` chain recovery | Виправлено міст в несуміжну subagent розмову | 2.1.101 |
+| `--resume` crash missing file_path | Виправлено краш при відсутньому `file_path` в persisted Edit/Write | 2.1.101 |
+| `-p --resume <name>` titles | Приймає session titles встановлені через `/rename` або `--name` | 2.1.101 |
+| `--continue -p` fix | Коректне продовження сесій створених через `-p` або SDK | 2.1.101 |
+| `EnterWorktree path` параметр | `path` параметр для переходу в існуючий worktree поточного репозиторію | 2.1.105 |
+| `Stale agent worktree cleanup` | Очищення worktrees чий PR було squash-merged (більше не зберігаються назавжди) | 2.1.105 |
+| `EnterWorktree duplicate text fix` | Виправлено дублювання тексту "Creating worktree" в EnterWorktree/ExitWorktree | 2.1.105 |
+| `Resume hint fix` | Виправлено відсутність підказки "Resume this session..." при виході після `/resume`, `--worktree` або `/branch` | 2.1.105 |
+| `Resume malformed text crash fix` | Виправлено краш при відновленні сесії з malformed text blocks | 2.1.105 |
+| `/resume` current dir default | `/resume` picker тепер показує сесії поточної директорії за замовч.; `Ctrl+A` для всіх проектів | 2.1.108 |
+| `--resume` loses custom name | Виправлено втрату кастомного імені та кольору при `claude --resume <session-id>` | 2.1.108 |
+| `--teleport` escape codes fix | Виправлено появу escape sequences в prompt input після `--teleport` | 2.1.108 |
+| `--teleport` precondition errors | Виправлено мовчазний вихід при помилках передумов (dirty git tree, session not found) | 2.1.108 |
+| `--resume` truncating fix | Виправлено обрізання сесій при самодостатніх повідомленнях в транскрипті | 2.1.108 |
+| `/tui` команда | `/tui` та `tui` setting — flicker-free rendering в тій же сесії (`/tui fullscreen`) | 2.1.110 |
+| `--resume` resurrects scheduled tasks | `--resume`/`--continue` відновлює незакінчені scheduled tasks | 2.1.110 |
+| `--resume` showing first prompt | Виправлено показ першого промпту замість `/rename` імені для активних або некоректно завершених сесій | 2.1.110 |
+| Console login macOS keychain | Виправлено мовчазний "Not logged in" при заблокованому keychain | 2.1.94 |
+| `/login` OAuth URL padding | Виправлено padding що заважав mouse selection | 2.1.101 |
 | `claude --session-timeout <seconds>` | Автозавершення сесії при бездіяльності | 2.2.3 |
 
 ## Запуск та аутентифікація
@@ -49,6 +80,10 @@
 | `--channels` | Канали MCP (research preview) | 2.1.80 |
 | `--plugin-dir <path>` | Директорія локальних плагінів | 2.1.69 |
 | `--console` | Anthropic Console аутентифікація | 2.1.79 |
+| `claude-cli://open?q=` multi-line | Глибокі посилання підтримують багаторядкові промпти (`%0A`) | 2.1.91 |
+| Bedrock setup wizard | Інтерактивний майстер налаштування з екрану логіну (AWS auth, region, credentials) | 2.1.92 |
+| Vertex AI setup wizard | Інтерактивний майстер налаштування (GCP auth, project, region, credentials, model pinning) | 2.1.98 |
+| `--exclude-dynamic-system-prompt-sections` | Print mode: виключення секцій для cross-user prompt caching | 2.1.98 |
 | `--teleport` | Телепорт сесії | 2.1.47 |
 | `--replay-user-messages` | Повторення повідомлень користувача | 1.0.86 |
 | `--include-partial-messages` | Часткове стрімінг (SDK) | 1.0.109 |
@@ -79,3 +114,4 @@
 | `claude doctor` | Діагностика | 1.0.51 |
 | `claude update` | Оновлення | — |
 | `claude remote-control` | Remote Control підсистема | 2.1.51 |
+| Homebrew release channel | Update prompts використовують release channel cask (`claude-code` → stable, `claude-code@latest` → latest) | 2.1.92 |

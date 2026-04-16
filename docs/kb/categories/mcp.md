@@ -33,6 +33,23 @@
 | `X-Claude-Code-Session-Id` | Заголовок для агрегації запитів по сесії | 2.1.86 |
 | Prompt cache для 3p | Видалення динамічного контенту з tool descriptions | 2.1.86 |
 | Виправлення Cowork Dispatch | Повідомлення в каналах тепер доставляються | 2.1.87 |
+| MCP tool errors fix | Помилки більше не обрізаються до першого content block | 2.1.89 |
+| MCP schema cache perf | Прибрано per-turn JSON.stringify MCP tool schemas при cache-key lookup | 2.1.90 |
+| SSE linear time | SSE транспорт обробляє великі стріми за лінійний час (було квадратичне) | 2.1.90 |
+| `_meta["anthropic/maxResultSizeChars"]` | Анотація для збільшення ліміту MCP tool result (до 500K) | 2.1.91 |
+| Plugin MCP connector fix | Виправлено зависання "connecting" при дублюванні неавтентифікованого claude.ai конектора | 2.1.92 |
+| Slack `#channel` header | Компактний заголовок з клікабельним посиланням на канал для send-message tool calls | 2.1.94 |
+| HTTP/SSE buffer leak fix | Виправлено накопичення ~50MB/год невивільнених буферів при реконектах серверів | 2.1.97 |
+| OAuth `authServerMetadataUrl` refresh fix | Конфіг працює при refresh token після рестарту (ADFS та інші IdP) | 2.1.97 |
+| `maxResultSizeChars` token persist | Виправлено ігнорування анотації при token-based persist layer | 2.1.98 |
+| `/mcp` OAuth для `headersHelper` | Замість OAuth-дій тепер пропонується Reconnect для серверів з `headersHelper` | 2.1.101 |
+| `claude mcp serve` outputSchema fix | Виправлено помилку "Tool execution failed" для клієнтів що валідують `outputSchema` | 2.1.101 |
+| `MCP large-output truncation` | Покращено промпт обрізки великого MCP output: формат-специфічні рецепти (`jq` для JSON, computed Read chunk sizes для тексту) | 2.1.105 |
+| `Inbound channel notifications fix` | Виправлено мовчазне випадання inbound channel notifications після першого повідомлення для Team/Enterprise | 2.1.105 |
+| `stdio MCP non-JSON hang fix` | stdio MCP сервер з malformed (non-JSON) output тепер завершується з помилкою замість зависання | 2.1.105 |
+| `MCP tools missing first turn fix` | Виправлено відсутність MCP tools на першому повороті headless/remote-trigger сесій при async підключенні | 2.1.105 |
+| `MCP tool calls hang SSE/HTTP fix` | Виправлено зависання MCP tool calls при розриві з'єднання на SSE/HTTP транспортах | 2.1.110 |
+| `stdio MCP stray non-JSON regression` | Виправлено відключення stdio MCP сервера на першому stray non-JSON рядку (регресія з 2.1.105) | 2.1.110 |
 | Elicitation | Інтерактивні MCP-запити | 2.1.76 |
 | Виправлення таймауту підключення [Win] | Виправлено на повільних мережах | 2.2.0 |
 

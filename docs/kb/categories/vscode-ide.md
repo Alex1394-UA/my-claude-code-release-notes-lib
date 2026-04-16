@@ -31,6 +31,12 @@
 | `/remote-control` | Remote Control з VS Code | 2.1.79 |
 | "Not responding" fix | Виправлено хибне повідомлення при довгих операціях | 2.1.86 |
 | Max plan default fix | Не скидає на Sonnet після OAuth refresh | 2.1.86 |
+| Reduced cold-open subprocess | Прискорено старт сесії | 2.1.94 |
+| Dropdown menus wrong item | Виправлено вибір неправильного елемента при миші над списком | 2.1.94 |
+| settings.json parse warning | Банер попередження при помилці парсингу `settings.json` | 2.1.94 |
+| "requires git-bash" false positive [Win] | Виправлено хибне повідомлення при `CLAUDE_CODE_GIT_BASH_PATH` або Git за замовч. | 2.1.98 |
+| File attachment clear fix | Вкладення файлу під чатом очищається при закритті останньої вкладки | 2.1.101 |
+| Write tool IDE edit notification | Write tool повідомляє модель коли користувач редагує контент в IDE diff перед прийняттям | 2.1.110 |
 
 ## Win32 ARM64
 
