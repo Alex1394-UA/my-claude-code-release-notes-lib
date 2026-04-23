@@ -70,3 +70,11 @@
 | `/plugin` Installed tab | Покращено: items needing attention та favorites зверху, disabled за fold, `f` для favorites | 2.1.110 |
 | Plugin install dependencies fix | `/plugin` install тепер встановлює залежності з `plugin.json` коли marketplace їх не вказує | 2.1.110 |
 | Policy-managed plugins auto-update fix | Виправлено відсутність автооновлення policy-managed плагінів при запуску з іншого проекту | 2.1.108 |
+| Plugin dependency error improvements | Dependency errors розрізняють conflicting, invalid та overly complex version requirements; виправлено stale resolved versions; `plugin install` відновлюється після перерваних prior installs | 2.1.111 |
+| Plugin install range-conflict | `plugin install` на вже встановленому з conflicting dependency тепер report `range-conflict` замість успіху | 2.1.113 |
+| `/reload-plugins` auto-deps | `/reload-plugins` та background plugin auto-update тепер auto-install missing plugin dependencies з marketplaces | 2.1.116 |
+| Plugin install missing deps | `/plugin install` на вже встановленому plugin тепер встановлює missing dependencies замість зупинки на "already installed" | 2.1.117 |
+| Plugin dependency resolve | `plugin install` повторно резолвить dependency встановлену на wrong version | 2.1.118 |
+| `blockedMarketplaces` enforcement | Managed-settings `blockedMarketplaces` та `strictKnownMarketplaces` тепер enforce при plugin install, update, refresh та autoupdate | 2.1.117 |
+| Plugin dependency install from marketplace | `claude plugin marketplace add` тепер auto-resolve missing dependencies з configured marketplaces | 2.1.117 |
+| Plugin auto-update skip shown | Коли auto-update пропускає plugin через version constraint іншого plugin, skip з'являється в `/doctor` та `/plugin` Errors tab | 2.1.118 |

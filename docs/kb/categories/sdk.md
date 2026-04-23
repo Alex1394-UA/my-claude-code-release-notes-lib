@@ -55,3 +55,7 @@
 | RC generic error fix | Виправлено показ загальної помилки замість re-login prompt для занадто старих RC сесій | 2.1.110 |
 | RC rename persistence fix | Виправлено відсутність збереження RC заголовків з claude.ai в локальній CLI сесії | 2.1.110 |
 | Headless auto-title extra Haiku fix | Виправлено зайвий Haiku запит для auto-title в headless/SDK коли `DISABLE_NONESSENTIAL_TRAFFIC` або `DISABLE_TERMINAL_TITLE` встановлено | 2.1.110 |
+| `/extra-usage` з Remote Control | `/extra-usage` тепер працює з Remote Control (mobile/web) клієнтів | 2.1.113 |
+| Remote Control `@`-file autocomplete | Remote Control клієнти тепер можуть запитувати `@`-file autocomplete suggestions | 2.1.113 |
+| Headless `plugin_errors` init event | `--output-format stream-json` тепер включає `plugin_errors` на init event коли plugins demoted через unsatisfied dependencies | 2.1.111 |
+| SDK `reload_plugins` serial fix | Виправлено послідовне reconnect всіх user MCP серверів при `reload_plugins` | 2.1.117 |

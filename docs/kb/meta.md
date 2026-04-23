@@ -1,7 +1,7 @@
 # Knowledge Base Metadata
 
-last_processed: 2.1.110
-last_updated: 2026-04-16
+last_processed: 2.1.118
+last_updated: 2026-04-23
 seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 
 ## Processing History
@@ -14,3 +14,4 @@ seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 | 2026-04-06 | 2.1.90–2.1.92 | core, cli, env-vars, hooks, mcp, settings, skills-agents, plugins, windows, sdk | ~45 записів додано, 2 команди видалено |
 | 2026-04-13 | 2.1.94–2.1.101 | all 12 categories | ~120 записів додано, 1 нова команда |
 | 2026-04-16 | 2.1.105–2.1.110 | all 12 categories | ~95 записів додано, 4 нові команди, 3 депрекації |
+| 2026-04-23 | 2.1.111–2.1.118 | all 12 categories | ~140 записів додано, 3 нові команди, 0 депрекацій |

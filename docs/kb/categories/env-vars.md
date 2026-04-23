@@ -79,6 +79,10 @@
 | `CLAUDE_CODE_CERT_STORE` | OS CA certificate store за замовч. (`bundled` для тільки bundled CAs) | 2.1.101 |
 | `ENABLE_PROMPT_CACHING_1H` | Opt-in 1-годинний prompt cache TTL для API key, Bedrock, Vertex, Foundry | 2.1.108 |
 | `FORCE_PROMPT_CACHING_5M` | Примусовий 5-хвилинний prompt cache TTL | 2.1.108 |
+| `OTEL_LOG_RAW_API_BODIES` | Емітує повні API request/response bodies як OpenTelemetry log events для дебагу | 2.1.111 |
+| `CLAUDE_CODE_USE_POWERSHELL_TOOL` | Opt-in/out для PowerShell tool; на Linux/macOS enable з `=1` (потрібен `pwsh` на PATH) | 2.1.111 |
+| `DISABLE_UPDATES` | Повне блокування всіх update paths включаючи ручний `claude update` — строже за `DISABLE_AUTOUPDATER` | 2.1.118 |
+| `CLAUDE_CODE_FORK_SUBAGENT` | Увімкнення forked subagents на external builds (`1`) | 2.1.117 |
 | `ENABLE_PROMPT_CACHING_1H_BEDROCK` | [ЗАСТАРІЛО] → `ENABLE_PROMPT_CACHING_1H` (працює для зворотної сумісності) | 2.1.108 |
 | `CLAUDE_CODE_ENABLE_AWAY_SUMMARY` | Примусове ввімкнення session recap коли телеметрія вимкнена (`0` для opt-out) | 2.1.108 |
 | `ENABLE_CLAUDEAI_MCP_SERVERS` | Opt-out від claude.ai MCP (false) | 2.1.63 |
@@ -100,5 +104,6 @@
 | Змінна | Опис | Версія |
 |--------|------|--------|
 | `OTEL_LOG_TOOL_DETAILS` | Деталі інструментів в OTEL (`1`) | 2.1.85 |
-| `OTEL_LOG_USER_PROMPTS` / `OTEL_LOG_TOOL_CONTENT` | Beta tracing тепер враховує ці змінні (sensitive span attributes не емітяться без opt-in) | 2.1.101 |
+| `OTEL_LOG_USER_PROMPTS` / `OTEL_LOG_TOOL_CONTENT` | Beta tracing тепер враховує ці змінні (sensitive span attributes не емітуются без opt-in) | 2.1.101 |
+| OTEL enhanced attributes | `user_prompt` include `command_name` та `command_source`; cost/token/api spans include `effort`; custom/MCP command names redacted без `OTEL_LOG_TOOL_DETAILS=1` | 2.1.117 |
 | `HTTP_PROXY` / `HTTPS_PROXY` | Proxy для OTEL | 2.0.17 |

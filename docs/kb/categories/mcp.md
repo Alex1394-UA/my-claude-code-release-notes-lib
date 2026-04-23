@@ -50,6 +50,18 @@
 | `MCP tools missing first turn fix` | Виправлено відсутність MCP tools на першому повороті headless/remote-trigger сесій при async підключенні | 2.1.105 |
 | `MCP tool calls hang SSE/HTTP fix` | Виправлено зависання MCP tool calls при розриві з'єднання на SSE/HTTP транспортах | 2.1.110 |
 | `stdio MCP stray non-JSON regression` | Виправлено відключення stdio MCP сервера на першому stray non-JSON рядку (регресія з 2.1.105) | 2.1.110 |
+| MCP concurrent-call timeout fix | Виправлено ситуацію де повідомлення для одного tool call мовчазно disarm іншого call's watchdog при concurrent timeout handling | 2.1.113 |
+| MCP OAuth `headersHelper` fix | Виправлено `/mcp` menu що ховав OAuth Authenticate/Re-authenticate actions для серверів з `headersHelper` | 2.1.118 |
+| MCP HTTP/SSE custom headers fix | HTTP/SSE MCP сервери з custom headers більше не зависають в "needs authentication" після transient 401 | 2.1.118 |
+| OAuth `expires_in` missing fix | MCP сервери чий OAuth token response опускає `expires_in` більше не вимагають re-authentication щогодини | 2.1.118 |
+| OAuth step-up silent refresh fix | Виправлено мовчазне refresh замість re-consent prompt при OAuth step-up authorization | 2.1.118 |
+| OAuth timeout/cancel fix | Виправлено unhandled promise rejection при timeout або cancel OAuth flow | 2.1.118 |
+| OAuth refresh lock fix | Виправлено OAuth refresh без cross-process lock під contention | 2.1.118 |
+| macOS keychain race fix | Виправлено race де concurrent MCP token refresh міг перезаписати свіжо-refreshed OAuth token | 2.1.118 |
+| OAuth token early revocation fix | Виправлено refresh що fail коли сервер revoke token до local expiry time | 2.1.118 |
+| `resources/templates/list` deferred | MCP `resources/templates/list` тепер відкладено до першого `@`-mention — прискорює MCP startup | 2.1.116 |
+| MCP concurrent connect | Паралельне підключення local та claude.ai MCP серверів за замовчуванням | 2.1.117 |
+| MCP elicitation auto-cancel fix | Виправлено auto-cancellation MCP `elicitation/create` requests в print/SDK mode | 2.1.117 |
 | Elicitation | Інтерактивні MCP-запити | 2.1.76 |
 | Виправлення таймауту підключення [Win] | Виправлено на повільних мережах | 2.2.0 |
 

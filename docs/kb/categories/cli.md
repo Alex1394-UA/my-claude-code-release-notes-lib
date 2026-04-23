@@ -46,6 +46,11 @@
 | `/tui` команда | `/tui` та `tui` setting — flicker-free rendering в тій же сесії (`/tui fullscreen`) | 2.1.110 |
 | `--resume` resurrects scheduled tasks | `--resume`/`--continue` відновлює незакінчені scheduled tasks | 2.1.110 |
 | `--resume` showing first prompt | Виправлено показ першого промпту замість `/rename` імені для активних або некоректно завершених сесій | 2.1.110 |
+| Near-miss subcommand suggestion | Пропозиція найближчої matching підкоманди при `claude <word>` з typo (напр. `claude udpate` → "Did you mean `claude update`?") | 2.1.111 |
+| `cd <current-dir> &&` no prompt | `cd <current-directory> && git …` більше не trigerra permission prompt коли `cd` є no-op | 2.1.113 |
+| Native binary spawn | CLI запускає нативний Claude Code binary замість bundled JavaScript | 2.1.113 |
+| `claude plugin tag` | Створення release git tags для плагінів з версіонною валідацією | 2.1.118 |
+| `--continue`/`--resume` add-dir | Тепер знаходять сесії що додали поточну директорію через `/add-dir` | 2.1.118 |
 | Console login macOS keychain | Виправлено мовчазний "Not logged in" при заблокованому keychain | 2.1.94 |
 | `/login` OAuth URL padding | Виправлено padding що заважав mouse selection | 2.1.101 |
 | `claude --session-timeout <seconds>` | Автозавершення сесії при бездіяльності | 2.2.3 |
@@ -85,6 +90,7 @@
 | Vertex AI setup wizard | Інтерактивний майстер налаштування (GCP auth, project, region, credentials, model pinning) | 2.1.98 |
 | `--exclude-dynamic-system-prompt-sections` | Print mode: виключення секцій для cross-user prompt caching | 2.1.98 |
 | `--teleport` | Телепорт сесії | 2.1.47 |
+| `/setup-vertex` та `/setup-bedrock` покращення | Показують фактичний `settings.json` path коли `CLAUDE_CONFIG_DIR` встановлено, seed candidates з existing pins при re-run, та опція "with 1M context" | 2.1.111 |
 | `--replay-user-messages` | Повторення повідомлень користувача | 1.0.86 |
 | `--include-partial-messages` | Часткове стрімінг (SDK) | 1.0.109 |
 
@@ -115,3 +121,4 @@
 | `claude update` | Оновлення | — |
 | `claude remote-control` | Remote Control підсистема | 2.1.51 |
 | Homebrew release channel | Update prompts використовують release channel cask (`claude-code` → stable, `claude-code@latest` → latest) | 2.1.92 |
+| Claude Code download URL | Claude Code та installer тепер використовують `https://downloads.claude.ai/claude-code-releases` замість Google Storage | 2.1.116 |

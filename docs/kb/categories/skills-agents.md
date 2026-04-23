@@ -25,6 +25,13 @@
 | `/reload-plugins` skills | Підхоплює plugin-provided skills без рестарту | 2.1.98 |
 | `disable-model-invocation` fix | Виправлено помилку при виклику skills з `disable-model-invocation: true` через `/<skill>` mid-message | 2.1.110 |
 | `/skills` menu scroll fix | Виправлено відсутність скролінгу списку `/skills` в fullscreen mode | 2.1.110 |
+| `/less-permission-prompts` | Сканує транскрипти на common read-only Bash та MCP tool calls та пропонує prioritized allowlist для `.claude/settings.json` | 2.1.111 |
+| `/ultrareview` | Комплексний code review в cloud з паралельним multi-agent аналізом та critique; без аргументів — поточна гілка, `/ultrareview <PR#>` — конкретний PR | 2.1.111 |
+| `/ultrareview` покращення | Прискорений запуск з parallelized checks, diffstat в launch dialog, анімований launching state | 2.1.113 |
+| `/skills` sort by tokens | `/skills` menu підтримує сортування по estimated token count — натисніть `t` для toggle | 2.1.111 |
+| Agent frontmatter `mcpServers` | `mcpServers` з agent frontmatter тепер завантажуються для main-thread agent sessions через `--agent` | 2.1.117 |
+| Agent frontmatter `hooks` | `hooks:` з agent frontmatter тепер спрацьовують при запуску через `--agent` | 2.1.116 |
+| Non-existent `commit` skill fix | Виправлено виклик неіснуючого `commit` skill та показ "Unknown skill: commit" для користувачів без кастомної `/commit` команди | 2.1.111 |
 
 ## Поля frontmatter
 

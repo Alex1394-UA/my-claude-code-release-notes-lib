@@ -141,3 +141,10 @@
 | NO_FLICKER повільне mouse-wheel | Виправлено на Windows Terminal | 2.1.97 |
 | NO_FLICKER CJK/Unicode | Виправлено пошкодження Korean/Japanese/Unicode при копіюванні | 2.1.97 |
 | VSCode "requires git-bash" [Win] | Виправлено хибне повідомлення коли `CLAUDE_CODE_GIT_BASH_PATH` встановлено | 2.1.98 |
+| PowerShell tool rollout | PowerShell tool progressive rollout; opt in/out з `CLAUDE_CODE_USE_POWERSHELL_TOOL`; Linux/macOS enable з `=1` (потрібен `pwsh`) | 2.1.111 |
+| `CLAUDE_ENV_FILE` fix [Win] | `CLAUDE_ENV_FILE` та SessionStart hook environment files тепер застосовуються (раніше no-op) | 2.1.111 |
+| Permission rules drive-letter fix [Win] | Permission rules з drive-letter paths тепер коректно root-anchored, та paths що відрізняються лише регістром букви диска розпізнаються як однакові | 2.1.111 |
+| `Ctrl+Backspace` delete word [Win] | Видалення попереднього слова на Windows | 2.1.113 |
+| `/insights` EBUSY fix [Win] | Виправлено краш `/insights` з `EBUSY` | 2.1.113 |
+| Credential save crash fix [Win] | Виправлено краш збереження credential що пошкоджував `~/.claude/.credentials.json` | 2.1.118 |
+| Cached `where.exe` lookups [Win] | Кешовані `where.exe` executable lookups per process для швидшого subprocess launches | 2.1.117 |

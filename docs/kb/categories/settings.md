@@ -30,6 +30,7 @@
 | `showThinkingSummaries` | Показувати thinking summaries в інтерактивних сесіях | 2.1.89 |
 | `disableSkillShellExecution` | Вимкнути shell виконання в skills, кастомних командах та plugin commands | 2.1.91 |
 | `sessionTimeout` | Таймаут автозавершення сесії (мс) | 2.2.3 |
+| Custom themes | Кастомні теми з `/theme` або JSON файлами в `~/.claude/themes/`; плагіни можуть постачати теми через `themes/` директорію | 2.1.118 |
 | `refreshInterval` status line | Перезапуск status line команди кожні N секунд | 2.1.97 |
 | `workspace.git_worktree` status line | JSON input для status line, встановлюється в git worktree | 2.1.97 |
 
@@ -64,6 +65,7 @@
 | `--dangerously-skip-permissions` fix | Не понижується до accept-edits після write в захищену директорію | 2.1.97 |
 | `permissions.deny` vs hook ask | `deny` правила мають пріоритет над хуковим `ask` | 2.1.101 |
 | `permissions.disableBypassPermissionsMode` | Заблокувати bypass режим | — |
+| Read-only glob no prompt | Read-only bash команди з glob patterns (напр. `ls *.ts`) більше не trigerra permission prompt | 2.1.111 |
 | `permissions.deny` | Правила відмови | — |
 | `permissions.allow` | Правила дозволу | — |
 | `disallowedTools` | Заблоковані інструменти | 0.2.82 |
@@ -102,6 +104,11 @@
 | Sandbox network auto-approve | Auto mode/bypass auto-approve sandbox network prompts | 2.1.97 |
 | Bash mktemp sandbox fix | Виправлено "No such file" після fresh boot в sandboxed commands | 2.1.98 |
 | `allowUnsandboxedCommands` | Дозволити команди поза sandbox | 2.0.30 |
+| Sandbox dangerous-path auto-allow fix | Sandbox auto-allow більше не bypass dangerous-path safety check для `rm`/`rmdir` що цільовують `/`, `$HOME` або critical system dirs | 2.1.116 |
+| macOS `/private/*` dangerous removal | `/private/{etc,var,tmp,home}` paths тепер трактуються як dangerous removal targets під `Bash(rm:*)` allow rules | 2.1.113 |
+| Bash deny exec wrappers | Bash deny rules тепер match команди обгорнуті в `env`/`sudo`/`watch`/`ionice`/`setsid` та подібні exec wrappers | 2.1.113 |
+| `Bash(find:*)` exec safety | `Bash(find:*)` allow rules більше не auto-approve `find -exec`/`-delete` | 2.1.113 |
+| `sandbox.network.deniedDomains` | Блокування специфічних доменів навіть коли ширший `allowedDomains` wildcard дозволяє | 2.1.113 |
 
 ## Пошук MCP
 
@@ -119,3 +126,4 @@
 | Statusline модель іншої сесії | Виправлено відображення моделі при кількох інстансах | 2.1.86 |
 | `forceRemoteSettingsRefresh` | Блокувати старт поки remote managed settings не завантажено (fail-closed) | 2.1.92 |
 | settings.json parse warning | Банер при помилці парсингу (permission rules не застосовуються) | 2.1.94 |
+| `wslInheritsWindowsSettings` | WSL на Windows може успадковувати Windows-side managed settings через цей policy key | 2.1.118 |

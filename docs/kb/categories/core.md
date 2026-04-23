@@ -25,6 +25,9 @@
 | Opus 4.6 default = medium | Для планів Max/Team | 2.1.68 |
 | `effort:` у frontmatter skill/agent | Рівень зусилля для навички | 2.1.80 |
 | Default effort = high | Для API-key, Bedrock/Vertex/Foundry, Team, Enterprise (`/effort` для зміни) | 2.1.94 |
+| `Claude Opus 4.7 xhigh` | Новий рівень зусилля `xhigh` для Opus 4.7 — між `high` та `max`, доступний через `/effort`, `--effort` та model picker; інші моделі fallback до `high` | 2.1.111 |
+| `/effort` інтерактивний слайдер | `/effort` без аргументів відкриває інтерактивний слайдер з навігацією стрелками та Enter для підтвердження | 2.1.111 |
+| Default effort high Pro/Max | Default effort для Pro/Max підписників на Opus 4.6 та Sonnet 4.6 тепер `high` (було `medium`) | 2.1.117 |
 
 ## План-режим
 
@@ -37,6 +40,7 @@
 | `showClearContextOnPlanAccept: true` | Показувати "очистити контекст" | 2.1.81 |
 | План-режим у remote sessions | Виправлено втрату плану після рестарту контейнера | 2.1.91 |
 | Hide "Refine with Ultraplan" | Не показується коли org/auth не може досягти Claude Code на web | 2.1.101 |
+| Plan файли з іменами промптів | Файли планів називаються за вашою назвою промпту (напр. `fix-auth-race-snug-otter.md`) замість випадкових слів | 2.1.111 |
 
 ## Швидкий режим
 
@@ -58,6 +62,7 @@
 | `modelOverrides` | Кастомні ID моделей для провайдерів | 2.1.73 |
 | Bedrock/Vertex/Foundry | Opus 4.6 за замовчуванням | 2.1.73 |
 | Auto mode "unavailable for plan" | Повідомлення при вимкненому через план | 2.1.86 |
+| Auto mode без прапорця | Auto mode більше не потребує `--enable-auto-mode` для Max підписників з Opus 4.7 | 2.1.111 |
 
 ## Контекст та пам'ять
 
@@ -76,6 +81,7 @@
 | Файли пам'яті з hover/click | Підсвічування та відкриття при наведенні | 2.1.86 |
 | Session recap | Recap: контекст при поверненні до сесії, configurable в `/config`, `/recap` для ручного виклику | 2.1.108 |
 | Session recap telemetry-disabled | Recap увімкнено для користувачів з вимкненою телеметрією (Bedrock, Vertex, Foundry); opt-out через `/config` або `CLAUDE_CODE_ENABLE_AWAY_SUMMARY=0` | 2.1.110 |
+| Opus 4.7 context window fix | Виправлено завищені `/context` відсотки та передчасний autocompact для Opus 4.7 — рахував проти 200K замість нативного 1M | 2.1.117 |
 
 ## Інтерактивність
 
@@ -89,6 +95,8 @@
 | Фонові агенти | Агенти працюють у фоні | 2.0.60 |
 | Escape | Переривання Claude (подвійне для агентів) | 0.2.70, 2.1.83 |
 | Auto mode кордони | Виправлено ігнорування явних кордонів користувача ("не пуш", "чекай X перед Y") | 2.1.90 |
+| Subagent stall timeout | Subagents що зависають mid-stream тепер fail з чіткою помилкою після 10 хвилин замість мовчазного зависання | 2.1.113 |
+| Platform binary spawn | CLI тепер запускає нативний Claude Code binary (через per-platform optional dependency) замість bundled JavaScript | 2.1.113 |
 
 ## Інші команди
 
@@ -241,3 +249,87 @@
 | `Open in editor hardening` | Захист від command injection через ненадійні імена файлів в "Open in editor" | 2.1.110 |
 | `Excessive memory piped fix` | Виправлено надмірне виділення пам'яті при piped (non-TTY) Ink output з дуже широким рядком | 2.1.110 |
 | `Bash max timeout enforce` | Bash tool тепер застосовує документований максимальний таймаут замість прийняття довільних значень | 2.1.110 |
+| `"Auto (match terminal)" тема` | Опція теми що автоматично підбирає dark/light режим терміналу — доступна з `/theme` | 2.1.111 |
+| `Auto mode "$defaults"` | Включення `"$defaults"` в `autoMode.allow`, `autoMode.soft_deny` або `autoMode.environment` додає кастомні правила поруч зі вбудованим списком | 2.1.118 |
+| Auto mode "Don't ask again" | Опція "Don't ask again" в діалозі auto mode opt-in | 2.1.118 |
+| Merged `/cost` + `/stats` → `/usage` | `/cost` та `/stats` об'єднані в `/usage`; обидва залишаються як typing-скорочення | 2.1.118 |
+| Custom themes | Створення та перемикання named кастомних тем з `/theme`, або ручне редагування JSON в `~/.claude/themes/`; плагіни можуть постачати теми через `themes/` директорію | 2.1.118 |
+| Thinking spinner з прогресом | Thinking spinner показує прогрес inline ("still thinking", "thinking more", "almost done thinking"), замість окремого рядка підказок | 2.1.116 |
+| `Advisor Tool` експериментальний | Діалог з "experimental" міткою, learn-more посиланням, та startup-сповіщенням; виправлено зависання сесій з "Advisor tool result content could not be processed" | 2.1.117 |
+| `cleanupPeriodDays` розширення | Retention sweep тепер також охоплює `~/.claude/tasks/`, `~/.claude/shell-snapshots/`, та `~/.claude/backups/` | 2.1.117 |
+| Native builds `bfs`/`ugrep` | macOS/Linux native builds: `Glob` та `Grep` замінені на вбудовані `bfs` та `ugrep` — швидший пошук без окремого tool round-trip (Windows та npm без змін) | 2.1.117 |
+| Non-streaming retry revert | Відкочено обмеження v2.1.110 на non-streaming fallback retries — замінило довгі очікування на більше помилок при API перевантаженні | 2.1.111 |
+| Spurious errors suppressed | Придушено помилкові decompression, network та transient error повідомлення в TUI під час нормальної роботи | 2.1.111 |
+| iTerm2+tmux tearing fix | Виправлено розриви терміналу (випадкові символи, drifting input) в iTerm2 + tmux при термінальних сповіщеннях | 2.1.111 |
+| Clickable wrapped URLs fix | Голі URL в bash/PowerShell/MCP output залишаються клікабельними при перенесенні через рядки | 2.1.111 |
+| `@` file suggestions perf fix | Виправлено повторне сканування всього проекту при кожному повороті в non-git директоріях, та показ лише config файлів в свіжих git repos без tracked файлів | 2.1.111 |
+| LSP diagnostics stale fix | Виправлено появу LSP diagnostics з до редагування після нього, що змушувало модель перечитувати щойно відредаговані файли | 2.1.111 |
+| `/resume` tab-complete fix | Виправлено миттєве відновлення довільної сесії замість показу session picker при tab-complet'і `/resume` | 2.1.111 |
+| `/context` grid fix | Виправлено зайві порожні рядки між рядками в `/context` grid | 2.1.111 |
+| `/clear` session name fix | Виправлено втрату імені сесії встановленого через `/rename` при `/clear`, що ламало statusline output | 2.1.111 |
+| 429 Bedrock/Vertex status fix | Виправлено 429 rate-limit помилки на Bedrock/Vertex/Foundry що посилали на status.claude.com | 2.1.111 |
+| Feedback survey back-to-back fix | Виправлено появу опитувань one-by-one після відхилення | 2.1.111 |
+| `"+N lines"` full-width rule | Marker для truncated long pastes тепер full-width rule для легшого сканування | 2.1.111 |
+| `Bash tool comment multiline fix` | Багаторядкові команди що починаються з коментару тепер показують повну команду в транскрипті, закриваючи UI-spoofing вектор | 2.1.113 |
+| Session recap auto-fire fix | Виправлено автоматичний спрацьовування session recap під час набору тексту в промпті | 2.1.113 |
+| `/copy` markdown table fix | `/copy` "Full response" тепер вирівнює колонки markdown таблиць для вставки в GitHub, Notion або Slack | 2.1.113 |
+| Parent messages hidden fix | Виправлено приховування повідомлень набраних під час перегляду subagent з його транскрипту та хибне приписування parent AI | 2.1.113 |
+| `dangerouslyDisableSandbox` fix | Виправлено виконання команд поза sandbox без permission prompt через `dangerouslyDisableSandbox` | 2.1.113 |
+| `/effort auto` label fix | Виправлено `/effort auto` підтвердження — тепер каже "Effort level set to max" для відповідності status bar | 2.1.113 |
+| "Copied N chars" toast fix | Виправлено завищення лічильника для emoji та інших multi-code-unit символів | 2.1.113 |
+| Exit confirmation dialog fix | Виправлено хибне позначення one-shot scheduled tasks як recurring — тепер показує countdown | 2.1.113 |
+| Slash/@ completion border fix | Виправлено nonsitting flush completion menu проти prompt border в fullscreen mode | 2.1.113 |
+| `CLAUDE_CODE_EXTRA_BODY` effort fix | Виправлено 400 помилки на subagent викликах до моделей без effort підтримки та на Vertex AI | 2.1.113 |
+| Prompt cursor NO_COLOR fix | Виправлено зникнення prompt cursor коли `NO_COLOR` встановлено | 2.1.113 |
+| `ToolSearch` ranking fix | Виправлено ranking так що вставлені MCP tool names знаходять фактичний tool замість description-matching siblings | 2.1.113 |
+| Long context compact fix | Виправлено compaction відновленої long-context сесії з помилкою "Extra usage is required for long context requests" | 2.1.113 |
+| `untrustedPlugin` permission crash | Виправлено краш в permission dialog коли agent teams teammate запитує tool permission | 2.1.114 |
+| Devanagari rendering fix | Виправлено зламану column alignment для Devanagari та інших Indic scripts | 2.1.116 |
+| `/resume` large sessions perf | Прискорено `/resume` на великих сесіях (до 67% на 40MB+ сесіях) та ефективніша обробка dead-fork entries | 2.1.116 |
+| Fullscreen scroll VS Code | Плавніший скролінг в fullscreen в VS Code, Cursor та Windsurf терміналах — `/terminal-setup` тепер налаштовує scroll sensitivity редактора | 2.1.116 |
+| `/config` search values | `/config` пошук тепер match значення опцій (напр. пошук "vim" знаходить Editor mode setting) | 2.1.116 |
+| `/doctor` під час відповіді | `/doctor` можна відкрити поки Claude відповідає, без очікування завершення поточного turn | 2.1.116 |
+| Bash `gh` rate limit hint | Bash tool показує підказку коли `gh` команди влучають в GitHub API rate limit | 2.1.116 |
+| Usage tab immediate data | Usage tab в Settings показує 5-годинний та тижневий usage одразу | 2.1.116 |
+| No-commands-match message | Slash command menu показує "No commands match" коли фільтр не має результатів замість зникнення | 2.1.116 |
+| Ctrl+- undo fix | Виправлено `Ctrl+-` що не trigerr undo в терміналах з Kitty keyboard protocol (iTerm2, Ghostty, kitty, WezTerm, Windows Terminal) | 2.1.116 |
+| Cmd+Left/Right fix | Виправлено Cmd+Left/Right що не переходили на початок/кінець рядка в терміналах з Kitty keyboard protocol | 2.1.116 |
+| Ctrl+Z wrapper fix | Виправлено зависання термінала при запуску через wrapper процес (напр. `npx`, `bun run`) | 2.1.116 |
+| Inline scrollback fix | Виправлено дублювання scrollback в inline mode при зміні розміру терміналу або великому output | 2.1.116 |
+| Modal search overflow fix | Виправлено переповнення екрану modal search dialogs на коротких терміналах | 2.1.116 |
+| VS Code scroll cells fix | Виправлено розсипані blank cells та зникнення composer chrome в VS Code integrated terminal при скролі | 2.1.116 |
+| API 400 cache TTL fix | Виправлено періодичний API 400 помилку пов'язану з cache control TTL ordering при паралельних запитах | 2.1.116 |
+| `/branch` 50MB fix | Виправлено відхилення `/branch` для розмов з транскриптом >50MB | 2.1.116 |
+| `/resume` empty fix | Виправлено мовчазний показ пустої розмови при великих session files замість повідомлення про помилку | 2.1.116 |
+| `/plugin` duplicate tab fix | Виправлено подвійне показ одного плагіна в Installed tab коли він з'являється під Needs attention або Favorites | 2.1.116 |
+| `/update`/`/tui` worktree fix | Виправлено `/update` та `/tui` що не працювали після входу в worktree mid-session | 2.1.116 |
+| Fork subagents external builds | Forked subagents можна увімкнути на external builds через `CLAUDE_CODE_FORK_SUBAGENT=1` | 2.1.117 |
+| `/resume` summarize stale | `/resume` пропонує підсумувати застарілі великі сесії перед повторним читанням | 2.1.117 |
+| `/model` persist across restarts | `/model` selections persist через рестарти навіть коли project pin іншу модель; startup header показує коли model з project або managed-settings pin | 2.1.117 |
+| Login token refresh fix | Виправлено смерть Plain-CLI OAuth сесій з "Please run /login" коли token expire mid-session — token тепер реактивно refresh на 401 | 2.1.117 |
+| `/login` env token fix | Виправлено `/login` без ефекту при запуску з `CLAUDE_CODE_OAUTH_TOKEN` та expiry цього token | 2.1.117 |
+| `NO_PROXY` Bun fix | Виправлено ігнорування `NO_PROXY` для remote API запитів під Bun | 2.1.117 |
+| Rare key coalesced fix | Виправлено рідкісні хибні escape/return triggers коли key names приходять як coalesced text через повільні з'єднання | 2.1.117 |
+| `WebFetch` hang fix | Виправлено зависання `WebFetch` на дуже великих HTML сторінках шляхом truncation input перед конвертацією | 2.1.117 |
+| HTTP 204 crash fix | Виправлено краш коли proxy повертає HTTP 204 No Content — тепер чітка помилка замість `TypeError` | 2.1.117 |
+| Prompt undo fix | Виправлено prompt-input undo (`Ctrl+_`) що нічого не робив одразу після набору | 2.1.117 |
+| Idle render loop fix | Виправлено idle re-render loop при наявності background tasks, зменшуючи зростання пам'яті на Linux | 2.1.117 |
+| SDK image content degrade | SDK image content blocks що не вдалося обробити більше не крашать сесію — degrade до text placeholder | 2.1.117 |
+| RC archived on exit | Remote Control sessions тепер архівуються при виході Claude Code | 2.1.117 |
+| RC subagent streaming | Remote Control sessions тепер стрімлять subagent транскрипти | 2.1.117 |
+| Bedrock thinking disabled fix | Виправлено 400 помилку для Bedrock application-inference-profile запитів з Opus 4.7 та вимкненим thinking | 2.1.117 |
+| Vim visual mode `v`/`V` | Vim visual mode (`v`) та visual-line mode (`V`) з selection, operators та візуальним feedback | 2.1.118 |
+| `Ctrl+A`/`Ctrl+E` multiline | `Ctrl+A` та `Ctrl+E` тепер переходять на початок/кінець поточного логічного рядка в multiline input (readline behavior) | 2.1.118 |
+| `Alt+K`/`Alt+X`/`Alt+^`/`Alt+_` freeze fix | Виправлено заморожування keyboard input при цих комбінаціях | 2.1.118 |
+| `/color` RC sync | `/color` тепер синхронізує session accent color до claude.ai/code при підключеному Remote Control | 2.1.118 |
+| Credential save crash fix | Виправлено краш збереження credential на Linux/Windows що пошкоджував `~/.claude/.credentials.json` | 2.1.118 |
+| Unreadable text fix | Виправлено непридатний для читання текст в "new messages" scroll pill та `/plugin` badges | 2.1.118 |
+| Plan auto mode label fix | Виправлено план acceptance dialog що пропонував "auto mode" замість "bypass permissions" при `--dangerously-skip-permissions` | 2.1.118 |
+| Agent hook messages fix | Виправлено помилку "Messages are required for agent hooks" для hook типів інших ніж `Stop` або `SubagentStop` | 2.1.118 |
+| Prompt hooks re-fire fix | Виправлено повторне спрацьовування `prompt` хуків на tool calls зроблених agent-hook verifier subagent | 2.1.118 |
+| `/fork` disk write fix | Виправлено запис повної parent розмови на диск при кожному fork — тепер записує pointer та hydrates on read | 2.1.118 |
+| Remote session local model fix | Виправлено перезапис локального `model` setting в `~/.claude/settings.json` при підключенні до remote session | 2.1.118 |
+| Typeahead `/` path fix | Виправлено typeahead що показував "No commands match" при вставці файл шляхів що починаються з `/` | 2.1.118 |
+| File watcher errors fix | Виправлено unhandled errors від file watcher на invalid paths або fd exhaustion | 2.1.118 |
+| RC archived blip fix | Виправлено архівування Remote Control sessions на transient CCR initialization blips під час JWT refresh | 2.1.118 |
+| Subagent `cwd` fix | Виправлено non-відновлення явного `cwd` при resuming subagents через `SendMessage` | 2.1.118 |

@@ -11,13 +11,19 @@
 | `Ctrl+C` | Переривання / вихід з -p | 2.1.79 |
 | `Ctrl+D` | Вихід | — |
 | `Ctrl+L` | Очистити екран + повний перемальовування | 2.1.83 |
+| `Ctrl+L` forces full screen redraw | Примусовий повний screen redraw + очистка prompt input | 2.1.116 |
 | `Ctrl+U` | Видалити до початку рядка | 1.0.44→2.1.0 |
 | `Ctrl+Y` | Вставити з kill ring | 2.0.49 |
+| `Ctrl+Y` restore killed text | `Ctrl+Y` тепер відновлює killed text (раніше вставка з kill ring) | 2.1.111 |
 | `Alt+Y` | Цикл через kill ring | 2.0.49 |
 | `Ctrl+W` | Видалити слово назад | — |
 | `Alt+B/F` | Навігація по словах | 2.0.11 |
 | `Alt+Delete` | Видалити слово вперед | — |
 | `Ctrl+K` | Видалити до кінця рядка | — |
+| `Shift+↑/↓` fullscreen selection | Прокрутка viewport при розширенні виділення за видимий край в fullscreen mode | 2.1.113 |
+| `Ctrl+A`/`Ctrl+E` multiline | Перехід на початок/кінець поточного логічного рядка в multiline input (readline behavior) | 2.1.118 |
+| `Ctrl+Backspace` delete word [Win] | Видалення попереднього слова на Windows | 2.1.113 |
+| Transcript view footer | `[` (dump to scrollback) та `v` (open in editor) швидкості в footer transcript view | 2.1.111 |
 
 ## Інструменти та режими
 
@@ -57,6 +63,8 @@
 | `u` | Undo в vim normal mode | 1.0.33 |
 | `←`/`→` | Історія в vim normal mode | 2.1.20 |
 | `gi` | Перехід на перший рядок файлу в insert mode (як у справжньому vim) | 2.2.3 |
+| `v` | Visual mode з selection, operators та візуальним feedback | 2.1.118 |
+| `V` | Visual-line mode з selection та operators | 2.1.118 |
 
 ## Голосовий режим
 

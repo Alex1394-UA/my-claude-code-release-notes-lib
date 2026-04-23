@@ -77,3 +77,4 @@
 | `PermissionRequest deny re-check` | `PermissionRequest` хуки з `updatedInput` тепер перевіряються повторно проти `permissions.deny`; `setMode:'bypassPermissions'` поважає `disableBypassPermissionsMode` | 2.1.110 |
 | `PreToolUse additionalContext drop fix` | Виправлено втрату `additionalContext` від `PreToolUse` хука коли tool call помиляється | 2.1.110 |
 | `hookSpecificOutput.sessionTitle` | `UserPromptSubmit` хуки можуть встановлювати заголовок сесії | 2.1.94 |
+| Hooks `type: "mcp_tool"` | Хуки можуть напряму викликати MCP tools через `type: "mcp_tool"` | 2.1.118 |
