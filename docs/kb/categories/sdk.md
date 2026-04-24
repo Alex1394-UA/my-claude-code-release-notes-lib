@@ -59,3 +59,4 @@
 | Remote Control `@`-file autocomplete | Remote Control клієнти тепер можуть запитувати `@`-file autocomplete suggestions | 2.1.113 |
 | Headless `plugin_errors` init event | `--output-format stream-json` тепер включає `plugin_errors` на init event коли plugins demoted через unsatisfied dependencies | 2.1.111 |
 | SDK `reload_plugins` serial fix | Виправлено послідовне reconnect всіх user MCP серверів при `reload_plugins` | 2.1.117 |
+| SDK bridge `read_file` size cap fix | SDK/bridge `read_file` тепер коректно enforce size cap на файлах що ростуть | 2.1.119 |

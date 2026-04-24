@@ -62,6 +62,11 @@
 | `resources/templates/list` deferred | MCP `resources/templates/list` тепер відкладено до першого `@`-mention — прискорює MCP startup | 2.1.116 |
 | MCP concurrent connect | Паралельне підключення local та claude.ai MCP серверів за замовчуванням | 2.1.117 |
 | MCP elicitation auto-cancel fix | Виправлено auto-cancellation MCP `elicitation/create` requests в print/SDK mode | 2.1.117 |
+| Subagent/SDK MCP parallel connect | Переконфігурація MCP серверів в subagents та SDK тепер підключає сервери паралельно замість послідовно | 2.1.119 |
+| `${ENV_VAR}` headers fix | Виправлено непідстановку `${ENV_VAR}` placeholders в `headers` для HTTP/SSE/WebSocket MCP серверів | 2.1.119 |
+| OAuth client_secret_post fix | Виправлено відсутність відправки OAuth client secret при token exchange для `client_secret_post` серверів | 2.1.119 |
+| Plugin MCP user_config fix | Виправлено падіння plugin MCP серверів коли `${user_config.*}` посилається на пустий optional field | 2.1.119 |
+| Vertex AI tool search disabled | Tool search вимкнено за замовчуванням на Vertex AI (opt-in з `ENABLE_TOOL_SEARCH`) | 2.1.119 |
 | Elicitation | Інтерактивні MCP-запити | 2.1.76 |
 | Виправлення таймауту підключення [Win] | Виправлено на повільних мережах | 2.2.0 |
 

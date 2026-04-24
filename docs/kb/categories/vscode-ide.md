@@ -39,6 +39,7 @@
 | Write tool IDE edit notification | Write tool повідомляє модель коли користувач редагує контент в IDE diff перед прийняттям | 2.1.110 |
 | VS Code "Manage Plugins" fix | Виправлено поломку "Manage Plugins" panel при кількох великих marketplaces | 2.1.117 |
 | VS Code scroll cells fix | Виправлено розсипані blank cells та зникнення composer chrome в VS Code integrated terminal при скролі | 2.1.116 |
+| Voice dictation macOS fix [VSCode] | Виправлено перший recording voice dictation що давав пустий результат на macOS поки microphone permission prompt показується | 2.1.119 |
 
 ## Win32 ARM64
 

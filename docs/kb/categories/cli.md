@@ -50,6 +50,9 @@
 | `cd <current-dir> &&` no prompt | `cd <current-directory> && git …` більше не trigerra permission prompt коли `cd` є no-op | 2.1.113 |
 | Native binary spawn | CLI запускає нативний Claude Code binary замість bundled JavaScript | 2.1.113 |
 | `claude plugin tag` | Створення release git tags для плагінів з версіонною валідацією | 2.1.118 |
+| `--from-pr` GitLab/Bitbucket/GHE | `--from-pr` тепер приймає GitLab merge-request, Bitbucket pull-request та GitHub Enterprise PR URLs | 2.1.119 |
+| `--print` tools/disallowedTools | `--print` mode тепер враховує `tools:` та `disallowedTools:` з agent frontmatter, як в інтерактивному режимі | 2.1.119 |
+| `--agent` permissionMode | `--agent <name>` тепер поважає `permissionMode` з визначення агента для built-in агентів | 2.1.119 |
 | `--continue`/`--resume` add-dir | Тепер знаходять сесії що додали поточну директорію через `/add-dir` | 2.1.118 |
 | Console login macOS keychain | Виправлено мовчазний "Not logged in" при заблокованому keychain | 2.1.94 |
 | `/login` OAuth URL padding | Виправлено padding що заважав mouse selection | 2.1.101 |

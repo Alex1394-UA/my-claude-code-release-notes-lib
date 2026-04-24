@@ -76,5 +76,7 @@
 | Plugin install missing deps | `/plugin install` на вже встановленому plugin тепер встановлює missing dependencies замість зупинки на "already installed" | 2.1.117 |
 | Plugin dependency resolve | `plugin install` повторно резолвить dependency встановлену на wrong version | 2.1.118 |
 | `blockedMarketplaces` enforcement | Managed-settings `blockedMarketplaces` та `strictKnownMarketplaces` тепер enforce при plugin install, update, refresh та autoupdate | 2.1.117 |
+| `blockedMarketplaces` hostPattern/pathPattern | `blockedMarketplaces` тепер коректно enforce `hostPattern` та `pathPattern` entries | 2.1.119 |
+| Pinned plugin auto-update | Плагіни закріплені version constraint іншого плагіна тепер auto-update до найвищого satisfying git tag | 2.1.119 |
 | Plugin dependency install from marketplace | `claude plugin marketplace add` тепер auto-resolve missing dependencies з configured marketplaces | 2.1.117 |
 | Plugin auto-update skip shown | Коли auto-update пропускає plugin через version constraint іншого plugin, skip з'являється в `/doctor` та `/plugin` Errors tab | 2.1.118 |

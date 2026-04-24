@@ -78,3 +78,4 @@
 | `PreToolUse additionalContext drop fix` | Виправлено втрату `additionalContext` від `PreToolUse` хука коли tool call помиляється | 2.1.110 |
 | `hookSpecificOutput.sessionTitle` | `UserPromptSubmit` хуки можуть встановлювати заголовок сесії | 2.1.94 |
 | Hooks `type: "mcp_tool"` | Хуки можуть напряму викликати MCP tools через `type: "mcp_tool"` | 2.1.118 |
+| `PostToolUse` `duration_ms` | `PostToolUse` та `PostToolUseFailure` hook inputs тепер включають `duration_ms` (час виконання інструменту, без permission prompts та PreToolUse hooks) | 2.1.119 |

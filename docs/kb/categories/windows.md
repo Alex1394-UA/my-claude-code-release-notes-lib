@@ -148,3 +148,7 @@
 | `/insights` EBUSY fix [Win] | Виправлено краш `/insights` з `EBUSY` | 2.1.113 |
 | Credential save crash fix [Win] | Виправлено краш збереження credential що пошкоджував `~/.claude/.credentials.json` | 2.1.118 |
 | Cached `where.exe` lookups [Win] | Кешовані `where.exe` executable lookups per process для швидшого subprocess launches | 2.1.117 |
+| MCP plugin servers spawn fix [Win] | Виправлено непоявлення MCP серверів з плагінів на Windows коли plugin cache неповний | 2.1.119 |
+| CRLF paste extra blank line [Win] | Виправлено вставку CRLF контенту (Windows clipboards, Xcode console) що додавала зайвий пустий рядок між кожним рядком | 2.1.119 |
+| MCP "cmd /c" false-positive [Win] | Видалено хибне "Windows requires 'cmd /c' wrapper" MCP config попередження | 2.1.119 |
+| Glob/Grep disappear fix [Win] | Виправлено зникання Glob та Grep tools на нативних macOS/Linux builds коли Bash tool заблокований через permissions | 2.1.119 |

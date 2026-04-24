@@ -65,6 +65,7 @@
 | `gi` | Перехід на перший рядок файлу в insert mode (як у справжньому vim) | 2.2.3 |
 | `v` | Visual mode з selection, operators та візуальним feedback | 2.1.118 |
 | `V` | Visual-line mode з selection та operators | 2.1.118 |
+| Esc в INSERT (no queue pull) | Esc в INSERT mode більше не підтягує чергове повідомлення назад в input; натисніть Esc ще раз для interrupt | 2.1.119 |
 
 ## Голосовий режим
 

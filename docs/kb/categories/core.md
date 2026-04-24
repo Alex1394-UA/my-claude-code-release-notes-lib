@@ -333,3 +333,29 @@
 | File watcher errors fix | Виправлено unhandled errors від file watcher на invalid paths або fd exhaustion | 2.1.118 |
 | RC archived blip fix | Виправлено архівування Remote Control sessions на transient CCR initialization blips під час JWT refresh | 2.1.118 |
 | Subagent `cwd` fix | Виправлено non-відновлення явного `cwd` при resuming subagents через `SendMessage` | 2.1.118 |
+| Vim Esc INSERT queue fix | Esc в INSERT mode більше не підтягує чергове повідомлення назад в input; натисніть Esc ще раз для interrupt | 2.1.119 |
+| Slash command suggestions highlight | Slash command suggestions тепер підсвічуують символи що збіглися з запитом | 2.1.119 |
+| Slash command picker wrap | Slash command picker переносить довгі описи на другий рядок замість обрізання | 2.1.119 |
+| `owner/repo#N` remote host | Shorthand links використовують хост з git remote замість github.com | 2.1.119 |
+| List item number wrapping fix | Виправлено перенесення числа в кінці речення на окремий рядок в list items | 2.1.119 |
+| Auto mode plan conflict fix | Виправлено auto mode що перезаписував plan mode з конфліктуючими інструкціями | 2.1.119 |
+| Async PostToolUse empty entry fix | Async `PostToolUse` хуки без payload більше не пишуть пусті записи в транскрипт | 2.1.119 |
+| Rewind overlay image fix | Rewind overlay більше не показує "(no prompt)" для повідомлень з image attachments | 2.1.119 |
+| Skills re-execution fix | Виправлено повторне виконання skills викликаних до auto-compaction проти наступного повідомлення | 2.1.119 |
+| `TaskList` sort fix | `TaskList` повертає задачі відсортовані по ID замість файлового порядку | 2.1.119 |
+| `@`-file Tab completion fix | Виправлено заміну всього prompt при `@`-file Tab completion з абсолютним шляхом в slash-команді | 2.1.119 |
+| `/plan`/`/plan open` fix | Виправлено `/plan` та `/plan open` що не діяли на існуючий план | 2.1.119 |
+| `/export` model fix | `/export` тепер показує фактичну модель розмови замість дефолтної | 2.1.119 |
+| Verbose persist fix | Виправлено скидання verbose output setting після рестарту | 2.1.119 |
+| `/usage` progress bar fix | Виправлено перекриття progress bar з "Resets …" labels | 2.1.119 |
+| `/reload-plugins`/`/doctor` disabled fix | Виправлено звіти про помилки для disabled плагінів | 2.1.119 |
+| Agent worktree stale fix | Agent tool з `isolation: "worktree"` більше не повторно використовує застарілі worktrees | 2.1.119 |
+| Disabled MCP "failed" fix | Disabled MCP сервери більше не показуються як "failed" в `/status` | 2.1.119 |
+| Spurious rate limit hint fix | Виправлено хибні "GitHub API rate limit exceeded" підказки | 2.1.119 |
+| PR worktree link fix | Виправлено неприв'язаний PR при роботі в git worktree | 2.1.119 |
+| `/doctor` override warning fix | Виправлено попередження `/doctor` про overridden MCP entries | 2.1.119 |
+| Subagent orphan spinner fix | Виправлено spinner що зависав при orphaned subagent notification | 2.1.119 |
+| Fullscreen scroll snap fix | Виправлено відскок вгору при скролі в fullscreen mode щоразу коли tool завершується | 2.1.119 |
+| Multi-line paste kitty fix | Виправлено втрату newlines в multi-line paste в терміналах з kitty keyboard protocol sequences в bracketed paste | 2.1.119 |
+| `/skills` Enter key fix | Виправлено `/skills` Enter key що закривав діалог замість pre-fill `/<skill-name>` в prompt | 2.1.119 |
+| `/agents` detail view fix | Виправлено `/agents` detail view що помилково маркував built-in tools недоступні субагентам як "Unrecognized" | 2.1.119 |

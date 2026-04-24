@@ -31,6 +31,9 @@
 | `disableSkillShellExecution` | Вимкнути shell виконання в skills, кастомних командах та plugin commands | 2.1.91 |
 | `sessionTimeout` | Таймаут автозавершення сесії (мс) | 2.2.3 |
 | Custom themes | Кастомні теми з `/theme` або JSON файлами в `~/.claude/themes/`; плагіни можуть постачати теми через `themes/` директорію | 2.1.118 |
+| `/config` persist | `/config` settings (theme, editor mode, verbose, etc.) зберігаються в `~/.claude/settings.json` з правильним precedence project/local/policy | 2.1.119 |
+| `prUrlTemplate` | Налаштування URL для PR badge в footer (замість github.com) | 2.1.119 |
+| PowerShell auto-approve | PowerShell tool команди можуть бути auto-approved в permission mode, аналогічно Bash поведінці | 2.1.119 |
 | `refreshInterval` status line | Перезапуск status line команди кожні N секунд | 2.1.97 |
 | `workspace.git_worktree` status line | JSON input для status line, встановлюється в git worktree | 2.1.97 |
 
