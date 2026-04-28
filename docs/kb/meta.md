@@ -4,6 +4,12 @@ last_processed: 2.1.121
 last_updated: 2026-04-28
 seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 
+## Відстежувані невідповідності (Release Notes vs Reality)
+
+| Дата виявлення | Реліз | Твердження | Фактичний стан | Issue(s) | Статус |
+|----------------|-------|------------|----------------|----------|--------|
+| 2026-04-28 | 2.1.121 | `PostToolUse` `updatedToolOutput` працює для всіх інструментів | Поле silently dropped для built-in + MCP; для MCP працює лише старе `updatedMCPToolOutput`; для built-in — не працює взагалі | [#54196](https://github.com/anthropics/claude-code/issues/54196), [#32105](https://github.com/anthropics/claude-code/issues/32105), [#54161](https://github.com/anthropics/claude-code/issues/54161) | Відкрито |
+
 ## Processing History
 
 | Date | Version | Categories Updated | Notes |

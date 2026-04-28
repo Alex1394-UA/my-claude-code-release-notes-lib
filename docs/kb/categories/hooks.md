@@ -6,6 +6,10 @@
 > - `PreToolUse`/`PostToolUse` хуки **не працюють у `-p` (print/pipe) mode** — `updatedInput` ігнорується, Stop хуки повертають пустий output ([#32348](https://github.com/anthropics/claude-code/issues/32348), [#39050](https://github.com/anthropics/claude-code/issues/39050))
 > - Hook runner іноді плутає: нормальні виклики помилково трактуються як "hook error" ([#35587](https://github.com/anthropics/claude-code/issues/35587))
 > - Працюють надійно лише в інтерактивному режимі
+> - `PostToolUse` `updatedToolOutput` **не працює в v2.1.121** — нове поле silently dropped для built-in (Bash, Read, Grep) та MCP tools; працює лише старе `updatedMCPToolOutput` для MCP ([#54196](https://github.com/anthropics/claude-code/issues/54196), [#32105](https://github.com/anthropics/claude-code/issues/32105))
+> - `PreToolUse` `permissionDecision: "ask"` **ігнорується auto-mode класифікатором** для in-flow викликів (git commit/push після редагування файлів); out-of-flow виклики prompt спрацьовує ([#51255](https://github.com/anthropics/claude-code/issues/51255), [#53824](https://github.com/anthropics/claude-code/issues/53824))
+> - `PostToolUse` prompt-type хуки **падають на Vertex AI** з `output_config: Extra inputs are not permitted` ([#37746](https://github.com/anthropics/claude-code/issues/37746), [#54224](https://github.com/anthropics/claude-code/issues/54224))
+> - Документація `updatedToolOutput` **не оновлена** — 7 сторінок docs/SDK ще описують старе `updatedMCPToolOutput` ([#54161](https://github.com/anthropics/claude-code/issues/54161))
 
 ## Типи хуків
 
@@ -79,4 +83,4 @@
 | `hookSpecificOutput.sessionTitle` | `UserPromptSubmit` хуки можуть встановлювати заголовок сесії | 2.1.94 |
 | Hooks `type: "mcp_tool"` | Хуки можуть напряму викликати MCP tools через `type: "mcp_tool"` | 2.1.118 |
 | `PostToolUse` `duration_ms` | `PostToolUse` та `PostToolUseFailure` hook inputs тепер включають `duration_ms` (час виконання інструменту, без permission prompts та PreToolUse hooks) | 2.1.119 |
-| `PostToolUse` `hookSpecificOutput.updatedToolOutput` | PostToolUse хуки тепер можуть замінити tool output для всіх інструментів через `hookSpecificOutput.updatedToolOutput` (раніше лише MCP) | 2.1.121 |
+| `PostToolUse` `hookSpecificOutput.updatedToolOutput` | ~~PostToolUse хуки тепер можуть замінити tool output для всіх інструментів через `hookSpecificOutput.updatedToolOutput` (раніше лише MCP)~~ **НЕ ПРАЦЮЄ в v2.1.121** — нове поле silently dropped; для MCP працює лише старе `updatedMCPToolOutput`; для built-in tools не працює взагалі. Див. відомі проблеми вище. | 2.1.121 |
