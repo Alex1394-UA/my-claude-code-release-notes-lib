@@ -30,6 +30,8 @@
 | `/ultrareview` покращення | Прискорений запуск з parallelized checks, diffstat в launch dialog, анімований launching state | 2.1.113 |
 | `/skills` sort by tokens | `/skills` menu підтримує сортування по estimated token count — натисніть `t` для toggle | 2.1.111 |
 | Agent frontmatter `mcpServers` | `mcpServers` з agent frontmatter тепер завантажуються для main-thread agent sessions через `--agent` | 2.1.117 |
+| `${CLAUDE_EFFORT}` в skill content | Skills можуть посилатися на поточний рівень зусилля через `${CLAUDE_EFFORT}` у своєму контенті | 2.1.120 |
+| `/skills` type-to-filter | Додано текстове поле пошуку до `/skills` для швидкого пошуку в довгих списках без скролінгу | 2.1.121 |
 | Agent frontmatter `hooks` | `hooks:` з agent frontmatter тепер спрацьовують при запуску через `--agent` | 2.1.116 |
 | Non-existent `commit` skill fix | Виправлено виклик неіснуючого `commit` skill та показ "Unknown skill: commit" для користувачів без кастомної `/commit` команди | 2.1.111 |
 

@@ -130,3 +130,7 @@
 | `forceRemoteSettingsRefresh` | Блокувати старт поки remote managed settings не завантажено (fail-closed) | 2.1.92 |
 | settings.json parse warning | Банер при помилці парсингу (permission rules не застосовуються) | 2.1.94 |
 | `wslInheritsWindowsSettings` | WSL на Windows може успадковувати Windows-side managed settings через цей policy key | 2.1.118 |
+| "Dangerous rm operation" false-positive fix [Win] | Виправлено хибні "Dangerous rm operation" permission prompts в auto mode для багаторядкових bash команд з pipe та redirect | 2.1.120 |
+| "Always allow" remote sessions fix | Правила "Always allow" для built-in tools в remote sessions тепер зберігаються після worker restarts | 2.1.121 |
+| Managed settings approval fix | Managed settings approval prompt більше не завершує сесію при прийнятті — тепер застосовує налаштування та продовжує | 2.1.121 |
+| Invalid legacy enum fix | Invalid legacy enum values в `settings.json` більше не інвалідують весь файл | 2.1.121 |

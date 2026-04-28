@@ -79,3 +79,4 @@
 | `hookSpecificOutput.sessionTitle` | `UserPromptSubmit` хуки можуть встановлювати заголовок сесії | 2.1.94 |
 | Hooks `type: "mcp_tool"` | Хуки можуть напряму викликати MCP tools через `type: "mcp_tool"` | 2.1.118 |
 | `PostToolUse` `duration_ms` | `PostToolUse` та `PostToolUseFailure` hook inputs тепер включають `duration_ms` (час виконання інструменту, без permission prompts та PreToolUse hooks) | 2.1.119 |
+| `PostToolUse` `hookSpecificOutput.updatedToolOutput` | PostToolUse хуки тепер можуть замінити tool output для всіх інструментів через `hookSpecificOutput.updatedToolOutput` (раніше лише MCP) | 2.1.121 |

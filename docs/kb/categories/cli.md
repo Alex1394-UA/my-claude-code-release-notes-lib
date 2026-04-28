@@ -51,6 +51,8 @@
 | Native binary spawn | CLI запускає нативний Claude Code binary замість bundled JavaScript | 2.1.113 |
 | `claude plugin tag` | Створення release git tags для плагінів з версіонною валідацією | 2.1.118 |
 | `--from-pr` GitLab/Bitbucket/GHE | `--from-pr` тепер приймає GitLab merge-request, Bitbucket pull-request та GitHub Enterprise PR URLs | 2.1.119 |
+| `claude ultrareview [target]` | CLI підкоманда для `/ultrareview` в non-interactive mode (CI/scripts); вивід на stdout, `--json` для raw output, exit 0 на completion або 1 на failure | 2.1.120 |
+| `--dangerously-skip-permissions` skill/agent dirs | Більше не запитує дозвіл на запис в `.claude/skills/`, `.claude/agents/` та `.claude/commands/` | 2.1.121 |
 | `--print` tools/disallowedTools | `--print` mode тепер враховує `tools:` та `disallowedTools:` з agent frontmatter, як в інтерактивному режимі | 2.1.119 |
 | `--agent` permissionMode | `--agent <name>` тепер поважає `permissionMode` з визначення агента для built-in агентів | 2.1.119 |
 | `--continue`/`--resume` add-dir | Тепер знаходять сесії що додали поточну директорію через `/add-dir` | 2.1.118 |
@@ -115,6 +117,7 @@
 | `claude auth logout` | Вихід | 2.1.41 |
 | `claude plugin install` | Встановити плагін | 2.0.12 |
 | `claude plugin validate` | Валідація плагіна | 2.0.12 |
+| `claude plugin validate` expanded fields | `claude plugin validate` тепер приймає `$schema`, `version` та `description` на top-level `marketplace.json` та `$schema` в `plugin.json` | 2.1.120 |
 | `claude agents` | Список всіх агентів | 2.1.49 |
 | ~~`claude config`~~ | [ЗАСТАРІЛО] використовуйте settings.json | 1.0.7 |
 | `claude install` | Встановлення/оновлення | — |

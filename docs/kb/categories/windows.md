@@ -151,4 +151,5 @@
 | MCP plugin servers spawn fix [Win] | Виправлено непоявлення MCP серверів з плагінів на Windows коли plugin cache неповний | 2.1.119 |
 | CRLF paste extra blank line [Win] | Виправлено вставку CRLF контенту (Windows clipboards, Xcode console) що додавала зайвий пустий рядок між кожним рядком | 2.1.119 |
 | MCP "cmd /c" false-positive [Win] | Видалено хибне "Windows requires 'cmd /c' wrapper" MCP config попередження | 2.1.119 |
+| PowerShell як заміна Git Bash [Win] | Git for Windows (Git Bash) більше не потрібен — при відсутності Claude Code використовує PowerShell як shell tool | 2.1.120 |
 | Glob/Grep disappear fix [Win] | Виправлено зникання Glob та Grep tools на нативних macOS/Linux builds коли Bash tool заблокований через permissions | 2.1.119 |

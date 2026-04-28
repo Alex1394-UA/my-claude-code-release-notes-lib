@@ -60,3 +60,5 @@
 | Headless `plugin_errors` init event | `--output-format stream-json` тепер включає `plugin_errors` на init event коли plugins demoted через unsatisfied dependencies | 2.1.111 |
 | SDK `reload_plugins` serial fix | Виправлено послідовне reconnect всіх user MCP серверів при `reload_plugins` | 2.1.117 |
 | SDK bridge `read_file` size cap fix | SDK/bridge `read_file` тепер коректно enforce size cap на файлах що ростуть | 2.1.119 |
+| `CLAUDE_CODE_FORK_SUBAGENT=1` non-interactive | `CLAUDE_CODE_FORK_SUBAGENT=1` тепер працює в non-interactive (SDK/`-p`) сесіях | 2.1.121 |
+| `mcp_authenticate` redirectUri | SDK `mcp_authenticate` тепер підтримує `redirectUri` для custom scheme completion та claude.ai connectors | 2.1.121 |

@@ -77,6 +77,8 @@
 | Plugin dependency resolve | `plugin install` повторно резолвить dependency встановлену на wrong version | 2.1.118 |
 | `blockedMarketplaces` enforcement | Managed-settings `blockedMarketplaces` та `strictKnownMarketplaces` тепер enforce при plugin install, update, refresh та autoupdate | 2.1.117 |
 | `blockedMarketplaces` hostPattern/pathPattern | `blockedMarketplaces` тепер коректно enforce `hostPattern` та `pathPattern` entries | 2.1.119 |
+| `claude plugin prune` | Видалення orphaned auto-installed plugin dependencies; `plugin uninstall --prune` cascade | 2.1.121 |
 | Pinned plugin auto-update | Плагіни закріплені version constraint іншого плагіна тепер auto-update до найвищого satisfying git tag | 2.1.119 |
 | Plugin dependency install from marketplace | `claude plugin marketplace add` тепер auto-resolve missing dependencies з configured marketplaces | 2.1.117 |
 | Plugin auto-update skip shown | Коли auto-update пропускає plugin через version constraint іншого plugin, skip з'являється в `/doctor` та `/plugin` Errors tab | 2.1.118 |
+| `/plugin` marketplace load fix | `/plugin` marketplace більше не ламається коли один entry використовує нерозпізнаний source format — entry показується але install пропонує оновити | 2.1.120 |

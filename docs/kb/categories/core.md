@@ -359,3 +359,33 @@
 | Multi-line paste kitty fix | Виправлено втрату newlines в multi-line paste в терміналах з kitty keyboard protocol sequences в bracketed paste | 2.1.119 |
 | `/skills` Enter key fix | Виправлено `/skills` Enter key що закривав діалог замість pre-fill `/<skill-name>` в prompt | 2.1.119 |
 | `/agents` detail view fix | Виправлено `/agents` detail view що помилково маркував built-in tools недоступні субагентам як "Unrecognized" | 2.1.119 |
+| Spinner tips hidden when available | Spinner tips що рекомендують desktop app або skills/agents приховані коли вони вже встановлені | 2.1.120 |
+| PgUp/PgDn scroll hint | Показується підказка "use PgUp/PgDn to scroll" коли термінал надсилає arrow keys замість scroll events | 2.1.120 |
+| Auto mode denial config link | Повідомлення відмови auto mode тепер містить посилання на документацію конфігурації | 2.1.120 |
+| Auto-compact `auto` display | Auto-compact в auto mode тепер показує `auto` (lowercase, без token count) замість оманливого значення токенів | 2.1.120 |
+| `/rewind` overlay `--resume` fix | Виправлено `/rewind` та інші інтерактивні overlays що не реагували на клавіатуру після запуску з `claude --resume` | 2.1.120 |
+| Scrollback duplication non-fullscreen | Виправлено дублювання scrollback в non-fullscreen mode (resize, dialog dismiss, довгі сесії) | 2.1.120 |
+| Long selection menus fullscreen fix | Довгі меню вибору що виходили за межі терміналу в fullscreen — фокусований option залишається на екрані при скролі | 2.1.120 |
+| Write tool output collapse fix | Write tool output розгортається замість згортання при кліку "+N lines" в fullscreen | 2.1.120 |
+| Slash command picker/highlight fix | Виправлено стрибання slash command picker при наборі та покращено highlight для contiguous substring matching в blue | 2.1.120 |
+| `find` FD exhaustion fix | Виправлено вичерпання open file descriptors при `find` на великих directory trees, що призводило до host-wide crashes (macOS/Linux native builds) | 2.1.120 |
+| Fullscreen typing scroll fix | Набір в prompt більше не скролить назад вниз після скролу вверх в fullscreen mode | 2.1.121 |
+| Dialogs scrollable | Діалоги що перевищують термінал тепер скроляться (arrow keys, PgUp/PgDn, home/end, mouse wheel) в обох modes | 2.1.121 |
+| Clickable wrapped URL fullscreen | Клік на будь-який рядок довгого URL що переноситься через рядки в fullscreen відкриває повний URL | 2.1.121 |
+| `/terminal-setup` iTerm2 clipboard | `/terminal-setup` тепер вмикає iTerm2 "Applications in terminal may access clipboard" для `/copy` (включаючи з tmux) | 2.1.121 |
+| Terminal tab title language | Заголовок термінальної таб-сесії тепер генерується в налаштованій `language` мові | 2.1.121 |
+| Швидший startup після оновлення | Видалено Recent Activity panel з release-notes splash — швидший запуск після оновлення | 2.1.121 |
+| LSP diagnostics expand on click | LSP diagnostic summaries тепер розгортаються при кліку/ctrl+o та показують expand hint | 2.1.121 |
+| Unbounded memory growth images fix | Виправлено необмежене зростання пам'яті (multi-GB RSS) при обробці багатьох зображень в сесії | 2.1.121 |
+| `/usage` memory leak fix | Виправлено витік пам'яті до ~2GB на машинах з великою історією транскриптів | 2.1.121 |
+| Memory leak long-running tools | Виправлено витік пам'яті коли long-running tools не emit clear progress event | 2.1.121 |
+| Bash tool deleted CWD fix | Bash tool більше не стає непридатним коли директорію Claude було запущено з видалено або перемещено mid-session | 2.1.121 |
+| `--resume` crash startup external builds fix | Виправлено краш `--resume` при старті в external builds | 2.1.121 |
+| `--resume` corrupted transcript line | Виправлено відмову `--resume` на великих сесіях коли рядок транскрипту пошкоджений при unclean shutdown — пошкоджений рядок пропускається | 2.1.121 |
+| Scrollback duplication Ctrl+L fix | Виправлено дублювання scrollback при Ctrl+L або redraw в non-fullscreen mode на tmux, GNOME Terminal, Windows Terminal та Konsole | 2.1.121 |
+| `/usage` stale OAuth token fix | Виправлено "/usage rate limited" після stale OAuth token — тепер refresh автоматично | 2.1.121 |
+| `/usage` dialog clipping fix | Виправлено обрізання вмісту `/usage` dialog коли no-flicker mode вимкнено | 2.1.121 |
+| `/focus` fullscreen renderer fix | `/focus` більше не показує "Unknown command" коли fullscreen renderer вимкнений — пояснює як увімкнути | 2.1.121 |
+| Embedded grep/find/rg wrappers fix | Embedded grep/find/rg shell wrappers більше не падають коли running binary видалено mid-session — fallback до installed tools | 2.1.121 |
+| Reduced FD usage `find` | Зменшено peak file descriptor usage під час `find` в Bash tool на великих directory trees | 2.1.121 |
+| PowerShell як заміна Git Bash [Win] | Git for Windows (Git Bash) більше не потрібен — при відсутності Claude Code використовує PowerShell як shell tool | 2.1.120 |

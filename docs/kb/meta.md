@@ -1,7 +1,7 @@
 # Knowledge Base Metadata
 
-last_processed: 2.1.119
-last_updated: 2026-04-25
+last_processed: 2.1.121
+last_updated: 2026-04-28
 seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 
 ## Processing History
@@ -16,3 +16,4 @@ seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 | 2026-04-16 | 2.1.105–2.1.110 | all 12 categories | ~95 записів додано, 4 нові команди, 3 депрекації |
 | 2026-04-23 | 2.1.111–2.1.118 | all 12 categories | ~140 записів додано, 3 нові команди, 0 депрекацій |
 | 2026-04-25 | 2.1.119 | all 12 categories | ~45 записів додано, 0 депрекацій |
+| 2026-04-28 | 2.1.120–2.1.121 | all 12 categories | ~60 записів додано, 0 депрекацій |

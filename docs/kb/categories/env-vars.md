@@ -53,6 +53,8 @@
 | `CLAUDE_CODE_DISABLE_GIT_INSTRUCTIONS` | Прибрати git інструкції з промпту | 2.1.69 |
 | `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` | Вимкнути release notes, telemetry | 2.0.17 |
 | `DISABLE_NONESSENTIAL_TRAFFIC` cross-project fix | Виправлено глобальне вимкнення usage metrics коли змінна встановлена в одному проекті | 2.1.105 |
+| `DISABLE_TELEMETRY` / `DISABLE_NONESSENTIAL_TRAFFIC` telemetry fix | Виправлено неотримання ці змінні для API та enterprise користувачів | 2.1.120 |
+| `NO_PROXY` native build fix | Виправлено неповагу `NO_PROXY` для всіх HTTP клієнтів під native build коли встановлено через `managed-settings.json` | 2.1.121 |
 | `DISABLE_TELEMETRY` cache TTL fix | Виправлено fallback до 5-хв TTL замість 1 год для підписників з `DISABLE_TELEMETRY` | 2.1.108 |
 | `CLAUDE_CODE_DISABLE_NONSTREAMING_FALLBACK` | Вимкнути non-streaming fallback | 2.1.83 |
 | `CLAUDE_CODE_DISABLE_1M_CONTEXT` | Вимкнути 1M контекст | 2.1.50 |
@@ -89,6 +91,7 @@
 | `ENABLE_CLAUDEAI_MCP_SERVERS` | Opt-out від claude.ai MCP (false) | 2.1.63 |
 | `CLAUDE_CODE_ENABLE_TASKS` | Старі system задачі (false) | 2.1.19 |
 | `NO_PROXY` | Bypass proxy для вказаних hostnames | 1.0.93 |
+| `AI_AGENT` | Встановлюється для subprocesses щоб `gh` міг атрибутувати трафік до Claude Code | 2.1.120 |
 | `CLAUDE_CODE_PROXY_RESOLVES_HOSTS` | Proxy DNS resolution (opt-in) | 2.0.55 |
 
 ## Шляхи
@@ -110,3 +113,4 @@
 | `HTTP_PROXY` / `HTTPS_PROXY` | Proxy для OTEL | 2.0.17 |
 | OTEL `tool_result`/`tool_decision` fields | `tool_result` та `tool_decision` events тепер включають `tool_use_id`; `tool_result` також `tool_input_size_bytes` | 2.1.119 |
 | Status line stdin JSON | Status line stdin JSON тепер включає `effort.level` та `thinking.enabled` | 2.1.119 |
+| OTEL LLM span attributes | Додано `stop_reason`, `gen_ai.response.finish_reasons` та `user_system_prompt` (за `OTEL_LOG_USER_PROMPTS`) до LLM request spans | 2.1.121 |

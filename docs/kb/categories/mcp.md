@@ -66,7 +66,15 @@
 | `${ENV_VAR}` headers fix | Виправлено непідстановку `${ENV_VAR}` placeholders в `headers` для HTTP/SSE/WebSocket MCP серверів | 2.1.119 |
 | OAuth client_secret_post fix | Виправлено відсутність відправки OAuth client secret при token exchange для `client_secret_post` серверів | 2.1.119 |
 | Plugin MCP user_config fix | Виправлено падіння plugin MCP серверів коли `${user_config.*}` посилається на пустий optional field | 2.1.119 |
+| `alwaysLoad` option | MCP сервер конфіг: коли `true`, всі інструменти з цього сервера пропускають tool-search deferral і завжди доступні | 2.1.121 |
+| MCP startup auto-retry | MCP сервери з transient помилкою при старті тепер автоматично retry до 3 разів замість залишатися disconnected | 2.1.121 |
+| claude.ai connectors dedup | Claude.ai connectors з однаковим upstream URL більше не дублюються | 2.1.121 |
+| Vertex AI X.509 Workload Identity Federation | Vertex AI: підтримка X.509 certificate-based Workload Identity Federation (mTLS ADC) | 2.1.121 |
+| claude.ai connectors silent disappear fix | Виправлено мовчазне зникнення claude.ai MCP connectors коли connector-list fetch отримує transient auth error при старті | 2.1.121 |
+| Bedrock `thinking.type.enabled` fix | Виправлено помилку `thinking.type.enabled is not supported` при використанні Bedrock application inference profile ARNs | 2.1.121 |
+| Microsoft 365 MCP OAuth fix | Виправлено Microsoft 365 MCP OAuth failing з duplicate або unsupported `prompt` parameter | 2.1.121 |
 | Vertex AI tool search disabled | Tool search вимкнено за замовчуванням на Vertex AI (opt-in з `ENABLE_TOOL_SEARCH`) | 2.1.119 |
+| stdio MCP Esc connection close fix | Виправлено закриття всього server connection при натисканні Esc під час stdio MCP tool call (регресія з 2.1.105) | 2.1.120 |
 | Elicitation | Інтерактивні MCP-запити | 2.1.76 |
 | Виправлення таймауту підключення [Win] | Виправлено на повільних мережах | 2.2.0 |
 
