@@ -74,6 +74,10 @@
 | Bedrock `thinking.type.enabled` fix | Виправлено помилку `thinking.type.enabled is not supported` при використанні Bedrock application inference profile ARNs | 2.1.121 |
 | Microsoft 365 MCP OAuth fix | Виправлено Microsoft 365 MCP OAuth failing з duplicate або unsupported `prompt` parameter | 2.1.121 |
 | Vertex AI tool search disabled | Tool search вимкнено за замовчуванням на Vertex AI (opt-in з `ENABLE_TOOL_SEARCH`) | 2.1.119 |
+| `/mcp` hidden connectors hint | `/mcp` тепер показує claude.ai connectors приховані вручну доданим сервером з тим самим URL, з підказкою видалити дублікат | 2.1.122 |
+| `/mcp` unauthorized clarification | Покращено повідомлення `/mcp` коли MCP сервер все ще неавтентифікований після browser sign-in flow | 2.1.122 |
+| ToolSearch nonblocking MCP fix | Виправлено ToolSearch що пропускав MCP tools підключені після старту сесії в nonblocking mode | 2.1.122 |
+| MCP connectors needs-auth suppression fix | Виправлено подавлення claude.ai MCP connectors вручну доданими серверами що застрягли в needs-auth state | 2.1.126 |
 | stdio MCP Esc connection close fix | Виправлено закриття всього server connection при натисканні Esc під час stdio MCP tool call (регресія з 2.1.105) | 2.1.120 |
 | Elicitation | Інтерактивні MCP-запити | 2.1.76 |
 | Виправлення таймауту підключення [Win] | Виправлено на повільних мережах | 2.2.0 |

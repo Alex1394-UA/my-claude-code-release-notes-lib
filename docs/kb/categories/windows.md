@@ -153,3 +153,8 @@
 | MCP "cmd /c" false-positive [Win] | Видалено хибне "Windows requires 'cmd /c' wrapper" MCP config попередження | 2.1.119 |
 | PowerShell як заміна Git Bash [Win] | Git for Windows (Git Bash) більше не потрібен — при відсутності Claude Code використовує PowerShell як shell tool | 2.1.120 |
 | Glob/Grep disappear fix [Win] | Виправлено зникання Glob та Grep tools на нативних macOS/Linux builds коли Bash tool заблокований через permissions | 2.1.119 |
+| PowerShell 7 detection expansion | PowerShell 7 встановлений через Microsoft Store, MSI без PATH, або .NET global tool тепер виявляється | 2.1.126 |
+| PowerShell як primary shell [Win] | Коли PowerShell tool увімкнено, Claude тепер розглядає PowerShell як основний shell замість Git Bash | 2.1.126 |
+| CJK/Chinese garbled text fix [Win] | Виправлено пошкоджений Japanese/Korean/Chinese текст на Windows в no-flicker mode | 2.1.126 |
+| Clipboard EDR exposure fix [Win] | Clipboard writes більше не відкривають скопійований контент в process command-line arguments видимих EDR/SIEM telemetry; також виправлено >22KB selections | 2.1.126 |
+| PowerShell bare `--` fix [Win] | PowerShell tool: bare `--` (напр. `git diff -- file`) більше не хибно трактуються як `--%` stop-parsing token | 2.1.126 |

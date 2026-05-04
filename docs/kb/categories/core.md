@@ -389,3 +389,20 @@
 | Embedded grep/find/rg wrappers fix | Embedded grep/find/rg shell wrappers більше не падають коли running binary видалено mid-session — fallback до installed tools | 2.1.121 |
 | Reduced FD usage `find` | Зменшено peak file descriptor usage під час `find` в Bash tool на великих directory trees | 2.1.121 |
 | PowerShell як заміна Git Bash [Win] | Git for Windows (Git Bash) більше не потрібен — при відсутності Claude Code використовує PowerShell як shell tool | 2.1.120 |
+| `/resume` PR URL paste | Вставка PR URL в `/resume` search box знаходить сесію що створила цей PR (GitHub, GitHub Enterprise, GitLab, Bitbucket) | 2.1.122 |
+| `/branch` rewound timeline fix | Виправлено `/branch` що створював forks з помилкою "tool_use ids were found without tool_result blocks" коли source session містила entries з rewound timelines | 2.1.122 |
+| `/model` Bedrock ARN effort fix | Виправлено відсутність Effort опції для Bedrock application inference profile ARNs в `/model`, та відсутність `output_config.effort` в цих ARNs | 2.1.122 |
+| Vertex AI/Bedrock `output_config` fix | Виправлено помилку `invalid_request_error: output_config: Extra inputs are not permitted` на Vertex AI та Bedrock для session-title generation та інших structured-output запитів | 2.1.122 |
+| Vertex AI `count_tokens` 400 fix | Виправлено 400 помилки Vertex AI `count_tokens` endpoint для користувачів за proxy gateways | 2.1.122 |
+| `!exit` / `!quit` bash mode fix | Виправлено `!exit` / `!quit` в bash mode що завершував CLI замість виконання як shell command | 2.1.122 |
+| Image resize 2576px fix | Виправлено зміну розміру зображень до 2576px замість правильних 2000px для новіших моделей | 2.1.122 |
+| Blank messages stale preference fix | Виправлено порожні повідомлення помічника в деяких сесіях через застарілу view preference | 2.1.122 |
+| `/model` gateway models | `/model` picker тепер показує моделі з gateway `/v1/models` endpoint коли `ANTHROPIC_BASE_URL` вказує на Anthropic-compatible gateway | 2.1.126 |
+| Auto mode spinner red on stall | Спіннер auto mode тепер червоніє коли permission check затримується, замість вигляду як tool працює | 2.1.126 |
+| Read tool malware reminder removed | Прибрано per-file malware-assessment reminder в Read tool що міг викликати spurious refusals на старих моделях | 2.1.126 |
+| Oversized image paste fix | Виправлено поломку сесії при вставці зображення >2000px — зображення тепер downscale при вставці, зайві з історії автоматично видаляються з повторною спробою | 2.1.126 |
+| API retry countdown fix | Виправлено застрягання API retry countdown на "0s" замість зворотного відліку між спробами | 2.1.126 |
+| Stream idle timeout Mac wake fix | Виправлено "Stream idle timeout" після пробудження Mac зі сну mid-request | 2.1.126 |
+| Empty output after thinking fix | Виправлено зависання де модель завершує thinking але не показує output після серії пустих turns | 2.1.126 |
+| Plan-mode tools `--channels` fix | Виправлено недоступність plan-mode tools в інтерактивних сесіях запущених з `--channels` | 2.1.126 |
+| File-modified reminders bounded | Обмежено загальний розмір file-modified reminders коли linter змінює багато файлів одночасно | 2.1.126 |

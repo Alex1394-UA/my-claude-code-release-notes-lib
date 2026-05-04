@@ -44,6 +44,7 @@
 | Voice dictation `language` setting [VSCode] | Voice dictation тепер поважає `language` setting в `~/.claude/settings.json` | 2.1.120 |
 | Voice dictation `accessibility.voice.speechLanguage` [VSCode] | Voice dictation поважає `accessibility.voice.speechLanguage` setting коли немає Claude Code language configured | 2.1.121 |
 | `/context` native dialog [VSCode] | `/context` тепер відкриває нативний token usage dialog | 2.1.121 |
+| Fast trackpad scroll fix | Виправлено надто швидкий trackpad scrolling в Cursor та VS Code 1.92–1.104 integrated terminals | 2.1.126 |
 
 ## Win32 ARM64
 

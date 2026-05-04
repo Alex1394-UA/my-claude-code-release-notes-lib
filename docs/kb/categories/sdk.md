@@ -62,3 +62,8 @@
 | SDK bridge `read_file` size cap fix | SDK/bridge `read_file` тепер коректно enforce size cap на файлах що ростуть | 2.1.119 |
 | `CLAUDE_CODE_FORK_SUBAGENT=1` non-interactive | `CLAUDE_CODE_FORK_SUBAGENT=1` тепер працює в non-interactive (SDK/`-p`) сесіях | 2.1.121 |
 | `mcp_authenticate` redirectUri | SDK `mcp_authenticate` тепер підтримує `redirectUri` для custom scheme completion та claude.ai connectors | 2.1.121 |
+| RC idle status redraw fix | Виправлено подвійну перемальовку idle status remote control сесій (2 рази/сек) що могла flood `tmux -CC` control pipes та призупиняти термінал | 2.1.122 |
+| RC stream idle timeout fix | Виправлено хибне переривання background та remote sessions з "Stream idle timeout" під час довгих model thinking pauses | 2.1.126 |
+| `/remote-control` retry visibility | `/remote-control` retries більше не виглядають застряглими на "connecting…" — кожна спроба показує результат | 2.1.126 |
+| RC failure notification fix | Повідомлення про невдачу Remote Control тепер показує причину помилки для initial connection failures | 2.1.126 |
+| Agent SDK parallel tool call hang fix | Виправлено зависання Agent SDK коли модель видає malformed tool name в parallel tool call batch | 2.1.126 |

@@ -59,6 +59,12 @@
 | Console login macOS keychain | Виправлено мовчазний "Not logged in" при заблокованому keychain | 2.1.94 |
 | `/login` OAuth URL padding | Виправлено padding що заважав mouse selection | 2.1.101 |
 | `claude --session-timeout <seconds>` | Автозавершення сесії при бездіяльності | 2.2.3 |
+| `claude project purge [path]` | Видалення всього стану Claude Code для проекту (transcripts, tasks, file history, config entry); підтримує `--dry-run`, `-y/--yes`, `-i/--interactive`, `--all` | 2.1.126 |
+| `--dangerously-skip-permissions` expanded bypass | Тепер обминає промпти для запису в `.claude/`, `.git/`, `.vscode/`, shell config files та інші раніше захищені шляхи (catastrophic removal commands все ще промптять як safety net) | 2.1.126 |
+| `claude auth login` terminal paste | `claude auth login` тепер приймає OAuth code вставлений в термінал коли browser callback не може досягнути localhost (WSL2, SSH, containers) | 2.1.126 |
+| "OAuth not allowed" login guidance | Замість login screen при "OAuth not allowed for organization" тепер показується інструкція звернутися до адміністратора | 2.1.126 |
+| OAuth login timeout fix | Виправлено timeout OAuth login на повільних/proxied з'єднаннях, IPv6-only devcontainers, та коли browser callback не досягає localhost | 2.1.126 |
+| OAuth credential race fix | Виправлено рідкісний race де concurrent credential write міг очистити valid OAuth refresh token | 2.1.126 |
 
 ## Запуск та аутентифікація
 

@@ -92,6 +92,8 @@
 | `CLAUDE_CODE_ENABLE_TASKS` | Старі system задачі (false) | 2.1.19 |
 | `NO_PROXY` | Bypass proxy для вказаних hostnames | 1.0.93 |
 | `AI_AGENT` | Встановлюється для subprocesses щоб `gh` міг атрибутувати трафік до Claude Code | 2.1.120 |
+| `ANTHROPIC_BEDROCK_SERVICE_TIER` | Вибір Bedrock service tier (`default`, `flex`, `priority`), відправляється як `X-Amzn-Bedrock-Service-Tier` header | 2.1.122 |
+| `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS` OAuth fix | Виправлено OAuth 401 retry loop коли ця змінна встановлена | 2.1.123 |
 | `CLAUDE_CODE_PROXY_RESOLVES_HOSTS` | Proxy DNS resolution (opt-in) | 2.0.55 |
 
 ## Шляхи
@@ -114,3 +116,6 @@
 | OTEL `tool_result`/`tool_decision` fields | `tool_result` та `tool_decision` events тепер включають `tool_use_id`; `tool_result` також `tool_input_size_bytes` | 2.1.119 |
 | Status line stdin JSON | Status line stdin JSON тепер включає `effort.level` та `thinking.enabled` | 2.1.119 |
 | OTEL LLM span attributes | Додано `stop_reason`, `gen_ai.response.finish_reasons` та `user_system_prompt` (за `OTEL_LOG_USER_PROMPTS`) до LLM request spans | 2.1.121 |
+| OTEL numeric attributes fix | Числові атрибути в `api_request`/`api_error` log events тепер емітться як числа, не рядки | 2.1.122 |
+| OTEL `claude_code.at_mention` | Новий OTEL log event для `@`-mention resolution | 2.1.122 |
+| OTEL `claude_code.skill_activated` | Новий OTEL event для skill activation; включає `invocation_trigger` (`"user-slash"`, `"claude-proactive"`, `"nested-skill"`) | 2.1.126 |

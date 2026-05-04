@@ -82,3 +82,4 @@
 | Plugin dependency install from marketplace | `claude plugin marketplace add` тепер auto-resolve missing dependencies з configured marketplaces | 2.1.117 |
 | Plugin auto-update skip shown | Коли auto-update пропускає plugin через version constraint іншого plugin, skip з'являється в `/doctor` та `/plugin` Errors tab | 2.1.118 |
 | `/plugin` marketplace load fix | `/plugin` marketplace більше не ламається коли один entry використовує нерозпізнаний source format — entry показується але install пропонує оновити | 2.1.120 |
+| `/plugin` Uninstall status fix | Виправлено `/plugin` Uninstall що показував "Enabled" замість "Uninstalled" | 2.1.126 |

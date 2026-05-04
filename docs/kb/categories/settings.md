@@ -134,3 +134,7 @@
 | "Always allow" remote sessions fix | Правила "Always allow" для built-in tools в remote sessions тепер зберігаються після worker restarts | 2.1.121 |
 | Managed settings approval fix | Managed settings approval prompt більше не завершує сесію при прийнятті — тепер застосовує налаштування та продовжує | 2.1.121 |
 | Invalid legacy enum fix | Invalid legacy enum values в `settings.json` більше не інвалідують весь файл | 2.1.121 |
+| `spinnerTipsOverride.excludeDefault` fix | Виправлено nonsuppressement time-based spinner tips коли `excludeDefault` встановлено | 2.1.122 |
+| Malformed hooks entry resilience | Malformed hooks entry в `settings.json` більше не інвалідує весь файл | 2.1.122 |
+| `allowManagedDomainsOnly`/`allowManagedReadPathsOnly` security fix | **Безпека:** Виправлено ігнорування цих sandbox правил коли higher-priority managed-settings source не мав `sandbox` block | 2.1.126 |
+| Host-managed analytics fix | Host-managed deployments (`CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST`) більше не auto-disable analytics на Bedrock/Vertex/Foundry | 2.1.126 |
