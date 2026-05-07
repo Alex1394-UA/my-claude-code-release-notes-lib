@@ -95,6 +95,11 @@
 | `ANTHROPIC_BEDROCK_SERVICE_TIER` | Вибір Bedrock service tier (`default`, `flex`, `priority`), відправляється як `X-Amzn-Bedrock-Service-Tier` header | 2.1.122 |
 | `CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS` OAuth fix | Виправлено OAuth 401 retry loop коли ця змінна встановлена | 2.1.123 |
 | `CLAUDE_CODE_PROXY_RESOLVES_HOSTS` | Proxy DNS resolution (opt-in) | 2.0.55 |
+| `CLAUDE_CODE_SESSION_ID` | Session ID доступний в subprocesses Bash tool, відповідає `session_id` в hooks | 2.1.132 |
+| `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN` | Опт-out від fullscreen alternate-screen renderer (встановити `1`) — розмова залишається в нативному scrollback терміналу | 2.1.132 |
+| `CLAUDE_CODE_FORCE_SYNC_OUTPUT` | Примусове ввімкнення synchronized output на терміналах де auto-detection не працює (напр. Emacs `eat`) | 2.1.129 |
+| `CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE` | При встановленні на Homebrew або WinGet — Claude Code запускає upgrade в фоні та пропонує рестарт | 2.1.129 |
+| `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY` | Opt-in для gateway `/v1/models` discovery в `/model` picker (було автоматичним в 2.1.126–2.1.128) | 2.1.129 |
 
 ## Шляхи
 

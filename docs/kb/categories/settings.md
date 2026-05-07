@@ -138,3 +138,9 @@
 | Malformed hooks entry resilience | Malformed hooks entry в `settings.json` більше не інвалідує весь файл | 2.1.122 |
 | `allowManagedDomainsOnly`/`allowManagedReadPathsOnly` security fix | **Безпека:** Виправлено ігнорування цих sandbox правил коли higher-priority managed-settings source не мав `sandbox` block | 2.1.126 |
 | Host-managed analytics fix | Host-managed deployments (`CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST`) більше не auto-disable analytics на Bedrock/Vertex/Foundry | 2.1.126 |
+| `skillOverrides` | Контроль видимості skills: `off` — ховає від моделі та `/`, `user-invocable-only` — ховає від моделі, `name-only` — згортає опис | 2.1.129 |
+| SDK hosts `localSettings` suggestion | SDK hosts отримують persistent `localSettings` suggestion для Bash permission prompts — "Always allow" пише в `.claude/settings.local.json` | 2.1.128 |
+| `Bash(mkdir *)` wildcard fix | `Bash(mkdir *)`, `Bash(touch *)` та подібні allow rules тепер працюють для in-project paths | 2.1.129 |
+| `deniedMcpServers` case fix | `deniedMcpServers` patterns з `*://` scheme wildcard тепер match mixed-case hostnames | 2.1.129 |
+| Server-managed settings OAuth scope fix | Server-managed settings policy тепер застосовується для enterprise/team користувачів чий stored OAuth credentials не мав `user:inference` scope | 2.1.129 |
+| `channelsEnabled` | Console orgs з managed settings повинні встановити `channelsEnabled: true` для роботи `--channels` з console auth | 2.1.128 |

@@ -67,3 +67,4 @@
 | `/remote-control` retry visibility | `/remote-control` retries більше не виглядають застряглими на "connecting…" — кожна спроба показує результат | 2.1.126 |
 | RC failure notification fix | Повідомлення про невдачу Remote Control тепер показує причину помилки для initial connection failures | 2.1.126 |
 | Agent SDK parallel tool call hang fix | Виправлено зависання Agent SDK коли модель видає malformed tool name в parallel tool call batch | 2.1.126 |
+| `claude_code.pull_request.count` OTel metric | Тепер рахує PRs/MRs створені через MCP tools, не лише через shell commands | 2.1.129 |

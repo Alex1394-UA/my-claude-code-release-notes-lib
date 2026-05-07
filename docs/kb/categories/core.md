@@ -406,3 +406,71 @@
 | Empty output after thinking fix | Виправлено зависання де модель завершує thinking але не показує output після серії пустих turns | 2.1.126 |
 | Plan-mode tools `--channels` fix | Виправлено недоступність plan-mode tools в інтерактивних сесіях запущених з `--channels` | 2.1.126 |
 | File-modified reminders bounded | Обмежено загальний розмір file-modified reminders коли linter змінює багато файлів одночасно | 2.1.126 |
+| `/color` без аргументів | Випадковий колір сесії при bare `/color` (без аргументів) | 2.1.128 |
+| `/model` picker оновлення | Згорнуто дублікати Opus 4.7; поточний Opus показується як "Opus" замість "Opus 4.7" | 2.1.128 |
+| `/mcp` tool count | `/mcp` показує кількість інструментів для підключених серверів та позначає сервери з 0 tools | 2.1.128 |
+| `workspace` зарезервоване ім'я MCP | `workspace` тепер зарезервоване ім'я MCP сервера — існуючі сервери з цим іменем пропускаються з попередженням | 2.1.128 |
+| MCP reconnect summary | Перепідключення MCP серверів більше не flood-ить розмову повним списком tool names — re-announced tools підсумовуються по server prefix | 2.1.128 |
+| EnterWorktree local HEAD | `EnterWorktree` тепер створює гілку від local HEAD як задокументовано, замість `origin/<default-branch>` — unpushed коміти більше не втрачаються | 2.1.128 |
+| OTEL env var scrub | Subprocesses (Bash, hooks, MCP, LSP) більше не успадковують `OTEL_*` змінні середовища | 2.1.128 |
+| Parallel shell tool calls fix | Failed read-only shell command (grep, git diff, ls) більше не скасовує sibling calls | 2.1.128 |
+| Banner "with X effort" fix | Виправлено показ "with X effort" на моделях що не підтримують effort | 2.1.128 |
+| `/fast` 3P provider fix | `/fast` на third-party providers більше не fuzzy-match-ить до неспорідненого skill замість повідомлення "not available" | 2.1.128 |
+| Vim `Space` NORMAL mode | `Space` в vim NORMAL mode тепер рухає курсор вправо, як у стандартному vi/vim | 2.1.128 |
+| Terminal progress indicator fix | Прогрес-індикатор (OSC 9;4) більше не вимикається між tool calls — залишається видимим протягом всього turn | 2.1.128 |
+| `/rename` resumed sessions fix | `/rename` без аргументів більше не ламається на відновлених сесіях де останній entry — compact boundary | 2.1.128 |
+| Stale "remote-control is active" fix | Застарілі рядки статусу "remote-control is active" з попередніх сесій більше не з'являються після `--resume`/`--continue` | 2.1.128 |
+| Sub-agent progress summaries fix | Прогрес-підсумки sub-agent-ів більше не missing prompt cache (~3× `cache_creation` reduction) | 2.1.128 |
+| Sub-agent summaries idle fix | Підсумки sub-agent-ів що стрілять повторно поки транскрипт статичний — cap worst-case token cost на idle sub-agents | 2.1.128 |
+| Long URLs fullscreen clickable fix | Довгі URL в fullscreen mode тепер клікабельні на кожному перенесеному рядку | 2.1.128 |
+| Markdown links fallback rendering | Markdown links на терміналах без OSC 8 hyperlink підтримки рендеряться як `label (url)` замість лише URL | 2.1.128 |
+| Fenced code blocks clipboard fix | Форматування fenced code blocks всередині list items більше не додає leading whitespace при копіюванні | 2.1.128 |
+| Drag-and-drop image upload fix | Виправлено зависання "Pasting text…" коли image read не вдається при drag-and-drop | 2.1.128 |
+| Focus mode dimming fix | Виправлено краткочасне затемнення попередньої відповіді при відправці нового промпту в focus mode | 2.1.128 |
+| `/config` tab navigation fix | Tab навігація в `/config` більше не втрачає фокус — tab header залишається сфокусованим | 2.1.128 |
+| Stray "4;0;" notification fix | Виправлено випадкове desktop сповіщення "4;0;" при кожному `/exit` в Kitty та інших терміналах | 2.1.128 |
+| 1M-context models false "Prompt too long" fix | Сесії на 1M-контекст моделях з меншим autocompact window більше не хибно блокуються перед досягненням API ліміту | 2.1.128 |
+| Auto mode classifier error hint | Коли classifier не може оцінити action, помилка тепер включає підказку (retry, `/compact`, або `--debug`) | 2.1.128 |
+| Piped stdin >10MB crash fix | Виправлено crash loop при piping дуже великого input (>10 MB) до `claude -p` через stdin | 2.1.128 |
+| 3rd-party spinner tips fix | Third-party deployments (Bedrock, Vertex, Foundry, `ANTHROPIC_BASE_URL` gateway) більше не бачать spinner tips з посиланнями на first-party Anthropic surfaces | 2.1.129 |
+| Ctrl+R history default | Ctrl+R history picker тепер шукає по всіх промптах всіх проектів за замовчуванням; `Ctrl+S` для звуження до поточного проекту/сесії | 2.1.129 |
+| `/clear` terminal title fix | `/clear` тепер скидає заголовок термінальної таб-сесії | 2.1.129 |
+| Session title chip dialog fix | Title chip від `/rename` більше не зникає поки активний permission або інший dialog | 2.1.129 |
+| Agent panel hidden fix | Agent panel під prompt більше не ховається коли subagents працюють (регресія з 2.1.122) | 2.1.129 |
+| External-editor blanking fix | Ctrl+G external-editor handoff більше не очищає історію розмови над prompt | 2.1.129 |
+| `/context` grid dump fix | `/context` більше не виводить ASCII grid в розмову (~1.6k tokens за виклик) | 2.1.129 |
+| `/agents` arrow-key navigation fix | Highlighted agent в `/agents` Library list залишається видимим при скролі списка що перевищує viewport | 2.1.129 |
+| `/branch` session id fix | `/branch` success message тепер включає session id нової гілки для `/resume` | 2.1.129 |
+| Bold headers emoji fix | Bold headers з keycap/ZWJ/skin-tone emoji більше не втрачають trailing characters в fullscreen mode | 2.1.129 |
+| Policy refusal API Request ID | Повідомлення policy refusal тепер включає API Request ID для полегшеного дебагу | 2.1.129 |
+| API 400 error message fix | API помилки з нерозпізнаними 400 status codes показують підлеглу помилку замість сирого JSON | 2.1.129 |
+| 1h prompt cache TTL fix | Виправлено мовчазне пониження 1-годинного prompt cache TTL до 5 хвилин | 2.1.129 |
+| Cache-miss warning after `/clear` fix | Хибне попередження cache-miss після `/clear` або compaction при зміні `/effort` або `/model` виправлено | 2.1.129 |
+| OAuth refresh race fix | Виправлено race умову OAuth refresh після пробудження від сну що могла розлогінити всі активні сесії | 2.1.129 |
+| Server-managed settings policy fix | Server-managed settings policy тепер застосовується для enterprise/team користувачів чий stored OAuth credentials не мав `user:inference` scope | 2.1.129 |
+| Slash command autocomplete scaling | Slash command autocomplete popup тепер масштабується з висотою терміналу замість обмеження ~3–5 команд | 2.1.129 |
+| Statusline `context_window` fix | Statusline `context_window` token counts тепер відображають поточне використання контексту замість кумулятивних підсумків сесії | 2.1.129 |
+| `CLAUDE_CODE_SESSION_ID` env var | Змінна середовища `CLAUDE_CODE_SESSION_ID` доступна в subprocesses Bash tool, відповідає `session_id` в hooks | 2.1.132 |
+| `CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN` | Опт-out від fullscreen alternate-screen renderer — розмова залишається в нативному scrollback терміналу | 2.1.132 |
+| Image paste "Pasting…" footer | Footer підказка "Pasting…" поки Ctrl+V image paste читається з clipboard | 2.1.132 |
+| SIGINT graceful shutdown | Зовнішній SIGINT (IDE stop button, `kill -INT`) тепер виконує graceful shutdown — відновлює термінальні режими та друкує `--resume` підказку | 2.1.132 |
+| Fullscreen blank after sleep fix | Fullscreen mode більше не показує blank screen після laptop sleep/wake або Ctrl+Z/`fg` | 2.1.132 |
+| Cursor mid-grapheme fix | Курсор більше не_landить mid-grapheme при Ctrl+E/A/K/U/arrow keys з Indic conjunct або ZWJ emoji | 2.1.132 |
+| Vim NFD accented chars fix | Vim operators більше не пошкоджують текст з decomposed (NFD) акцентованими символами | 2.1.132 |
+| Paste `/` fix | Вставка тексту що починається з `/` більше не мовчазно поглинається або trigerra unknown-command | 2.1.132 |
+| Paste escape sequences fix | Вставка більше не додає stray escape sequences коли focus events або mouse-tracking interleave з bracketed paste | 2.1.132 |
+| `/effort` picker env var fix | `/effort` picker тепер відображає `CLAUDE_CODE_EFFORT_LEVEL` env var override | 2.1.132 |
+| `/status` wrong default model fix | `/status` більше не показує неправильну дефолтну модель для деяких користувачів | 2.1.132 |
+| Alt+T macOS fix | Alt+T (thinking toggle) тепер працює на macOS терміналах без "Option as Meta" (iTerm2, Terminal.app defaults) | 2.1.132 |
+| Dead keyboard input Windows fix | Виправлено dead keyboard input на Windows при повторному відкритті фоновой сесії з `claude agents` | 2.1.132 |
+| `/tui fullscreen` banner update | Оновлено `/tui fullscreen` startup banner з описом додаткових переваг renderer (менша пам'ять, mouse support, auto-copy on select) | 2.1.132 |
+| Visual consistency dialogs | Покращено візуальну узгодженість в slash command dialogs, `/login`, `/upgrade`, `/extra-usage` dialog spacing | 2.1.132 |
+| Uncaught exception terminal close fix | Виправлено uncaught exception при закритті терміналу або SSH disconnect mid-session під native build | 2.1.132 |
+| `--resume` emoji crash fix | Виправлено `--resume` з помилкою `no low surrogate in string` коли tool error truncation розділив emoji; pre-corrupted sessions sanitize on load | 2.1.132 |
+| `--permission-mode` resume fix | `--permission-mode` flag більше не ігнорується при resume plan-mode session з `-p --continue`/`--resume` | 2.1.132 |
+| Mouse wheel Cursor/VS Code fix | Виправлено надто швидке mouse wheel scrolling в Cursor та VS Code 1.92–1.104 через upstream xterm.js bug | 2.1.132 |
+| Scroll-wheel JetBrains fix | Виправлено scroll-wheel handling в JetBrains IDE 2025.2 terminals (spurious arrow keys, wrong-direction events) | 2.1.132 |
+| `/usage` Ctrl+S Linux fix | Виправлено зависання `/usage` Ctrl+S при копіюванні stats screenshot в clipboard на Linux/X11 | 2.1.132 |
+| `/terminal-setup` Win Terminal fix | Виправлено суперечливе повідомлення `/terminal-setup` в Windows Terminal — Shift+Enter нативно підтримується | 2.1.132 |
+| Unbounded memory MCP server fix | Виправлено необмежене зростання пам'яті (10GB+ RSS) коли stdio MCP server пише non-protocol data в stdout | 2.1.132 |
+| Uninitialized native build exit | Виправлено падіння нативного build при закритті терміналу або SSH disconnect mid-session | 2.1.132 |

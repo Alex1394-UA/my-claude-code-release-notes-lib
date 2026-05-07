@@ -83,3 +83,9 @@
 | Plugin auto-update skip shown | Коли auto-update пропускає plugin через version constraint іншого plugin, skip з'являється в `/doctor` та `/plugin` Errors tab | 2.1.118 |
 | `/plugin` marketplace load fix | `/plugin` marketplace більше не ламається коли один entry використовує нерозпізнаний source format — entry показується але install пропонує оновити | 2.1.120 |
 | `/plugin` Uninstall status fix | Виправлено `/plugin` Uninstall що показував "Enabled" замість "Uninstalled" | 2.1.126 |
+| `--plugin-dir` .zip support | `--plugin-dir` тепер приймає `.zip` plugin archives крім директорій | 2.1.128 |
+| `--plugin-url <url>` | Новий прапорець для завантаження plugin `.zip` archive з URL для поточної сесії | 2.1.129 |
+| `themes`/`monitors` under `experimental` | Plugin manifests: `themes` та `monitors` повинні бути оголошені під `"experimental": { ... }`; top-level ще працює але `claude plugin validate` попереджає | 2.1.129 |
+| `/plugin update` version detection fix | Виправлено `/plugin update` що ніколи не виявляв нові версії npm-sourced plugins | 2.1.128 |
+| `/plugin` Components panel fix | Виправлено "Marketplace 'inline' not found" для plugins завантажених через `--plugin-dir` | 2.1.128 |
+| Stale `installed_plugins.json` fix | Stale записи що вказували на видалені cache директорії більше не забруднюють PATH | 2.1.128 |

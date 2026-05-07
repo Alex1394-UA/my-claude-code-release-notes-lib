@@ -45,6 +45,10 @@
 | Voice dictation `accessibility.voice.speechLanguage` [VSCode] | Voice dictation поважає `accessibility.voice.speechLanguage` setting коли немає Claude Code language configured | 2.1.121 |
 | `/context` native dialog [VSCode] | `/context` тепер відкриває нативний token usage dialog | 2.1.121 |
 | Fast trackpad scroll fix | Виправлено надто швидкий trackpad scrolling в Cursor та VS Code 1.92–1.104 integrated terminals | 2.1.126 |
+| Mouse wheel Cursor/VS Code fix | Виправлено надто швидке mouse wheel scrolling в Cursor та VS Code 1.92–1.104 через upstream xterm.js bug | 2.1.132 |
+| Scroll-wheel JetBrains fix | Виправлено scroll-wheel handling в JetBrains IDE 2025.2 terminals (spurious arrow keys, wrong-direction events, runaway acceleration) | 2.1.132 |
+| `/clear` VSCode fix | Виправлено `/clear` що не очищував conversation context та displayed transcript у VS Code extension | 2.1.129 |
+| VS Code extension activation fix [Win] | Виправлено помилку активації VS Code extension на Windows через hardcoded build path в bundled SDK (`createRequire` polyfill bug) | 2.1.131 |
 
 ## Win32 ARM64
 

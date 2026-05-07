@@ -85,3 +85,4 @@
 | `null` | Скидання вбудованих прив'язок | 2.1.84 |
 | Caps Lock voice mode error | Голосовий режим: keybindings прив'язані до Caps Lock тепер показують помилку, оскільки термінали не доставляють Caps Lock як key event | 2.1.122 |
 | `Ctrl+L` prompt input preserved | `Ctrl+L` більше не очищає prompt input — тепер лише forces screen redraw, відповідаючи readline behavior | 2.1.126 |
+| Vim `Space` NORMAL mode | `Space` в vim NORMAL mode рухає курсор вправо, як у стандартному vi/vim | 2.1.128 |

@@ -81,6 +81,13 @@
 | stdio MCP Esc connection close fix | Виправлено закриття всього server connection при натисканні Esc під час stdio MCP tool call (регресія з 2.1.105) | 2.1.120 |
 | Elicitation | Інтерактивні MCP-запити | 2.1.76 |
 | Виправлення таймауту підключення [Win] | Виправлено на повільних мережах | 2.2.0 |
+| `workspace` зарезервоване ім'я | `workspace` — зарезервоване ім'я MCP сервера; існуючі сервери з цим іменем пропускаються з попередженням | 2.1.128 |
+| MCP reconnect tool summary | Перепідключення MCP серверів більше не flood-ить розмову повним списком tool names — re-announced tools підсумовуються по server prefix | 2.1.128 |
+| MCP stdio corrupted args fix | Виправлено отримання corrupted arguments stdio MCP серверами коли `CLAUDE_CODE_SHELL_PREFIX` встановлено та аргумент містить пробіли або shell metacharacters | 2.1.128 |
+| MCP tool results images fix | Виправлено втрату images коли MCP server повертає і structured content і content blocks | 2.1.128 |
+| MCP servers 0 tools retry | MCP сервери що підключились але не пройшли `tools/list` більше не показують 0 tools — retry один раз та показують "connected · tools fetch failed" в `/mcp` | 2.1.132 |
+| Unauthorized MCP connectors "needs auth" | Unauthorized claude.ai MCP connectors тепер показують "needs auth" замість "failed"; headless `-p` більше не retry non-transient 4xx | 2.1.132 |
+| Bedrock/Vertex `ENABLE_PROMPT_CACHING_1H` fix | Виправлено 400 помилки на Bedrock та Vertex коли `ENABLE_PROMPT_CACHING_1H` встановлено | 2.1.132 |
 
 ## Області видимості
 

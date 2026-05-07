@@ -158,3 +158,6 @@
 | CJK/Chinese garbled text fix [Win] | Виправлено пошкоджений Japanese/Korean/Chinese текст на Windows в no-flicker mode | 2.1.126 |
 | Clipboard EDR exposure fix [Win] | Clipboard writes більше не відкривають скопійований контент в process command-line arguments видимих EDR/SIEM telemetry; також виправлено >22KB selections | 2.1.126 |
 | PowerShell bare `--` fix [Win] | PowerShell tool: bare `--` (напр. `git diff -- file`) більше не хибно трактуються як `--%` stop-parsing token | 2.1.126 |
+| VS Code extension activation fix [Win] | Виправлено помилку активації VS Code extension на Windows через hardcoded build path в bundled SDK (`createRequire` polyfill bug) | 2.1.131 |
+| Dead keyboard input fix [Win] | Виправлено dead keyboard input на Windows при повторному відкритті фоновой сесії з `claude agents` | 2.1.132 |
+| `/clear` VSCode fix [VSCode/Win] | Виправлено `/clear` що не очищував conversation context та displayed transcript у VS Code extension | 2.1.129 |

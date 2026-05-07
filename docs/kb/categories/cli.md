@@ -65,6 +65,10 @@
 | "OAuth not allowed" login guidance | Замість login screen при "OAuth not allowed for organization" тепер показується інструкція звернутися до адміністратора | 2.1.126 |
 | OAuth login timeout fix | Виправлено timeout OAuth login на повільних/proxied з'єднаннях, IPv6-only devcontainers, та коли browser callback не досягає localhost | 2.1.126 |
 | OAuth credential race fix | Виправлено рідкісний race де concurrent credential write міг очистити valid OAuth refresh token | 2.1.126 |
+| `--plugin-dir` .zip support | `--plugin-dir` тепер приймає `.zip` plugin archives крім директорій | 2.1.128 |
+| `--channels` console auth | `--channels` тепер працює з console (API key) аутентифікацією — console orgs з managed settings повинні встановити `channelsEnabled: true` | 2.1.128 |
+| Headless `plugin_errors` expanded | `--output-format stream-json` `init.plugin_errors` тепер включає `--plugin-dir` load failures | 2.1.128 |
+| `--plugin-url <url>` | Новий прапорець для завантаження plugin `.zip` archive з URL для поточної сесії | 2.1.129 |
 
 ## Запуск та аутентифікація
 
