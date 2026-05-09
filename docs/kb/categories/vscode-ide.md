@@ -49,6 +49,10 @@
 | Scroll-wheel JetBrains fix | Виправлено scroll-wheel handling в JetBrains IDE 2025.2 terminals (spurious arrow keys, wrong-direction events, runaway acceleration) | 2.1.132 |
 | `/clear` VSCode fix | Виправлено `/clear` що не очищував conversation context та displayed transcript у VS Code extension | 2.1.129 |
 | VS Code extension activation fix [Win] | Виправлено помилку активації VS Code extension на Windows через hardcoded build path в bundled SDK (`createRequire` polyfill bug) | 2.1.131 |
+| `claudeProcessWrapper` "Unsupported platform" fix | Виправлено `claudeCode.claudeProcessWrapper` failing з "Unsupported platform" коли extension build не bundles Claude binary | 2.1.133 |
+| MCP servers `/clear` VS Code fix | Виправлено MCP servers що silently disappearing після `/clear` в VS Code extension та JetBrains plugin | 2.1.136 |
+| IDE shell-integration `CLAUDE_CONFIG_DIR` fix | Виправлено IDE shell-integration lock files що не поважали `CLAUDE_CONFIG_DIR` | 2.1.136 |
+| VS Code extension Windows fix [VSCode] | Виправлено extension failing to activate на Windows | 2.1.137 |
 
 ## Win32 ARM64
 

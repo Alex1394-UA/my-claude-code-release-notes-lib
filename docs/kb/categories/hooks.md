@@ -85,3 +85,6 @@
 | `PostToolUse` `duration_ms` | `PostToolUse` та `PostToolUseFailure` hook inputs тепер включають `duration_ms` (час виконання інструменту, без permission prompts та PreToolUse hooks) | 2.1.119 |
 | `PostToolUse` `hookSpecificOutput.updatedToolOutput` | ~~PostToolUse хуки тепер можуть замінити tool output для всіх інструментів через `hookSpecificOutput.updatedToolOutput` (раніше лише MCP)~~ **НЕ ПРАЦЮЄ в v2.1.121** — нове поле silently dropped; для MCP працює лише старе `updatedMCPToolOutput`; для built-in tools не працює взагалі. Див. відомі проблеми вище. | 2.1.121 |
 | Vertex AI/Bedrock `output_config` fix | Виправлено помилку `output_config: Extra inputs are not permitted` для hooks (та інших structured-output запитів) на Vertex AI та Bedrock | 2.1.122 |
+| Hooks `effort.level` input | Хуки тепер отримують active effort level через `effort.level` JSON input field та `$CLAUDE_EFFORT` env var | 2.1.133 |
+| `CLAUDE_ENV_FILE` SessionStart stale fix | Виправлено env vars з `CLAUDE_ENV_FILE` SessionStart hooks що stale-ілися після `/resume` або `/clear` | 2.1.136 |
+| Plugin hooks cache cleanup fix | Виправлено plugin `Stop`/`UserPromptSubmit` hooks що failing коли cache cleanup deletes version що ще в use running session | 2.1.136 |

@@ -89,3 +89,7 @@
 | `/plugin update` version detection fix | Виправлено `/plugin update` що ніколи не виявляв нові версії npm-sourced plugins | 2.1.128 |
 | `/plugin` Components panel fix | Виправлено "Marketplace 'inline' not found" для plugins завантажених через `--plugin-dir` | 2.1.128 |
 | Stale `installed_plugins.json` fix | Stale записи що вказували на видалені cache директорії більше не забруднюють PATH | 2.1.128 |
+| Plugin hooks cache cleanup fix | Виправлено plugin `Stop`/`UserPromptSubmit` hooks що failing коли cache cleanup deletes version що ще в use running session | 2.1.136 |
+| Plugin uninstall case-insensitive fix | Виправлено plugin uninstall та enable/disable що не matching slugs case-insensitively | 2.1.136 |
+| Plugin slash commands spaces fix | Виправлено plugin slash commands з spaces (напр. `/myplugin review`) що не resolving до namespaced form | 2.1.136 |
+| Marketplace removal key change | Змінено plugin marketplace removal key на `d` (matching delete elsewhere) замість `r` що collide-вав з retry | 2.1.136 |

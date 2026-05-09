@@ -36,6 +36,11 @@
 | Deferred tools `context: fork` skills fix | Виправлено відсутність deferred tools (WebSearch, WebFetch, etc.) в skills з `context: fork` та інших subagents на першому turn | 2.1.126 |
 | Agent frontmatter `hooks` | `hooks:` з agent frontmatter тепер спрацьовують при запуску через `--agent` | 2.1.116 |
 | Non-existent `commit` skill fix | Виправлено виклик неіснуючого `commit` skill та показ "Unknown skill: commit" для користувачів без кастомної `/commit` команди | 2.1.111 |
+| Subagents skill discovery fix | Виправлено subagents що не discovering project, user, або plugin skills через Skill tool | 2.1.133 |
+| Plugin.json `skills` hiding default fix | Виправлено `skills` entry в `plugin.json` що ховав plugin's default `skills/` directory; listing file path тепер показує error замість silent failure | 2.1.136 |
+| `AskUserQuestion` multi-select fix | Виправлено `AskUserQuestion` що discarding multi-select answers коли supplied як array | 2.1.136 |
+| `CronList` output fix | Виправлено `CronList` output що missing qualifiers та scheduled prompt | 2.1.136 |
+| "Chat about this" AskUserQuestion fix | Виправлено "Chat about this" на `AskUserQuestion` dialog що erasing question text | 2.1.136 |
 
 ## Поля frontmatter
 

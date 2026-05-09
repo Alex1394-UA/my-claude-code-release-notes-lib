@@ -100,6 +100,10 @@
 | `CLAUDE_CODE_FORCE_SYNC_OUTPUT` | Примусове ввімкнення synchronized output на терміналах де auto-detection не працює (напр. Emacs `eat`) | 2.1.129 |
 | `CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE` | При встановленні на Homebrew або WinGet — Claude Code запускає upgrade в фоні та пропонує рестарт | 2.1.129 |
 | `CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY` | Opt-in для gateway `/v1/models` discovery в `/model` picker (було автоматичним в 2.1.126–2.1.128) | 2.1.129 |
+| `$CLAUDE_EFFORT` | Active effort level доступний в Bash tool командах та hook environment | 2.1.133 |
+| `CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL` | Повторне ввімкнення session quality survey для enterprises що capture responses через OpenTelemetry | 2.1.136 |
+| `CLAUDE_ENV_FILE` stale fix | Виправлено env vars з `CLAUDE_ENV_FILE` SessionStart hooks що stale-ілися після `/resume` або `/clear` | 2.1.136 |
+| IDE shell-integration lock files `CLAUDE_CONFIG_DIR` fix | Виправлено IDE shell-integration lock files що не поважали `CLAUDE_CONFIG_DIR` | 2.1.136 |
 
 ## Шляхи
 

@@ -69,6 +69,18 @@
 | `--channels` console auth | `--channels` тепер працює з console (API key) аутентифікацією — console orgs з managed settings повинні встановити `channelsEnabled: true` | 2.1.128 |
 | Headless `plugin_errors` expanded | `--output-format stream-json` `init.plugin_errors` тепер включає `--plugin-dir` load failures | 2.1.128 |
 | `--plugin-url <url>` | Новий прапорець для завантаження plugin `.zip` archive з URL для поточної сесії | 2.1.129 |
+| `claude --help` `--remote-control` | `claude --help` тепер lists `--remote-control` alongside `--remote-control-session-name-prefix` | 2.1.133 |
+| `--resume`/`--continue` underscores fix | Виправлено `--resume`/`--continue` що не знаходили сесій коли project path містить underscores | 2.1.136 |
+| Worktree exit dialog directory fix | Виправлено worktree exit dialog що warning про uncommitted files в wrong directory після worktree removal | 2.1.136 |
+| `/usage` weekly reset fix | Виправлено `/usage` weekly reset що показував time of day замість calendar date | 2.1.136 |
+| `/insights` crash malformed input fix | Виправлено `/insights` краш коли session history містить tool calls з malformed input fields | 2.1.136 |
+| `/branch` multi-line title fix | Виправлено `/branch` що saving multi-line session title при pasted multi-line name | 2.1.136 |
+| `/clear <name>` labeling fix | Виправлено `/clear <name>` що не labeling cleared session для `/resume` | 2.1.136 |
+| `/release-notes` stale version fix | Виправлено `/release-notes` що застрягав на old version після failed changelog refresh | 2.1.136 |
+| Mid-input slash autocomplete fix | Виправлено mid-input slash command autocomplete що не працював після initial slash command | 2.1.136 |
+| `/settings` language Escape fix | Виправлено `/settings` language change що revert-увався на Escape після confirming | 2.1.136 |
+| `/terminal-setup` autocomplete fix | Виправлено `/terminal-setup` що appearing в autocomplete лише на exact name match замість partial prefixes | 2.1.136 |
+| Worktree collision error improvement | Покращено error message при `--worktree` collision з existing або stale worktree | 2.1.136 |
 
 ## Запуск та аутентифікація
 

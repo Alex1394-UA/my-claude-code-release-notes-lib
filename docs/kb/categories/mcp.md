@@ -88,6 +88,11 @@
 | MCP servers 0 tools retry | MCP сервери що підключились але не пройшли `tools/list` більше не показують 0 tools — retry один раз та показують "connected · tools fetch failed" в `/mcp` | 2.1.132 |
 | Unauthorized MCP connectors "needs auth" | Unauthorized claude.ai MCP connectors тепер показують "needs auth" замість "failed"; headless `-p` більше не retry non-transient 4xx | 2.1.132 |
 | Bedrock/Vertex `ENABLE_PROMPT_CACHING_1H` fix | Виправлено 400 помилки на Bedrock та Vertex коли `ENABLE_PROMPT_CACHING_1H` встановлено | 2.1.132 |
+| MCP OAuth proxy/mTLS fix | Виправлено `HTTP(S)_PROXY` / `NO_PROXY` / mTLS що не поважалися для повного MCP OAuth flow (discovery, DCR, token exchange, refresh) | 2.1.133 |
+| MCP servers `/clear` disappearing fix | Виправлено MCP servers configured в `.mcp.json`, plugins, та claude.ai connectors що silently disappearing після `/clear` | 2.1.136 |
+| MCP OAuth refresh tokens concurrent fix | Виправлено втрату MCP OAuth refresh tokens при concurrent refresh — користувачі з кількома remote MCP servers більше не потребують daily re-authentication | 2.1.136 |
+| `/mcp` server list scrolling fix | Виправлено `/mcp` server list що не скролився коли servers більше ніж вміщує термінал | 2.1.136 |
+| MCP tool results content blocks fix | Виправлено MCP tool results що були invisible коли server повертає content blocks | 2.1.136 |
 
 ## Області видимості
 

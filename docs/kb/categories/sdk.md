@@ -68,3 +68,6 @@
 | RC failure notification fix | Повідомлення про невдачу Remote Control тепер показує причину помилки для initial connection failures | 2.1.126 |
 | Agent SDK parallel tool call hang fix | Виправлено зависання Agent SDK коли модель видає malformed tool name в parallel tool call batch | 2.1.126 |
 | `claude_code.pull_request.count` OTel metric | Тепер рахує PRs/MRs створені через MCP tools, не лише через shell commands | 2.1.129 |
+| `parentSettingsBehavior` admin key | Admin-tier key (`'first-wins' | 'merge'`) що дозволяє SDK managed settings (parent tier) брати участь у policy merge | 2.1.133 |
+| RC stop/interrupt full cancel fix | Виправлено Remote Control stop/interrupt з claude.ai що не fully cancel-вав CLI session — queued messages більше не застряють | 2.1.133 |
+| MCP servers `/clear` SDK fix | Виправлено MCP servers що silently disappearing після `/clear` в Agent SDK | 2.1.136 |

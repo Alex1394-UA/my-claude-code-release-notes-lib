@@ -160,4 +160,8 @@
 | PowerShell bare `--` fix [Win] | PowerShell tool: bare `--` (напр. `git diff -- file`) більше не хибно трактуються як `--%` stop-parsing token | 2.1.126 |
 | VS Code extension activation fix [Win] | Виправлено помилку активації VS Code extension на Windows через hardcoded build path в bundled SDK (`createRequire` polyfill bug) | 2.1.131 |
 | Dead keyboard input fix [Win] | Виправлено dead keyboard input на Windows при повторному відкритті фоновой сесії з `claude agents` | 2.1.132 |
+| `Edit`/`Write` drive root allow rules fix [Win] | Виправлено `Edit`/`Write` allow правила scoped до drive root (`C:\`) що завжди промптили замість match | 2.1.133 |
+| Mapped network drives `--add-dir` fix [Win] | Виправлено Read/Write/Edit що denied на mapped network drives переданих через `--add-dir` / SDK `additionalDirectories` | 2.1.133 |
+| WSL2 image paste PowerShell fallback | WSL2: image paste з Windows clipboard працює через PowerShell fallback коли xclip/wl-paste не може прочитати image data | 2.1.136 |
+| VS Code extension Windows activation fix [Win] | Виправлено extension failing to activate на Windows | 2.1.137 |
 | `/clear` VSCode fix [VSCode/Win] | Виправлено `/clear` що не очищував conversation context та displayed transcript у VS Code extension | 2.1.129 |

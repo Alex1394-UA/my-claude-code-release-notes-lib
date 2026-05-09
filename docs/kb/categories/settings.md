@@ -144,3 +144,10 @@
 | `deniedMcpServers` case fix | `deniedMcpServers` patterns з `*://` scheme wildcard тепер match mixed-case hostnames | 2.1.129 |
 | Server-managed settings OAuth scope fix | Server-managed settings policy тепер застосовується для enterprise/team користувачів чий stored OAuth credentials не мав `user:inference` scope | 2.1.129 |
 | `channelsEnabled` | Console orgs з managed settings повинні встановити `channelsEnabled: true` для роботи `--channels` з console auth | 2.1.128 |
+| `worktree.baseRef` | Вибір базової гілки для worktrees (`fresh` — `origin/<default>`, `head` — local `HEAD`); за замовч. `fresh` | 2.1.133 |
+| `sandbox.bwrapPath` / `sandbox.socatPath` | [Managed] Кастомні шляхи до bubblewrap та socat бінарників (Linux/WSL) | 2.1.133 |
+| `parentSettingsBehavior` | [Admin/SDK] `'first-wins' | 'merge'` — дозволяє SDK managed settings (parent tier) брати участь у policy merge | 2.1.133 |
+| `autoMode.hard_deny` | Правила auto mode класифікатора що блокують безумовно, незалежно від user intent або allow exceptions | 2.1.136 |
+| `Edit`/`Write` drive root fix | Виправлено allow правила scoped до `C:\` або `/` що завжди промптили замість match | 2.1.133 |
+| Plan mode Edit allow rule fix | Виправлено plan mode що не блокував file writes коли matching `Edit(...)` allow rule існує | 2.1.136 |
+| Bash permission parser diagnostic fix | Виправлено Bash permission prompts що показували internal parser diagnostic замість user-readable explanation | 2.1.136 |

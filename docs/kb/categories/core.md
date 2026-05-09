@@ -474,3 +474,27 @@
 | `/terminal-setup` Win Terminal fix | Виправлено суперечливе повідомлення `/terminal-setup` в Windows Terminal — Shift+Enter нативно підтримується | 2.1.132 |
 | Unbounded memory MCP server fix | Виправлено необмежене зростання пам'яті (10GB+ RSS) коли stdio MCP server пише non-protocol data в stdout | 2.1.132 |
 | Uninitialized native build exit | Виправлено падіння нативного build при закритті терміналу або SSH disconnect mid-session | 2.1.132 |
+| Improved focus mode behavior | Покращено поведінку focus mode | 2.1.133 |
+| Memory usage warm-spare workers | Звільнення warm-spare background workers під memory pressure | 2.1.133 |
+| Parallel sessions 401 fix | Виправлено зупинку всіх паралельних сесій з 401 після refresh-token race що стирав shared credentials | 2.1.133 |
+| ECOMPROMISED file lock fix | Виправлено unhandled rejection (`ECOMPROMISED`) коли history або session-log file lock компрометується clock skew або повільним диском | 2.1.133 |
+| Esc compaction notification fix | Виправлено spurious "Error compacting conversation" notification при натисканні Esc під час compaction | 2.1.133 |
+| `/effort` cross-session fix | Виправлено `/effort` в одній сесії що неочікувано змінював effort level інших concurrent сесій, та related issue де IDE effort change міг бути silently dropped | 2.1.133 |
+| Login loop concurrent credential fix | Виправлено рідкісний login loop де concurrent credential write перезаписував freshly-rotated OAuth token | 2.1.136 |
+| API 400 redacted thinking fix | Виправлено API помилку (400) коли extended thinking emit redacted thinking block після tool call | 2.1.136 |
+| Visual consistency slash dialogs | Покращено візуальну узгодженість slash command dialogs: стандартизовані footer hints, dialog spacing, arrow-key styling; dialog frame з'являється одразу | 2.1.136 |
+| Colors bash/markdown fix | Виправлено кольори що з'являлися на неправильних позиціях в bash output та markdown code blocks | 2.1.136 |
+| ReasonML diffs "undefined" fix | Виправлено ReasonML diffs що рендерили пошкоджені "undefined" text artifacts на word-diff boundaries | 2.1.136 |
+| `@` file picker mid-session fix | Виправлено `@` file picker що не знаходив файли створені mid-session в small non-git директоріях | 2.1.136 |
+| `@` file picker >100 entries fix | Виправлено `@`-mention file picker що не знаходив файли в директоріях з більш ніж 100 entries | 2.1.136 |
+| Failed tool calls fullscreen expand fix | Виправлено failed tool calls що не були click-to-expand в fullscreen mode коли output truncated | 2.1.136 |
+| Welcome banner CJK ellipsis fix | Виправлено welcome banner ellipsis що спричиняв column overflow на CJK терміналах | 2.1.136 |
+| Renderer crash collapsibility fix | Виправлено краш renderer коли tool's collapsibility classification змінюється mid-session | 2.1.136 |
+| Trailing whitespace copied output fix | Виправлено trailing whitespace в copied terminal output під час streaming | 2.1.136 |
+| Tool error truncation negative count fix | Виправлено truncation marker що показував negative count для surrogate-pair strings | 2.1.136 |
+| Stray leading space wrapped text fix | Виправлено stray leading space на другому рядку wrapped text на column boundary | 2.1.136 |
+| "Jump to bottom" CJK artifacts fix | Виправлено "Jump to bottom" overlay що залишав color artifacts на CJK characters в fullscreen mode | 2.1.136 |
+| Wide markdown tables stale render fix | Виправлено wide markdown tables що залишали stale bordered render в terminal scrollback під час streaming | 2.1.136 |
+| Pasted text auto-truncation fix | Виправлено pasted text що silently drop-ався коли long prompt з pasted-text placeholder auto-truncate-вався | 2.1.136 |
+| Auto-follow re-engaging fix | Виправлено scrolling to bottom що re-engage-вав auto-follow з `autoScrollEnabled: false` | 2.1.136 |
+| Prompt suggestions auto-submit fix | Виправлено prompt suggestions що auto-submit-валися Enter на empty input замість вимоги Tab або arrow для accept | 2.1.136 |

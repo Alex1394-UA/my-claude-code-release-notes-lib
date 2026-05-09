@@ -86,3 +86,7 @@
 | Caps Lock voice mode error | Голосовий режим: keybindings прив'язані до Caps Lock тепер показують помилку, оскільки термінали не доставляють Caps Lock як key event | 2.1.122 |
 | `Ctrl+L` prompt input preserved | `Ctrl+L` більше не очищає prompt input — тепер лише forces screen redraw, відповідаючи readline behavior | 2.1.126 |
 | Vim `Space` NORMAL mode | `Space` в vim NORMAL mode рухає курсор вправо, як у стандартному vi/vim | 2.1.128 |
+| Esc compaction notification fix | Виправлено spurious "Error compacting conversation" notification при натисканні Esc під час compaction | 2.1.133 |
+| Backspace/Ctrl+Backspace Ctrl+G fix | Виправлено swapping Backspace та Ctrl+Backspace після використання Ctrl+G для зовнішнього редактора на терміналах з persistent extended-key modes | 2.1.136 |
+| Esc dialogs dismiss fix | Виправлено Esc що не dismissing dialogs в `/install-github-app`, `/desktop`, `/resume`, та `/web-setup` | 2.1.136 |
+| Keyboard shortcut hints keybindings.json fix | Виправлено keyboard shortcut hints що не reflecting rebound keys з `keybindings.json` | 2.1.136 |
