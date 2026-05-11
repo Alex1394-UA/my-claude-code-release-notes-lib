@@ -93,3 +93,9 @@
 | Plugin uninstall case-insensitive fix | Виправлено plugin uninstall та enable/disable що не matching slugs case-insensitively | 2.1.136 |
 | Plugin slash commands spaces fix | Виправлено plugin slash commands з spaces (напр. `/myplugin review`) що не resolving до namespaced form | 2.1.136 |
 | Marketplace removal key change | Змінено plugin marketplace removal key на `d` (matching delete elsewhere) замість `r` що collide-вав з retry | 2.1.136 |
+| `claude plugin details <name>` | Показ component inventory та projected per-session token cost плагіна | 2.1.139 |
+| `claude plugin install <name>@<marketplace>` auto-refresh | Auto-refresh marketplace та retry перед reporting plugin as not found | 2.1.139 |
+| `/plugin` installed details hooks/MCP | `/plugin` installed-plugin details тепер показують hook event names та MCP server names | 2.1.139 |
+| Plugin details marketplace key fix | Виправлено plugin details failing коли marketplace key differs від manifest name | 2.1.139 |
+| Plugin dependency resolution stale count fix | Виправлено plugin dependency resolution що leaving stale count коли manifest name differs від source identifier | 2.1.139 |
+| `claude plugin update` symlinks fix | Виправлено `claude plugin update` що не preserving cross-plugin symlinks всередині marketplace | 2.1.139 |

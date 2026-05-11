@@ -104,6 +104,8 @@
 | `CLAUDE_CODE_ENABLE_FEEDBACK_SURVEY_FOR_OTEL` | Повторне ввімкнення session quality survey для enterprises що capture responses через OpenTelemetry | 2.1.136 |
 | `CLAUDE_ENV_FILE` stale fix | Виправлено env vars з `CLAUDE_ENV_FILE` SessionStart hooks що stale-ілися після `/resume` або `/clear` | 2.1.136 |
 | IDE shell-integration lock files `CLAUDE_CONFIG_DIR` fix | Виправлено IDE shell-integration lock files що не поважали `CLAUDE_CONFIG_DIR` | 2.1.136 |
+| `CLAUDE_PROJECT_DIR` (MCP) | MCP stdio servers тепер отримують `CLAUDE_PROJECT_DIR` в environment; plugin configs можуть reference `${CLAUDE_PROJECT_DIR}` в commands | 2.1.139 |
+| `claude_code.active_time.total` `--print` fix | Виправлено OpenTelemetry metric `claude_code.active_time.total` що не емітився в `--print` mode | 2.1.139 |
 
 ## Шляхи
 

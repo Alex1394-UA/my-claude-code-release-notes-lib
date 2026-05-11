@@ -93,6 +93,12 @@
 | MCP OAuth refresh tokens concurrent fix | Виправлено втрату MCP OAuth refresh tokens при concurrent refresh — користувачі з кількома remote MCP servers більше не потребують daily re-authentication | 2.1.136 |
 | `/mcp` server list scrolling fix | Виправлено `/mcp` server list що не скролився коли servers більше ніж вміщує термінал | 2.1.136 |
 | MCP tool results content blocks fix | Виправлено MCP tool results що були invisible коли server повертає content blocks | 2.1.136 |
+| MCP stdio `CLAUDE_PROJECT_DIR` | MCP stdio servers тепер отримують `CLAUDE_PROJECT_DIR` в environment; plugin configs можуть reference `${CLAUDE_PROJECT_DIR}` | 2.1.139 |
+| `/mcp` Reconnect `.mcp.json` edits | `/mcp` Reconnect тепер picks up `.mcp.json` edits без restart, та показує HTTP status та URL при reconnect failure | 2.1.139 |
+| Remote MCP reconnect retry all users | Remote MCP server reconnect retry на transient failures тепер увімкнено для всіх користувачів | 2.1.139 |
+| HTTP/SSE MCP non-protocol data cap | Виправлено unbounded memory growth коли HTTP/SSE MCP server streams non-protocol data — response bodies тепер capped at 16 MB per SSE frame | 2.1.139 |
+| Silent exit 1 unwritable cache fix | Виправлено silent `exit 1` з 10+ MCP servers та unwritable cache directory — error message тепер включає underlying cause | 2.1.139 |
+| MCP resources disconnected servers fix | Виправлено MCP resources від disconnected servers що lingering в `@server:` autocomplete | 2.1.139 |
 
 ## Області видимості
 

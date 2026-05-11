@@ -1,7 +1,7 @@
 # Knowledge Base Metadata
 
-last_processed: 2.1.138
-last_updated: 2026-05-09
+last_processed: 2.1.139
+last_updated: 2026-05-12
 seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 
 ## Відстежувані невідповідності (Release Notes vs Reality)
@@ -26,3 +26,4 @@ seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 | 2026-05-04 | 2.1.122–2.1.126 | all 12 categories | ~50 записів додано, 0 депрекацій, 1 виправлена відома проблема |
 | 2026-05-07 | 2.1.128–2.1.132 | core, cli, env-vars, mcp, plugins, settings, windows, keybindings, sdk, vscode-ide | ~75 записів додано, 0 депрекацій |
 | 2026-05-09 | 2.1.133, 2.1.136–2.1.138 | all 12 categories | ~80 записів додано, 0 депрекацій |
+| 2026-05-12 | 2.1.139 | all 12 categories | ~50 записів додано, 0 депрекацій |

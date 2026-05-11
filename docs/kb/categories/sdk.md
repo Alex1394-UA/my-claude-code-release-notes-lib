@@ -71,3 +71,5 @@
 | `parentSettingsBehavior` admin key | Admin-tier key (`'first-wins' | 'merge'`) що дозволяє SDK managed settings (parent tier) брати участь у policy merge | 2.1.133 |
 | RC stop/interrupt full cancel fix | Виправлено Remote Control stop/interrupt з claude.ai що не fully cancel-вав CLI session — queued messages більше не застряють | 2.1.133 |
 | MCP servers `/clear` SDK fix | Виправлено MCP servers що silently disappearing після `/clear` в Agent SDK | 2.1.136 |
+| Subagent `x-claude-code-agent-id` headers | API requests від subagents тепер несуть `x-claude-code-agent-id` / `x-claude-code-parent-agent-id` headers; OTEL spans включають `agent_id` / `parent_agent_id` | 2.1.139 |
+| RC/schedule/connectors disabled with API key | Remote Control, `/schedule`, claude.ai connectors та notification preferences вимкнені коли `ANTHROPIC_API_KEY` / `apiKeyHelper` / `ANTHROPIC_AUTH_TOKEN` встановлено | 2.1.139 |

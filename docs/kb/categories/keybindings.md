@@ -90,3 +90,7 @@
 | Backspace/Ctrl+Backspace Ctrl+G fix | Виправлено swapping Backspace та Ctrl+Backspace після використання Ctrl+G для зовнішнього редактора на терміналах з persistent extended-key modes | 2.1.136 |
 | Esc dialogs dismiss fix | Виправлено Esc що не dismissing dialogs в `/install-github-app`, `/desktop`, `/resume`, та `/web-setup` | 2.1.136 |
 | Keyboard shortcut hints keybindings.json fix | Виправлено keyboard shortcut hints що не reflecting rebound keys з `keybindings.json` | 2.1.136 |
+| `/scroll-speed` command | Налаштування швидкості mouse wheel scroll з live preview | 2.1.139 |
+| Transcript view navigation | `?` для keyboard shortcuts, `{`/`}` jump між user prompts, `v` toggle shortcut panel | 2.1.139 |
+| Transcript view shortcuts mouse click fix | Виправлено transcript view letter shortcuts що не працювали після mouse click | 2.1.139 |
+| Keybindings cmd/super/win unparseable fix | Виправлено keybindings з лише cmd/super/win modifier що flagged як unparseable | 2.1.139 |

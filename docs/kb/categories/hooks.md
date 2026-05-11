@@ -88,3 +88,6 @@
 | Hooks `effort.level` input | Хуки тепер отримують active effort level через `effort.level` JSON input field та `$CLAUDE_EFFORT` env var | 2.1.133 |
 | `CLAUDE_ENV_FILE` SessionStart stale fix | Виправлено env vars з `CLAUDE_ENV_FILE` SessionStart hooks що stale-ілися після `/resume` або `/clear` | 2.1.136 |
 | Plugin hooks cache cleanup fix | Виправлено plugin `Stop`/`UserPromptSubmit` hooks що failing коли cache cleanup deletes version що ще в use running session | 2.1.136 |
+| Hook `args: string[]` (exec form) | Поле `args` що spawn команду напряму без shell — path placeholders не потребують quoting | 2.1.139 |
+| Hook `continueOnBlock` | Config option для `PostToolUse` — встановити `true` для передачі rejection reason назад Claude та продовження turn | 2.1.139 |
+| Hook terminal corruption fix | Виправлено hook що пише в terminal та міг corrupt on-screen interactive prompt; hooks тепер run без terminal access | 2.1.139 |

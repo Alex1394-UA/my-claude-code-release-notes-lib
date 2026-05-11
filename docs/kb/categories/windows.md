@@ -165,3 +165,5 @@
 | WSL2 image paste PowerShell fallback | WSL2: image paste з Windows clipboard працює через PowerShell fallback коли xclip/wl-paste не може прочитати image data | 2.1.136 |
 | VS Code extension Windows activation fix [Win] | Виправлено extension failing to activate на Windows | 2.1.137 |
 | `/clear` VSCode fix [VSCode/Win] | Виправлено `/clear` що не очищував conversation context та displayed transcript у VS Code extension | 2.1.129 |
+| Scroll behavior Win Terminal + VS Code background fix [Win] | Виправлено scroll behavior в Windows Terminal та VS Code при attached до background sessions | 2.1.139 |
+| Grep drive-letter paths fix [Win] | Виправлено Grep results що не relativizing Windows drive-letter paths та count mode reporting wrong totals для single-file paths | 2.1.139 |

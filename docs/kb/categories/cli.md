@@ -81,6 +81,9 @@
 | `/settings` language Escape fix | Виправлено `/settings` language change що revert-увався на Escape після confirming | 2.1.136 |
 | `/terminal-setup` autocomplete fix | Виправлено `/terminal-setup` що appearing в autocomplete лише на exact name match замість partial prefixes | 2.1.136 |
 | Worktree collision error improvement | Покращено error message при `--worktree` collision з existing або stale worktree | 2.1.136 |
+| `claude agents` agent view | [Research Preview] Єдиний список всіх сесій — running, blocked on you, або done | 2.1.139 |
+| `claude plugin details <name>` | Показ component inventory та projected per-session token cost плагіна | 2.1.139 |
+| `claude plugin install <name>@<marketplace>` auto-refresh | Auto-refresh marketplace та retry перед reporting plugin as not found | 2.1.139 |
 
 ## Запуск та аутентифікація
 

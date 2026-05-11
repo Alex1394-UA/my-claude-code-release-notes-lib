@@ -53,6 +53,9 @@
 | MCP servers `/clear` VS Code fix | Виправлено MCP servers що silently disappearing після `/clear` в VS Code extension та JetBrains plugin | 2.1.136 |
 | IDE shell-integration `CLAUDE_CONFIG_DIR` fix | Виправлено IDE shell-integration lock files що не поважали `CLAUDE_CONFIG_DIR` | 2.1.136 |
 | VS Code extension Windows fix [VSCode] | Виправлено extension failing to activate на Windows | 2.1.137 |
+| Cmd/Ctrl+Shift+T reopen closed tab [VSCode] | Натиснути Cmd/Ctrl+Shift+T для reopen найбільш нещодавно закритої session tab; configurable через `claudeCode.enableReopenClosedSessionShortcut` | 2.1.139 |
+| Mouse wheel scrolling Cursor/VS Code fix | Виправлено mouse wheel scrolling speed в Cursor та VS Code 1.92–1.104; trackpad steady rate, mouse wheel ~3 lines per notch | 2.1.139 |
+| Scroll behavior Win Terminal + VS Code background fix | Виправлено scroll behavior в Windows Terminal та VS Code при attached до background sessions | 2.1.139 |
 
 ## Win32 ARM64
 

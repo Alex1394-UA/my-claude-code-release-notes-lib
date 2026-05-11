@@ -498,3 +498,26 @@
 | Pasted text auto-truncation fix | Виправлено pasted text що silently drop-ався коли long prompt з pasted-text placeholder auto-truncate-вався | 2.1.136 |
 | Auto-follow re-engaging fix | Виправлено scrolling to bottom що re-engage-вав auto-follow з `autoScrollEnabled: false` | 2.1.136 |
 | Prompt suggestions auto-submit fix | Виправлено prompt suggestions що auto-submit-валися Enter на empty input замість вимоги Tab або arrow для accept | 2.1.136 |
+| Agent view (Research Preview) | Єдиний список всіх Claude Code сесій — running, blocked on you, або done. Запуск через `claude agents` | 2.1.139 |
+| `/goal` command | Встановлення completion condition — Claude продовжує працювати across turns поки goal не досягнуто. Працює в interactive, `-p`, та Remote Control. Показує live elapsed/turns/tokens overlay panel | 2.1.139 |
+| `/scroll-speed` command | Налаштування швидкості mouse wheel scroll з live preview | 2.1.139 |
+| Compaction preserves sensitive instructions | Compaction prompt тепер просить модель зберегти sensitive user instructions | 2.1.139 |
+| `/context all` per-skill token estimates | Токен-оцінки per-skill тепер враховують model's tokenizer та показують rounded values | 2.1.139 |
+| `/context` plugin name | `/context` тепер показує ім'я плагіна що надає plugin-sourced skill | 2.1.139 |
+| RC/schedule/connectors disabled with API key | Remote Control, `/schedule`, claude.ai MCP connectors та notification preferences вимкнені коли `ANTHROPIC_API_KEY` / `apiKeyHelper` / `ANTHROPIC_AUTH_TOKEN` встановлено, навіть при наявності Claude.ai login | 2.1.139 |
+| `forceRemoteSettingsRefresh` deadlock fix | Виправлено deadlock де expired credentials + `forceRemoteSettingsRefresh` блокували `claude auth login`/`logout`/`status` без можливості recovery | 2.1.139 |
+| `/model` picker Default overrides fix | Виправлено `/model` picker "Default" row що не reflecting `ANTHROPIC_DEFAULT_OPUS_MODEL`/`ANTHROPIC_DEFAULT_SONNET_MODEL` overrides | 2.1.139 |
+| Stream idle timeout spurious fix | Виправлено spurious "stream idle timeout" 5 хвилин після завершення response — watchdog timer не clearing на stream cancellation | 2.1.139 |
+| Typing cursor dialogs fix | Виправлено typing cursor blinking на tab names, list pointers та select rows в dialogs | 2.1.139 |
+| Bash-mode up-arrow history fix | Виправлено Bash-mode up-arrow history що repeating first entry та clobbering in-progress draft | 2.1.139 |
+| Multiple images paste/drop fix | Виправлено вставку або drop кількох зображень — вставлялося лише останнє | 2.1.139 |
+| Hyperlinks dark themes fix | Виправлено hyperlinks з unreadable dark navy на dark themes — тепер adapt до active theme | 2.1.139 |
+| Model picker redundant "Current model" 3P fix | Виправлено model picker що показував redundant "Current model" row для third-party users чи model set на `opus` alias | 2.1.139 |
+| Legacy Opus PAYG 3P fix | Виправлено legacy Opus picker entry на PAYG 3P providers що resolving до тієї ж моделі що і default entry | 2.1.139 |
+| Mouse wheel scrolling Cursor/VS Code fix | Виправлено mouse wheel scrolling speed в Cursor та VS Code 1.92–1.104; trackpad тепер scrolls steady rate, mouse wheel ~3 lines per notch | 2.1.139 |
+| Two-file diff snippets truncation fix | Виправлено two-file diff snippets що over-reporting кількість truncated lines на один | 2.1.139 |
+| Border-embedded text CJK/emoji fix | Виправлено overflow border-embedded text на CJK/emoji через visual cell width miscalculation | 2.1.139 |
+| Fuzzy-match emoji/astral fix | Виправлено fuzzy-match highlighting що splitting emoji та astral-plane characters mid-pair | 2.1.139 |
+| ProgressBar fractional cell fix | Виправлено ProgressBar що rendering full block для almost-full fractional cell | 2.1.139 |
+| Task polling resurrected fix | Виправлено task polling та `fs.watch` що resurrected коли останній subscriber leave-вав під час in-flight fetch | 2.1.139 |
+| Insights Time-of-Day skewing fix | Виправлено Insights Time-of-Day chart skewing коли session має unparseable timestamp | 2.1.139 |

@@ -151,3 +151,7 @@
 | `Edit`/`Write` drive root fix | Виправлено allow правила scoped до `C:\` або `/` що завжди промптили замість match | 2.1.133 |
 | Plan mode Edit allow rule fix | Виправлено plan mode що не блокував file writes коли matching `Edit(...)` allow rule існує | 2.1.136 |
 | Bash permission parser diagnostic fix | Виправлено Bash permission prompts що показували internal parser diagnostic замість user-readable explanation | 2.1.136 |
+| `forceRemoteSettingsRefresh` deadlock fix | Виправлено deadlock де expired credentials + `forceRemoteSettingsRefresh` блокували `claude auth login`/`logout`/`status` без можливості recovery | 2.1.139 |
+| `autoAllowBashIfSandboxed` expansions fix | Виправлено `autoAllowBashIfSandboxed` що не auto-approving commands з shell expansions як `$VAR` та `$(cmd)` | 2.1.139 |
+| `Skill(name *)` wildcard fix | Виправлено `Skill(name *)` permission rules — wildcard form тепер працює як prefix match, matching `Bash(ls *)` behavior | 2.1.139 |
+| Settings symlink hot-reload fix | Виправлено settings hot-reload що не detecting edits до symlinked `~/.claude/settings.json` | 2.1.139 |
