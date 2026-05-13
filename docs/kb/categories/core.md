@@ -521,3 +521,9 @@
 | ProgressBar fractional cell fix | Виправлено ProgressBar що rendering full block для almost-full fractional cell | 2.1.139 |
 | Task polling resurrected fix | Виправлено task polling та `fs.watch` що resurrected коли останній subscriber leave-вав під час in-flight fetch | 2.1.139 |
 | Insights Time-of-Day skewing fix | Виправлено Insights Time-of-Day chart skewing коли session має unparseable timestamp | 2.1.139 |
+| Agent color palette update | Оновлено кольорову палітру агентів | 2.1.140 |
+| `/goal` silent hang fix | Виправлено `/goal` що silently hanging коли `disableAllHooks` або `allowManagedHooksOnly` встановлено — тепер показує clear message замість indicator що never resolves | 2.1.140 |
+| `/loop` redundant wakeups fix | Виправлено `/loop` scheduling redundant wakeups для poll за background tasks що вже notify on completion | 2.1.140 |
+| Windows missing executable event-loop stall fix [Win] | Виправлено recurring event-loop stall на Windows коли missing executable (напр. `gh`) triggering synchronous `where.exe` re-spawns на кожному check | 2.1.140 |
+| `Read` tool offset validation fix | Виправлено `Read` tool calls що failing validation коли `offset` передається як whitespace-padded або `+`-prefixed string | 2.1.140 |
+| Terminal cursor focus loss fix | Виправлено native terminal cursor що не staying на input caret коли terminal втрачає focus | 2.1.140 |

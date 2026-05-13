@@ -40,6 +40,7 @@
 | Agent view (Research Preview) | Єдиний список всіх Claude Code сесій через `claude agents` | 2.1.139 |
 | `Skill(name *)` wildcard fix | Виправлено `Skill(name *)` permission rules — wildcard form тепер працює як prefix match | 2.1.139 |
 | Skill argument regex metacharacters fix | Виправлено skill argument names з regex metacharacters що breaking argument substitution | 2.1.139 |
+| Agent tool `subagent_type` matching improvement | `subagent_type` matching тепер case- та separator-insensitive (напр. `"Code Reviewer"` resolves до `code-reviewer`) | 2.1.140 |
 | Subagents skill discovery fix | Виправлено subagents що не discovering project, user, або plugin skills через Skill tool | 2.1.133 |
 | Plugin.json `skills` hiding default fix | Виправлено `skills` entry в `plugin.json` що ховав plugin's default `skills/` directory; listing file path тепер показує error замість silent failure | 2.1.136 |
 | `AskUserQuestion` multi-select fix | Виправлено `AskUserQuestion` що discarding multi-select answers коли supplied як array | 2.1.136 |

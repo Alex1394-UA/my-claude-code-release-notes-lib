@@ -84,6 +84,8 @@
 | `claude agents` agent view | [Research Preview] Єдиний список всіх сесій — running, blocked on you, або done | 2.1.139 |
 | `claude plugin details <name>` | Показ component inventory та projected per-session token cost плагіна | 2.1.139 |
 | `claude plugin install <name>@<marketplace>` auto-refresh | Auto-refresh marketplace та retry перед reporting plugin as not found | 2.1.139 |
+| `claude --bg` connection drop fix | Виправлено `claude --bg` failing з "connection dropped mid-request" коли background service був about to idle-exit | 2.1.140 |
+| Background service startup enterprise fix | Виправлено background service startup failing на машинах з enterprise endpoint security шляхом allowing more time | 2.1.140 |
 
 ## Запуск та аутентифікація
 

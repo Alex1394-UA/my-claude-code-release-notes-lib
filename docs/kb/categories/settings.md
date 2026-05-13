@@ -155,3 +155,6 @@
 | `autoAllowBashIfSandboxed` expansions fix | Виправлено `autoAllowBashIfSandboxed` що не auto-approving commands з shell expansions як `$VAR` та `$(cmd)` | 2.1.139 |
 | `Skill(name *)` wildcard fix | Виправлено `Skill(name *)` permission rules — wildcard form тепер працює як prefix match, matching `Bash(ls *)` behavior | 2.1.139 |
 | Settings symlink hot-reload fix | Виправлено settings hot-reload що не detecting edits до symlinked `~/.claude/settings.json` | 2.1.139 |
+| Settings symlink hot-reload regression fix | Виправлено regression в settings hot-reload де symlinked settings files causing misattributed change events та spurious `ConfigChange` hooks | 2.1.140 |
+| Remote managed settings 401 retry fix | Виправлено remote managed settings що не retrying на 401 — тепер retries один раз з force-refreshed token | 2.1.140 |
+| `extraKnownMarketplaces` persistence fix | Виправлено managed `extraKnownMarketplaces` auto-update policy що не persisting до `known_marketplaces.json` | 2.1.140 |

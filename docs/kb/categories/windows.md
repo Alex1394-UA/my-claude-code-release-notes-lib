@@ -167,3 +167,4 @@
 | `/clear` VSCode fix [VSCode/Win] | Виправлено `/clear` що не очищував conversation context та displayed transcript у VS Code extension | 2.1.129 |
 | Scroll behavior Win Terminal + VS Code background fix [Win] | Виправлено scroll behavior в Windows Terminal та VS Code при attached до background sessions | 2.1.139 |
 | Grep drive-letter paths fix [Win] | Виправлено Grep results що не relativizing Windows drive-letter paths та count mode reporting wrong totals для single-file paths | 2.1.139 |
+| Missing executable event-loop stall fix [Win] | Виправлено recurring event-loop stall на Windows коли missing executable (напр. `gh`) triggering synchronous `where.exe` re-spawns на кожному check | 2.1.140 |

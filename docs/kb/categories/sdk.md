@@ -73,3 +73,5 @@
 | MCP servers `/clear` SDK fix | Виправлено MCP servers що silently disappearing після `/clear` в Agent SDK | 2.1.136 |
 | Subagent `x-claude-code-agent-id` headers | API requests від subagents тепер несуть `x-claude-code-agent-id` / `x-claude-code-parent-agent-id` headers; OTEL spans включають `agent_id` / `parent_agent_id` | 2.1.139 |
 | RC/schedule/connectors disabled with API key | Remote Control, `/schedule`, claude.ai connectors та notification preferences вимкнені коли `ANTHROPIC_API_KEY` / `apiKeyHelper` / `ANTHROPIC_AUTH_TOKEN` встановлено | 2.1.139 |
+| `claude --bg` connection drop fix | Виправлено `claude --bg` failing з "connection dropped mid-request" коли background service був about to idle-exit | 2.1.140 |
+| Remote managed settings 401 retry fix | Виправлено remote managed settings що не retrying на 401 — тепер retries один раз з force-refreshed token | 2.1.140 |

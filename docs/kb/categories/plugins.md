@@ -99,3 +99,5 @@
 | Plugin details marketplace key fix | Виправлено plugin details failing коли marketplace key differs від manifest name | 2.1.139 |
 | Plugin dependency resolution stale count fix | Виправлено plugin dependency resolution що leaving stale count коли manifest name differs від source identifier | 2.1.139 |
 | `claude plugin update` symlinks fix | Виправлено `claude plugin update` що не preserving cross-plugin symlinks всередині marketplace | 2.1.139 |
+| `extraKnownMarketplaces` persistence fix | Виправлено managed `extraKnownMarketplaces` auto-update policy що не persisting до `known_marketplaces.json` | 2.1.140 |
+| Plugin default component folder warning | Плагіни тепер warn коли default component folder (напр. `commands/`) silently ignored через `plugin.json` key; shown в `/doctor`, `claude plugin list`, `/plugin` | 2.1.140 |
