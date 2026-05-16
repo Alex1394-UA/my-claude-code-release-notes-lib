@@ -75,3 +75,9 @@
 | RC/schedule/connectors disabled with API key | Remote Control, `/schedule`, claude.ai connectors та notification preferences вимкнені коли `ANTHROPIC_API_KEY` / `apiKeyHelper` / `ANTHROPIC_AUTH_TOKEN` встановлено | 2.1.139 |
 | `claude --bg` connection drop fix | Виправлено `claude --bg` failing з "connection dropped mid-request" коли background service був about to idle-exit | 2.1.140 |
 | Remote managed settings 401 retry fix | Виправлено remote managed settings що не retrying на 401 — тепер retries один раз з force-refreshed token | 2.1.140 |
+| Background side-queries Haiku fallback fix | Виправлено background side-queries що sending unavailable Haiku model ID на Bedrock/Vertex/Foundry/gateway — тепер fallback to main-loop model | 2.1.141 |
+| Background jobs BASE_URL auto-naming fix | Виправлено background jobs на custom `ANTHROPIC_BASE_URL` gateway що не getting auto-named — namer тепер uses main model | 2.1.141 |
+| RC MCP connectors 401 token rotation fix | Виправлено Remote Control MCP connectors всі failing з 401 коли worker session token rotated mid-session | 2.1.141 |
+| RC stale token auto-re-enroll fix | Виправлено Remote Control що automatically re-enrolling trusted device коли server rejects stale token, замість looping through `/login` | 2.1.141 |
+| Early OTel spans SDK/headless fix | Виправлено early OTel spans що silently dropped в SDK/headless mode з beta tracing enabled | 2.1.141 |
+| SDK native binary glibc/musl fix | Виправлено SDK "Claude Code native binary not found" на Linux коли обидва glibc та musl platform packages installed | 2.1.141 |

@@ -41,6 +41,9 @@
 | `Skill(name *)` wildcard fix | Виправлено `Skill(name *)` permission rules — wildcard form тепер працює як prefix match | 2.1.139 |
 | Skill argument regex metacharacters fix | Виправлено skill argument names з regex metacharacters що breaking argument substitution | 2.1.139 |
 | Agent tool `subagent_type` matching improvement | `subagent_type` matching тепер case- та separator-insensitive (напр. `"Code Reviewer"` resolves до `code-reviewer`) | 2.1.140 |
+| `claude agents --cwd <path>` | Scope session list до specific directory | 2.1.141 |
+| `claude agents` finished+background shell | Агенти що finished work але leave background shell running тепер move to Completed замість Working | 2.1.141 |
+| `x` on subagent prompt typing fix | Виправлено `x` на selected subagent в agent panel що typing into prompt замість stopping agent | 2.1.141 |
 | Subagents skill discovery fix | Виправлено subagents що не discovering project, user, або plugin skills через Skill tool | 2.1.133 |
 | Plugin.json `skills` hiding default fix | Виправлено `skills` entry в `plugin.json` що ховав plugin's default `skills/` directory; listing file path тепер показує error замість silent failure | 2.1.136 |
 | `AskUserQuestion` multi-select fix | Виправлено `AskUserQuestion` що discarding multi-select answers коли supplied як array | 2.1.136 |

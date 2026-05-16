@@ -527,3 +527,27 @@
 | Windows missing executable event-loop stall fix [Win] | Виправлено recurring event-loop stall на Windows коли missing executable (напр. `gh`) triggering synchronous `where.exe` re-spawns на кожному check | 2.1.140 |
 | `Read` tool offset validation fix | Виправлено `Read` tool calls що failing validation коли `offset` передається як whitespace-padded або `+`-prefixed string | 2.1.140 |
 | Terminal cursor focus loss fix | Виправлено native terminal cursor що не staying на input caret коли terminal втрачає focus | 2.1.140 |
+| `/feedback` recent sessions | `/feedback` тепер може включати recent sessions (останні 24 години або 7 днів) для issues що spanning більше за поточну сесію | 2.1.141 |
+| Rewind "Summarize up to here" | Rewind menu: додано "Summarize up to here" для compress раннього контексту з збереженням recent turns | 2.1.141 |
+| Auto mode `permissions.ask` explanation | Auto mode permission dialog тепер explains коли `permissions.ask` rule caused prompt | 2.1.141 |
+| IDE diff view restored on permission prompts | Відновлено опцію "view diff in your IDE" на file-edit permission prompts коли IDE підключено | 2.1.141 |
+| Background agents preserve permission mode | Background agents запущені через `/bg` або `←←` тепер preserve поточний permission mode замість revert to default | 2.1.141 |
+| Spinner amber 10s | Покращено spinner feedback під час довгого thinking — spinner тепер warm to amber after 10s для signal що Claude працює | 2.1.141 |
+| `/model` autocompact cross-session fix | Виправлено `/model` в одній сесії що silently changing autocompact threshold в інших concurrent sessions | 2.1.141 |
+| Permission mode switch auto-dismiss fix | Виправлено переключення permission mode поки tool-permission prompt відкритий — новий setting тепер auto-dismiss prompt коли permit tool | 2.1.141 |
+| Enter permission dialog prompt submit fix | Виправлено Enter поки permission/dialog prompt відкритий що also submitting text в input box | 2.1.141 |
+| Markdown tables cell wrapping fix | Виправлено markdown tables з cell wrapping що falling back до vertical key-value layout замість bordered grid (регресія з 2.1.136) | 2.1.141 |
+| Cancelled prompts Up-arrow history fix | Виправлено cancelled prompts що removed from Up-arrow history коли auto-restored в input box, та Ctrl+C/Esc cancelled prompts dropped | 2.1.141 |
+| Ctrl+C vim INSERT/VISUAL interrupt fix | Виправлено Ctrl+C що не interrupting running turn поки в vim INSERT/VISUAL mode | 2.1.141 |
+| Prompt suggestions output style fix | Виправлено prompt suggestions що silently disabled коли output style configured | 2.1.141 |
+| AskUserQuestion last line hiding fix | Виправлено AskUserQuestion popup що hiding last line of preceding chat content | 2.1.141 |
+| Web Search "Did 0 searches" fix | Виправлено Web Search status що showing "Did 0 searches" коли searches returned errors | 2.1.141 |
+| Multi-line statusline corruption fix | Виправлено multi-line statusline output що dropping або corrupting rows коли line exceeds terminal width | 2.1.141 |
+| Light-ansi theme diff context fix | Виправлено light-ansi theme що використовував invisible white для diff context lines на light backgrounds — тепер black | 2.1.141 |
+| Error overlay minified source fix | Виправлено error overlay що dumping minified bundle source що hid original error message | 2.1.141 |
+| Feedback survey Enter submit fix | Виправлено Enter після typing feedback survey rating digit що submitting як chat message замість rating | 2.1.141 |
+| `x` on subagent types into prompt fix | Виправлено `x` на selected subagent в agent panel що typing into prompt замість stopping agent | 2.1.141 |
+| Session title plugin monitor fix | Виправлено session title що derived from plugin monitor notifications перед first user prompt | 2.1.141 |
+| Welcome banner third-party provider name | Виправлено welcome banner що showing "API Usage Billing" на Bedrock/Vertex/Foundry/3P — тепер shows provider name | 2.1.141 |
+| `/feedback` redaction invalid JSON fix | Виправлено redaction в `/feedback` bundles що producing invalid JSON для quoted values як session IDs | 2.1.141 |
+| Early analytics events dropped fix | Виправлено early analytics events що silently dropped коли fired before logger initialization | 2.1.141 |

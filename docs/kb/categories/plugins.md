@@ -100,4 +100,8 @@
 | Plugin dependency resolution stale count fix | Виправлено plugin dependency resolution що leaving stale count коли manifest name differs від source identifier | 2.1.139 |
 | `claude plugin update` symlinks fix | Виправлено `claude plugin update` що не preserving cross-plugin symlinks всередині marketplace | 2.1.139 |
 | `extraKnownMarketplaces` persistence fix | Виправлено managed `extraKnownMarketplaces` auto-update policy що не persisting до `known_marketplaces.json` | 2.1.140 |
-| Plugin default component folder warning | Плагіни тепер warn коли default component folder (напр. `commands/`) silently ignored через `plugin.json` key; shown в `/doctor`, `claude plugin list`, `/plugin` | 2.1.140 |
+| Plugin default component folder warning | Плагіни тепер warn коли default component folder (напр. `commands/`) silently ignored через `plugin.json` key; shown in `/doctor`, `claude plugin list`, `/plugin` | 2.1.140 |
+| Plugin menu navigation improvements | `→`/Tab switch tabs, `↑` moves to tab strip, tab headers та search box clickable в fullscreen mode | 2.1.141 |
+| `claude plugin install` ref+sha fix | Виправлено `claude plugin install` failing для plugins чи marketplace `ref` більше не існує upstream коли `sha` також pinned | 2.1.141 |
+| Plugin details 0 MCP servers .mcp.json fix | Виправлено plugin details pane що showing 0 MCP servers для plugins що declare через `.mcp.json` | 2.1.141 |
+| Plugin MCP config variables fix | Plugin MCP servers з unset config variables тепер show "config issue" message з fix-it hint замість generic connection failure; malformed `.mcp.json` entries більше не drop інші MCP servers | 2.1.141 |

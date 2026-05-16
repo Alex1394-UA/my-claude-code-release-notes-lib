@@ -168,3 +168,5 @@
 | Scroll behavior Win Terminal + VS Code background fix [Win] | Виправлено scroll behavior в Windows Terminal та VS Code при attached до background sessions | 2.1.139 |
 | Grep drive-letter paths fix [Win] | Виправлено Grep results що не relativizing Windows drive-letter paths та count mode reporting wrong totals для single-file paths | 2.1.139 |
 | Missing executable event-loop stall fix [Win] | Виправлено recurring event-loop stall на Windows коли missing executable (напр. `gh`) triggering synchronous `where.exe` re-spawns на кожному check | 2.1.140 |
+| `claude daemon status` Windows pipe fix [Win] | Виправлено `claude daemon status` та `/doctor` на Windows що throwing коли daemon pipe key file locked або unreadable — тепер shows underlying error | 2.1.141 |
+| Alt+V image paste "no image" fix [Win] | Виправлено Windows Alt+V image paste що reporting "no image found" коли clipboard містить screenshot | 2.1.141 |

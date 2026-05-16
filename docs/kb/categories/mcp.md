@@ -99,6 +99,10 @@
 | HTTP/SSE MCP non-protocol data cap | Виправлено unbounded memory growth коли HTTP/SSE MCP server streams non-protocol data — response bodies тепер capped at 16 MB per SSE frame | 2.1.139 |
 | Silent exit 1 unwritable cache fix | Виправлено silent `exit 1` з 10+ MCP servers та unwritable cache directory — error message тепер включає underlying cause | 2.1.139 |
 | MCP resources disconnected servers fix | Виправлено MCP resources від disconnected servers що lingering в `@server:` autocomplete | 2.1.139 |
+| `/mcp` server list focused server fix | Виправлено `/mcp` server list що не keeping focused server visible в short terminals в fullscreen mode | 2.1.141 |
+| MCP POSIX shell expansions fix | Виправлено MCP server configs що використовують POSIX shell parameter expansions (напр. `${var%pattern}`) що incorrectly flagged як missing environment variables | 2.1.141 |
+| MCP HTTP/SSE 403 "needs auth" fix | Виправлено HTTP/SSE MCP servers що returning 403 on connect показували "failed" замість "needs auth" | 2.1.141 |
+| Remote MCP server-events stream fix | Виправлено remote MCP servers що disconnecting unnecessarily коли optional server-events stream failed to reconnect — tool calls continue over POST | 2.1.141 |
 
 ## Області видимості
 

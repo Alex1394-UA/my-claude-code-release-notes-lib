@@ -56,6 +56,9 @@
 | Cmd/Ctrl+Shift+T reopen closed tab [VSCode] | Натиснути Cmd/Ctrl+Shift+T для reopen найбільш нещодавно закритої session tab; configurable через `claudeCode.enableReopenClosedSessionShortcut` | 2.1.139 |
 | Mouse wheel scrolling Cursor/VS Code fix | Виправлено mouse wheel scrolling speed в Cursor та VS Code 1.92–1.104; trackpad steady rate, mouse wheel ~3 lines per notch | 2.1.139 |
 | Scroll behavior Win Terminal + VS Code background fix | Виправлено scroll behavior в Windows Terminal та VS Code при attached до background sessions | 2.1.139 |
+| IDE diff view on permission prompts restored [VSCode] | Відновлено опцію "view diff in your IDE" на file-edit permission prompts коли IDE підключено | 2.1.141 |
+| Mic silence feedback fix [VSCode] | Виправлено in-chat mic що showing no feedback коли microphone producing only silence — тепер shows "No audio detected" | 2.1.141 |
+| WSL voice sox error hint [VSCode] | Voice mode WSL error тепер suggests installing `sox libsox-fmt-pulse` для WSLg users | 2.1.141 |
 
 ## Win32 ARM64
 

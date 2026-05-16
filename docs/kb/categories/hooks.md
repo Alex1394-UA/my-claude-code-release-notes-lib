@@ -92,3 +92,5 @@
 | Hook `continueOnBlock` | Config option для `PostToolUse` — встановити `true` для передачі rejection reason назад Claude та продовження turn | 2.1.139 |
 | Hook terminal corruption fix | Виправлено hook що пише в terminal та міг corrupt on-screen interactive prompt; hooks тепер run без terminal access | 2.1.139 |
 | Settings symlink spurious ConfigChange fix | Виправлено regression де symlinked settings files causing spurious `ConfigChange` hooks | 2.1.140 |
+| Hook `terminalSequence` output field | Нове поле `terminalSequence` в hook JSON output — дозволяє hooks emit desktop notifications, window titles та bells без controlling terminal | 2.1.141 |
+| Hooks `transcript_path` EnterWorktree fix | Виправлено hooks що receiving non-existent `transcript_path` після `EnterWorktree` switches working directory | 2.1.141 |

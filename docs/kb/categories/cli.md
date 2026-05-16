@@ -86,6 +86,13 @@
 | `claude plugin install <name>@<marketplace>` auto-refresh | Auto-refresh marketplace та retry перед reporting plugin as not found | 2.1.139 |
 | `claude --bg` connection drop fix | Виправлено `claude --bg` failing з "connection dropped mid-request" коли background service був about to idle-exit | 2.1.140 |
 | Background service startup enterprise fix | Виправлено background service startup failing на машинах з enterprise endpoint security шляхом allowing more time | 2.1.140 |
+| `claude agents --cwd <path>` | Scope session list до specific directory | 2.1.141 |
+| `claude agents` wrapper dashboard fix | Виправлено `claude agents` що showing agent-type list замість dashboard коли launched через wrapper що adds flags | 2.1.141 |
+| `claude agents` crashed session cwd fix | Виправлено `claude agents` що opening crashed session firing redundant dispatches коли working directory deleted | 2.141 |
+| `/tui` background shells fix | Виправлено `/tui` що silently dropping running background shells та subagents — тепер refuses та asks to wait | 2.1.141 |
+| `claude agents` unhealthy worker fallback | Launching session через `claude agents` більше не fails коли pre-warmed background worker unhealthy — fallback to fresh launch | 2.1.141 |
+| `claude agents` empty placeholder sessions | Більше не показує empty placeholder sessions від backgrounding fresh REPL; shows onboarding text при вході через `←` без інших агентів | 2.1.141 |
+| Empty idle background sessions auto-retire | Empty idle background sessions від `←` тепер автоматично retired daemon after 5 minutes | 2.1.141 |
 
 ## Запуск та аутентифікація
 

@@ -158,3 +158,6 @@
 | Settings symlink hot-reload regression fix | Виправлено regression в settings hot-reload де symlinked settings files causing misattributed change events та spurious `ConfigChange` hooks | 2.1.140 |
 | Remote managed settings 401 retry fix | Виправлено remote managed settings що не retrying на 401 — тепер retries один раз з force-refreshed token | 2.1.140 |
 | `extraKnownMarketplaces` persistence fix | Виправлено managed `extraKnownMarketplaces` auto-update policy що не persisting до `known_marketplaces.json` | 2.1.140 |
+| `spinnerVerbs` turn-completion fix | Виправлено `spinnerVerbs` setting що не honored в turn-completion messages | 2.1.141 |
+| "Allowed by PermissionRequest hook" repeating fix | Виправлено "Allowed by PermissionRequest hook" що repeating once per tool call під collapsed read/search group | 2.1.141 |
+| Desktop/3P apiKeyHelper inheritance fix | Виправлено desktop та third-party provider sessions що incorrectly inheriting `apiKeyHelper`/`ANTHROPIC_AUTH_TOKEN` від host managed-settings | 2.1.141 |
