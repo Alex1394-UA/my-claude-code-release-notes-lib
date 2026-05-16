@@ -1,6 +1,6 @@
 # Knowledge Base Metadata
 
-last_processed: 2.1.142
+last_processed: 2.1.143
 last_updated: 2026-05-16
 seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 
@@ -30,3 +30,4 @@ seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 | 2026-05-13 | 2.1.140 | 8 categories | ~13 записів додано, 0 депрекацій |
 | 2026-05-14 | 2.1.141 | all 12 categories | ~65 записів додано, 0 депрекацій |
 | 2026-05-16 | 2.1.142 | cli, core, env-vars, mcp, plugins, hooks, windows | ~28 записів додано, 0 депрекацій |
+| 2026-05-16 | 2.1.143 | cli, core, env-vars, plugins, hooks, settings, windows | ~27 записів додано, 3 дублікати з 2.1.142 пропущено, 0 депрекацій |

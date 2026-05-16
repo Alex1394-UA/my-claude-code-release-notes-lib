@@ -110,6 +110,8 @@
 | `ANTHROPIC_WORKSPACE_ID` | Workload identity federation — scopes minted token до specific workspace коли federation rule covers more than one | 2.1.141 |
 | Bedrock `awsCredentialExport` always runs | `awsCredentialExport` тепер always runs коли configured замість skipping коли ambient AWS credentials resolve; фікси auth для cross-account access | 2.1.141 |
 | `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` | Закріпити fast mode на Opus 4.6 замість нового дефолту Opus 4.7 (`1`) | 2.1.142 |
+| `CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY` | Opt-out з дефолтного `-ExecutionPolicy Bypass` в PowerShell tool (`1`) | 2.1.143 |
+| `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP` | Override дефолтного ліміту 8 послідовних stop hook блоків; turn завершується з warning після досягнення ліміту | 2.1.143 |
 
 ## Шляхи
 

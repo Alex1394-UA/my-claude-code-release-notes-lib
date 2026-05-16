@@ -103,6 +103,8 @@
 | Plugin default component folder warning | Плагіни тепер warn коли default component folder (напр. `commands/`) silently ignored через `plugin.json` key; shown in `/doctor`, `claude plugin list`, `/plugin` | 2.1.140 |
 | Root-level `SKILL.md` as skill | Плагіни з root-level `SKILL.md` та без `skills/` subdirectory тепер показуються як skill | 2.1.142 |
 | Plugin details LSP servers | `/plugin` details pane та `claude plugin details` тепер показують LSP servers що надає плагін | 2.1.142 |
+| Plugin dependency enforcement | `claude plugin disable` відмовляє коли інший enabled plugin залежить від цільового (з copy-pasteable disable-chain підказкою); `claude plugin enable` force-enables transitive dependencies | 2.1.143 |
+| `/plugin` marketplace projected context cost | Browse pane тепер показує projected context cost — per-turn та per-invocation token estimates для кожного плагіна | 2.1.143 |
 | Plugin `skills: ["./"]` escape error fix | Виправлено хибне повідомлення "path escapes plugin directory" для plugins з `skills: ["./"]` | 2.1.142 |
 | Plugin cache cleanup active version fix | Виправлено видалення active plugin version directory під час cache cleanup коли відсутні installation metadata | 2.1.142 |
 | `/plugin` browse 0 installs fix | Виправлено `/plugin` browse pane що показував "0 installs" для новоопублікованих plugins | 2.1.142 |

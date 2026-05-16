@@ -171,3 +171,9 @@
 | `claude daemon status` Windows pipe fix [Win] | Виправлено `claude daemon status` та `/doctor` на Windows що throwing коли daemon pipe key file locked або unreadable — тепер shows underlying error | 2.1.141 |
 | Alt+V image paste "no image" fix [Win] | Виправлено Windows Alt+V image paste що reporting "no image found" коли clipboard містить screenshot | 2.1.141 |
 | `claude agents` network-drive deadlock fix [Win] | Виправлено deadlock `claude agents` на Windows з робочими директоріями на network drives; Ctrl+C тепер працює під час startup | 2.1.142 |
+| PowerShell tool default Bedrock/Vertex/Foundry [Win] | PowerShell tool тепер увімкнений за замовчуванням на Windows для Bedrock, Vertex та Foundry користувачів; opt-out з `CLAUDE_CODE_USE_POWERSHELL_TOOL=0` | 2.1.143 |
+| PowerShell `-ExecutionPolicy Bypass` [Win] | PowerShell tool тепер передає `-ExecutionPolicy Bypass`; opt-out з `CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY=1` | 2.1.143 |
+| `claude agents` right-click paste fix [Win] | Виправлено right-click paste в `claude agents` на Windows Terminal та WSL | 2.1.143 |
+| `claude agents` repeated PowerShell processes fix [Win] | Виправлено agent view що спавнив повторні PowerShell процеси на Windows при спискуванні сесій | 2.1.143 |
+| Attached background sessions stale-fragment fix [Win] | Виправлено stale-fragment rendering при скролі в attached background sessions на Windows Terminal | 2.1.143 |
+| `claude agents` ← while streaming fix [Win] | Виправлено unresponsive agents list при натисканні ← в `claude agents` поки response стрімиться на Windows | 2.1.143 |

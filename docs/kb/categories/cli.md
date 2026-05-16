@@ -101,6 +101,9 @@
 | `claude --bg --dangerously-skip-permissions` persist fix | Виправлено `claude --bg --dangerously-skip-permissions` що не зберігався через retire/wake | 2.1.142 |
 | `/web-setup` existing GitHub App warning | `/web-setup` тепер попереджає перед заміною існуючого GitHub App connection | 2.1.142 |
 | Daemon clean exit after upgrade fix | Виправлено daemon що не виходив коректно після оновлення binary (напр. `brew upgrade`), що спричиняло crash-loop dispatched agents на видаленому path | 2.1.142 |
+| `--agent <name>` plugin agents fix | `--agent <name>` тепер знаходить plugin-contributed agents без `plugin:` prefix | 2.1.143 |
+| `claude agents` delete session transcript fix | Виправлено видалення сесії з agent view що не видаляв transcript file | 2.1.143 |
+| `claude agents --allow-dangerously-skip-permissions` fix | Виправлено що default dispatched sessions на bypass mode замість додавання в permission cycle | 2.1.143 |
 
 ## Запуск та аутентифікація
 

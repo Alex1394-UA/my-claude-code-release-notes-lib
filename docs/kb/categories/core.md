@@ -560,3 +560,17 @@
 | Redundant `set_model` requests fix | Виправлено надлишкові `set_model` запити від remote клієнтів що додавали дублікати `/model` breadcrumbs в транскрипт | 2.1.142 |
 | Reactive compaction improvement | Покращено reactive compaction: перша спроба summarize тепер починає з overflow size оригінального запиту, уникаючи марної near-full-context спроби | 2.1.142 |
 | Stale `/model` suggestion removed | Видалено застарілу підказку `/model claude-sonnet-4-20250514` з повідомлень відмови Usage Policy | 2.1.142 |
+| Background sessions preserve model/effort after idle | Background sessions тепер зберігають model та effort level після пробудження від idle | 2.1.143 |
+| Shift+Tab attached agent auto mode | Shift+Tab в attached agent sessions тепер включає auto mode в цикл | 2.1.143 |
+| Stop hooks block loop fix | Stop hooks що блокують повторно більше не loop-яться нескінченно — turn завершується з warning після 8 послідовних блоків (override через `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP`) | 2.1.143 |
+| `/bg` without prompt fix | `/bg` без промпту більше не відправляє "continue" до fork-сесії — fork тепер чекає на input | 2.1.143 |
+| `/bg` preserves configuration flags | `/bg` тепер зберігає `--mcp-config`, `--settings`, `--add-dir`, `--plugin-dir`, `--strict-mcp-config` через respawn | 2.1.143 |
+| `/bg`/←-detach preserve `--fallback-model` | Backgrounded workers тепер degrade до fallback model при overload замість hard-failure | 2.1.143 |
+| `/bg`/←-detach preserve `--allow-dangerously-skip-permissions` | Forked worker зберігає bypass-permissions в Shift+Tab cycle | 2.1.143 |
+| Background sessions honor `permissions.defaultMode` | Background sessions запущені з `claude agents` тепер поважають `permissions.defaultMode` з settings.json (раніше override на auto mode) | 2.1.143 |
+| Background daemon spawn binary fallback | Background daemon spawn тепер fallback-ить до running binary коли `~/.local/bin/claude` launcher відсутній або non-executable | 2.1.143 |
+| Background agents worker-stall detection fix | Виправлено false-positive worker-stall detection storm у background agents після host sleep або macOS App Nap | 2.1.143 |
+| 5xx error messages gateway/provider fix | 5xx помилки тепер показують configured gateway або cloud provider замість status.claude.com | 2.1.143 |
+| Corrupt `.credentials.json` scopes fix | Виправлено corrupt `.credentials.json` з non-array `scopes` що hang-ав CLI на startup або silently abort-ав OAuth token refresh | 2.1.143 |
+| Background sessions macOS protected dirs fix | Виправлено background-job sessions на macOS що отримували "Operation not permitted" при читанні файлів під `~/Documents`, `~/Desktop` або `~/Downloads` навіть з Full Disk Access | 2.1.143 |
+| Worktree cleanup no `rm -rf` fallback | Worktree cleanup більше не fallback-ить до `rm -rf` коли `git worktree remove` fails — запобігає втраті gitignored або in-progress файлів | 2.1.143 |
