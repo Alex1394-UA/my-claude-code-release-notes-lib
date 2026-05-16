@@ -93,6 +93,14 @@
 | `claude agents` unhealthy worker fallback | Launching session через `claude agents` більше не fails коли pre-warmed background worker unhealthy — fallback to fresh launch | 2.1.141 |
 | `claude agents` empty placeholder sessions | Більше не показує empty placeholder sessions від backgrounding fresh REPL; shows onboarding text при вході через `←` без інших агентів | 2.1.141 |
 | Empty idle background sessions auto-retire | Empty idle background sessions від `←` тепер автоматично retired daemon after 5 minutes | 2.1.141 |
+| `claude agents` конфігураційні прапорці | Нові прапорці для dispatched background sessions: `--add-dir`, `--settings`, `--mcp-config`, `--plugin-dir`, `--permission-mode`, `--model`, `--effort`, `--dangerously-skip-permissions` | 2.1.142 |
+| `claude agents` links fix | Виправлено клік по посиланнях в attached `claude agents` сесії — headless browser shim worker-а більше не застосовується під час attachment | 2.1.142 |
+| `claude agents` editor fix | Виправлено `claude agents` "v to open in editor" що використовував daemon's default editor замість shell `$EDITOR`/`$VISUAL` | 2.1.142 |
+| `claude agents` Windows network drives fix | Виправлено deadlock `claude agents` на Windows з робочими директоріями на network drives; Ctrl+C тепер працює під час startup [Win] | 2.1.142 |
+| `claude agents` background-color bleed fix | Виправлено background-color bleed при attaching до `claude agents` сесії з Apple Terminal або інших 256-color-only терміналів | 2.1.142 |
+| `claude --bg --dangerously-skip-permissions` persist fix | Виправлено `claude --bg --dangerously-skip-permissions` що не зберігався через retire/wake | 2.1.142 |
+| `/web-setup` existing GitHub App warning | `/web-setup` тепер попереджає перед заміною існуючого GitHub App connection | 2.1.142 |
+| Daemon clean exit after upgrade fix | Виправлено daemon що не виходив коректно після оновлення binary (напр. `brew upgrade`), що спричиняло crash-loop dispatched agents на видаленому path | 2.1.142 |
 
 ## Запуск та аутентифікація
 

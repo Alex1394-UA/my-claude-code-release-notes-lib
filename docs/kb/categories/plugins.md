@@ -101,6 +101,12 @@
 | `claude plugin update` symlinks fix | Виправлено `claude plugin update` що не preserving cross-plugin symlinks всередині marketplace | 2.1.139 |
 | `extraKnownMarketplaces` persistence fix | Виправлено managed `extraKnownMarketplaces` auto-update policy що не persisting до `known_marketplaces.json` | 2.1.140 |
 | Plugin default component folder warning | Плагіни тепер warn коли default component folder (напр. `commands/`) silently ignored через `plugin.json` key; shown in `/doctor`, `claude plugin list`, `/plugin` | 2.1.140 |
+| Root-level `SKILL.md` as skill | Плагіни з root-level `SKILL.md` та без `skills/` subdirectory тепер показуються як skill | 2.1.142 |
+| Plugin details LSP servers | `/plugin` details pane та `claude plugin details` тепер показують LSP servers що надає плагін | 2.1.142 |
+| Plugin `skills: ["./"]` escape error fix | Виправлено хибне повідомлення "path escapes plugin directory" для plugins з `skills: ["./"]` | 2.1.142 |
+| Plugin cache cleanup active version fix | Виправлено видалення active plugin version directory під час cache cleanup коли відсутні installation metadata | 2.1.142 |
+| `/plugin` browse 0 installs fix | Виправлено `/plugin` browse pane що показував "0 installs" для новоопублікованих plugins | 2.1.142 |
+| Plugin advisories key naming fix | Виправлено plugin advisories що не називали кожен `plugin.json` key що shadows default folder | 2.1.142 |
 | Plugin menu navigation improvements | `→`/Tab switch tabs, `↑` moves to tab strip, tab headers та search box clickable в fullscreen mode | 2.1.141 |
 | `claude plugin install` ref+sha fix | Виправлено `claude plugin install` failing для plugins чи marketplace `ref` більше не існує upstream коли `sha` також pinned | 2.1.141 |
 | Plugin details 0 MCP servers .mcp.json fix | Виправлено plugin details pane що showing 0 MCP servers для plugins що declare через `.mcp.json` | 2.1.141 |

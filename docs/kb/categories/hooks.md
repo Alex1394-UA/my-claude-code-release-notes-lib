@@ -94,3 +94,4 @@
 | Settings symlink spurious ConfigChange fix | Виправлено regression де symlinked settings files causing spurious `ConfigChange` hooks | 2.1.140 |
 | Hook `terminalSequence` output field | Нове поле `terminalSequence` в hook JSON output — дозволяє hooks emit desktop notifications, window titles та bells без controlling terminal | 2.1.141 |
 | Hooks `transcript_path` EnterWorktree fix | Виправлено hooks що receiving non-existent `transcript_path` після `EnterWorktree` switches working directory | 2.1.141 |
+| Hook config error improvement | Покращено повідомлення про помилку: налаштування prompt- або agent-type hook для `SessionStart`/`Setup`/`SubagentStart` тепер показує чітку помилку "use a command-type hook instead" | 2.1.142 |

@@ -170,3 +170,4 @@
 | Missing executable event-loop stall fix [Win] | Виправлено recurring event-loop stall на Windows коли missing executable (напр. `gh`) triggering synchronous `where.exe` re-spawns на кожному check | 2.1.140 |
 | `claude daemon status` Windows pipe fix [Win] | Виправлено `claude daemon status` та `/doctor` на Windows що throwing коли daemon pipe key file locked або unreadable — тепер shows underlying error | 2.1.141 |
 | Alt+V image paste "no image" fix [Win] | Виправлено Windows Alt+V image paste що reporting "no image found" коли clipboard містить screenshot | 2.1.141 |
+| `claude agents` network-drive deadlock fix [Win] | Виправлено deadlock `claude agents` на Windows з робочими директоріями на network drives; Ctrl+C тепер працює під час startup | 2.1.142 |

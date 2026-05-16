@@ -47,6 +47,7 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | Opus 4.6 Fast mode | Швидший вивід, та сама модель | 2.1.36 |
+| Fast mode Opus 4.7 default | Fast mode тепер використовує Opus 4.7 за замовчуванням (було Opus 4.6) | 2.1.142 |
 | `/fast` | Перемикання швидкого режиму | 2.1.36 |
 | Alt+P (Win/Linux), Option+P (macOS) | Перемикання моделі під час вводу | 2.0.65 |
 
@@ -542,6 +543,7 @@
 | Prompt suggestions output style fix | Виправлено prompt suggestions що silently disabled коли output style configured | 2.1.141 |
 | AskUserQuestion last line hiding fix | Виправлено AskUserQuestion popup що hiding last line of preceding chat content | 2.1.141 |
 | Web Search "Did 0 searches" fix | Виправлено Web Search status що showing "Did 0 searches" коли searches returned errors | 2.1.141 |
+| Web Search географічне обмеження | WebSearch працює лише в США — за межами США повертає помилки API або "Did 0 searches". Використовувати Perplexity (pplx), crawl4ai або web-reader як альтернативи | — |
 | Multi-line statusline corruption fix | Виправлено multi-line statusline output що dropping або corrupting rows коли line exceeds terminal width | 2.1.141 |
 | Light-ansi theme diff context fix | Виправлено light-ansi theme що використовував invisible white для diff context lines на light backgrounds — тепер black | 2.1.141 |
 | Error overlay minified source fix | Виправлено error overlay що dumping minified bundle source що hid original error message | 2.1.141 |
@@ -551,3 +553,10 @@
 | Welcome banner third-party provider name | Виправлено welcome banner що showing "API Usage Billing" на Bedrock/Vertex/Foundry/3P — тепер shows provider name | 2.1.141 |
 | `/feedback` redaction invalid JSON fix | Виправлено redaction в `/feedback` bundles що producing invalid JSON для quoted values як session IDs | 2.1.141 |
 | Early analytics events dropped fix | Виправлено early analytics events що silently dropped коли fired before logger initialization | 2.1.141 |
+| Background sessions pre-existing worktrees fix | Виправлено background sessions що не розпізнавали pre-existing git worktrees, блокуючи Edit поки EnterWorktree відмовлявся створювати дублікат | 2.1.142 |
+| Background sessions macOS sleep/wake fix | Виправлено зникнення background sessions та помилку daemon reconnect після macOS sleep/wake — daemon тепер виявляє стрибки годинника замість обробки як idle time | 2.1.142 |
+| Background agents Chrome extension fix | Виправлено crash-loop background agents коли Claude-in-Chrome extension підключено без shared tab | 2.1.142 |
+| Session titles URL fix | Виправлено отримання session titles з URL коли перше повідомлення є посиланням | 2.1.142 |
+| Redundant `set_model` requests fix | Виправлено надлишкові `set_model` запити від remote клієнтів що додавали дублікати `/model` breadcrumbs в транскрипт | 2.1.142 |
+| Reactive compaction improvement | Покращено reactive compaction: перша спроба summarize тепер починає з overflow size оригінального запиту, уникаючи марної near-full-context спроби | 2.1.142 |
+| Stale `/model` suggestion removed | Видалено застарілу підказку `/model claude-sonnet-4-20250514` з повідомлень відмови Usage Policy | 2.1.142 |

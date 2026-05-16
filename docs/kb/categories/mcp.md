@@ -103,6 +103,7 @@
 | MCP POSIX shell expansions fix | Виправлено MCP server configs що використовують POSIX shell parameter expansions (напр. `${var%pattern}`) що incorrectly flagged як missing environment variables | 2.1.141 |
 | MCP HTTP/SSE 403 "needs auth" fix | Виправлено HTTP/SSE MCP servers що returning 403 on connect показували "failed" замість "needs auth" | 2.1.141 |
 | Remote MCP server-events stream fix | Виправлено remote MCP servers що disconnecting unnecessarily коли optional server-events stream failed to reconnect — tool calls continue over POST | 2.1.141 |
+| `MCP_TOOL_TIMEOUT` HTTP/SSE per-request fix | Виправлено `MCP_TOOL_TIMEOUT` що не підвищував per-request fetch timeout для remote HTTP та SSE MCP серверів, обмежуючи tool calls до 60 секунд незалежно від конфігурації | 2.1.142 |
 
 ## Області видимості
 

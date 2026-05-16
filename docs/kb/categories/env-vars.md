@@ -109,6 +109,7 @@
 | `CLAUDE_CODE_PLUGIN_PREFER_HTTPS` | Clone GitHub plugin sources over HTTPS замість SSH, для environments без GitHub SSH key | 2.1.141 |
 | `ANTHROPIC_WORKSPACE_ID` | Workload identity federation — scopes minted token до specific workspace коли federation rule covers more than one | 2.1.141 |
 | Bedrock `awsCredentialExport` always runs | `awsCredentialExport` тепер always runs коли configured замість skipping коли ambient AWS credentials resolve; фікси auth для cross-account access | 2.1.141 |
+| `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` | Закріпити fast mode на Opus 4.6 замість нового дефолту Opus 4.7 (`1`) | 2.1.142 |
 
 ## Шляхи
 
