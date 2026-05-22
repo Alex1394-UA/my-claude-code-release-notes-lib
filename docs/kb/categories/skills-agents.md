@@ -49,6 +49,7 @@
 | `AskUserQuestion` multi-select fix | Виправлено `AskUserQuestion` що discarding multi-select answers коли supplied як array | 2.1.136 |
 | `CronList` output fix | Виправлено `CronList` output що missing qualifiers та scheduled prompt | 2.1.136 |
 | "Chat about this" AskUserQuestion fix | Виправлено "Chat about this" на `AskUserQuestion` dialog що erasing question text | 2.1.136 |
+| Skill tool headless permission error fix | Виправлено Skill tool що failing з permission error в headless mode (регресія з v2.1.141) | 2.1.144 |
 
 ## Поля frontmatter
 
@@ -155,7 +156,8 @@
 | `/sandbox` | Інфо про sandbox | — |
 | `/remote-control` | Remote Control | 2.1.51 |
 | `/teleport` | Телепорт сесії | 2.1.0 |
-| `/extra-usage` | Додаткове використання | — |
+| `/extra-usage` | ~~Додаткове використання~~ → `/usage-credits` (стара назва ще працює) | — |
+| `/usage-credits` | Usage credits (нова назва замість `/extra-usage`) | 2.1.144 |
 | `/feedback` | Зворотний зв'язок | — |
 | `/security-review` | Аудит безпеки | 2.1.70 |
 | ~~`/output-style`~~ | [ЗАСТАРІЛО] → /config | 2.1.73 |

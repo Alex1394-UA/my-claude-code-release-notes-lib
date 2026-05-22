@@ -62,6 +62,7 @@
 | `claude project purge [path]` | Видалення всього стану Claude Code для проекту (transcripts, tasks, file history, config entry); підтримує `--dry-run`, `-y/--yes`, `-i/--interactive`, `--all` | 2.1.126 |
 | `--dangerously-skip-permissions` expanded bypass | Тепер обминає промпти для запису в `.claude/`, `.git/`, `.vscode/`, shell config files та інші раніше захищені шляхи (catastrophic removal commands все ще промптять як safety net) | 2.1.126 |
 | `claude auth login` terminal paste | `claude auth login` тепер приймає OAuth code вставлений в термінал коли browser callback не може досягнути localhost (WSL2, SSH, containers) | 2.1.126 |
+| Remote-session login `forceLoginMethod` fix | Виправлено remote-session login failing з "Can't access this organization" для користувачів з `forceLoginMethod` та `forceLoginOrgUUID` | 2.1.144 |
 | "OAuth not allowed" login guidance | Замість login screen при "OAuth not allowed for organization" тепер показується інструкція звернутися до адміністратора | 2.1.126 |
 | OAuth login timeout fix | Виправлено timeout OAuth login на повільних/proxied з'єднаннях, IPv6-only devcontainers, та коли browser callback не досягає localhost | 2.1.126 |
 | OAuth credential race fix | Виправлено рідкісний race де concurrent credential write міг очистити valid OAuth refresh token | 2.1.126 |
@@ -104,6 +105,26 @@
 | `--agent <name>` plugin agents fix | `--agent <name>` тепер знаходить plugin-contributed agents без `plugin:` prefix | 2.1.143 |
 | `claude agents` delete session transcript fix | Виправлено видалення сесії з agent view що не видаляв transcript file | 2.1.143 |
 | `claude agents --allow-dangerously-skip-permissions` fix | Виправлено що default dispatched sessions на bypass mode замість додавання в permission cycle | 2.1.143 |
+| `/resume` для background sessions | Sessions запущені через `claude --bg` або agent view тепер appear в `/resume` picker, позначені з `bg` | 2.1.144 |
+| `/model` session-only | `/model` тепер змінює модель лише для поточної сесії; натисніть `d` в model picker для встановлення default для нових сесій | 2.1.144 |
+| ~~`/extra-usage`~~ | [ЗАСТАРІЛО] перейменовано на `/usage-credits`; стара назва ще працює | 2.1.144 |
+| `/usage-credits` | Нова назва замість `/extra-usage` — показує usage credits | 2.1.144 |
+| `claude agents` rename live update | Перейменування background session через `Ctrl+R` в `claude agents` тепер негайно оновлює banner attached session | 2.1.144 |
+| `claude --bg --name <label>` confirmation | `claude --bg --name <label>` тепер підтверджує ім'я в post-spawn повідомленні | 2.1.144 |
+| `claude agents`/`--bg` rejection naming | Повідомлення відмови тепер називає конкретний gate (non-TTY, env var, або setting) замість generic message | 2.1.144 |
+| `claude respawn` stopped session fix | Виправлено `claude respawn <id>` на stopped background session що показував "stopped" замість running | 2.1.144 |
+| `claude agents`/`claude logs` timeout | Виправлено зависання `claude agents` або `claude logs <id>` коли background service unresponsive — тепер timeout 10s з recovery hint | 2.1.144 |
+| `/branch` worktree/background fix | Виправлено `/branch` що failing з "No conversation to branch" після входу в worktree або в деяких background sessions | 2.1.144 |
+| `/model` Bedrock/Vertex Opus 1M fix | Виправлено неможливість обрати "Opus (1M context)" з `/model` picker на Bedrock та Vertex (регресія з v2.1.129) | 2.1.144 |
+| `/doctor` exec-form hook hint | `/doctor` тепер показує exec-form приклад коли command hook не має поля `command` | 2.1.144 |
+| Skill-listing truncation не як notification | Truncation списку skills більше не показується як startup notification — запуск `/doctor` для повної інформації | 2.1.144 |
+| Background Bash tasks SDK panel fix | Background Bash tasks spawned subagents більше не залишаються "Running" в SDK task panels після завершення process | 2.1.144 |
+| Completed/stopped sessions wake failure fix | Completed або stopped background sessions що briefly failing to wake більше не permanently marking як startup crash | 2.1.144 |
+| `claude mcp list` parse error reporting | `claude mcp list` більше не silently reports no servers коли `.mcp.json` не парситься (напр. VS Code `"servers"` key замість `"mcpServers"`) — тепер показує конфігураційні помилки | 2.1.144 |
+| Background side-queries custom BASE_URL fix | Background side-queries на custom `ANTHROPIC_BASE_URL` setups та Bedrock Mantle тепер correctly fallback коли first-party API key configured або Haiku model не set | 2.1.144 |
+| `/bg`/←-detach preserve `/add-dir` | `/bg` та ←-detach тепер preserve directories додані через `/add-dir` | 2.1.144 |
+| Edit/Write background session isolation fix | Виправлено Edit/Write що refusing з "background session hasn't isolated its changes yet" одразу після detach сесії що вже editing in place | 2.1.144 |
+| Background session worktree VCS guard | Background session worktree isolation guard тепер застосовується для non-git VCS користувачів з `WorktreeCreate` hooks configured | 2.1.144 |
 
 ## Запуск та аутентифікація
 

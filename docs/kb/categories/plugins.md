@@ -113,3 +113,7 @@
 | `claude plugin install` ref+sha fix | Виправлено `claude plugin install` failing для plugins чи marketplace `ref` більше не існує upstream коли `sha` також pinned | 2.1.141 |
 | Plugin details 0 MCP servers .mcp.json fix | Виправлено plugin details pane що showing 0 MCP servers для plugins що declare через `.mcp.json` | 2.1.141 |
 | Plugin MCP config variables fix | Plugin MCP servers з unset config variables тепер show "config issue" message з fix-it hint замість generic connection failure; malformed `.mcp.json` entries більше не drop інші MCP servers | 2.1.141 |
+| Plugin browse last-updated | `/plugin` browse та discover panes тепер показують коли плагін востаннє оновлювався | 2.1.144 |
+| Plugin "not cached" errors fix | Plugins enabled в user settings більше не показують "not cached" errors після першого завантаження на fresh machine; plugins enabled тільки через project `.claude/settings.json` тепер показують actionable `claude plugin install` hint | 2.1.144 |
+| `CLAUDE_CODE_PLUGIN_PREFER_HTTPS` marketplace | Plugin marketplace add/update тепер поважає `CLAUDE_CODE_PLUGIN_PREFER_HTTPS` | 2.1.144 |
+| `/plugin` return to Installed tab | `/plugin` тепер повертається до Installed list після enable, disable або uninstall плагіна | 2.1.144 |

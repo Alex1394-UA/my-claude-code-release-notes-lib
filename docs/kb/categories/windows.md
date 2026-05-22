@@ -177,3 +177,9 @@
 | `claude agents` repeated PowerShell processes fix [Win] | Виправлено agent view що спавнив повторні PowerShell процеси на Windows при спискуванні сесій | 2.1.143 |
 | Attached background sessions stale-fragment fix [Win] | Виправлено stale-fragment rendering при скролі в attached background sessions на Windows Terminal | 2.1.143 |
 | `claude agents` ← while streaming fix [Win] | Виправлено unresponsive agents list при натисканні ← в `claude agents` поки response стрімиться на Windows | 2.1.143 |
+| Scrolling attached background sessions fix [Win] | Виправлено скролінг в attached background sessions на Windows — PgUp/PgDn, mouse wheel та Ctrl+O transcript navigation тепер працюють | 2.1.144 |
+| Crash closing terminal attached to background session fix [Win] | Виправлено crash при закритті терміналу поки attached до background session на Windows | 2.1.144 |
+| `claude agents` ← unresponsive list fix [Win] | Виправлено `claude agents` де натискання ← залишав список unresponsive до keyboard input на Windows | 2.1.144 |
+| Ghost characters CJK agent view fix [Win] | Виправлено ghost characters на лівому краю при переключенні panes в Agent View на Windows Terminal з CJK контентом | 2.1.144 |
+| `/resume` picker forked background sessions fix [Win] | Виправлено `/resume` picker що не показував sessions forked від background session | 2.1.144 |
+| Markdown links in agents clickable fix [Win] | Виправлено markdown links в `claude agents` attached sessions що rendering як plain text замість clickable hyperlinks | 2.1.144 |

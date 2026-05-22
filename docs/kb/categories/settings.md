@@ -163,3 +163,4 @@
 | Desktop/3P apiKeyHelper inheritance fix | Виправлено desktop та third-party provider sessions що incorrectly inheriting `apiKeyHelper`/`ANTHROPIC_AUTH_TOKEN` від host managed-settings | 2.1.141 |
 | `worktree.bgIsolation: "none"` | Дозволяє background sessions редагувати робочу копію напряму без EnterWorktree, для репозиторіїв де worktrees непрактичні | 2.1.143 |
 | `NO_COLOR`/`FORCE_COLOR` in settings.json `env` fix | `NO_COLOR`/`FORCE_COLOR` в settings.json `env` більше не stripають Claude Code UI кольори — тепер застосовуються лише до subprocesses | 2.1.143 |
+| `spinnerVerbs` post-turn duration fix | Виправлено `spinnerVerbs` що applying до post-turn duration message — past-tense built-ins як "Worked for 5s" відновлені | 2.1.144 |

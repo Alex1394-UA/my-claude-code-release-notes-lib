@@ -569,6 +569,21 @@
 | `/bg`/←-detach preserve `--allow-dangerously-skip-permissions` | Forked worker зберігає bypass-permissions в Shift+Tab cycle | 2.1.143 |
 | Background sessions honor `permissions.defaultMode` | Background sessions запущені з `claude agents` тепер поважають `permissions.defaultMode` з settings.json (раніше override на auto mode) | 2.1.143 |
 | Background daemon spawn binary fallback | Background daemon spawn тепер fallback-ить до running binary коли `~/.local/bin/claude` launcher відсутній або non-executable | 2.1.143 |
+| Elapsed duration subagent notifications | Background subagent completion notifications тепер показують elapsed duration (напр. "Agent completed · 3h 2m 5s") | 2.1.144 |
+| Startup hanging unreachable API fix | Виправлено зависання startup до 75s коли `api.anthropic.com` недоступний (captive portal, firewall, VPN) — side-channel API calls тепер timeout 15s | 2.1.144 |
+| Terminal resize garbled output fix | Виправлено пошкоджений термінальний вивід після пропущеного window-resize event (напр. перетягування VS Code split-pane) — self-heals на наступному frame замість Ctrl+L | 2.1.144 |
+| Progressive terminal display corruption fix | Виправлено progressive corruption (stale/garbled glyphs) в дуже довгих сесіях що clearing лише при terminal resize або restart | 2.1.144 |
+| VS Code spinner animation color reduction | Зменшено кількість кольорів spinner animation для зменшення rendering glitches в VS Code | 2.1.144 |
+| macOS background sessions Full Disk Access crash fix | Виправлено crash macOS background sessions з "exit 1 before init" коли project під Full Disk Access-захищеною папкою (регресія з 2.1.143) | 2.1.144 |
+| Unreadable image extension fallback | Файл з image extension що не відповідає вмісту (напр. HTML збережений як .png) тепер fallback-ить до text замість unrecoverable conversation | 2.1.144 |
+| `head`/`tail` read-before-edit | `head`/`tail` file views тепер satisfy read-before-edit check | 2.1.144 |
+| `egrep`/`fgrep`/`git grep`/`git diff` exit 1 fix | "No matches" result (exit code 1) від `egrep`, `fgrep`, `git grep` або `git diff` більше не reported як command failure | 2.1.144 |
+| AskUserQuestion Escape notes field fix | Натискання Escape в AskUserQuestion notes field більше не abortує turn — повертається до answer selection | 2.1.144 |
+| Model selection IDE/applyFlagSettings fix | Виправлено model selection що не застосовувався при зміні через IDE model picker або `applyFlagSettings` після startup | 2.1.144 |
+| Resumed sessions model persistence | Відновлені сесії тепер зберігають модель яку використовували замість підхоплення `/model` choice іншої сесії | 2.1.144 |
+| Pre-response stream stall recovery | Покращено відновлення від рідкісних pre-response stream stalls — тепер retries streaming once замість fallback до повільнішого non-streaming request | 2.1.144 |
+| SDK/headless MCP startup overlap | Pre-wait тепер перекривається з MCP startup замість блокування перед першим turn (до 2s швидше з повільними MCP серверами) | 2.1.144 |
+| Post-survey follow-up hint | Після survey response тепер з'являється follow-up hint з context-aware copy для детальнішого feedback через `/feedback` | 2.1.144 |
 | Background agents worker-stall detection fix | Виправлено false-positive worker-stall detection storm у background agents після host sleep або macOS App Nap | 2.1.143 |
 | 5xx error messages gateway/provider fix | 5xx помилки тепер показують configured gateway або cloud provider замість status.claude.com | 2.1.143 |
 | Corrupt `.credentials.json` scopes fix | Виправлено corrupt `.credentials.json` з non-array `scopes` що hang-ав CLI на startup або silently abort-ав OAuth token refresh | 2.1.143 |
