@@ -117,3 +117,6 @@
 | Plugin "not cached" errors fix | Plugins enabled в user settings більше не показують "not cached" errors після першого завантаження на fresh machine; plugins enabled тільки через project `.claude/settings.json` тепер показують actionable `claude plugin install` hint | 2.1.144 |
 | `CLAUDE_CODE_PLUGIN_PREFER_HTTPS` marketplace | Plugin marketplace add/update тепер поважає `CLAUDE_CODE_PLUGIN_PREFER_HTTPS` | 2.1.144 |
 | `/plugin` return to Installed tab | `/plugin` тепер повертається до Installed list після enable, disable або uninstall плагіна | 2.1.144 |
+| `/plugin` pre-install component preview | Discover та Browse screens тепер показують плагіна commands, agents, skills, hooks, та MCP/LSP servers перед встановленням | 2.1.145 |
+| Stale marketplace banner fix | Виправлено stale "Failed to install Anthropic marketplace" banner що показувався коли marketplace вже встановлено | 2.1.145 |
+| `claude plugin validate` skills: file vs directory | `claude plugin validate` тепер flag-ить `skills:` entries що point на file замість directory — error suggests parent directory | 2.1.145 |

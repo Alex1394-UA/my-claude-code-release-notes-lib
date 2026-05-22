@@ -584,6 +584,14 @@
 | Pre-response stream stall recovery | Покращено відновлення від рідкісних pre-response stream stalls — тепер retries streaming once замість fallback до повільнішого non-streaming request | 2.1.144 |
 | SDK/headless MCP startup overlap | Pre-wait тепер перекривається з MCP startup замість блокування перед першим turn (до 2s швидше з повільними MCP серверами) | 2.1.144 |
 | Post-survey follow-up hint | Після survey response тепер з'являється follow-up hint з context-aware copy для детальнішого feedback через `/feedback` | 2.1.144 |
+| Permission-prompt bypass bare variable assignment fix | Виправлено bypass permission-prompt де bare variable assignments до non-allowlisted env vars в Bash auto-approved | 2.1.145 |
+| Spinner/elapsed-time freeze after resize/refocus fix | Виправлено spinner та elapsed-time display що freezing до keypress після terminal resize або refocus | 2.1.145 |
+| Slash/@-mention mouse hover/click fullscreen | Slash command та @-mention suggestion list тепер підтримує mouse hover та click в fullscreen mode | 2.1.145 |
+| Voice push-to-talk agent view fix | Виправлено voice push-to-talk що не працював в agent view reply pane | 2.1.145 |
+| Task lists random order fix | Виправлено task lists що rendering в random order коли кілька tasks створюються одночасно | 2.1.145 |
+| PR badge footer not updating fix | Виправлено PR badge в footer що не оновлювався негайно після `gh pr create` та інших PR-state-changing commands | 2.1.145 |
+| Agent Teams non-ASCII names header encoding fix | Виправлено Agent Teams teammates з non-ASCII names що failing кожен API call через invalid header encoding | 2.1.145 |
+| Read tool truncated "PARTIAL view" | Read tool тепер повертає truncated first page з "PARTIAL view" notice замість hard error коли whole-file read перевищує token limit | 2.1.145 |
 | Background agents worker-stall detection fix | Виправлено false-positive worker-stall detection storm у background agents після host sleep або macOS App Nap | 2.1.143 |
 | 5xx error messages gateway/provider fix | 5xx помилки тепер показують configured gateway або cloud provider замість status.claude.com | 2.1.143 |
 | Corrupt `.credentials.json` scopes fix | Виправлено corrupt `.credentials.json` з non-array `scopes` що hang-ав CLI на startup або silently abort-ав OAuth token refresh | 2.1.143 |

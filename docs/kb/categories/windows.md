@@ -183,3 +183,4 @@
 | Ghost characters CJK agent view fix [Win] | Виправлено ghost characters на лівому краю при переключенні panes в Agent View на Windows Terminal з CJK контентом | 2.1.144 |
 | `/resume` picker forked background sessions fix [Win] | Виправлено `/resume` picker що не показував sessions forked від background session | 2.1.144 |
 | Markdown links in agents clickable fix [Win] | Виправлено markdown links в `claude agents` attached sessions що rendering як plain text замість clickable hyperlinks | 2.1.144 |
+| Cross-project resume hint PowerShell 5.1 fix [Win] | Виправлено cross-project resume hint що failing в default Windows PowerShell 5.1 — Windows тепер використовує `;` як command separator | 2.1.145 |

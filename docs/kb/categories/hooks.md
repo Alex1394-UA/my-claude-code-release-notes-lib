@@ -97,3 +97,4 @@
 | Hook config error improvement | Покращено повідомлення про помилку: налаштування prompt- або agent-type hook для `SessionStart`/`Setup`/`SubagentStart` тепер показує чітку помилку "use a command-type hook instead" | 2.1.142 |
 | Stop hooks block loop fix | Stop hooks що block-лять повторно більше не loop-яться нескінченно — turn завершується з warning після 8 послідовних блоків; override через `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP` env var | 2.1.143 |
 | File descriptor exhaustion skill dir fix | Виправлено file descriptor exhaustion коли build запущено в skill directory — non-`.md` files більше не trigger skill reloads | 2.1.144 |
+| Stop/SubagentStop `background_tasks`/`session_crons` fields | Hook input тепер включає `background_tasks` та `session_crons` поля | 2.1.145 |

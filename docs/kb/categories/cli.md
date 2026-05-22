@@ -125,6 +125,9 @@
 | `/bg`/←-detach preserve `/add-dir` | `/bg` та ←-detach тепер preserve directories додані через `/add-dir` | 2.1.144 |
 | Edit/Write background session isolation fix | Виправлено Edit/Write що refusing з "background session hasn't isolated its changes yet" одразу після detach сесії що вже editing in place | 2.1.144 |
 | Background session worktree VCS guard | Background session worktree isolation guard тепер застосовується для non-git VCS користувачів з `WorktreeCreate` hooks configured | 2.1.144 |
+| `claude agents --json` | CLI вивід live Claude sessions як JSON для скриптів (tmux-resurrect, status bars, session pickers) | 2.1.145 |
+| `claude agents` tab title awaiting-input count | Заголовок термінальної таб-сесії `claude agents` тепер показує кількість агентів що чекають на input | 2.1.145 |
+| `/review` projectCards GraphQL fix | Виправлено `/review` що використовував deprecated `projectCards` GraphQL query що помилявся на repos з Classic Projects | 2.1.145 |
 
 ## Запуск та аутентифікація
 

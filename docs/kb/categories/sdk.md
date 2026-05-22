@@ -81,3 +81,5 @@
 | RC stale token auto-re-enroll fix | Виправлено Remote Control що automatically re-enrolling trusted device коли server rejects stale token, замість looping through `/login` | 2.1.141 |
 | Early OTel spans SDK/headless fix | Виправлено early OTel spans що silently dropped в SDK/headless mode з beta tracing enabled | 2.1.141 |
 | SDK native binary glibc/musl fix | Виправлено SDK "Claude Code native binary not found" на Linux коли обидва glibc та musl platform packages installed | 2.1.141 |
+| `claude_code.tool` OTEL `agent_id`/`parent_agent_id` | OTEL spans тепер включають `agent_id` та `parent_agent_id` attributes; виправлено trace parenting так що background subagent spans nest під dispatching Agent tool span | 2.1.145 |
+| Status line JSON GitHub repo/PR info | Status line JSON input тепер включає GitHub repo та PR information коли виявлено | 2.1.145 |

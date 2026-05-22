@@ -50,6 +50,7 @@
 | `CronList` output fix | Виправлено `CronList` output що missing qualifiers та scheduled prompt | 2.1.136 |
 | "Chat about this" AskUserQuestion fix | Виправлено "Chat about this" на `AskUserQuestion` dialog що erasing question text | 2.1.136 |
 | Skill tool headless permission error fix | Виправлено Skill tool що failing з permission error в headless mode (регресія з v2.1.141) | 2.1.144 |
+| `context: fork` skill infinite loop fix | Виправлено infinite loop де skill з `context: fork` міг повторно invocate саму себе замість виконання | 2.1.145 |
 
 ## Поля frontmatter
 
