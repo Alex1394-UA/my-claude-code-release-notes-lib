@@ -83,3 +83,5 @@
 | SDK native binary glibc/musl fix | Виправлено SDK "Claude Code native binary not found" на Linux коли обидва glibc та musl platform packages installed | 2.1.141 |
 | `claude_code.tool` OTEL `agent_id`/`parent_agent_id` | OTEL spans тепер включають `agent_id` та `parent_agent_id` attributes; виправлено trace parenting так що background subagent spans nest під dispatching Agent tool span | 2.1.145 |
 | Status line JSON GitHub repo/PR info | Status line JSON input тепер включає GitHub repo та PR information коли виявлено | 2.1.145 |
+| Unknown slash commands headless/SDK error | Невідомі slash commands в headless/SDK mode тепер показують помилку замість мовчазного ігнорування | 2.1.147 |
+| Agent SDK uncaught exception streaming end fix | Виправлено uncaught exception в кінці streaming sessions при виконанні через Agent SDK | 2.1.147 |

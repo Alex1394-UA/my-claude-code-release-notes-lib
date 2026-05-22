@@ -107,6 +107,7 @@
 | Paginated `tools/list` fix | Виправлено MCP сервери з paginated `tools/list` responses що повертали лише першу сторінку, silently dropping tools | 2.1.144 |
 | MCP images unsupported MIME types fix | MCP images з unsupported MIME types (напр. SVG) більше не break conversation — тепер зберігаються на диск та referenced в tool result | 2.1.144 |
 | MCP prompt slash commands validation error fix | MCP prompt slash commands тепер показують ім'я missing argument та expected usage замість raw server validation errors | 2.1.145 |
+| MCP servers pagination resources/templates/prompts fix | Виправлено paginating MCP servers що dropping resources, templates та prompts past page 1 | 2.1.147 |
 
 ## Області видимості
 

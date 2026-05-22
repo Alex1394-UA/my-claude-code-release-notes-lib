@@ -184,3 +184,9 @@
 | `/resume` picker forked background sessions fix [Win] | Виправлено `/resume` picker що не показував sessions forked від background session | 2.1.144 |
 | Markdown links in agents clickable fix [Win] | Виправлено markdown links в `claude agents` attached sessions що rendering як plain text замість clickable hyperlinks | 2.1.144 |
 | Cross-project resume hint PowerShell 5.1 fix [Win] | Виправлено cross-project resume hint що failing в default Windows PowerShell 5.1 — Windows тепер використовує `;` як command separator | 2.1.145 |
+| PowerShell "Yes, and don't ask again" permission rule fix [Win] | Виправлено "Yes, and don't ask again" для PowerShell script invocation що писав правило що не match-ило на наступних runs | 2.1.147 |
+| PowerShell tool winget/Store pwsh exit code 1 fix [Win] | Виправлено PowerShell tool що failing з exit code 1 коли `pwsh` встановлено через winget або Microsoft Store | 2.1.147 |
+| Full-screen strobing attached background sessions Win Terminal fix [Win] | Виправлено full-screen strobing в attached background sessions на Windows Terminal поки Claude стрімить | 2.1.147 |
+| Background-job worktree NTFS junctions follow fix [Win] | Виправлено видалення background-job worktree що проходив через NTFS junctions в основний repo | 2.1.147 |
+| Rare hang scroll settle fix [Win] | Виправлено rare hang при очікуванні scroll settle на Windows | 2.1.147 |
+| Agent view stale/doubled rows CJK characters fix [Win] | Виправлено stale та doubled rows в agent view list на Windows коли background session results містять wide (CJK) characters | 2.1.147 |

@@ -51,6 +51,8 @@
 | "Chat about this" AskUserQuestion fix | Виправлено "Chat about this" на `AskUserQuestion` dialog що erasing question text | 2.1.136 |
 | Skill tool headless permission error fix | Виправлено Skill tool що failing з permission error в headless mode (регресія з v2.1.141) | 2.1.144 |
 | `context: fork` skill infinite loop fix | Виправлено infinite loop де skill з `context: fork` міг повторно invocate саму себе замість виконання | 2.1.145 |
+| `claude agents` pinned sessions `Ctrl+T` | `Ctrl+T` в `claude agents` pin-ить background session — залишається живою при idle, рестартується in-place для оновлень, та shed-иться під memory pressure лише після non-pinned sessions | 2.1.147 |
+| `CLAUDE_CODE_SUBAGENT_MODEL` teammate processes fix | Виправлено `CLAUDE_CODE_SUBAGENT_MODEL` що не застосовувався до teammate processes spawned agent teams | 2.1.147 |
 
 ## Поля frontmatter
 
@@ -147,7 +149,7 @@
 | `/loop` | Повторювана задача | 2.1.71 |
 | `/plan` | План-режим | 2.1.0 |
 | `/debug` | Debug логування | 2.1.30 |
-| `/simplify` | Спрощення коду | 2.1.63 |
+| `/simplify` | ~~Спрощення коду~~ → `/code-review` (поведінка видалена, команда перейменована) | 2.1.63, 2.1.147 |
 | `/batch` | Пакетна обробка | 2.1.63 |
 | `/skills` | Список навичок | — |
 | `/plugin` | Управління плагінами | 2.0.12 |
@@ -166,6 +168,7 @@
 | `/translate` | Переклад в чаті (40+ мов) | 2.2.0 |
 | `/export-v2` | Експорт розмови (новий) | 2.2.0 |
 | `/release-notes` | Реліз-ноти | 0.2.37 |
+| `/code-review` | Code review з обраним рівнем зусилля (напр. `/code-review high`); `--comment` для inline GitHub PR comments | 2.1.147 |
 | `/powerup` | Інтерактивні уроки з анімованими демо для вивчення можливостей Claude Code | 2.1.90 |
 | `/team-onboarding` | Генерація teammate ramp-up guide з локального використання Claude Code | 2.1.101 |
 | `/proactive` | Аліас для `/loop` | 2.1.105 |

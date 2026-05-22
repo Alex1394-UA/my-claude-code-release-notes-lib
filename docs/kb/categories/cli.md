@@ -128,6 +128,7 @@
 | `claude agents --json` | CLI вивід live Claude sessions як JSON для скриптів (tmux-resurrect, status bars, session pickers) | 2.1.145 |
 | `claude agents` tab title awaiting-input count | Заголовок термінальної таб-сесії `claude agents` тепер показує кількість агентів що чекають на input | 2.1.145 |
 | `/review` projectCards GraphQL fix | Виправлено `/review` що використовував deprecated `projectCards` GraphQL query що помилявся на repos з Classic Projects | 2.1.145 |
+| `claude agents` pinned sessions `Ctrl+T` | `Ctrl+T` в `claude agents` pin-ить background session — pin-нута сесія залишається живою при idle, рестартується in-place для оновлень, та shed-иться під memory pressure лише після non-pinned | 2.1.147 |
 
 ## Запуск та аутентифікація
 

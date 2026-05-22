@@ -597,3 +597,22 @@
 | Corrupt `.credentials.json` scopes fix | Виправлено corrupt `.credentials.json` з non-array `scopes` що hang-ав CLI на startup або silently abort-ав OAuth token refresh | 2.1.143 |
 | Background sessions macOS protected dirs fix | Виправлено background-job sessions на macOS що отримували "Operation not permitted" при читанні файлів під `~/Documents`, `~/Desktop` або `~/Downloads` навіть з Full Disk Access | 2.1.143 |
 | Worktree cleanup no `rm -rf` fallback | Worktree cleanup більше не fallback-ить до `rm -rf` коли `git worktree remove` fails — запобігає втраті gitignored або in-progress файлів | 2.1.143 |
+| Auto-updater retries transient network failures | Покращений auto-updater: retries transient помилки, specific error categories та OS error codes при невдачі, показує current version | 2.1.147 |
+| Diff rendering performance large file edits | Покращена продуктивність diff rendering для великих файлових редагувань | 2.1.147 |
+| Prompt history no consecutive duplicates | Prompt history більше не записує послідовні дублікати — arrow-up recall та повторна відправка не додає ще один запис | 2.1.147 |
+| `&` in `!` command `&amp;` fix | Виправлено `&` в `!` command output що відображався як `&amp;`, що ламало copy-paste URL (напр. `gcloud auth login`) на headless machines | 2.1.147 |
+| Unknown slash commands headless/SDK error | Невідомі slash commands в headless/SDK mode тепер показують помилку замість мовчазного ігнорування | 2.1.147 |
+| `/help` tab header and single command per page fix | Виправлено `/help` що показував зламаний tab header та лише одну команду на сторінці на малих терміналах поза fullscreen mode | 2.1.147 |
+| Shell snapshot underscore user functions fix | Виправлено shell snapshot що dropping user functions з іменами що починаються з одного underscore, ламаючи aliases що посилаються на них | 2.1.147 |
+| PowerShell tool default formatter output fix | Виправлено PowerShell tool що dropping output для команд що покладаються на default formatter | 2.1.147 |
+| `/effort` slider wrong level fix | Виправлено `/effort` що відкривався зі слайдером на неправильному рівні — тепер починає на поточному рівні | 2.1.147 |
+| `/background` skill/slash-command-only sessions fix | Виправлено `/background` що відмовлявся від сесій де єдиним input була skill або кастомна slash команда | 2.1.147 |
+| Auto mode `AskUserQuestion` suppression fix | Виправлено auto mode що suppressing `AskUserQuestion` коли користувач або skill явно на нього покладаються — auto-mode classifier тепер бачить відповіді користувача як intent signal | 2.1.147 |
+| `/theme` Esc not responding fix | Виправлено `/theme` "New custom theme" та color editor dialogs що не реагували на Esc | 2.1.147 |
+| Pasted text `[Pasted text #N]` placeholder fix | Виправлено pasted text що доставлявся агентам як непридатний `[Pasted text #N]` placeholder замість фактичного контенту | 2.1.147 |
+| Backgrounded sessions re-prompting permissions fix | Виправлено backgrounded sessions що повторно запитували tool permissions вже надані з "don't ask again" | 2.1.147 |
+| GNOME Terminal right-click/middle-click paste fix | Виправлено вставку правим та середнім кліком в GNOME Terminal | 2.1.147 |
+| Slash commands tab/newline unknown command fix | Виправлено slash commands з tab або newline що трактуються як unknown command | 2.1.147 |
+| Spacing/layout menus fix | Виправлено кілька spacing та layout проблем в `/plugin`, `/status`, `/mobile`, `/sandbox`, `/permissions` menus | 2.1.147 |
+| Stripped images re-read absent media fix | Виправлено stripped images що prompting модель повторно читати media що більше не присутній | 2.1.147 |
+| Bash tool exit code 127 regression fix | Виправлено Bash tool що повертав exit code 127 на кожній команді для деяких користувачів (регресія з 2.1.147) | 2.1.148 |

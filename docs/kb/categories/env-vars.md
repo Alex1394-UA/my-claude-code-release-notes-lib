@@ -112,6 +112,7 @@
 | `CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE` | Закріпити fast mode на Opus 4.6 замість нового дефолту Opus 4.7 (`1`) | 2.1.142 |
 | `CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY` | Opt-out з дефолтного `-ExecutionPolicy Bypass` в PowerShell tool (`1`) | 2.1.143 |
 | `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP` | Override дефолтного ліміту 8 послідовних stop hook блоків; turn завершується з warning після досягнення ліміту | 2.1.143 |
+| `CLAUDE_CODE_SUBAGENT_MODEL` teammate processes fix | Виправлено `CLAUDE_CODE_SUBAGENT_MODEL` що не застосовувався до teammate processes spawned agent teams | 2.1.147 |
 
 ## Шляхи
 

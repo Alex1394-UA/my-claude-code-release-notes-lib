@@ -120,3 +120,5 @@
 | `/plugin` pre-install component preview | Discover та Browse screens тепер показують плагіна commands, agents, skills, hooks, та MCP/LSP servers перед встановленням | 2.1.145 |
 | Stale marketplace banner fix | Виправлено stale "Failed to install Anthropic marketplace" banner що показувався коли marketplace вже встановлено | 2.1.145 |
 | `claude plugin validate` skills: file vs directory | `claude plugin validate` тепер flag-ить `skills:` entries що point на file замість directory — error suggests parent directory | 2.1.145 |
+| Plugin agents multiple `Agent(...)` types fix | Виправлено plugin agents що declare multiple `Agent(...)` types в `tools:` frontmatter dropping all but last entry | 2.1.147 |
+| Plugin component counts doubled `claude plugin details` fix | Виправлено plugin component counts в `claude plugin details` та `/plugin` що подвоювались коли plugin manifest мав paths що overlap default directories | 2.1.147 |
