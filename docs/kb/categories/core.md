@@ -616,3 +616,13 @@
 | Spacing/layout menus fix | Виправлено кілька spacing та layout проблем в `/plugin`, `/status`, `/mobile`, `/sandbox`, `/permissions` menus | 2.1.147 |
 | Stripped images re-read absent media fix | Виправлено stripped images що prompting модель повторно читати media що більше не присутній | 2.1.147 |
 | Bash tool exit code 127 regression fix | Виправлено Bash tool що повертав exit code 127 на кожній команді для деяких користувачів (регресія з 2.1.147) | 2.1.148 |
+| `/usage` per-category breakdown | `/usage` тепер показує per-category розбивку що використовує ліміти — skills, subagents, plugins, та per-MCP-server cost | 2.1.149 |
+| GFM task list checkboxes | Markdown output тепер рендерить GFM task list checkboxes (`- [ ] todo` / `- [x] done`) замість звичайних bullets | 2.1.149 |
+| Thinking spinner amber across tool calls fix | Виправлено thinking spinner що залишався amber між tool calls та на fresh thinking bursts | 2.1.149 |
+| Status bar baseline effort fix | Виправлено status bar що показував baseline `/effort` setting замість effort level застосованого через skill/agent `effort:` frontmatter | 2.1.149 |
+| Ctrl+O transcript view freeze fix | Виправлено Ctrl+O transcript view що freezing на момент відкриття замість tailing нових повідомлень | 2.1.149 |
+| Prompt-history edit losing fix | Виправлено редагування recalled prompt-history entry що втрачалось при навігації вгору/вниз arrow keys | 2.1.149 |
+| Up-arrow history race fix | Виправлено race де щойно відправлений промпт міг з'явитись двічі в up-arrow history | 2.1.149 |
+| "Jump to bottom" pill fullscreen dismiss fix | Виправлено tap на "Jump to bottom" pill в fullscreen mode що не dismiss-ав негайно | 2.1.149 |
+| Collapsed Bash output wrong hidden-line count fix | Виправлено collapsed Bash output що reporting неправильну кількість hidden lines для outputs з багатьма короткими рядками | 2.1.149 |
+| Argument-hint clipping trailing characters fix | Виправлено slash-command argument-hint що обрізав trailing typed characters коли hint переливався через input box | 2.1.149 |

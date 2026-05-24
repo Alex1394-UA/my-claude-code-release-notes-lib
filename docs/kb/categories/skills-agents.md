@@ -53,6 +53,7 @@
 | `context: fork` skill infinite loop fix | Виправлено infinite loop де skill з `context: fork` міг повторно invocate саму себе замість виконання | 2.1.145 |
 | `claude agents` pinned sessions `Ctrl+T` | `Ctrl+T` в `claude agents` pin-ить background session — залишається живою при idle, рестартується in-place для оновлень, та shed-иться під memory pressure лише після non-pinned sessions | 2.1.147 |
 | `CLAUDE_CODE_SUBAGENT_MODEL` teammate processes fix | Виправлено `CLAUDE_CODE_SUBAGENT_MODEL` що не застосовувався до teammate processes spawned agent teams | 2.1.147 |
+| Argument-hint after Tab-completion fix | Виправлено argument-hint та progressive arg suggestions що не з'являлись після Tab-completing skill чий frontmatter `name:` відрізняється від directory basename | 2.1.149 |
 
 ## Поля frontmatter
 

@@ -165,3 +165,9 @@
 | `NO_COLOR`/`FORCE_COLOR` in settings.json `env` fix | `NO_COLOR`/`FORCE_COLOR` в settings.json `env` більше не stripають Claude Code UI кольори — тепер застосовуються лише до subprocesses | 2.1.143 |
 | `spinnerVerbs` post-turn duration fix | Виправлено `spinnerVerbs` що applying до post-turn duration message — past-tense built-ins як "Worked for 5s" відновлені | 2.1.144 |
 | Enterprise login restrictions enforcement fix | Виправлено `forceLoginOrgUUID` та `forceLoginMethod` managed-settings що не застосовувались до third-party-provider та API-key sessions | 2.1.147 |
+| `allowAllClaudeAiMcps` | [Managed] Дозволяє завантажувати claude.ai cloud MCP connectors разом з `managed-mcp.json` | 2.1.149 |
+| PowerShell `cd` functions permission bypass fix | Виправлено PowerShell permission bypass: built-in `cd` functions (`cd..`, `cd\`, `cd~`, `X:`) змінювали робочу директорію undetected, дозволяючи пізнішій команді читати поза workspace | 2.1.149 |
+| Permission-analysis stale PWD/OLDPWD/DIRSTACK fix | Виправлено permission-analysis gap де parser trusted stale variable-tracking values для `PWD`/`OLDPWD`/`DIRSTACK` через `cd`/`pushd`/`popd` | 2.1.149 |
+| PowerShell prefix/wildcard allow rules fix | Виправлено PowerShell prefix/wildcard allow rules (напр. `PowerShell(dotnet.exe build *)`) що не pre-approving native executables та scripts | 2.1.149 |
+| Sandbox write allowlist git worktree fix | Виправлено sandbox write allowlist в git worktrees що покривав весь main repository root замість лише shared `.git` directory (з `hooks/` та `config` denied) | 2.1.149 |
+| Managed-settings approval dialog freeze fix | Виправлено managed-settings approval dialog що залишав термінал frozen після прийняття при startup | 2.1.149 |

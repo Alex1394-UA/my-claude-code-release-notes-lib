@@ -190,3 +190,5 @@
 | Background-job worktree NTFS junctions follow fix [Win] | Виправлено видалення background-job worktree що проходив через NTFS junctions в основний repo | 2.1.147 |
 | Rare hang scroll settle fix [Win] | Виправлено rare hang при очікуванні scroll settle на Windows | 2.1.147 |
 | Agent view stale/doubled rows CJK characters fix [Win] | Виправлено stale та doubled rows в agent view list на Windows коли background session results містять wide (CJK) characters | 2.1.147 |
+| PowerShell `cd` functions permission bypass fix [Win] | Виправлено PowerShell permission bypass: built-in `cd` functions (`cd..`, `cd\`, `cd~`, `X:`) змінювали робочу директорію undetected, дозволяючи пізнішій команді читати поза workspace | 2.1.149 |
+| PowerShell prefix/wildcard allow rules fix [Win] | Виправлено PowerShell prefix/wildcard allow rules (напр. `PowerShell(dotnet.exe build *)`) що не pre-approving native executables та scripts | 2.1.149 |

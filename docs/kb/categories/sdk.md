@@ -85,3 +85,4 @@
 | Status line JSON GitHub repo/PR info | Status line JSON input тепер включає GitHub repo та PR information коли виявлено | 2.1.145 |
 | Unknown slash commands headless/SDK error | Невідомі slash commands в headless/SDK mode тепер показують помилку замість мовчазного ігнорування | 2.1.147 |
 | Agent SDK uncaught exception streaming end fix | Виправлено uncaught exception в кінці streaming sessions при виконанні через Agent SDK | 2.1.147 |
+| Remote Control session rename not updating local fix | Виправлено перейменування Remote Control session з claude.ai або Claude mobile app що не оновлював local session name для `claude --resume` | 2.1.149 |
