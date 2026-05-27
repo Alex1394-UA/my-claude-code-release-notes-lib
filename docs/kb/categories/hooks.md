@@ -3,9 +3,10 @@
 > Документація: https://code.claude.com/docs/en/hooks
 >
 > ⚠️ **Відомі проблеми:**
-> - `PreToolUse`/`PostToolUse` хуки **не працюють у `-p` (print/pipe) mode** — `updatedInput` ігнорується, Stop хуки повертають пустий output ([#32348](https://github.com/anthropics/claude-code/issues/32348), [#39050](https://github.com/anthropics/claude-code/issues/39050))
+> - `PreToolUse` `updatedInput` **не працює у `-p` (print/pipe) mode** — мовчазно ігнорується; `permissionDecision` (allow/deny) працює ([#32348](https://github.com/anthropics/claude-code/issues/32348) — закрито без фіксу як неактивний)
+> - ~~Stop хуки повертають пустий output у `-p` mode~~ **виправлено в v2.1.84** — print mode тепер пропускає Stop-hook progress/attachment messages ([#39050](https://github.com/anthropics/claude-code/issues/39050))
 > - Hook runner іноді плутає: нормальні виклики помилково трактуються як "hook error" ([#35587](https://github.com/anthropics/claude-code/issues/35587))
-> - Працюють надійно лише в інтерактивному режимі
+> - У `-p` mode працює `permissionDecision` та `additionalContext`; `updatedInput` та `updatedToolOutput` — мовчазно ігноруються
 > - `PostToolUse` `updatedToolOutput` **не працює в v2.1.121** — нове поле silently dropped для built-in (Bash, Read, Grep) та MCP tools; працює лише старе `updatedMCPToolOutput` для MCP ([#54196](https://github.com/anthropics/claude-code/issues/54196), [#32105](https://github.com/anthropics/claude-code/issues/32105))
 > - `PreToolUse` `permissionDecision: "ask"` **ігнорується auto-mode класифікатором** для in-flow викликів (git commit/push після редагування файлів); out-of-flow виклики prompt спрацьовує ([#51255](https://github.com/anthropics/claude-code/issues/51255), [#53824](https://github.com/anthropics/claude-code/issues/53824))
 > - `PostToolUse` prompt-type хуки **падали на Vertex AI** з `output_config: Extra inputs are not permitted` — **виправлено в v2.1.122** ([#37746](https://github.com/anthropics/claude-code/issues/37746), [#54224](https://github.com/anthropics/claude-code/issues/54224))
