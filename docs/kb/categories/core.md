@@ -626,3 +626,17 @@
 | "Jump to bottom" pill fullscreen dismiss fix | Виправлено tap на "Jump to bottom" pill в fullscreen mode що не dismiss-ав негайно | 2.1.149 |
 | Collapsed Bash output wrong hidden-line count fix | Виправлено collapsed Bash output що reporting неправильну кількість hidden lines для outputs з багатьма короткими рядками | 2.1.149 |
 | Argument-hint clipping trailing characters fix | Виправлено slash-command argument-hint що обрізав trailing typed characters коли hint переливався через input box | 2.1.149 |
+| Auto mode no opt-in consent | Auto mode більше не потребує попереднього згоди користувача | 2.1.152 |
+| Thinking summaries collapsed readability | Thinking summaries в collapsed group залишаються читабельними мінімум 3 секунди, рендеряться як markdown та cap на 10 рядків; `Ctrl+O` показує повний thinking | 2.1.152 |
+| Fullscreen thinking live counter | В fullscreen mode індикатор "Thinking for Ns" тепер рахує в реальному часі під час thinking; зберігає значення при interrupt mid-thought | 2.1.152 |
+| Workflow tool inline progress simplified | Workflow tool inline progress display спрощено — live agent counts тепер лише в persistent workflow status row під prompt | 2.1.152 |
+| Post-response timer background agents | Post-response timer тепер показує "Waiting for N background agents/workflows to finish" та звітує cumulative time коли результати оброблені | 2.1.152 |
+| Terminal styling long sessions fix | Виправлено деградацію terminal styling в дуже довгих сесіях — renderer style pool тепер recycled | 2.1.152 |
+| Sandbox-enabled warning condensed startup fix | Виправлено sandbox-enabled warning що не показувався в condensed startup mode | 2.1.152 |
+| Thinking spinner tool running fix | Виправлено thinking spinner що показував "still thinking"/"almost done thinking" поки tool running; thinking status скидається до "thinking" після кожного tool | 2.1.152 |
+| Focus mode spurious hidden count fix | Виправлено focus mode що показував спurious "N messages hidden" на turns без hidden activity | 2.1.152 |
+| Expanded tool result link click fix | Виправлено clicking link в expanded tool result що collapse-ав section замість відкриття link | 2.1.152 |
+| Markdown table cell borders fix | Виправлено table cell borders що успадковували колір inline code, continuation lines що втрачали стиль, та empty header cells що показували label в narrow-terminal stacked layout | 2.1.152 |
+| Effort-change confirmation dialog fix | Виправлено effort-change confirmation dialog що з'являвся коли conversation не мала повідомлень або при switch між effort levels що resolve до того ж значення | 2.1.152 |
+| Agent tool description `--bare` fix | Виправлено Agent tool description що reference-ав agent list який ніколи не доставляється з `--bare` або attachments disabled | 2.1.152 |
+| Stale thinking-block signatures fix | Виправлено sessions що застрягали після model/login switch через stale thinking-block signatures в history — тепер stripped proactively з retry safety-net | 2.1.152 |

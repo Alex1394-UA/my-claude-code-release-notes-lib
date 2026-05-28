@@ -1,7 +1,7 @@
 # Knowledge Base Metadata
 
-last_processed: 2.1.150
-last_updated: 2026-05-24
+last_processed: 2.1.152
+last_updated: 2026-05-28
 seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 
 ## Відстежувані невідповідності (Release Notes vs Reality)
@@ -37,3 +37,4 @@ seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 | 2026-05-22 | 2.1.148 | core | ~1 запис додано, 0 депрекацій |
 | 2026-05-24 | 2.1.149 | core, cli, settings, windows, skills-agents, sdk | ~34 записів додано, 0 депрекацій |
 | 2026-05-24 | 2.1.150 | — | 0 записів (internal infrastructure) |
+| 2026-05-28 | 2.1.152 | core, cli, skills-agents, hooks, plugins, settings, keybindings, sdk, mcp | ~34 записів додано, 0 депрекацій |

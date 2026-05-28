@@ -150,7 +150,7 @@
 | `/loop` | Повторювана задача | 2.1.71 |
 | `/plan` | План-режим | 2.1.0 |
 | `/debug` | Debug логування | 2.1.30 |
-| `/simplify` | ~~Спрощення коду~~ → `/code-review` (поведінка видалена, команда перейменована) | 2.1.63, 2.1.147 |
+| `/simplify` | ~~Спрощення коду~~ → `/code-review` (тепер invoke-є `/code-review --fix`) | 2.1.63, 2.1.147, 2.1.152 |
 | `/batch` | Пакетна обробка | 2.1.63 |
 | `/skills` | Список навичок | — |
 | `/plugin` | Управління плагінами | 2.0.12 |
@@ -169,7 +169,7 @@
 | `/translate` | Переклад в чаті (40+ мов) | 2.2.0 |
 | `/export-v2` | Експорт розмови (новий) | 2.2.0 |
 | `/release-notes` | Реліз-ноти | 0.2.37 |
-| `/code-review` | Code review з обраним рівнем зусилля (напр. `/code-review high`); `--comment` для inline GitHub PR comments | 2.1.147 |
+| `/code-review` | Code review з обраним рівнем зусилля (напр. `/code-review high`); `--comment` для inline GitHub PR comments; `--fix` для автоматичного застосування знахідок до working tree | 2.1.152 |
 | `/powerup` | Інтерактивні уроки з анімованими демо для вивчення можливостей Claude Code | 2.1.90 |
 | `/team-onboarding` | Генерація teammate ramp-up guide з локального використання Claude Code | 2.1.101 |
 | `/proactive` | Аліас для `/loop` | 2.1.105 |
@@ -177,4 +177,6 @@
 | `/undo` | Аліас для `/rewind` | 2.1.108 |
 | `/focus` | Окремий toggle focus view (відокремлено від `Ctrl+O`) | 2.1.110 |
 | Вбудовані команди через Skill tool | Модель може викликати вбудовані slash-команди (`/init`, `/review`, `/security-review`) через Skill tool | 2.1.108 |
+| `/reload-skills` | Перезавантаження skill directories без перезапуску сесії | 2.1.152 |
+| Skill frontmatter `disallowed-tools` | Skills та slash commands можуть встановлювати `disallowed-tools` в frontmatter для видалення tools під час активного skill | 2.1.152 |
 | ~~`/tag`~~ | [ВИДАЛЕНО] | 2.1.92 |

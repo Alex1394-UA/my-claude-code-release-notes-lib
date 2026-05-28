@@ -122,3 +122,6 @@
 | `claude plugin validate` skills: file vs directory | `claude plugin validate` тепер flag-ить `skills:` entries що point на file замість directory — error suggests parent directory | 2.1.145 |
 | Plugin agents multiple `Agent(...)` types fix | Виправлено plugin agents що declare multiple `Agent(...)` types в `tools:` frontmatter dropping all but last entry | 2.1.147 |
 | Plugin component counts doubled `claude plugin details` fix | Виправлено plugin component counts в `claude plugin details` та `/plugin` що подвоювались коли plugin manifest мав paths що overlap default directories | 2.1.147 |
+| `claude plugin marketplace remove --scope` | `claude plugin marketplace remove` тепер приймає `--scope user|project|local` для симетрії з `marketplace add`, `install`, `uninstall` | 2.1.152 |
+| Plugin MCP same-command different-env dedup fix | Виправлено plugin MCP servers з тим самим command але різними environment variables що incorrectly deduplicated | 2.1.152 |
+| Plugin git branch update tracking fix | Виправлено plugins що track git branch та перестали receiving updates після plugin registry rebuild | 2.1.152 |

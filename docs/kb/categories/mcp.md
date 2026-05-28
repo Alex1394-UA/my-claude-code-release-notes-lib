@@ -108,6 +108,7 @@
 | MCP images unsupported MIME types fix | MCP images з unsupported MIME types (напр. SVG) більше не break conversation — тепер зберігаються на диск та referenced в tool result | 2.1.144 |
 | MCP prompt slash commands validation error fix | MCP prompt slash commands тепер показують ім'я missing argument та expected usage замість raw server validation errors | 2.1.145 |
 | MCP servers pagination resources/templates/prompts fix | Виправлено paginating MCP servers що dropping resources, templates та prompts past page 1 | 2.1.147 |
+| Remote MCP egress proxy Remote sessions fix | Виправлено remote MCP servers що failing to connect в Claude Code Remote sessions коли egress proxy enabled | 2.1.152 |
 
 ## Області видимості
 

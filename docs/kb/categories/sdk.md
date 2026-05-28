@@ -86,3 +86,6 @@
 | Unknown slash commands headless/SDK error | Невідомі slash commands в headless/SDK mode тепер показують помилку замість мовчазного ігнорування | 2.1.147 |
 | Agent SDK uncaught exception streaming end fix | Виправлено uncaught exception в кінці streaming sessions при виконанні через Agent SDK | 2.1.147 |
 | Remote Control session rename not updating local fix | Виправлено перейменування Remote Control session з claude.ai або Claude mobile app що не оновлював local session name для `claude --resume` | 2.1.149 |
+| OTEL metric `app.entrypoint` | Session entrypoint як OTEL metric attribute (`app.entrypoint`, opt-in через `OTEL_METRICS_INCLUDE_ENTRYPOINT=true`) | 2.1.152 |
+| `cache_creation_input_tokens` reporting fix | Виправлено `cache_creation_input_tokens` що report-ився як 0 в transcript та result usage коли API report-ив cache writes лише через nested `cache_creation` breakdown | 2.1.152 |
+| PushNotification tool SDK-hosted fix | Виправлено PushNotification tool що incorrectly report-ив "Mobile push not sent (Remote Control inactive)" в SDK-hosted sessions коли Remote Control enabled | 2.1.152 |

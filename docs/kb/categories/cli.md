@@ -206,3 +206,6 @@
 | `claude remote-control` | Remote Control підсистема | 2.1.51 |
 | Homebrew release channel | Update prompts використовують release channel cask (`claude-code` → stable, `claude-code@latest` → latest) | 2.1.92 |
 | Claude Code download URL | Claude Code та installer тепер використовують `https://downloads.claude.ai/claude-code-releases` замість Google Storage | 2.1.116 |
+| `/usage` large session files | `/usage` breakdown тепер включає large session files; streaming read для стабільного memory usage | 2.1.152 |
+| `/doctor` stale marketplace/plugin fix | Виправлено `/doctor` що report-ив "marketplace not found" або "plugin not found" для stale `enabledPlugins` entries що reference removed marketplaces або dropped plugins | 2.1.152 |
+| `claude agents` background worker crash fix | Виправлено background worker crash в `claude agents` при прийнятті stale permission prompt після cancel subagent | 2.1.152 |

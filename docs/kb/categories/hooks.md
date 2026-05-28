@@ -44,6 +44,7 @@
 | `WorktreeCreate` | При створенні worktree | 2.1.50 |
 | `WorktreeRemove` | При видаленні worktree | 2.1.50 |
 | `ModelSwitch` | При зміні моделі під час сесії | 2.2.1 |
+| `MessageDisplay` | При відображенні тексту assistant message — трансформація або приховування | 2.1.152 |
 | `AgentOutput` | [НЕ ПОСТАВЛЕНО] Вивід агента | 2.0.64 |
 
 ## Налаштування хуків
@@ -100,3 +101,6 @@
 | File descriptor exhaustion skill dir fix | Виправлено file descriptor exhaustion коли build запущено в skill directory — non-`.md` files більше не trigger skill reloads | 2.1.144 |
 | Stop/SubagentStop `background_tasks`/`session_crons` fields | Hook input тепер включає `background_tasks` та `session_crons` поля | 2.1.145 |
 | Hook `if` conditions PowerShell wildcard fix | Виправлено hook `if` умови як `PowerShell(git push*)` що ніколи не match-или — працював лише `PowerShell(*)` | 2.1.147 |
+| `SessionStart` hook `reloadSkills: true` | `SessionStart` хуки можуть повертати `reloadSkills: true` для re-scan skill directories — skills встановлені хуком доступні в тій самій сесії | 2.1.152 |
+| `SessionStart` hook session title | `SessionStart` хуки можуть встановлювати заголовок сесії через `hookSpecificOutput.sessionTitle` на startup та resume | 2.1.152 |
+| `MessageDisplay` hook event | Новий тип хука `MessageDisplay` — дозволяє hooks трансформувати або ховати текст assistant message при відображенні | 2.1.152 |

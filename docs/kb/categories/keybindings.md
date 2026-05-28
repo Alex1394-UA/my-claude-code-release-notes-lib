@@ -96,3 +96,4 @@
 | Keybindings cmd/super/win unparseable fix | Виправлено keybindings з лише cmd/super/win modifier що flagged як unparseable | 2.1.139 |
 | Alt `chat:submit` with rebound enter fix | Виправлено alternative `chat:submit` keybindings (напр. `meta+enter`, `ctrl+enter`) що не working коли `enter` rebound to `chat:newline` | 2.1.141 |
 | Custom `voice:pushToTalk` keybindings fix | Виправлено custom `voice:pushToTalk` keybindings та `"space": null` unbinds що silently ignored | 2.1.141 |
+| Vim `/` reverse history search | Vim mode: `/` в NORMAL mode відкриває reverse history search (як Ctrl+R), matching bash/zsh vi-mode | 2.1.152 |

@@ -171,3 +171,4 @@
 | PowerShell prefix/wildcard allow rules fix | Виправлено PowerShell prefix/wildcard allow rules (напр. `PowerShell(dotnet.exe build *)`) що не pre-approving native executables та scripts | 2.1.149 |
 | Sandbox write allowlist git worktree fix | Виправлено sandbox write allowlist в git worktrees що покривав весь main repository root замість лише shared `.git` directory (з `hooks/` та `config` denied) | 2.1.149 |
 | Managed-settings approval dialog freeze fix | Виправлено managed-settings approval dialog що залишав термінал frozen після прийняття при startup | 2.1.149 |
+| `pluginSuggestionMarketplaces` | [Managed] Admin allowlist для org marketplaces чий plugins можуть бути запропоновані через context-aware tips | 2.1.152 |
