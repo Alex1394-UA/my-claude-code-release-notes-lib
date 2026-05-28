@@ -53,6 +53,20 @@ Incrementally maintain a modular knowledge base of Claude Code features.
 - Якщо щось загубилося — додай
 - Якщо Windows-фіга — перевір що є запис і в windows.md і в основній категорії
 
+### Step 4.5: Перевірка на анґліцизми
+
+Після додавання нових записів перевір файл категорій на анґліцизми — слова що поєднують англійський корінь з українським закінченням через дефіс (напр. "invoke-є", "match-или", "strip-ає", "report-ив").
+
+1. Запусти grep-патерн на оновлених файлах:
+   ```
+   grep -rnP '\b(invoke|match|strip|drop|skip|trigger|report|track|sync|merge|flush|fetch|parse|render|stream|resolve|retry|load|dump|scope|stage|batch|route|proxy|reset|mount|spawn|loop|wrap|fallback|worker|daemon|crash|fix|break|catch|pass|push|pull|cache|block)-[а-яіїєґ]+(ся)?\b' docs/kb/categories/
+   ```
+2. Для кожного знайденого — перевір `references/anglicisms.md` за таблицею замін
+3. Якщо знайшов анґліцизм — виправ через Edit tool
+4. **Також перевіряй під час написання** нових записів — не створюй анґліцизми, одразу пиши українською
+
+Прийняті Ukr IT-позички (кешувати, парсити, рендерити, клонувати, форкнути, крашити, блокувати, монтувати) — нормальні, не виправляй.
+
 ### Step 5: Створити снапшот релізу
 
 Файл `docs/kb/releases/YYYY-MM-DD_vX.Y.Z.md`:
@@ -109,6 +123,8 @@ Incrementally maintain a modular knowledge base of Claude Code features.
 ## Rules
 
 - **ВСЕ описи — українською** (ідентифікатори як є)
+- **Без анґліцизмів** — англійський корінь + українське закінчення через дефіс (напр. "invoke-є", "report-ив") заміняй українським дієсловом; див. `references/anglicisms.md`
+- **Прийняті позички ок** — "кешувати", "парсити", "рендерити", "форкнути", "крашити", "блокувати", "монтувати" — це нормальні Ukr IT-терміни
 - **Не видаляти записи** — лише додавати або позначати [ЗАСТАРІЛО]
 - **Перевіряти дублікати** перед додаванням (ідентифікатор + версія)
 - **Валідувати повноту** — кожна фіча з release notes = запис у KB
@@ -123,3 +139,4 @@ Incrementally maintain a modular knowledge base of Claude Code features.
 
 - `references/category-map.md` — що куди категоризувати (читай on-demand)
 - `references/file-formats.md` — шаблони форматів файлів (читай on-demand)
+- `references/anglicisms.md` — словник анґліцизмів та українських замін для Step 4.5 (читай on-demand)

@@ -95,7 +95,7 @@
 | `claude agents` empty placeholder sessions | Більше не показує empty placeholder sessions від backgrounding fresh REPL; shows onboarding text при вході через `←` без інших агентів | 2.1.141 |
 | Empty idle background sessions auto-retire | Empty idle background sessions від `←` тепер автоматично retired daemon after 5 minutes | 2.1.141 |
 | `claude agents` конфігураційні прапорці | Нові прапорці для dispatched background sessions: `--add-dir`, `--settings`, `--mcp-config`, `--plugin-dir`, `--permission-mode`, `--model`, `--effort`, `--dangerously-skip-permissions` | 2.1.142 |
-| `claude agents` links fix | Виправлено клік по посиланнях в attached `claude agents` сесії — headless browser shim worker-а більше не застосовується під час attachment | 2.1.142 |
+| `claude agents` links fix | Виправлено клік по посиланнях в attached `claude agents` сесії — headless browser shim воркера більше не застосовується під час attachment | 2.1.142 |
 | `claude agents` editor fix | Виправлено `claude agents` "v to open in editor" що використовував daemon's default editor замість shell `$EDITOR`/`$VISUAL` | 2.1.142 |
 | `claude agents` Windows network drives fix | Виправлено deadlock `claude agents` на Windows з робочими директоріями на network drives; Ctrl+C тепер працює під час startup [Win] | 2.1.142 |
 | `claude agents` background-color bleed fix | Виправлено background-color bleed при attaching до `claude agents` сесії з Apple Terminal або інших 256-color-only терміналів | 2.1.142 |
@@ -130,7 +130,7 @@
 | `/review` projectCards GraphQL fix | Виправлено `/review` що використовував deprecated `projectCards` GraphQL query що помилявся на repos з Classic Projects | 2.1.145 |
 | `claude agents` pinned sessions `Ctrl+T` | `Ctrl+T` в `claude agents` pin-ить background session — pin-нута сесія залишається живою при idle, рестартується in-place для оновлень, та shed-иться під memory pressure лише після non-pinned | 2.1.147 |
 | `/diff` keyboard scrollable detail view | `/diff` detail view тепер підтримує скролінг клавіатурою (arrows, `j`/`k`, `PgUp`/`PgDn`, `Space`, `Home`/`End`) | 2.1.149 |
-| `find` macOS vnode table crash fix | Виправлено `find` в Bash tool що вичерпував macOS system file/vnode table та crash-ив host на великих directory trees | 2.1.149 |
+| `find` macOS vnode table crash fix | Виправлено `find` в Bash tool що вичерпував macOS system file/vnode table та змушував падати host на великих directory trees | 2.1.149 |
 | `/ultraplan` "uncommitted changes" false positive fix | Виправлено `/ultraplan` та remote session creation що failing з "Could not capture uncommitted changes" коли working tree не має реальних змін | 2.1.149 |
 | `otelHeadersHelper` spaces in path fix | Виправлено `otelHeadersHelper` що silent-failing коли script path містить пробіли; helper failures тепер reported в `/doctor` та debug log | 2.1.149 |
 | `/config` phantom changes fix | Виправлено `/config` exit summary що reporting phantom changes до auto-compact та theme при toggle unrelated settings | 2.1.149 |
@@ -207,7 +207,7 @@
 | Homebrew release channel | Update prompts використовують release channel cask (`claude-code` → stable, `claude-code@latest` → latest) | 2.1.92 |
 | Claude Code download URL | Claude Code та installer тепер використовують `https://downloads.claude.ai/claude-code-releases` замість Google Storage | 2.1.116 |
 | `/usage` large session files | `/usage` breakdown тепер включає large session files; streaming read для стабільного memory usage | 2.1.152 |
-| `/doctor` stale marketplace/plugin fix | Виправлено `/doctor` що report-ив "marketplace not found" або "plugin not found" для stale `enabledPlugins` entries що reference removed marketplaces або dropped plugins | 2.1.152 |
+| `/doctor` stale marketplace/plugin fix | Виправлено `/doctor` що повідомляв "marketplace not found" або "plugin not found" для stale `enabledPlugins` entries що reference removed marketplaces або dropped plugins | 2.1.152 |
 | `claude agents` background worker crash fix | Виправлено background worker crash в `claude agents` при прийнятті stale permission prompt після cancel subagent | 2.1.152 |
 | `claude agents` autocomplete native commands | Autocomplete в dispatch input тепер пропонує native slash команди та bundled skills, не лише project skills | 2.1.153 |
 | `claude agents` PR column format | PR column тепер показує `PR #N` для одного PR або `N PRs` для кількох | 2.1.153 |

@@ -110,7 +110,7 @@
 | MCP servers pagination resources/templates/prompts fix | Виправлено paginating MCP servers що dropping resources, templates та prompts past page 1 | 2.1.147 |
 | Remote MCP egress proxy Remote sessions fix | Виправлено remote MCP servers що failing to connect в Claude Code Remote sessions коли egress proxy enabled | 2.1.152 |
 | Об'єднане "needs authentication" повідомлення | Об'єднано окремі "needs authentication" startup notifications для MCP servers та connectors в одне повідомлення | 2.1.153 |
-| Stateful MCP reconnect loop fix | Виправлено stateful MCP servers без optional GET SSE stream що reconnect-loop-или на `tools/list` (регресія з v2.1.147) | 2.1.153 |
+| Stateful MCP reconnect loop fix | Виправлено stateful MCP servers без optional GET SSE stream що зациклювалися на повторних підключеннях по `tools/list` (регресія з v2.1.147) | 2.1.153 |
 | Custom API gateway OAuth credential fix | Виправлено регресію де custom API gateway міг отримувати user's Anthropic OAuth credential замість gateway's own token | 2.1.153 |
 | Subagent frontmatter MCP servers `--strict-mcp-config` fix | Виправлено subagent (Agent tool) frontmatter MCP servers що ігнорували `--strict-mcp-config`, `--bare`, remote mode, enterprise managed MCP config, та managed-settings MCP server allow/deny policies | 2.1.153 |
 | MCP tool progress notifications collapsed view fix | Виправлено MCP tool progress notifications що не рендерились в collapsed tool view | 2.1.153 |

@@ -416,7 +416,7 @@
 | OTEL env var scrub | Subprocesses (Bash, hooks, MCP, LSP) більше не успадковують `OTEL_*` змінні середовища | 2.1.128 |
 | Parallel shell tool calls fix | Failed read-only shell command (grep, git diff, ls) більше не скасовує sibling calls | 2.1.128 |
 | Banner "with X effort" fix | Виправлено показ "with X effort" на моделях що не підтримують effort | 2.1.128 |
-| `/fast` 3P provider fix | `/fast` на third-party providers більше не fuzzy-match-ить до неспорідненого skill замість повідомлення "not available" | 2.1.128 |
+| `/fast` 3P provider fix | `/fast` на third-party providers більше не відображав fuzzy-match з неспорідненим skill замість повідомлення "not available" | 2.1.128 |
 | Vim `Space` NORMAL mode | `Space` в vim NORMAL mode тепер рухає курсор вправо, як у стандартному vi/vim | 2.1.128 |
 | Terminal progress indicator fix | Прогрес-індикатор (OSC 9;4) більше не вимикається між tool calls — залишається видимим протягом всього turn | 2.1.128 |
 | `/rename` resumed sessions fix | `/rename` без аргументів більше не ламається на відновлених сесіях де останній entry — compact boundary | 2.1.128 |
@@ -496,7 +496,7 @@
 | Stray leading space wrapped text fix | Виправлено stray leading space на другому рядку wrapped text на column boundary | 2.1.136 |
 | "Jump to bottom" CJK artifacts fix | Виправлено "Jump to bottom" overlay що залишав color artifacts на CJK characters в fullscreen mode | 2.1.136 |
 | Wide markdown tables stale render fix | Виправлено wide markdown tables що залишали stale bordered render в terminal scrollback під час streaming | 2.1.136 |
-| Pasted text auto-truncation fix | Виправлено pasted text що silently drop-ався коли long prompt з pasted-text placeholder auto-truncate-вався | 2.1.136 |
+| Pasted text auto-truncation fix | Виправлено pasted text що мовчазно відкидався коли long prompt з pasted-text placeholder автообрізався | 2.1.136 |
 | Auto-follow re-engaging fix | Виправлено scrolling to bottom що re-engage-вав auto-follow з `autoScrollEnabled: false` | 2.1.136 |
 | Prompt suggestions auto-submit fix | Виправлено prompt suggestions що auto-submit-валися Enter на empty input замість вимоги Tab або arrow для accept | 2.1.136 |
 | Agent view (Research Preview) | Єдиний список всіх Claude Code сесій — running, blocked on you, або done. Запуск через `claude agents` | 2.1.139 |
@@ -562,20 +562,20 @@
 | Stale `/model` suggestion removed | Видалено застарілу підказку `/model claude-sonnet-4-20250514` з повідомлень відмови Usage Policy | 2.1.142 |
 | Background sessions preserve model/effort after idle | Background sessions тепер зберігають model та effort level після пробудження від idle | 2.1.143 |
 | Shift+Tab attached agent auto mode | Shift+Tab в attached agent sessions тепер включає auto mode в цикл | 2.1.143 |
-| Stop hooks block loop fix | Stop hooks що блокують повторно більше не loop-яться нескінченно — turn завершується з warning після 8 послідовних блоків (override через `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP`) | 2.1.143 |
+| Stop hooks block loop fix | Stop hooks що блокують повторно більше не зациклюються нескінченно — turn завершується з warning після 8 послідовних блоків (override через `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP`) | 2.1.143 |
 | `/bg` without prompt fix | `/bg` без промпту більше не відправляє "continue" до fork-сесії — fork тепер чекає на input | 2.1.143 |
 | `/bg` preserves configuration flags | `/bg` тепер зберігає `--mcp-config`, `--settings`, `--add-dir`, `--plugin-dir`, `--strict-mcp-config` через respawn | 2.1.143 |
 | `/bg`/←-detach preserve `--fallback-model` | Backgrounded workers тепер degrade до fallback model при overload замість hard-failure | 2.1.143 |
 | `/bg`/←-detach preserve `--allow-dangerously-skip-permissions` | Forked worker зберігає bypass-permissions в Shift+Tab cycle | 2.1.143 |
 | Background sessions honor `permissions.defaultMode` | Background sessions запущені з `claude agents` тепер поважають `permissions.defaultMode` з settings.json (раніше override на auto mode) | 2.1.143 |
-| Background daemon spawn binary fallback | Background daemon spawn тепер fallback-ить до running binary коли `~/.local/bin/claude` launcher відсутній або non-executable | 2.1.143 |
+| Background daemon spawn binary fallback | Background daemon spawn тепер відступає до running binary коли `~/.local/bin/claude` launcher відсутній або non-executable | 2.1.143 |
 | Elapsed duration subagent notifications | Background subagent completion notifications тепер показують elapsed duration (напр. "Agent completed · 3h 2m 5s") | 2.1.144 |
 | Startup hanging unreachable API fix | Виправлено зависання startup до 75s коли `api.anthropic.com` недоступний (captive portal, firewall, VPN) — side-channel API calls тепер timeout 15s | 2.1.144 |
 | Terminal resize garbled output fix | Виправлено пошкоджений термінальний вивід після пропущеного window-resize event (напр. перетягування VS Code split-pane) — self-heals на наступному frame замість Ctrl+L | 2.1.144 |
 | Progressive terminal display corruption fix | Виправлено progressive corruption (stale/garbled glyphs) в дуже довгих сесіях що clearing лише при terminal resize або restart | 2.1.144 |
 | VS Code spinner animation color reduction | Зменшено кількість кольорів spinner animation для зменшення rendering glitches в VS Code | 2.1.144 |
 | macOS background sessions Full Disk Access crash fix | Виправлено crash macOS background sessions з "exit 1 before init" коли project під Full Disk Access-захищеною папкою (регресія з 2.1.143) | 2.1.144 |
-| Unreadable image extension fallback | Файл з image extension що не відповідає вмісту (напр. HTML збережений як .png) тепер fallback-ить до text замість unrecoverable conversation | 2.1.144 |
+| Unreadable image extension fallback | Файл з image extension що не відповідає вмісту (напр. HTML збережений як .png) тепер відступає до text замість unrecoverable conversation | 2.1.144 |
 | `head`/`tail` read-before-edit | `head`/`tail` file views тепер satisfy read-before-edit check | 2.1.144 |
 | `egrep`/`fgrep`/`git grep`/`git diff` exit 1 fix | "No matches" result (exit code 1) від `egrep`, `fgrep`, `git grep` або `git diff` більше не reported як command failure | 2.1.144 |
 | AskUserQuestion Escape notes field fix | Натискання Escape в AskUserQuestion notes field більше не abortує turn — повертається до answer selection | 2.1.144 |
@@ -596,7 +596,7 @@
 | 5xx error messages gateway/provider fix | 5xx помилки тепер показують configured gateway або cloud provider замість status.claude.com | 2.1.143 |
 | Corrupt `.credentials.json` scopes fix | Виправлено corrupt `.credentials.json` з non-array `scopes` що hang-ав CLI на startup або silently abort-ав OAuth token refresh | 2.1.143 |
 | Background sessions macOS protected dirs fix | Виправлено background-job sessions на macOS що отримували "Operation not permitted" при читанні файлів під `~/Documents`, `~/Desktop` або `~/Downloads` навіть з Full Disk Access | 2.1.143 |
-| Worktree cleanup no `rm -rf` fallback | Worktree cleanup більше не fallback-ить до `rm -rf` коли `git worktree remove` fails — запобігає втраті gitignored або in-progress файлів | 2.1.143 |
+| Worktree cleanup no `rm -rf` fallback | Worktree cleanup більше не відступає до `rm -rf` коли `git worktree remove` fails — запобігає втраті gitignored або in-progress файлів | 2.1.143 |
 | Auto-updater retries transient network failures | Покращений auto-updater: retries transient помилки, specific error categories та OS error codes при невдачі, показує current version | 2.1.147 |
 | Diff rendering performance large file edits | Покращена продуктивність diff rendering для великих файлових редагувань | 2.1.147 |
 | Prompt history no consecutive duplicates | Prompt history більше не записує послідовні дублікати — arrow-up recall та повторна відправка не додає ще один запис | 2.1.147 |
@@ -634,7 +634,7 @@
 | Stream-json stdin hang fix | Виправлено hang де CLI не міг exit коли stdin закритий без EOF в stream-json mode, залишаючи stale session marker | 2.1.153 |
 | Malformed `file://` links clickable fix | Виправлено некоректні `file://` посилання в відповідях Claude що не були клікабельними в терміналі | 2.1.153 |
 | `Agent` tool `subagent_type: 'claude'` worktree fix | Виправлено `Agent` tool з `subagent_type: 'claude'` що працював в недокументованому temporary worktree, міг мовчазно discard outputs записані в gitignored paths | 2.1.153 |
-| `/bg` while responding continues | `/bg` поки Claude відповідає тепер продовжує відповідь в background session замість drop-у | 2.1.153 |
+| `/bg` while responding continues | `/bg` поки Claude відповідає тепер продовжує відповідь в background session замість відкидання | 2.1.153 |
 | `/btw` background sessions keyboard shortcuts fix | Виправлено `/btw` keyboard shortcuts що ставали unresponsive в background sessions поки task running | 2.1.153 |
 | Background sessions `$CLAUDE_JOB_DIR` sensitive prompt fix | Виправлено background sessions що писали temp файли в `$CLAUDE_JOB_DIR` triggering "sensitive file" permission prompt | 2.1.153 |
 | Background agent deleted cwd error fix | Виправлено recovering background agent чиї working directory була видалена — показував truncated stack trace замість clear error message | 2.1.153 |

@@ -97,7 +97,7 @@
 | Hook `terminalSequence` output field | Нове поле `terminalSequence` в hook JSON output — дозволяє hooks emit desktop notifications, window titles та bells без controlling terminal | 2.1.141 |
 | Hooks `transcript_path` EnterWorktree fix | Виправлено hooks що receiving non-existent `transcript_path` після `EnterWorktree` switches working directory | 2.1.141 |
 | Hook config error improvement | Покращено повідомлення про помилку: налаштування prompt- або agent-type hook для `SessionStart`/`Setup`/`SubagentStart` тепер показує чітку помилку "use a command-type hook instead" | 2.1.142 |
-| Stop hooks block loop fix | Stop hooks що block-лять повторно більше не loop-яться нескінченно — turn завершується з warning після 8 послідовних блоків; override через `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP` env var | 2.1.143 |
+| Stop hooks block loop fix | Stop hooks що блокують повторно більше не зациклюються нескінченно — turn завершується з warning після 8 послідовних блоків; override через `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP` env var | 2.1.143 |
 | File descriptor exhaustion skill dir fix | Виправлено file descriptor exhaustion коли build запущено в skill directory — non-`.md` files більше не trigger skill reloads | 2.1.144 |
 | Stop/SubagentStop `background_tasks`/`session_crons` fields | Hook input тепер включає `background_tasks` та `session_crons` поля | 2.1.145 |
 | Hook `if` conditions PowerShell wildcard fix | Виправлено hook `if` умови як `PowerShell(git push*)` що ніколи не збігалися — працював лише `PowerShell(*)` | 2.1.147 |
