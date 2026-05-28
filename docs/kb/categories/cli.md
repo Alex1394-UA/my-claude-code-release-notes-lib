@@ -214,4 +214,4 @@
 | `claude update` release channel fix [Win] | Виправлено `claude update` що встановлював latest version замість configured release channel version для npm installations | 2.1.153 |
 | `claude agents`/`--bg` stale daemon fix | Виправлено `claude agents` та `claude --bg` що працювали на stale daemon запущеному до binary-takeover support, навіть після оновлення | 2.1.153 |
 | `claude --help` narrow terminal fix | Виправлено `claude --help` що виводив нерозбитий текст на терміналах вужчих за 92 колонки | 2.1.153 |
-| `--strict-mcp-config` explicit agents inline mcpServers | `--strict-mcp-config` більше не strip-ає inline `mcpServers` з явно переданих agent definitions (`--agents` / SDK `agents`); blocked subagent MCP servers тепер показують visible warning | 2.1.153 |
+| `--strict-mcp-config` explicit agents inline mcpServers | `--strict-mcp-config` більше не вилучає inline `mcpServers` з явно переданих agent definitions (`--agents` / SDK `agents`); blocked subagent MCP servers тепер показують visible warning | 2.1.153 |
