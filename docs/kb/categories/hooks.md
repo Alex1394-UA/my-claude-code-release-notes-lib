@@ -100,7 +100,7 @@
 | Stop hooks block loop fix | Stop hooks що block-лять повторно більше не loop-яться нескінченно — turn завершується з warning після 8 послідовних блоків; override через `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP` env var | 2.1.143 |
 | File descriptor exhaustion skill dir fix | Виправлено file descriptor exhaustion коли build запущено в skill directory — non-`.md` files більше не trigger skill reloads | 2.1.144 |
 | Stop/SubagentStop `background_tasks`/`session_crons` fields | Hook input тепер включає `background_tasks` та `session_crons` поля | 2.1.145 |
-| Hook `if` conditions PowerShell wildcard fix | Виправлено hook `if` умови як `PowerShell(git push*)` що ніколи не match-или — працював лише `PowerShell(*)` | 2.1.147 |
+| Hook `if` conditions PowerShell wildcard fix | Виправлено hook `if` умови як `PowerShell(git push*)` що ніколи не збігалися — працював лише `PowerShell(*)` | 2.1.147 |
 | `SessionStart` hook `reloadSkills: true` | `SessionStart` хуки можуть повертати `reloadSkills: true` для re-scan skill directories — skills встановлені хуком доступні в тій самій сесії | 2.1.152 |
 | `SessionStart` hook session title | `SessionStart` хуки можуть встановлювати заголовок сесії через `hookSpecificOutput.sessionTitle` на startup та resume | 2.1.152 |
 | `MessageDisplay` hook event | Новий тип хука `MessageDisplay` — дозволяє hooks трансформувати або ховати текст assistant message при відображенні | 2.1.152 |
