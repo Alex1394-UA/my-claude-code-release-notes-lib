@@ -192,3 +192,6 @@
 | Agent view stale/doubled rows CJK characters fix [Win] | Виправлено stale та doubled rows в agent view list на Windows коли background session results містять wide (CJK) characters | 2.1.147 |
 | PowerShell `cd` functions permission bypass fix [Win] | Виправлено PowerShell permission bypass: built-in `cd` functions (`cd..`, `cd\`, `cd~`, `X:`) змінювали робочу директорію undetected, дозволяючи пізнішій команді читати поза workspace | 2.1.149 |
 | PowerShell prefix/wildcard allow rules fix [Win] | Виправлено PowerShell prefix/wildcard allow rules (напр. `PowerShell(dotnet.exe build *)`) що не pre-approving native executables та scripts | 2.1.149 |
+| PowerShell installer false "complete" fix [Win] | Виправлено Windows PowerShell installer що повідомляв "Installation complete!" коли installation фактично не вдалася | 2.1.153 |
+| IME candidate window position fix [Win] | Виправлено IME candidate window що appear-ав на bottom of screen замість next to input caret в attached background sessions на Windows | 2.1.153 |
+| Windows update rollback restore [Win] | Якщо Windows update fails, Claude Code тепер відновлює оригінальний executable by copy та повідомляє як recovery | 2.1.153 |

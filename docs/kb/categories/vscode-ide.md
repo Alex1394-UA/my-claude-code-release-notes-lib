@@ -58,6 +58,7 @@
 | Scroll behavior Win Terminal + VS Code background fix | Виправлено scroll behavior в Windows Terminal та VS Code при attached до background sessions | 2.1.139 |
 | IDE diff view on permission prompts restored [VSCode] | Відновлено опцію "view diff in your IDE" на file-edit permission prompts коли IDE підключено | 2.1.141 |
 | Mic silence feedback fix [VSCode] | Виправлено in-chat mic що showing no feedback коли microphone producing only silence — тепер shows "No audio detected" | 2.1.141 |
+| VSCode clean shutdown Windows fix [VSCode][Win] | Виправлено Claude Code processes що не shutdown cleanly при закритті VS Code на Windows, викликаючи хибні "unclean exit" reports та orphaned MCP servers | 2.1.153 |
 | WSL voice sox error hint [VSCode] | Voice mode WSL error тепер suggests installing `sox libsox-fmt-pulse` для WSLg users | 2.1.141 |
 
 ## Win32 ARM64

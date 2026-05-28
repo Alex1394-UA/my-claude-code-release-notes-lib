@@ -97,3 +97,5 @@
 | Alt `chat:submit` with rebound enter fix | Виправлено alternative `chat:submit` keybindings (напр. `meta+enter`, `ctrl+enter`) що не working коли `enter` rebound to `chat:newline` | 2.1.141 |
 | Custom `voice:pushToTalk` keybindings fix | Виправлено custom `voice:pushToTalk` keybindings та `"space": null` unbinds що silently ignored | 2.1.141 |
 | Vim `/` reverse history search | Vim mode: `/` в NORMAL mode відкриває reverse history search (як Ctrl+R), matching bash/zsh vi-mode | 2.1.152 |
+| `/model` saves default, `s` session-only | `/model` тепер зберігає вибір як default для нових сесій; `s` в picker для switch лише поточної сесії | 2.1.153 |
+| `modelPicker:setAsDefault` → `modelPicker:thisSessionOnly` | Якщо ви customized `modelPicker:setAsDefault` keybinding, rename на `modelPicker:thisSessionOnly` (action `d` replaced by `s`) | 2.1.153 |

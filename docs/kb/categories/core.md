@@ -627,6 +627,23 @@
 | Collapsed Bash output wrong hidden-line count fix | Виправлено collapsed Bash output що reporting неправильну кількість hidden lines для outputs з багатьма короткими рядками | 2.1.149 |
 | Argument-hint clipping trailing characters fix | Виправлено slash-command argument-hint що обрізав trailing typed characters коли hint переливався через input box | 2.1.149 |
 | Auto mode no opt-in consent | Auto mode більше не потребує попереднього згоди користувача | 2.1.152 |
+| npm global auto-update notice | One-time notice коли npm global install не може auto-update; `/doctor` показує варіанти виправлення | 2.1.153 |
+| Status line `COLUMNS`/`LINES` | Status line команди тепер отримують `COLUMNS` та `LINES` змінні середовища для sizing output під ширину терміналу | 2.1.153 |
+| macOS background agents Privacy & Security | macOS: background agents тепер appear як "Claude Code" в Privacy & Security та зберігають permission grants через оновлення | 2.1.153 |
+| Resume by transcript path excessive memory fix | Виправлено надмірне споживання пам'яті (multiple GB) при відновленні сесії по transcript file path на машинах з багатьма stored sessions | 2.1.153 |
+| Stream-json stdin hang fix | Виправлено hang де CLI не міг exit коли stdin закритий без EOF в stream-json mode, залишаючи stale session marker | 2.1.153 |
+| Malformed `file://` links clickable fix | Виправлено некоректні `file://` посилання в відповідях Claude що не були клікабельними в терміналі | 2.1.153 |
+| `Agent` tool `subagent_type: 'claude'` worktree fix | Виправлено `Agent` tool з `subagent_type: 'claude'` що працював в недокументованому temporary worktree, міг мовчазно discard outputs записані в gitignored paths | 2.1.153 |
+| `/bg` while responding continues | `/bg` поки Claude відповідає тепер продовжує відповідь в background session замість drop-у | 2.1.153 |
+| `/btw` background sessions keyboard shortcuts fix | Виправлено `/btw` keyboard shortcuts що ставали unresponsive в background sessions поки task running | 2.1.153 |
+| Background sessions `$CLAUDE_JOB_DIR` sensitive prompt fix | Виправлено background sessions що писали temp файли в `$CLAUDE_JOB_DIR` triggering "sensitive file" permission prompt | 2.1.153 |
+| Background agent deleted cwd error fix | Виправлено recovering background agent чиї working directory була видалена — показував truncated stack trace замість clear error message | 2.1.153 |
+| `EnterWorktree` background sessions immediate fix | Виправлено `EnterWorktree` що не був доступний одразу в background sessions (потребував `ToolSearch` першим) | 2.1.153 |
+| `cmd+k` iTerm2/Terminal.app repaint fix | Виправлено `cmd+k` в iTerm2/Terminal.app що не перемальовував attached background sessions | 2.1.153 |
+| Background-color bleed 256-color terminals fix | Виправлено background-color bleed при attaching до background agent з 256-color-only терміналів після рендерингу file diffs | 2.1.153 |
+| `/copy` clipboard tmux background fix | Виправлено `/copy` та copy-on-select що мовчазно не оновлювали system clipboard при attached до background session в tmux | 2.1.153 |
+| `/rename` background sessions banner fix | Виправлено `/rename` в background sessions що не оновлював session banner негайно | 2.1.153 |
+| `/model` saves default for new sessions | `/model` тепер зберігає вибір як default для нових сесій (matching IDE behavior); натисніть `s` в picker для switch лише для поточної сесії | 2.1.153 |
 | Thinking summaries collapsed readability | Thinking summaries в collapsed group залишаються читабельними мінімум 3 секунди, рендеряться як markdown та cap на 10 рядків; `Ctrl+O` показує повний thinking | 2.1.152 |
 | Fullscreen thinking live counter | В fullscreen mode індикатор "Thinking for Ns" тепер рахує в реальному часі під час thinking; зберігає значення при interrupt mid-thought | 2.1.152 |
 | Workflow tool inline progress simplified | Workflow tool inline progress display спрощено — live agent counts тепер лише в persistent workflow status row під prompt | 2.1.152 |

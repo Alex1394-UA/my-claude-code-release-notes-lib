@@ -125,3 +125,4 @@
 | `claude plugin marketplace remove --scope` | `claude plugin marketplace remove` тепер приймає `--scope user|project|local` для симетрії з `marketplace add`, `install`, `uninstall` | 2.1.152 |
 | Plugin MCP same-command different-env dedup fix | Виправлено plugin MCP servers з тим самим command але різними environment variables що incorrectly deduplicated | 2.1.152 |
 | Plugin git branch update tracking fix | Виправлено plugins що track git branch та перестали receiving updates після plugin registry rebuild | 2.1.152 |
+| `skipLfs` marketplace source option | Опція `skipLfs` для `github`/`git` plugin marketplace sources — skip Git LFS downloads під час clone та update | 2.1.153 |

@@ -209,3 +209,9 @@
 | `/usage` large session files | `/usage` breakdown тепер включає large session files; streaming read для стабільного memory usage | 2.1.152 |
 | `/doctor` stale marketplace/plugin fix | Виправлено `/doctor` що report-ив "marketplace not found" або "plugin not found" для stale `enabledPlugins` entries що reference removed marketplaces або dropped plugins | 2.1.152 |
 | `claude agents` background worker crash fix | Виправлено background worker crash в `claude agents` при прийнятті stale permission prompt після cancel subagent | 2.1.152 |
+| `claude agents` autocomplete native commands | Autocomplete в dispatch input тепер пропонує native slash команди та bundled skills, не лише project skills | 2.1.153 |
+| `claude agents` PR column format | PR column тепер показує `PR #N` для одного PR або `N PRs` для кількох | 2.1.153 |
+| `claude update` release channel fix [Win] | Виправлено `claude update` що встановлював latest version замість configured release channel version для npm installations | 2.1.153 |
+| `claude agents`/`--bg` stale daemon fix | Виправлено `claude agents` та `claude --bg` що працювали на stale daemon запущеному до binary-takeover support, навіть після оновлення | 2.1.153 |
+| `claude --help` narrow terminal fix | Виправлено `claude --help` що виводив нерозбитий текст на терміналах вужчих за 92 колонки | 2.1.153 |
+| `--strict-mcp-config` explicit agents inline mcpServers | `--strict-mcp-config` більше не strip-ає inline `mcpServers` з явно переданих agent definitions (`--agents` / SDK `agents`); blocked subagent MCP servers тепер показують visible warning | 2.1.153 |
