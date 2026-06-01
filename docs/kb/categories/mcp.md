@@ -114,6 +114,7 @@
 | Custom API gateway OAuth credential fix | Виправлено регресію де custom API gateway міг отримувати user's Anthropic OAuth credential замість gateway's own token | 2.1.153 |
 | Subagent frontmatter MCP servers `--strict-mcp-config` fix | Виправлено subagent (Agent tool) frontmatter MCP servers що ігнорували `--strict-mcp-config`, `--bare`, remote mode, enterprise managed MCP config, та managed-settings MCP server allow/deny policies | 2.1.153 |
 | MCP tool progress notifications collapsed view fix | Виправлено MCP tool progress notifications що не рендерились в collapsed tool view | 2.1.153 |
+| `CLAUDE_CODE_SESSION_ID` та `CLAUDECODE=1` в subprocesses | Stdio MCP server subprocesses тепер отримують `CLAUDE_CODE_SESSION_ID` та `CLAUDECODE=1` в environment | 2.1.154 |
 
 ## Області видимості
 

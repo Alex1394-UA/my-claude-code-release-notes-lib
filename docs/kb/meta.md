@@ -1,7 +1,7 @@
 # Knowledge Base Metadata
 
-last_processed: 2.1.153
-last_updated: 2026-05-28
+last_processed: 2.1.154
+last_updated: 2026-06-01
 seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 
 ## Відстежувані невідповідності (Release Notes vs Reality)
@@ -39,3 +39,4 @@ seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 | 2026-05-24 | 2.1.150 | — | 0 записів (internal infrastructure) |
 | 2026-05-28 | 2.1.152 | core, cli, skills-agents, hooks, plugins, settings, keybindings, sdk, mcp | ~34 записів додано, 0 депрекацій |
 | 2026-05-28 | 2.1.153 | cli, core, mcp, plugins, windows, vscode-ide, skills-agents, keybindings, sdk | ~34 записів додано, 0 депрекацій |
+| 2026-06-01 | 2.1.154 | core, cli, mcp, plugins, skills-agents, vscode-ide, settings, env-vars, windows, sdk | ~35 записів додано, 1 депрекація (`CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE`) |

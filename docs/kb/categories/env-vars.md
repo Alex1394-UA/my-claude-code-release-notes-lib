@@ -113,6 +113,8 @@
 | `CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY` | Opt-out з дефолтного `-ExecutionPolicy Bypass` в PowerShell tool (`1`) | 2.1.143 |
 | `CLAUDE_CODE_STOP_HOOK_BLOCK_CAP` | Override дефолтного ліміту 8 послідовних stop hook блоків; turn завершується з warning після досягнення ліміту | 2.1.143 |
 | `CLAUDE_CODE_SUBAGENT_MODEL` teammate processes fix | Виправлено `CLAUDE_CODE_SUBAGENT_MODEL` що не застосовувався до teammate processes spawned agent teams | 2.1.147 |
+| ~~`CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE`~~ | [ЗАСТАРІЛО] буде видалено 06/01; для fast mode на Opus 4.6 switch на `/model claude-opus-4-6[1m]` та `/fast on` | 2.1.154 |
+| `CLAUDE_CODE_ALWAYS_ENABLE_EFFORT` 400 fix | Виправлено API 400 помилки на моделях що не підтримують effort параметр коли `CLAUDE_CODE_ALWAYS_ENABLE_EFFORT` встановлено | 2.1.154 |
 
 ## Шляхи
 

@@ -55,6 +55,7 @@
 | `CLAUDE_CODE_SUBAGENT_MODEL` teammate processes fix | Виправлено `CLAUDE_CODE_SUBAGENT_MODEL` що не застосовувався до teammate processes spawned agent teams | 2.1.147 |
 | Argument-hint after Tab-completion fix | Виправлено argument-hint та progressive arg suggestions що не з'являлись після Tab-completing skill чий frontmatter `name:` відрізняється від directory basename | 2.1.149 |
 | `claude agents` autocomplete native commands | Autocomplete в dispatch input тепер пропонує native slash команди та bundled skills, не лише project skills | 2.1.153 |
+| Dynamic workflows | Новий тип задач: попросіть Claude створити workflow — він координує роботу через десятки до сотень агентів у фоні для більших та складніших задач; `/workflows` для перегляду виконань | 2.1.154 |
 
 ## Поля frontmatter
 
@@ -151,7 +152,7 @@
 | `/loop` | Повторювана задача | 2.1.71 |
 | `/plan` | План-режим | 2.1.0 |
 | `/debug` | Debug логування | 2.1.30 |
-| `/simplify` | ~~Спрощення коду~~ → `/code-review` (тепер викликає `/code-review --fix`) | 2.1.63, 2.1.147, 2.1.152 |
+| `/simplify` | ~~Спрощення коду~~ → cleanup-only review (reuse, simplification, efficiency, altitude); виправлено що викликав `/code-review --fix` замість cleanup-only pass | 2.1.63, 2.1.147, 2.1.152, 2.1.154 |
 | `/batch` | Пакетна обробка | 2.1.63 |
 | `/skills` | Список навичок | — |
 | `/plugin` | Управління плагінами | 2.0.12 |

@@ -126,3 +126,5 @@
 | Plugin MCP same-command different-env dedup fix | Виправлено plugin MCP servers з тим самим command але різними environment variables що incorrectly deduplicated | 2.1.152 |
 | Plugin git branch update tracking fix | Виправлено plugins що track git branch та перестали receiving updates після plugin registry rebuild | 2.1.152 |
 | `skipLfs` marketplace source option | Опція `skipLfs` для `github`/`git` plugin marketplace sources — skip Git LFS downloads під час clone та update | 2.1.153 |
+| `defaultEnabled: false` в plugin.json | Плагіни можуть декларувати `defaultEnabled: false` в `plugin.json` або marketplace entry; увімкнення через `/plugin` або `claude plugin enable`. Залежності enabled плагінів все ще auto-enabled | 2.1.154 |
+| `/plugin` Discover "suggested for this directory" | Discover tab в `/plugin` тепер pin-ить плагіни чий relevance signals збігаються з поточною директорією з анотацією "suggested for this directory" | 2.1.154 |

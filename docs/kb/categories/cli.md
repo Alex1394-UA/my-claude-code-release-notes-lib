@@ -215,3 +215,8 @@
 | `claude agents`/`--bg` stale daemon fix | Виправлено `claude agents` та `claude --bg` що працювали на stale daemon запущеному до binary-takeover support, навіть після оновлення | 2.1.153 |
 | `claude --help` narrow terminal fix | Виправлено `claude --help` що виводив нерозбитий текст на терміналах вужчих за 92 колонки | 2.1.153 |
 | `--strict-mcp-config` explicit agents inline mcpServers | `--strict-mcp-config` більше не вилучає inline `mcpServers` з явно переданих agent definitions (`--agents` / SDK `agents`); blocked subagent MCP servers тепер показують visible warning | 2.1.153 |
+| `claude agents` `! <command>` background shell | `claude agents`: `! <command>` запускає shell команду як background session до якої можна attach/detach; також доступно як `claude --bg --exec '<command>'` | 2.1.154 |
+| `claude agents` `/logout` sign-out | `claude agents`: `/logout` тепер виконує вихід з акаунту замість відправки в background session | 2.1.154 |
+| `←←` agents view Bedrock/Vertex/Foundry/telemetry | `←←` для відкриття agents view тепер працює на Bedrock, Vertex, Foundry та з вимкненою телеметрією | 2.1.154 |
+| `claude mcp list`/`get` pending approval | `claude mcp list` та `claude mcp get` тепер показують неатестовані `.mcp.json` сервери як `⏸ Pending approval` замість auto-approve при piped output | 2.1.154 |
+| `/remote-control` autocomplete disconnect | Autocomplete `/remote-control` тепер показує "Disconnect Remote Control" коли Remote Control вже активний | 2.1.154 |

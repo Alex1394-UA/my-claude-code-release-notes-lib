@@ -91,3 +91,4 @@
 | PushNotification tool SDK-hosted fix | Виправлено PushNotification tool що хибно повідомляв "Mobile push not sent (Remote Control inactive)" в SDK-hosted sessions коли Remote Control enabled | 2.1.152 |
 | Subagent frontmatter MCP servers `--strict-mcp-config` fix | Виправлено subagent (Agent tool) frontmatter MCP servers що ігнорували `--strict-mcp-config`, `--bare`, remote mode, enterprise managed MCP config, та managed-settings allow/deny policies | 2.1.153 |
 | `claude agents` Remote Control zombie sessions fix | Виправлено `claude agents` з Remote Control enabled що залишав zombie session entries на Code tab після exit | 2.1.153 |
+| `/claude-api` skill Opus 4.8 support | Додано підтримку Claude Opus 4.8 та 4.7 → 4.8 migration guidance в `/claude-api` skill | 2.1.154 |

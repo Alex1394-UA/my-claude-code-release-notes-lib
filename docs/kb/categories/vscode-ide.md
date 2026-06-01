@@ -59,6 +59,12 @@
 | IDE diff view on permission prompts restored [VSCode] | Відновлено опцію "view diff in your IDE" на file-edit permission prompts коли IDE підключено | 2.1.141 |
 | Mic silence feedback fix [VSCode] | Виправлено in-chat mic що showing no feedback коли microphone producing only silence — тепер shows "No audio detected" | 2.1.141 |
 | VSCode clean shutdown Windows fix [VSCode][Win] | Виправлено Claude Code processes що не shutdown cleanly при закритті VS Code на Windows, викликаючи хибні "unclean exit" reports та orphaned MCP servers | 2.1.153 |
+| Claude in Chrome browser picker | Вибір підключеного браузера через `/chrome` → "Select browser…" або in-chat при запуску browser action з кількома підключеними | 2.1.154 |
+| Auto mode mode picker без bypass-permissions [VSCode] | Auto mode більше не потребує bypass-permissions setting для появи в mode picker; dismissable notice на екрані нової сесії пояснює auto mode при першій активізації | 2.1.154 |
+| Task panel stray "main" row fix [VSCode] | Виправлено task panel під prompt що показував сторонній non-selectable "main" рядок коли тільки workflow працював | 2.1.154 |
+| `/mcp` tools list rendering fix [VSCode] | Виправлено `/mcp` tools list та tool detail rendering коли MCP servers мають long або multi-line tool names або довгі описи | 2.1.154 |
+| `/model` picker fast mode pricing fix [VSCode] | Виправлено `/model` picker що не показував fast mode pricing на Default опції для API (pay-as-you-go) користувачів коли fast mode увімкнено | 2.1.154 |
+| Auto mode "could not evaluate" fix [VSCode] | Виправлено auto mode що хибно блокував дії з "could not evaluate this action" коли safety classifier вичерпав output tokens під час reasoning | 2.1.154 |
 | WSL voice sox error hint [VSCode] | Voice mode WSL error тепер suggests installing `sox libsox-fmt-pulse` для WSLg users | 2.1.141 |
 
 ## Win32 ARM64

@@ -28,6 +28,7 @@
 | `Claude Opus 4.7 xhigh` | Новий рівень зусилля `xhigh` для Opus 4.7 — між `high` та `max`, доступний через `/effort`, `--effort` та model picker; інші моделі fallback до `high` | 2.1.111 |
 | `/effort` інтерактивний слайдер | `/effort` без аргументів відкриває інтерактивний слайдер з навігацією стрелками та Enter для підтвердження | 2.1.111 |
 | Default effort high Pro/Max | Default effort для Pro/Max підписників на Opus 4.6 та Sonnet 4.6 тепер `high` (було `medium`) | 2.1.117 |
+| `/effort` слайдер "Faster"/"Smarter" | Мітки слайдера `/effort` перейменовані з "Speed"/"Intelligence" на "Faster"/"Smarter" | 2.1.154 |
 
 ## План-режим
 
@@ -49,6 +50,7 @@
 | Opus 4.6 Fast mode | Швидший вивід, та сама модель | 2.1.36 |
 | Fast mode Opus 4.7 default | Fast mode тепер використовує Opus 4.7 за замовчуванням (було Opus 4.6) | 2.1.142 |
 | `/fast` | Перемикання швидкого режиму | 2.1.36 |
+| Opus 4.8 fast mode | Fast mode на Opus 4.8 за 2x стандартної ціни з 2.5x швидкістю (було значно дорожче) | 2.1.154 |
 | Alt+P (Win/Linux), Option+P (macOS) | Перемикання моделі під час вводу | 2.0.65 |
 
 ## Моделі
@@ -64,6 +66,7 @@
 | Bedrock/Vertex/Foundry | Opus 4.6 за замовчуванням | 2.1.73 |
 | Auto mode "unavailable for plan" | Повідомлення при вимкненому через план | 2.1.86 |
 | Auto mode без прапорця | Auto mode більше не потребує `--enable-auto-mode` для Max підписників з Opus 4.7 | 2.1.111 |
+| Opus 4.8 | Нова модель — default effort встановлено на `high`; підтримує `/effort xhigh` та fast mode за 2x стандартної ціни | 2.1.154 |
 
 ## Контекст та пам'ять
 
@@ -83,6 +86,7 @@
 | Session recap | Recap: контекст при поверненні до сесії, configurable в `/config`, `/recap` для ручного виклику | 2.1.108 |
 | Session recap telemetry-disabled | Recap увімкнено для користувачів з вимкненою телеметрією (Bedrock, Vertex, Foundry); opt-out через `/config` або `CLAUDE_CODE_ENABLE_AWAY_SUMMARY=0` | 2.1.110 |
 | Opus 4.7 context window fix | Виправлено завищені `/context` відсотки та передчасний autocompact для Opus 4.7 — рахував проти 200K замість нативного 1M | 2.1.117 |
+| Lean system prompt за замовчуванням | Скорочений системний промпт тепер використовується за замовчуванням для всіх моделей крім Haiku, Sonnet та Opus 4.7 і старіших | 2.1.154 |
 
 ## Інтерактивність
 
@@ -98,6 +102,7 @@
 | Auto mode кордони | Виправлено ігнорування явних кордонів користувача ("не пуш", "чекай X перед Y") | 2.1.90 |
 | Subagent stall timeout | Subagents що зависають mid-stream тепер fail з чіткою помилкою після 10 хвилин замість мовчазного зависання | 2.1.113 |
 | Platform binary spawn | CLI тепер запускає нативний Claude Code binary (через per-platform optional dependency) замість bundled JavaScript | 2.1.113 |
+| AskUserQuestion зарезервовано для реальних рішень | Claude тепер використовує AskUserQuestion лише для рішень що дійсно не може прийняти самостійно, замість запитів коли вже достатньо контексту | 2.1.154 |
 
 ## Інші команди
 
@@ -657,3 +662,21 @@
 | Effort-change confirmation dialog fix | Виправлено effort-change confirmation dialog що з'являвся коли conversation не мала повідомлень або при switch між effort levels що resolve до того ж значення | 2.1.152 |
 | Agent tool description `--bare` fix | Виправлено Agent tool description що reference-ав agent list який ніколи не доставляється з `--bare` або attachments disabled | 2.1.152 |
 | Stale thinking-block signatures fix | Виправлено sessions що застрягали після model/login switch через stale thinking-block signatures в history — тепер stripped proactively з retry safety-net | 2.1.152 |
+| Streaming tool execution завжди увімкнено | Streaming tool execution тепер завжди увімкнено, включаючи коли телеметрія вимкнена або на Bedrock/Vertex/Foundry (раніше за feature flag) | 2.1.154 |
+| Auto mode exfiltration detection | Покращено виявлення data exfiltration в auto mode класифікаторі, особливо bulk transfers репозиторію | 2.1.154 |
+| `rm -rf $HOME` trailing slash fix | Виправлено `rm -rf $HOME` що не блокувався як dangerous path коли `HOME` мав trailing slash | 2.1.154 |
+| `$TMPDIR` sandbox inconsistency fix | Виправлено `$TMPDIR` що розв'язувався до різних директорій в sandboxed vs unsandboxed Bash командах в межах однієї сесії | 2.1.154 |
+| `claude agents` unreadable highlighted-row fix | Виправлено непридатний для читання текст highlight-рядків в `claude agents` коли тема Claude Code не збігається з фоном терміналу | 2.1.154 |
+| Background agent notifications "out of context" fix | Виправлено notifications завершення background-агента що спрацьовували передчасне "out of context" на деяких 1M-контекст моделях | 2.1.154 |
+| Background session classifier goal loss fix | Виправлено втрату цілі користувача в background session коли scheduled `/command` spaw-иться | 2.1.154 |
+| Pinned background sessions respawn fix | Виправлено повторний spawn pinned background sessions щохвилини після оновлення Claude Code, що спричиняв повторні notification та process churn на idle | 2.1.154 |
+| Background sessions stuck status retirement fix | Виправлено background sessions застряглі в "blocked", "running" або "working" що не retire-ились після idle grace period | 2.1.154 |
+| Subagents background sessions worktree isolation fix | Виправлено subagents в background sessions що обходили worktree-isolation guard та писали в спільну робочу копію | 2.1.154 |
+| Orphaned `claude --bg-pty-host` 100% CPU fix [macOS] | Виправлено orphaned `claude --bg-pty-host` процеси що споживали 100% CPU після завершення daemon на macOS | 2.1.154 |
+| Number key shortcuts divider fix | Виправлено number key shortcuts що не працювали для опцій відображених під divider в option dialogs | 2.1.154 |
+| `worktree.baseRef: "head"` linked worktree fix | Виправлено `worktree.baseRef: "head"` що розв'язувався до HEAD основного чекауту замість HEAD поточного worktree при spawn subagent або `EnterWorktree` з linked worktree | 2.1.154 |
+| Stray leading space wrapped lines fix | Виправлено зайвий leading space на перенесених рядках коли попередній рядок закінчувався точно на ширині терміналу | 2.1.154 |
+| VS Code thinking spinner color cap fix | Виправлено періодичну пошкодження рендерингу терміналу в VS Code обмеженням кількості кольорів thinking spinner | 2.1.154 |
+| Plan file names placeholders fix | Виправлено імена файлів планів що включали `[Image #N]` / `[Pasted text #N]` placeholders коли prompt починався з pasted images або text | 2.1.154 |
+| Phantom expand/click affordance fix | Виправлено уявну expand/click affordance на кольоровому tool output: короткі ANSI-colored рядки що вміщуються на екрані більше не показують "ctrl+o to expand" | 2.1.154 |
+| Stale "& for background" hint removed | Видалено застарілу підказку "& for background" з панелі скорочень | 2.1.154 |
