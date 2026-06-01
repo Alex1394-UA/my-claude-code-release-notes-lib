@@ -680,3 +680,16 @@
 | Plan file names placeholders fix | Виправлено імена файлів планів що включали `[Image #N]` / `[Pasted text #N]` placeholders коли prompt починався з pasted images або text | 2.1.154 |
 | Phantom expand/click affordance fix | Виправлено уявну expand/click affordance на кольоровому tool output: короткі ANSI-colored рядки що вміщуються на екрані більше не показують "ctrl+o to expand" | 2.1.154 |
 | Stale "& for background" hint removed | Видалено застарілу підказку "& for background" з панелі скорочень | 2.1.154 |
+| Opus 4.8 thinking blocks API error fix | Виправлено помилку API при використанні Opus 4.8 — thinking blocks модифікувалися, спричиняючи 400 помилки | 2.1.156 |
+| Unprocessable images text placeholder | Непридатні зображення (zero-byte, corrupt) вставлені через paste, MCP або dialog тепер стають текстовим placeholder замість крашу сесії | 2.1.157 |
+| Sandbox network prompts auto/bypass fix | Виправлено появу sandbox network permission prompts в auto та bypass-permissions mode при використанні desktop app, IDE extensions або SDK | 2.1.157 |
+| `/model` picker "Newer version available" fix | Виправлено `/model` picker що показував хибну підказку "Newer version available" коли обрана модель вже найновіша; рядок pinned-моделі тепер показує опис замість raw ID | 2.1.157 |
+| Fullscreen markdown markers in-progress fix | Виправлено літерні markdown-маркери (backticks, asterisks) що з'являлися в тексті in-progress повідомлення в fullscreen mode | 2.1.157 |
+| Terminal freeze managed-settings dialog fix | Виправлено замерзання терміналу після прийняття managed-settings security dialog при старті | 2.1.157 |
+| Scrollback duplicate line after redraw fix | Виправлено рідкісний дублікат рядка що з'являвся в scrollback після перемальовування термінального UI | 2.1.157 |
+| Long/resumed conversations performance | Покращено продуктивність довгих та відновлених розмов шляхом усунення надлишкових повторних обчислень рендерингу повідомлень | 2.1.157 |
+| Feature of the Week notification | Feature of the Week credit-claim статус тепер з'являється як сповіщення в статусній області замість рядка над prompt | 2.1.157 |
+| "Bash sandboxed" startup banner removed | Видалено банер "bash commands will be sandboxed" при старті — sandbox статус показується в `/status` та при блокуванні команди | 2.1.157 |
+| "/ide for …" startup hint removed | Видалено startup hint toast "/ide for …" | 2.1.157 |
+| Backspace dismisses workflow trigger | Натискання Backspace одразу після workflow trigger keyword відхиляє workflow request (як alt+w) замість видалення символу | 2.1.157 |
+| Auto mode Bedrock/Vertex/Foundry | Auto mode тепер доступний на Bedrock, Vertex та Foundry для Opus 4.7 та Opus 4.8; ввімкнути через `CLAUDE_CODE_ENABLE_AUTO_MODE=1` | 2.1.158 |

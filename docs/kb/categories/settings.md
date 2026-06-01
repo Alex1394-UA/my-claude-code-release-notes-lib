@@ -174,3 +174,4 @@
 | `pluginSuggestionMarketplaces` | [Managed] Admin allowlist для org marketplaces чий plugins можуть бути запропоновані через context-aware tips | 2.1.152 |
 | Streaming tool execution завжди увімкнено | Streaming tool execution тепер увімкнений за замовчуванням на всіх платформах (раніше за feature flag) | 2.1.154 |
 | `allowedMcpServers`/`deniedMcpServers` invalid entry tolerance | Один неприпустимий entry в `allowedMcpServers`/`deniedMcpServers` більше не відхиляє всю managed-settings політику — хибний entry dropped з попередженням в `/doctor` | 2.1.154 |
+| Workflow keyword trigger setting | Новий налаштування в `/config` для вимкнення workflow trigger — слово "workflow" в промпті більше не тригерить dynamic workflow | 2.1.157 |

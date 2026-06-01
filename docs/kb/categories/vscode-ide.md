@@ -66,6 +66,10 @@
 | `/model` picker fast mode pricing fix [VSCode] | Виправлено `/model` picker що не показував fast mode pricing на Default опції для API (pay-as-you-go) користувачів коли fast mode увімкнено | 2.1.154 |
 | Auto mode "could not evaluate" fix [VSCode] | Виправлено auto mode що хибно блокував дії з "could not evaluate this action" коли safety classifier вичерпав output tokens під час reasoning | 2.1.154 |
 | WSL voice sox error hint [VSCode] | Voice mode WSL error тепер suggests installing `sox libsox-fmt-pulse` для WSLg users | 2.1.141 |
+| Right-click paste duplicate fix | Виправлено дублювання clipboard при right-click paste в VS Code, Cursor та Windsurf integrated terminals | 2.1.157 |
+| `/terminal-setup` GPU acceleration disable | `/terminal-setup` тепер вимикає GPU acceleration в VS Code/Cursor/Windsurf integrated terminals для запобігання garbled-text rendering | 2.1.157 |
+| IDE Stop background subagent fix | Виправлено натискання Stop в IDE поки background subagent працює — тепер фактично зупиняє його | 2.1.157 |
+| VSCode fast mode indicator Opus 4.8 fix | Виправлено відсутність fast mode indicator на Opus 4.8 в VS Code extension | 2.1.157 |
 
 ## Win32 ARM64
 

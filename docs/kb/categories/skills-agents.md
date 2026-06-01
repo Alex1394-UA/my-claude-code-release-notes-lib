@@ -56,6 +56,7 @@
 | Argument-hint after Tab-completion fix | Виправлено argument-hint та progressive arg suggestions що не з'являлись після Tab-completing skill чий frontmatter `name:` відрізняється від directory basename | 2.1.149 |
 | `claude agents` autocomplete native commands | Autocomplete в dispatch input тепер пропонує native slash команди та bundled skills, не лише project skills | 2.1.153 |
 | Dynamic workflows | Новий тип задач: попросіть Claude створити workflow — він координує роботу через десятки до сотень агентів у фоні для більших та складніших задач; `/workflows` для перегляду виконань | 2.1.154 |
+| `.claude/skills` auto-load plugins | Плагіни з `.claude/skills` директорій автоматично завантажуються без marketplace; `claude plugin init <name>` для створення шаблону | 2.1.157 |
 
 ## Поля frontmatter
 

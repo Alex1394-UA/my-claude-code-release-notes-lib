@@ -196,3 +196,6 @@
 | IME candidate window position fix [Win] | Виправлено IME candidate window що appear-ав на bottom of screen замість next to input caret в attached background sessions на Windows | 2.1.153 |
 | Windows update rollback restore [Win] | Якщо Windows update fails, Claude Code тепер відновлює оригінальний executable by copy та повідомляє як recovery | 2.1.153 |
 | Windows update "exe in use" fix [Win] | Виправлено помилки оновлення на Windows що показували generic error замість підказки закрити інші сесії та повторити | 2.1.154 |
+| WSL image paste `alt+v` fix | Виправлено image paste (`alt+v`) в WSL | 2.1.157 |
+| WSL screenshot paste Windows 11 | Підтримка screenshot paste на Windows 11 в WSL | 2.1.157 |
+| WSL drag images from Windows Explorer | Можливість перетягувати зображення з Windows Explorer в WSL | 2.1.157 |

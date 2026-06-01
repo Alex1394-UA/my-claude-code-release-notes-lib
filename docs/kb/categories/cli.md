@@ -220,3 +220,17 @@
 | `←←` agents view Bedrock/Vertex/Foundry/telemetry | `←←` для відкриття agents view тепер працює на Bedrock, Vertex, Foundry та з вимкненою телеметрією | 2.1.154 |
 | `claude mcp list`/`get` pending approval | `claude mcp list` та `claude mcp get` тепер показують неатестовані `.mcp.json` сервери як `⏸ Pending approval` замість auto-approve при piped output | 2.1.154 |
 | `/remote-control` autocomplete disconnect | Autocomplete `/remote-control` тепер показує "Disconnect Remote Control" коли Remote Control вже активний | 2.1.154 |
+| `claude plugin init <name>` | Створення шаблону нового плагіна в `.claude/skills` | 2.1.157 |
+| `/plugin` autocomplete expansion | Autocomplete для `/plugin` аргументів: підкоманди, встановлені імена плагінів та плагіни з відомих marketplaces | 2.1.157 |
+| `claude agents` `agent` setting | Поле `agent` в `settings.json` тепер поважається для dispatched sessions; `--agent <name>` для перевизначення | 2.1.157 |
+| `EnterWorktree` mid-session switching | `EnterWorktree` тепер дозволяє перемикатися між worktrees керованими Claude в межах сесії | 2.1.157 |
+| Claude worktrees left unlocked | Worktrees керовані Claude тепер залишаються розблокованими після завершення агента, щоб `git worktree remove`/`prune` могли їх очистити | 2.1.157 |
+| `claude agents` completed sessions retirement fix | Виправлено завершені сесії в `claude agents` що не retire-ились коли idle subagent все ще був parked або мав leak-нути backgrounded shell | 2.1.157 |
+| `claude agents` Esc cancel fix | Виправлено натискання Esc в `claude agents` що не скасовувало повільне "opening…", залишаючи список unresponsive | 2.1.157 |
+| Background agent worktrees orphan fix | Виправлено orphaning background agent worktrees під `.claude/worktrees/` після 30-денної job retention sweep | 2.1.157 |
+| Background sessions sleep/wake date fix | Виправлено background sessions повторно attached після sleep/wake що не повідомляли моделі правильну дату | 2.1.157 |
+| `claude agents` copy-on-select tmux fix | Виправлено copy-on-select в `claude agents` що не досягав system clipboard в tmux з `set-clipboard on` (регресія з 2.1.153) | 2.1.157 |
+| `--resume` background subagents fix | Виправлено `--resume` що не повідомляв про background subagents що працювали коли попередній Claude Code process вийшов | 2.1.157 |
+| `--resume` picker fullscreen residue fix | Виправлено `--resume` session picker що залишав свій вміст на терміналі після виходу в fullscreen mode | 2.1.157 |
+| `--worktree`/`--worktree --tmux` linked worktree fix | Виправлено повернення до canonical repo root замість поточного linked worktree при `--worktree` та `--worktree --tmux` | 2.1.157 |
+| `claude agents` slash-command substring autocomplete | Autocomplete в dispatch input тепер підтримує substring matching для slash-команд | 2.1.157 |

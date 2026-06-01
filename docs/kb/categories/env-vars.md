@@ -139,3 +139,5 @@
 | OTEL numeric attributes fix | Числові атрибути в `api_request`/`api_error` log events тепер емітться як числа, не рядки | 2.1.122 |
 | OTEL `claude_code.at_mention` | Новий OTEL log event для `@`-mention resolution | 2.1.122 |
 | OTEL `claude_code.skill_activated` | Новий OTEL event для skill activation; включає `invocation_trigger` (`"user-slash"`, `"claude-proactive"`, `"nested-skill"`) | 2.1.126 |
+| `OTEL_LOG_TOOL_DETAILS` tool_parameters | `tool_decision` telemetry events тепер включають `tool_parameters` (bash команди, MCP/skill імена) коли `OTEL_LOG_TOOL_DETAILS=1` | 2.1.157 |
+| `CLAUDE_CODE_ENABLE_AUTO_MODE` | Увімкнення auto mode на Bedrock, Vertex та Foundry для Opus 4.7 та Opus 4.8 (`1`) | 2.1.158 |
