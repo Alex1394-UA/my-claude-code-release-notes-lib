@@ -234,3 +234,13 @@
 | `--resume` picker fullscreen residue fix | Виправлено `--resume` session picker що залишав свій вміст на терміналі після виходу в fullscreen mode | 2.1.157 |
 | `--worktree`/`--worktree --tmux` linked worktree fix | Виправлено повернення до canonical repo root замість поточного linked worktree при `--worktree` та `--worktree --tmux` | 2.1.157 |
 | `claude agents` slash-command substring autocomplete | Autocomplete в dispatch input тепер підтримує substring matching для slash-команд | 2.1.157 |
+| `claude agents` відновлення завершених сесій fix | Виправлено відновлення завершеної сесії з `claude agents` що втрачало chat history та повторно запускало оригінальний промпт | 2.1.160 |
+| Background sessions overnight retire fix | Виправлено background sessions що повторно підключались після overnight retire з втраченою розмовою та повторним запуском оригінального промпту | 2.1.160 |
+| `claude --bg` socket missing fix | Виправлено `claude --bg` що періодично failing з "socket missing" при cold-start background daemon на завантаженій машині | 2.1.160 |
+| `claude agents` auto-updater freeze fix | Виправлено `claude agents` що зависав на кілька секунд при поверненні до списку через auto-updater що повторно перевіряв оновлення при кожному exit | 2.1.160 |
+| Background agents shown under Completed fix | Виправлено background agents що продовжували роботу та показувались під Completed в agents list | 2.1.160 |
+| Background agents terminal sync-output markers fix | Виправлено background agents що надсилали terminal sync-output markers на термінали що їх не підтримують (Apple Terminal, tmux), спричиняючи артефакти рендерингу при вході в running agent | 2.1.160 |
+| Mouse wheel scroll prompt history fix | Виправлено mouse wheel scrolling що скролив prompt history замість транскрипту одразу після відкриття сесії з agents list | 2.1.160 |
+| CJK IME composition position fix | Виправлено CJK IME composition що з'являвся в bottom-left екрану замість біля input caret в `claude agents` view | 2.1.160 |
+| Performance opening inactive background agents | Покращено продуктивність відкриття недавно неактивних background agent sessions в `claude agents` | 2.1.160 |
+| Background session teardown SIGTERM | Покращено teardown background sessions (`claude rm`/`stop`, idle reap) — тепер надсилає SIGTERM shell subprocesses перед SIGKILL, щоб cleanup handlers запустились | 2.1.160 |

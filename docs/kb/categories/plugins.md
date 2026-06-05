@@ -130,3 +130,4 @@
 | `/plugin` Discover "suggested for this directory" | Discover tab в `/plugin` тепер закріплює плагіни чий relevance signals збігаються з поточною директорією з анотацією "suggested for this directory" | 2.1.154 |
 | `.claude/skills` auto-load | Плагіни з `.claude/skills` директорій тепер завантажуються автоматично, без необхідності marketplace | 2.1.157 |
 | `claude plugin init <name>` | Створення шаблону нового плагіна в `.claude/skills` з базовою структурою файлів | 2.1.157 |
+| Видалено JetBrains plugin install suggestion | Прибрано пропозицію встановлення JetBrains plugin при старті | 2.1.160 |

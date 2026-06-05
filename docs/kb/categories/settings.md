@@ -175,3 +175,5 @@
 | Streaming tool execution завжди увімкнено | Streaming tool execution тепер увімкнений за замовчуванням на всіх платформах (раніше за feature flag) | 2.1.154 |
 | `allowedMcpServers`/`deniedMcpServers` invalid entry tolerance | Один неприпустимий entry в `allowedMcpServers`/`deniedMcpServers` більше не відхиляє всю managed-settings політику — хибний entry dropped з попередженням в `/doctor` | 2.1.154 |
 | Workflow keyword trigger setting | Новий налаштування в `/config` для вимкнення workflow trigger — слово "workflow" в промпті більше не тригерить dynamic workflow | 2.1.157 |
+| Промпт перед shell startup files | Промпт перед записом в shell startup files (`.zshenv`, `.zlogin`, `.bash_login`) та `~/.config/git/` для запобігання небажаному виконанню команд | 2.1.160 |
+| `acceptEdits` build-tool config prompt | `acceptEdits` mode тепер промптить перед записом build-tool config files що надають code execution (`.npmrc`, `.yarnrc*`, `.bunfig.toml`, `.bazelrc`, `.pre-commit-config.yaml`, `.devcontainer/`) | 2.1.160 |

@@ -82,7 +82,7 @@ Incrementally maintain a modular knowledge base of Claude Code features.
 ### Step 6: Оновити meta.md та index.md
 
 - `meta.md`: оновити `last_processed`, додати запис в Processing History
-- `index.md`: оновити лише якщо додали нову категорію
+- `index.md`: **завжди** оновити заголовок — дата (`last_updated`) та версія (`last_processed`). Список категорій оновити лише якщо додали нову категорію
 
 ### Step 7: Звіт користувачу
 

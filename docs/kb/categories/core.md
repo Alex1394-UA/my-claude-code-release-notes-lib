@@ -693,3 +693,10 @@
 | "/ide for …" startup hint removed | Видалено startup hint toast "/ide for …" | 2.1.157 |
 | Backspace dismisses workflow trigger | Натискання Backspace одразу після workflow trigger keyword відхиляє workflow request (як alt+w) замість видалення символу | 2.1.157 |
 | Auto mode Bedrock/Vertex/Foundry | Auto mode тепер доступний на Bedrock, Vertex та Foundry для Opus 4.7 та Opus 4.8; ввімкнути через `CLAUDE_CODE_ENABLE_AUTO_MODE=1` | 2.1.158 |
+| `grep`/`egrep`/`fgrep` read-before-edit | Single-file `grep`/`egrep`/`fgrep` команди задовольняють read-before-edit перевірку (як `head`/`tail`) | 2.1.160 |
+| Dynamic-workflow ключове слово `ultracode` | Слово "workflow" більше не запускає dynamic workflow; нове ключове слово "ultracode"; підсвічується фіолетовим в prompt input | 2.1.160 |
+| Auto mode класифікатор latency | Зменшено reasoning на routine actions, нижчий шанс блокування "could not evaluate this action" | 2.1.160 |
+| Voice mode non-ASCII fix | Виправлено voice mode що не підключався коли project directory або branch name містить non-ASCII або special characters | 2.1.160 |
+| `/effort ultracode` model fix | Виправлено `/effort ultracode` що хибно звинувачував setting dynamic workflows коли модель не підтримує xhigh; ultracode більше не пропонується на моделях без підтримки | 2.1.160 |
+| Auto mode 3p provider message fix | Виправлено повідомлення недоступності auto mode на Bedrock/Vertex/Foundry — тепер вказує на `CLAUDE_CODE_ENABLE_AUTO_MODE` opt-in замість хибного звинувачення моделі | 2.1.160 |
+| Brief mode scrollback fix | Виправлено зникнення попередніх відповідей Claude зі scrollback при відновленні сесії brief mode з вимкненим brief mode | 2.1.160 |
