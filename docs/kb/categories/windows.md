@@ -203,3 +203,4 @@
 | Directory deletion after `claude rm` fix [Win] | Виправлено issue де directory background session не могла бути видалена після `claude rm` поки background daemon не вийшов | 2.1.160 |
 | Esc/arrow keys unresponsive background sessions fix [Win] | Виправлено Esc, arrow keys та typing що ставали unresponsive на Windows при attached до background session або в agent view під високим CPU навантаженням | 2.1.160 |
 | `file:///C:/...` links broken path fix [Win] | Виправлено valid `file:///C:/...` links що переписувались в broken path на Windows terminals з hyperlink підтримкою | 2.1.160 |
+| Windows hooks explicit bash fix [Win] | Виправлено hooks на Windows що явно викликають bash (напр. `/usr/bin/bash script.sh`) що failing з "command not found" або "cannot execute binary file" | 2.1.161 |

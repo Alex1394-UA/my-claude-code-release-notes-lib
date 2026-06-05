@@ -70,6 +70,7 @@
 | `/terminal-setup` GPU acceleration disable | `/terminal-setup` тепер вимикає GPU acceleration в VS Code/Cursor/Windsurf integrated terminals для запобігання garbled-text rendering | 2.1.157 |
 | IDE Stop background subagent fix | Виправлено натискання Stop в IDE поки background subagent працює — тепер фактично зупиняє його | 2.1.157 |
 | VSCode fast mode indicator Opus 4.8 fix | Виправлено відсутність fast mode indicator на Opus 4.8 в VS Code extension | 2.1.157 |
+| GPU acceleration disable tip [VSCode] | Додано підказку про вимкнення GPU acceleration термінала (або `/terminal-setup`) для виправлення garbled glyphs | 2.1.161 |
 
 ## Win32 ARM64
 

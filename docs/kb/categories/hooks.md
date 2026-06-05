@@ -104,3 +104,4 @@
 | `SessionStart` hook `reloadSkills: true` | `SessionStart` хуки можуть повертати `reloadSkills: true` для re-scan skill directories — skills встановлені хуком доступні в тій самій сесії | 2.1.152 |
 | `SessionStart` hook session title | `SessionStart` хуки можуть встановлювати заголовок сесії через `hookSpecificOutput.sessionTitle` на startup та resume | 2.1.152 |
 | `MessageDisplay` hook event | Новий тип хука `MessageDisplay` — дозволяє hooks трансформувати або ховати текст assistant message при відображенні | 2.1.152 |
+| Windows hooks explicit bash fix [Win] | Виправлено hooks на Windows що явно викликають bash (напр. `/usr/bin/bash script.sh`) що failing з "command not found" або "cannot execute binary file" | 2.1.161 |

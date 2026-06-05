@@ -93,3 +93,5 @@
 | `claude agents` Remote Control zombie sessions fix | Виправлено `claude agents` з Remote Control enabled що залишав zombie session entries на Code tab після exit | 2.1.153 |
 | `/claude-api` skill Opus 4.8 support | Додано підтримку Claude Opus 4.8 та 4.7 → 4.8 migration guidance в `/claude-api` skill | 2.1.154 |
 | Model-not-found `--model` suggestion fix | Виправлено помилки model-not-found що пропонували `--model` при запуску через SDK або інші hosts де CLI flag не застосовується | 2.1.160 |
+| Background subagent `claude -p` stdout corrupt fix | Виправлено corrupted stdout від background subagent output при використанні `--output-format text` або `json` в `claude -p` | 2.1.161 |
+| Workflow agents worktree isolation background fix | Виправлено Workflow agents з `isolation: "worktree"` в background sessions що були заблоковані від редагування файлів у власному worktree | 2.1.161 |

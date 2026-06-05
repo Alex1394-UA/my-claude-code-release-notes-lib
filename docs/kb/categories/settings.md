@@ -177,3 +177,4 @@
 | Workflow keyword trigger setting | Новий налаштування в `/config` для вимкнення workflow trigger — слово "workflow" в промпті більше не тригерить dynamic workflow | 2.1.157 |
 | Промпт перед shell startup files | Промпт перед записом в shell startup files (`.zshenv`, `.zlogin`, `.bash_login`) та `~/.config/git/` для запобігання небажаному виконанню команд | 2.1.160 |
 | `acceptEdits` build-tool config prompt | `acceptEdits` mode тепер промптить перед записом build-tool config files що надають code execution (`.npmrc`, `.yarnrc*`, `.bunfig.toml`, `.bazelrc`, `.pre-commit-config.yaml`, `.devcontainer/`) | 2.1.160 |
+| `forceLoginOrgUUID`/`forceLoginMethod` 3p provider fix | Виправлено managed-settings policies що блокували third-party provider sessions (Bedrock, Vertex, Foundry, Mantle) разом з org pin (регресія з 2.1.146) | 2.1.161 |

@@ -244,3 +244,11 @@
 | CJK IME composition position fix | Виправлено CJK IME composition що з'являвся в bottom-left екрану замість біля input caret в `claude agents` view | 2.1.160 |
 | Performance opening inactive background agents | Покращено продуктивність відкриття недавно неактивних background agent sessions в `claude agents` | 2.1.160 |
 | Background session teardown SIGTERM | Покращено teardown background sessions (`claude rm`/`stop`, idle reap) — тепер надсилає SIGTERM shell subprocesses перед SIGKILL, щоб cleanup handlers запустились | 2.1.160 |
+| `claude agents` done/total рядки | Рядки `claude agents` тепер показують `done/total` перед деталями коли роботу розподілено; peek показує найдовший елемент | 2.1.161 |
+| `/mcp` collapses unused connectors | `/mcp` тепер згортає claude.ai connectors з якими ви ніколи не логінилися за рядок "Show unused connectors" | 2.1.161 |
+| `/usage-credits` re-login fix | Виправлено `/usage-credits` що запускав re-login для Team та Enterprise admins замість посилання на usage settings організації | 2.1.161 |
+| `/autofix-pr` worktree fix | Виправлено `/autofix-pr` що повідомляв "cannot run on the default branch" коли сесія в git worktree або іншому репозиторії | 2.1.161 |
+| `--resume` picker non-git worktree fix | Виправлено `--resume` picker що не показував сесії з поточної директорії коли вона не є git worktree (напр. jj workspaces) | 2.1.161 |
+| `claude mcp` secrets redacted | Виправлено `claude mcp` list/get/add що друкували secrets в термінал: `${VAR}` references більше не розширюються, credential headers та URL secrets замасковані | 2.1.161 |
+| Background sessions stale model fix | Виправлено background sessions запущені з `claude agents` що завантажували застарілу модель з daemon environment замість моделі з `settings.json` | 2.1.161 |
+| Completed subagents stuck running fix | Виправлено завершені субагенти що застрягали в стані "running" коли помилка виникала при фіналізації їх результату | 2.1.161 |

@@ -124,6 +124,7 @@
 | `CLAUDE_CODE_PLUGIN_CACHE_DIR` | Кеш плагінів | — |
 | `CLAUDE_CODE_PLUGIN_SEED_DIR` | Seed директорія плагінів (`;` на Win) | 2.1.77 |
 | `CLAUDE_CODE_ADDITIONAL_DIRECTORIES_CLAUDE_MD` | CLAUDE.md з --add-dir (`1`) | 2.1.20 |
+| `CLAUDE_CODE_TMPDIR` deep path `EADDRINUSE` fix | Виправлено `EADDRINUSE` помилки від tools що bind Unix sockets під `$TMPDIR` коли `CLAUDE_CODE_TMPDIR` встановлено на глибокий шлях | 2.1.161 |
 
 ## Телеметрія та OTEL
 
@@ -141,3 +142,5 @@
 | OTEL `claude_code.skill_activated` | Новий OTEL event для skill activation; включає `invocation_trigger` (`"user-slash"`, `"claude-proactive"`, `"nested-skill"`) | 2.1.126 |
 | `OTEL_LOG_TOOL_DETAILS` tool_parameters | `tool_decision` telemetry events тепер включають `tool_parameters` (bash команди, MCP/skill імена) коли `OTEL_LOG_TOOL_DETAILS=1` | 2.1.157 |
 | `CLAUDE_CODE_ENABLE_AUTO_MODE` | Увімкнення auto mode на Bedrock, Vertex та Foundry для Opus 4.7 та Opus 4.8 (`1`) | 2.1.158 |
+| `OTEL_RESOURCE_ATTRIBUTES` metric labels | Значення `OTEL_RESOURCE_ATTRIBUTES` тепер включаються як labels на metric datapoints для розрізнення usage metrics за кастомними dimensions (напр. team, repo) | 2.1.161 |
+| OTEL log events early emit fix | Виправлено OTEL log events (`user_prompt`, `api_request`, `tool_result`, `tool_decision`) що мовчазно відкидались коли emit відбувався до завершення telemetry initialization | 2.1.161 |

@@ -700,3 +700,9 @@
 | `/effort ultracode` model fix | Виправлено `/effort ultracode` що хибно звинувачував setting dynamic workflows коли модель не підтримує xhigh; ultracode більше не пропонується на моделях без підтримки | 2.1.160 |
 | Auto mode 3p provider message fix | Виправлено повідомлення недоступності auto mode на Bedrock/Vertex/Foundry — тепер вказує на `CLAUDE_CODE_ENABLE_AUTO_MODE` opt-in замість хибного звинувачення моделі | 2.1.160 |
 | Brief mode scrollback fix | Виправлено зникнення попередніх відповідей Claude зі scrollback при відновленні сесії brief mode з вимкненим brief mode | 2.1.160 |
+| Parallel tool calls: failed Bash no cancel siblings | Помилка в одному Bash command в parallel tool calls більше не скасовує інші виклики в тому ж batch — кожен tool повертає свій результат незалежно | 2.1.161 |
+| Fullscreen clipboard Linux `wl-copy`/`xclip`/`xsel` | Fullscreen clipboard на Linux тепер використовує `wl-copy`/`xclip`/`xsel` коли доступні, копіює в clipboard та PRIMARY selection для middle-click paste; підказка "hold {key}" тепер показує правильну клавішу | 2.1.161 |
+| Reduce motion fix | Виправлено `/effort` dialog, workflow animations та prompt keyword shimmer що не поважали setting "Reduce motion" | 2.1.161 |
+| Write tool results crash after resume fix | Виправлено потенційний краш при рендерингу результатів Write tool після відновлення сесії | 2.1.161 |
+| Terminal rendering JIT perf | Покращено продуктивність термінального рендерингу стабілізацією JIT compilation profile layout engine | 2.1.161 |
+| Large file writes rendering perf | Покращено продуктивність рендерингу для записів великих файлів | 2.1.161 |
