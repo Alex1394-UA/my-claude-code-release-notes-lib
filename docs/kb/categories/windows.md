@@ -206,3 +206,4 @@
 | Windows hooks explicit bash fix [Win] | Виправлено hooks на Windows що явно викликають bash (напр. `/usr/bin/bash script.sh`) що failing з "command not found" або "cannot execute binary file" | 2.1.161 |
 | Windows permission rules backslashes/case fix [Win] | Виправлено Windows permission rules що ніколи не match коли шлях написаний з backslashes (`~\`, `\\server\share`) або case-variant paths | 2.1.162 |
 | Read deny rules hiding files from Glob/Grep [Win] | Виправлено Read deny rules що не ховали файли з Glob/Grep results | 2.1.162 |
+| Bash EEXIST session-env directory fix [Win] | Виправлено Bash команди з "EEXIST: file already exists" на session-env directory коли він має read-only атрибут або знаходиться всередині OneDrive | 2.1.163 |

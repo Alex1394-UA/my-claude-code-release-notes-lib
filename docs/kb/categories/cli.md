@@ -137,6 +137,12 @@
 | `/insights` crash missing fields fix | Виправлено `/insights` crash коли cached session-meta files missing optional fields | 2.1.149 |
 | Malformed PowerShell/History misclassified fix | Виправлено malformed PowerShell та History tool calls з missing input що misclassified як reads в transcript collapsing | 2.1.149 |
 | `/feedback` pre-compaction context | `/feedback` reports тепер включають conversation що відбулась до context compaction, полегшуючи triaging issues з ранніх частин довгих сесій | 2.1.149 |
+| `claude -p` hanging backgrounded command fix | Виправлено `claude -p` що зависав назавжди після фінального результату коли backgrounded команда ніколи не завершується — background shells тепер зупиняються ~5s після результату коли stdin закривається | 2.1.163 |
+| `claude -p` Bedrock/Vertex/Foundry CI fix | Виправлено `claude -p` що failing з "ANTHROPIC_API_KEY required" на Bedrock/Vertex/Foundry коли `CI=true` і немає Anthropic API key | 2.1.163 |
+| Bash `$TMPDIR` override regression fix | Виправлено bash команди що failing під bazel та EDR-protected Go workflows: `$TMPDIR` було перевизначено на `/tmp/claude-{uid}` для всіх команд замість лише sandboxed (регресія з 2.1.154) | 2.1.163 |
+| Bash EEXIST session-env directory fix [Win] | Виправлено Bash команди на Windows з "EEXIST: file already exists" на session-env directory коли він має read-only атрибут або знаходиться всередині OneDrive | 2.1.163 |
+| Keyboard paste unresponsive fix | Виправлено keyboard input що ставав назавжди unresponsive після paste operation чий кінцевий маркер був втрачений терміналом | 2.1.163 |
+| Stray "(no content)" line panel dialogs fix | Виправлено сторонній рядок "(no content)" що залишався в транскрипті після закриття панельних діалогів як `/mcp` та `/plugins` | 2.1.163 |
 
 ## Запуск та аутентифікація
 
@@ -264,3 +270,10 @@
 | Opening running background session stall fix | Виправлено відкриття running background session з `claude agents` що затримувалось на 5 секунд перед attach | 2.1.162 |
 | Background service startup verification | Покращено background service startup та `claude update` verification — тепер очікує завершення endpoint-security scanning нових binaries замість failure після 5 секунд | 2.1.162 |
 | Background dispatch spawn error class | Background dispatch spawn failures тепер повідомляють клас помилки коли errno недоступний | 2.1.162 |
+| `claude agents` background tasks lost on reattach fix | Виправлено background sessions в `claude agents` що втрачали running background tasks при повторному підключенні після оновлення Claude Code | 2.1.163 |
+| Agent view Esc exit misalignment/hang fix | Виправлено terminal misalignment та багатосекундний hang при виході з agent view натисканням Esc | 2.1.163 |
+| Stop background-task chip not clearing fix | Виправлено натискання Stop на background-task chip в desktop app що не очищав chip коли відповідний процес вже завершився | 2.1.163 |
+| Background agent sessions background update | Background agent sessions тепер оновлюються до нової версії Claude Code у фоні — відкриття сесії після оновлення більше не чекає на cold restart | 2.1.163 |
+| / menu clearer descriptions | Покращено описи вбудованих команд та навичок в `/` menu | 2.1.163 |
+| Subscription-switch startup slot | Підказка перемикання підписки тепер показується в слоті startup announcements замість toast | 2.1.163 |
+| `claude agents` dispatch directory fix | `claude agents` dispatching з state-grouped view тепер стартує сесію в директорії з якої було відкрито agent view | 2.1.163 |

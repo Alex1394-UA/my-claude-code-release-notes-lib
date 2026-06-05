@@ -55,6 +55,7 @@
 | `modelSwitchTimeout` | Таймаут для ModelSwitch хуків | 2.2.1 |
 | `once: true` | Одноразовий хук | 2.1.0 |
 | `if` | Умова запуску (правила дозволів; compound commands з 2.1.89) | 2.1.85, 2.1.89 |
+| Hook `if: "Bash(...)"` subshell fix | Виправлено hook `if: "Bash(...)"` умови що спрацьовували на кожну Bash команду з `$()` або `$VAR`; патерн тепер співпадає з командами всередині subshells та backticks | 2.1.163 |
 | `model` | Кастомна модель для хука | 2.0.41 |
 | `systemMessage` | Системне повідомлення хука | 1.0.64 |
 | `type: "http"` | HTTP хук замість shell | 2.1.63 |
@@ -105,3 +106,4 @@
 | `SessionStart` hook session title | `SessionStart` хуки можуть встановлювати заголовок сесії через `hookSpecificOutput.sessionTitle` на startup та resume | 2.1.152 |
 | `MessageDisplay` hook event | Новий тип хука `MessageDisplay` — дозволяє hooks трансформувати або ховати текст assistant message при відображенні | 2.1.152 |
 | Windows hooks explicit bash fix [Win] | Виправлено hooks на Windows що явно викликають bash (напр. `/usr/bin/bash script.sh`) що failing з "command not found" або "cannot execute binary file" | 2.1.161 |
+| Stop/SubagentStop `hookSpecificOutput.additionalContext` | Stop та SubagentStop хуки тепер можуть повертати `hookSpecificOutput.additionalContext` для надання зворотного зв'язку Claude та продовження turn без помилки hook error | 2.1.163 |

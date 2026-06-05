@@ -17,6 +17,7 @@
 | `/plugin discover` | Огляд плагінів | — |
 | `/reload-plugins` | Перезавантажити | 2.1.69 |
 | `claude plugin list --json` | Список плагінів у JSON форматі | 2.2.2 |
+| `/plugin list` | Показує встановлені плагіни з фільтрами `--enabled`/`--disabled` | 2.1.163 |
 
 ## Типи джерел
 

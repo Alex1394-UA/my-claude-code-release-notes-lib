@@ -72,6 +72,7 @@
 | `permissions.deny` | Правила відмови | — |
 | `permissions.allow` | Правила дозволу | — |
 | `disallowedTools` | Заблоковані інструменти | 0.2.82 |
+| Правила відмови `$HOME` paths Bash fix | Правила відмови на домашніх шляхах (напр. `Read(~/Desktop/**)`) тепер блокують Bash команди що посилаються на шлях через `$HOME` | 2.1.163 |
 
 ## Контекст
 
@@ -180,3 +181,5 @@
 | `forceLoginOrgUUID`/`forceLoginMethod` 3p provider fix | Виправлено managed-settings policies що блокували third-party provider sessions (Bedrock, Vertex, Foundry, Mantle) разом з org pin (регресія з 2.1.146) | 2.1.161 |
 | WebFetch permission rules preapproved domains fix | Виправлено WebFetch permission rules що не застосовувались до вбудованих preapproved domains; явні `WebFetch(domain:...)` deny/ask/allow правила тепер мають пріоритет над preapproved-host auto-allow | 2.1.162 |
 | Windows permission rules backslashes/case fix | Виправлено Windows permission rules що ніколи не match коли шлях написаний з backslashes (`~\`, `\\server\share`) або case-variant paths | 2.1.162 |
+| `requiredMinimumVersion` / `requiredMaximumVersion` | Managed settings для версіонування: Claude Code відмовляється стартувати якщо версія поза допустимим діапазоном і спрямовує користувача до затвердженої версії | 2.1.163 |
+| Org-managed permission rules startup race fix | Виправлено org-managed permission rules що не застосовувались протягом усієї сесії коли managed settings fetch завершувався під час startup на свіжій config directory | 2.1.163 |

@@ -1,6 +1,6 @@
 # Knowledge Base Metadata
 
-last_processed: 2.1.162
+last_processed: 2.1.163
 last_updated: 2026-06-06
 seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 
@@ -44,3 +44,4 @@ seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 | 2026-06-06 | 2.1.160 | core, cli, settings, env-vars, windows, keybindings, plugins, sdk | ~28 записів додано, 1 видалення (`CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE`) |
 | 2026-06-06 | 2.1.161 | core, cli, settings, hooks, env-vars, sdk, windows, vscode-ide | ~23 записів додано, 0 депрекацій |
 | 2026-06-06 | 2.1.162 | core, cli, settings, windows, mcp, sdk, vscode-ide | ~30 записів додано, 0 депрекацій |
+| 2026-06-06 | 2.1.163 | settings, cli, hooks, skills-agents, mcp, plugins, windows | ~23 записи додано, 0 депрекацій |

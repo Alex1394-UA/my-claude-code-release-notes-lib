@@ -116,6 +116,7 @@
 | MCP tool progress notifications collapsed view fix | Виправлено MCP tool progress notifications що не рендерились в collapsed tool view | 2.1.153 |
 | `CLAUDE_CODE_SESSION_ID` та `CLAUDECODE=1` в subprocesses | Stdio MCP server subprocesses тепер отримують `CLAUDE_CODE_SESSION_ID` та `CLAUDECODE=1` в environment | 2.1.154 |
 | MCP per-server timeout <1000ms floor fix | Значення `timeout` <1000ms більше не зводяться до 1-секундного сторожового таймера що скасовує кожен tool call; sub-1000ms values ігноруються (fallback до `MCP_TOOL_TIMEOUT` або default), `claude mcp get` позначає це | 2.1.162 |
+| stdio `CLAUDE_CODE_SESSION_ID` на `--resume` | Stdio MCP сервери тепер отримують `CLAUDE_CODE_SESSION_ID` при `--resume` (як hooks та Bash) | 2.1.163 |
 
 ## Області видимості
 

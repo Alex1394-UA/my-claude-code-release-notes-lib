@@ -57,6 +57,7 @@
 | `claude agents` autocomplete native commands | Autocomplete в dispatch input тепер пропонує native slash команди та bundled skills, не лише project skills | 2.1.153 |
 | Dynamic workflows | Новий тип задач: попросіть Claude створити workflow — він координує роботу через десятки до сотень агентів у фоні для більших та складніших задач; `/workflows` для перегляду виконань | 2.1.154 |
 | `.claude/skills` auto-load plugins | Плагіни з `.claude/skills` директорій автоматично завантажуються без marketplace; `claude plugin init <name>` для створення шаблону | 2.1.157 |
+| `\$` escape syntax | Навички та команди: `\$` escape syntax для включення літерального `$` перед цифрою в тілі команди | 2.1.163 |
 
 ## Поля frontmatter
 
@@ -183,3 +184,4 @@
 | `/reload-skills` | Перезавантаження skill directories без перезапуску сесії | 2.1.152 |
 | Skill frontmatter `disallowed-tools` | Skills та slash commands можуть встановлювати `disallowed-tools` в frontmatter для видалення tools під час активного skill | 2.1.152 |
 | ~~`/tag`~~ | [ВИДАЛЕНО] | 2.1.92 |
+| `/btw` "c to copy" | Скрипт `/btw` тепер має скорочення `c` для копіювання raw markdown відповіді в clipboard зі збереженням форматування | 2.1.163 |
