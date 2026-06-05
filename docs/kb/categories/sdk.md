@@ -95,3 +95,5 @@
 | Model-not-found `--model` suggestion fix | Виправлено помилки model-not-found що пропонували `--model` при запуску через SDK або інші hosts де CLI flag не застосовується | 2.1.160 |
 | Background subagent `claude -p` stdout corrupt fix | Виправлено corrupted stdout від background subagent output при використанні `--output-format text` або `json` в `claude -p` | 2.1.161 |
 | Workflow agents worktree isolation background fix | Виправлено Workflow agents з `isolation: "worktree"` в background sessions що були заблоковані від редагування файлів у власному worktree | 2.1.161 |
+| Interrupt Esc silent drop stream-json/SDK fix | Виправлено interrupt (Esc) надісланий на самому початку turn що мовчазно відкидався в stream-json/SDK sessions, залишаючи turn running без "Interrupted" feedback | 2.1.162 |
+| Remote Control footer pill | Remote Control тепер відображається як постійний footer pill з посиланням на сесію замість startup message | 2.1.162 |

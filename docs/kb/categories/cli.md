@@ -252,3 +252,15 @@
 | `claude mcp` secrets redacted | Виправлено `claude mcp` list/get/add що друкували secrets в термінал: `${VAR}` references більше не розширюються, credential headers та URL secrets замасковані | 2.1.161 |
 | Background sessions stale model fix | Виправлено background sessions запущені з `claude agents` що завантажували застарілу модель з daemon environment замість моделі з `settings.json` | 2.1.161 |
 | Completed subagents stuck running fix | Виправлено завершені субагенти що застрягали в стані "running" коли помилка виникала при фіналізації їх результату | 2.1.161 |
+| `claude agents --json` `waitingFor` | `claude agents --json` тепер включає `waitingFor` що показує на чому очікує сесія (напр. permission prompt) | 2.1.162 |
+| `--tools` Grep/Glob native builds | `--tools` з явним переліком Grep/Glob тепер надає вбудовані search tools на native builds з embedded search (раніше ці назви мовчазно ігнорувались) | 2.1.162 |
+| Config directory read-only hang fix | Виправлено silent startup hang коли config directory read-only або unwritable — тепер стартує з in-memory config та показує startup errors замість blank screen | 2.1.162 |
+| `claude agents` status text full width | Виправлено `claude agents` що обрізав live status text (tool args, replies, prompts, exec output) на 60–120 колонок на широких терміналах — тепер використовує повну ширину | 2.1.162 |
+| `claude agents` name column width | Виправлено `claude agents` що обрізав довгі session names на 40 колонок — name column тепер росте з шириною терміналу | 2.1.162 |
+| `claude agents` attach bounce fix | Виправлено `claude agents` attach що іноді одразу повертався до session list при першій спробі після background-service restart | 2.1.162 |
+| `claude agents` Ctrl+V image paste fix | Виправлено `claude agents` Ctrl+V image paste що не працював в dispatch input та session reply box; paste без image тепер показує підказку | 2.1.162 |
+| Backgrounding with ← losing conversation fix | Виправлено backgrounding сесії через ← що мовчазно втрачав розмову коли background service не може стартувати — сесія залишається в списку як failed row, можна wake з Enter | 2.1.162 |
+| Agents view replies retry | Виправлено відповіді з agents view що не вдається відправити — тепер ставляться в чергу для доставки при наступному старті сесії | 2.1.162 |
+| Opening running background session stall fix | Виправлено відкриття running background session з `claude agents` що затримувалось на 5 секунд перед attach | 2.1.162 |
+| Background service startup verification | Покращено background service startup та `claude update` verification — тепер очікує завершення endpoint-security scanning нових binaries замість failure після 5 секунд | 2.1.162 |
+| Background dispatch spawn error class | Background dispatch spawn failures тепер повідомляють клас помилки коли errno недоступний | 2.1.162 |

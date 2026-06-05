@@ -178,3 +178,5 @@
 | Промпт перед shell startup files | Промпт перед записом в shell startup files (`.zshenv`, `.zlogin`, `.bash_login`) та `~/.config/git/` для запобігання небажаному виконанню команд | 2.1.160 |
 | `acceptEdits` build-tool config prompt | `acceptEdits` mode тепер промптить перед записом build-tool config files що надають code execution (`.npmrc`, `.yarnrc*`, `.bunfig.toml`, `.bazelrc`, `.pre-commit-config.yaml`, `.devcontainer/`) | 2.1.160 |
 | `forceLoginOrgUUID`/`forceLoginMethod` 3p provider fix | Виправлено managed-settings policies що блокували third-party provider sessions (Bedrock, Vertex, Foundry, Mantle) разом з org pin (регресія з 2.1.146) | 2.1.161 |
+| WebFetch permission rules preapproved domains fix | Виправлено WebFetch permission rules що не застосовувались до вбудованих preapproved domains; явні `WebFetch(domain:...)` deny/ask/allow правила тепер мають пріоритет над preapproved-host auto-allow | 2.1.162 |
+| Windows permission rules backslashes/case fix | Виправлено Windows permission rules що ніколи не match коли шлях написаний з backslashes (`~\`, `\\server\share`) або case-variant paths | 2.1.162 |

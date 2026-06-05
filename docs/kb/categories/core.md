@@ -706,3 +706,13 @@
 | Write tool results crash after resume fix | Виправлено потенційний краш при рендерингу результатів Write tool після відновлення сесії | 2.1.161 |
 | Terminal rendering JIT perf | Покращено продуктивність термінального рендерингу стабілізацією JIT compilation profile layout engine | 2.1.161 |
 | Large file writes rendering perf | Покращено продуктивність рендерингу для записів великих файлів | 2.1.161 |
+| `/effort` confirm persist default | `/effort` тепер підтверджує коли обраний рівень збережеться як default для нових сесій | 2.1.162 |
+| Slash command autocomplete fill | Клік на slash command в autocomplete меню тепер вставляє його в prompt замість негайного запуску; натисніть Enter для запуску | 2.1.162 |
+| API 400 surrogate fix (classifier/MCP) | Виправлено API 400 `no low surrogate in string` для classifier side-queries та MCP server descriptions з emoji біля truncation boundary | 2.1.162 |
+| `SendMessage` deep TMPDIR fix | Виправлено cross-session messaging (`SendMessage`) що мовчазно ламався коли `CLAUDE_CODE_TMPDIR` або `$TMPDIR` вказує на глибокий шлях | 2.1.162 |
+| LSP `workspaceSymbol` query parameter | LSP tool операція `workspaceSymbol` тепер приймає параметр `query` та передає його language server; раніше повертала 0 results | 2.1.162 |
+| Quieter startup | Стартові нотифікації групуються за severity; session info та announcements займають один рядок | 2.1.162 |
+| Startup warnings rewritten | Стартові warnings переписані — коротші та зрозуміліші, кожен з конкретним fix | 2.1.162 |
+| Launch-prompt warnings pinned | Попередження запущеного промпту (deep link/pre-filled) тепер закріплені під input замість scroll-away | 2.1.162 |
+| Failed turns compact warning | Помилкові turn-и тепер показують компактний warning рядок замість multi-line червоного error block | 2.1.162 |
+| Removed startup messages | Прибрано "Claude in Chrome enabled" та "marketplace installed" startup messages; model auto-updates та team-onboarding tip тепер quiet notices під logo | 2.1.162 |

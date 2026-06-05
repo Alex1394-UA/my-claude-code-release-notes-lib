@@ -71,6 +71,7 @@
 | IDE Stop background subagent fix | Виправлено натискання Stop в IDE поки background subagent працює — тепер фактично зупиняє його | 2.1.157 |
 | VSCode fast mode indicator Opus 4.8 fix | Виправлено відсутність fast mode indicator на Opus 4.8 в VS Code extension | 2.1.157 |
 | GPU acceleration disable tip [VSCode] | Додано підказку про вимкнення GPU acceleration термінала (або `/terminal-setup`) для виправлення garbled glyphs | 2.1.161 |
+| Windsurf → Devin Desktop rename [VSCode] | Windsurf перейменовано на Devin Desktop в `/ide` menu, `/terminal-setup` та `/scroll-speed` відповідно до ребрендингу редактора | 2.1.162 |
 
 ## Win32 ARM64
 
