@@ -67,6 +67,7 @@
 | Auto mode "unavailable for plan" | Повідомлення при вимкненому через план | 2.1.86 |
 | Auto mode без прапорця | Auto mode більше не потребує `--enable-auto-mode` для Max підписників з Opus 4.7 | 2.1.111 |
 | Opus 4.8 | Нова модель — default effort встановлено на `high`; підтримує `/effort xhigh` та fast mode за 2x стандартної ціни | 2.1.154 |
+| Claude Fable 5 | Mythos-клас модель, безпечна для загального використання; можливості перевершують будь-яку раніше загальнодоступну модель | 2.1.170 |
 
 ## Контекст та пам'ять
 
@@ -764,3 +765,4 @@
 | Skill tags color contrast fix | Покращено кольоровий контраст для skill tags в slash-command menu | 2.1.169 |
 | Promo credit claims guidance | Promo credit claims для Apple/Google-billed підписників без методу оплати тепер пояснюють де додати метод | 2.1.169 |
 | Tip: `claude agents` для concurrent sessions | Додано підказку що пропонує `claude agents` при запуску кількох паралельних сесій | 2.1.169 |
+| Sessions not saving transcripts inherited env fix | Виправлено сесії що не зберігали транскрипти (і не появлялись в `--resume`) коли запущені з VS Code integrated terminal або shell що успадкував змінні середовища Claude Code | 2.1.170 |

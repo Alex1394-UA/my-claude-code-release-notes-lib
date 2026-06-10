@@ -78,6 +78,7 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | JetBrains flickering fix [VSCode] | Виправлено мерехтіння в JetBrains IDE terminals (IntelliJ, PyCharm, WebStorm тощо) на 2026.1+ увімкненням synchronized output | 2.1.166 |
+| Sessions not saving transcripts VS Code terminal fix | Виправлено сесії що не зберігали транскрипти коли запущені з VS Code integrated terminal або shell що успадкував змінні середовища Claude Code | 2.1.170 |
 
 ## Win32 ARM64
 

@@ -1,6 +1,6 @@
 # Knowledge Base Metadata
 
-last_processed: 2.1.169
+last_processed: 2.1.170
 last_updated: 2026-06-10
 seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 
@@ -49,3 +49,4 @@ seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 | 2026-06-10 | 2.1.166 | settings, cli, core, vscode-ide, keybindings, windows | ~22 записи додано, 0 депрекацій |
 | 2026-06-10 | 2.1.167–2.1.168 | — | 0 записів (generic bug fixes) |
 | 2026-06-10 | 2.1.169 | settings, cli, core, hooks, env-vars, sdk, keybindings, windows, plugins | ~32 записи додано, 0 депрекацій |
+| 2026-06-10 | 2.1.170 | core, vscode-ide | ~3 записи додано, 0 депрекацій |
