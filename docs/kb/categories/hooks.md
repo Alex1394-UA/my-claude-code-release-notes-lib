@@ -107,3 +107,9 @@
 | `MessageDisplay` hook event | Новий тип хука `MessageDisplay` — дозволяє hooks трансформувати або ховати текст assistant message при відображенні | 2.1.152 |
 | Windows hooks explicit bash fix [Win] | Виправлено hooks на Windows що явно викликають bash (напр. `/usr/bin/bash script.sh`) що failing з "command not found" або "cannot execute binary file" | 2.1.161 |
 | Stop/SubagentStop `hookSpecificOutput.additionalContext` | Stop та SubagentStop хуки тепер можуть повертати `hookSpecificOutput.additionalContext` для надання зворотного зв'язку Claude та продовження turn без помилки hook error | 2.1.163 |
+
+## Self-hosted runner lifecycle
+
+| Подія | Опис | Версія |
+|-------|------|--------|
+| `post-session` lifecycle hook | Новий хук для self-hosted runner — запускається після завершення сесії та перед видаленням workspace; дозволяє зберегти uncommitted роботу або експортувати логи | 2.1.169 |

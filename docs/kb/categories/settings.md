@@ -183,3 +183,21 @@
 | Windows permission rules backslashes/case fix | Виправлено Windows permission rules що ніколи не match коли шлях написаний з backslashes (`~\`, `\\server\share`) або case-variant paths | 2.1.162 |
 | `requiredMinimumVersion` / `requiredMaximumVersion` | Managed settings для версіонування: Claude Code відмовляється стартувати якщо версія поза допустимим діапазоном і спрямовує користувача до затвердженої версії | 2.1.163 |
 | Org-managed permission rules startup race fix | Виправлено org-managed permission rules що не застосовувались протягом усієї сесії коли managed settings fetch завершувався під час startup на свіжій config directory | 2.1.163 |
+
+## Моделі — fallback
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `fallbackModel` | Налаштування до трьох fallback-моделей, що використовуються послідовно коли основна модель перевантажена або недоступна | 2.1.166 |
+| Glob patterns у deny rules | Підтримка glob-патернів у позиції назви інструменту в deny-правилах (`"*"` забороняє всі інструменти); allow-правила відхиляють non-MCP globs, невідомі назви в deny rules викликають попередження при старті | 2.1.166 |
+| Managed settings invalid entry fix | Один неприпустимий entry в managed settings більше не відключає застосування решти валідних політик | 2.1.166 |
+| Managed-settings `${VAR}` fix | `allowedMcpServers`/`deniedMcpServers` предикати тепер коректно збігаються коли використовують `${VAR}` посилання | 2.1.166 |
+
+## Налаштування (2.1.169)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `disableBundledSkills` | Приховати bundled skills, workflows та built-in slash commands від моделі; також `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` env var | 2.1.169 |
+| Enterprise MCP policies reconnect fix | Виправлено `allowedMcpServers`/`deniedMcpServers` що не застосовувались при reconnect, IDE-typed configs, `--mcp-config` servers під час першої сесії після install, або до завантаження remote settings; також виправлено повільний cold start для org без remote settings | 2.1.169 |
+| Untrusted settings OTEL cert fix | Виправлено можливість non-trusted project settings встановлювати OTEL client-certificate paths без підтвердження довіри | 2.1.169 |
+| Remote-managed settings invalid entry surface error | Remote-managed settings з неприпустимим entry тепер застосовують решту валідних поліцій та показують помилку валідації замість мовчазного відкидання всього payload | 2.1.169 |

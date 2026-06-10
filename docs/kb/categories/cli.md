@@ -277,3 +277,54 @@
 | / menu clearer descriptions | Покращено описи вбудованих команд та навичок в `/` menu | 2.1.163 |
 | Subscription-switch startup slot | Підказка перемикання підписки тепер показується в слоті startup announcements замість toast | 2.1.163 |
 | `claude agents` dispatch directory fix | `claude agents` dispatching з state-grouped view тепер стартує сесію в директорії з якої було відкрито agent view | 2.1.163 |
+
+## Прапорці моделі — fallback
+
+| Прапорець | Опис | Версія |
+|----------|------|--------|
+| `--fallback-model` | Налаштування fallback-моделі для CLI; тепер працює також в інтерактивних сесіях (раніше лише `-p`) | 2.1.166 |
+
+## `claude update`
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `claude update` цільова версія | `claude update` тепер оголошує цільову версію перед завантаженням замість мовчазного завантаження | 2.1.166 |
+
+## `claude agents` — виправлення
+
+| Виправлення | Опис | Версія |
+|-------------|------|--------|
+| `claude agents` URL фільтр | Введення URL в список `claude agents` тепер фільтрує до сесії, чий перший промпт містив цей URL | 2.1.166 |
+| `/doctor` remote session fix | Виправлено `/doctor` що показував суперечливий "Not inside a remote session" коли запущено в remote session | 2.1.166 |
+| Multiline prompt cursor fix | Виправлено курсор що залишався в кінці першого рядка при наборі багаторядкового промпту в `claude agents` dispatch та reply inputs | 2.1.166 |
+| Blank lines background agent rows fix | Виправлено порожні рядки між background agent rows в task list на терміналах без Unicode підтримки | 2.1.166 |
+
+## `--safe-mode`
+
+| Прапорець | Опис | Версія |
+|----------|------|--------|
+| `--safe-mode` | Запуск з усіма кастомізаціями вимкненими (CLAUDE.md, plugins, skills, hooks, MCP servers) для трублшутингу | 2.1.169 |
+
+## `/cd`
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `/cd` | Перехід сесії в нову робочу директорію без порушення prompt cache mid-session | 2.1.169 |
+
+## `/workflows`
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `/workflows` під час turn | `/workflows` тепер відкривається миттєво навіть під час активного turn | 2.1.169 |
+
+## `claude agents --json` (2.1.169)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `claude agents --json` fix | Виправлено omitting blocked та just-dispatched background sessions; додано `--all` для включення completed sessions, нові поля `id` та `state` | 2.1.169 |
+
+## Виправлення CLI (2.1.169)
+
+| Виправлення | Опис | Версія |
+|-------------|------|--------|
+| `claude -p` slow Windows slash-command scan fix [Win] | Виправлено `claude -p` що працював повільно або зависав на Windows під час сканування slash-commands/skills (регресія з 2.1.161) | 2.1.169 |

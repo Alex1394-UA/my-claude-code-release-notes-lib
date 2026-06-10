@@ -716,3 +716,51 @@
 | Launch-prompt warnings pinned | Попередження запущеного промпту (deep link/pre-filled) тепер закріплені під input замість scroll-away | 2.1.162 |
 | Failed turns compact warning | Помилкові turn-и тепер показують компактний warning рядок замість multi-line червоного error block | 2.1.162 |
 | Removed startup messages | Прибрано "Claude in Chrome enabled" та "marketplace installed" startup messages; model auto-updates та team-onboarding tip тепер quiet notices під logo | 2.1.162 |
+
+## Cross-session messaging
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Cross-session messaging hardened | Повідомлення передані через `SendMessage` з інших сесій Claude більше не несуть повноважень користувача — отримувачі відхиляють relay-запити дозволів, auto mode їх блокує | 2.1.166 |
+
+## Режим мислення — відключення
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `MAX_THINKING_TOKENS=0` disables thinking | `MAX_THINKING_TOKENS=0`, `--thinking disabled` та per-model toggle тепер вимикають thinking на моделях що думають за замовчуванням через Claude API (3P providers без змін) | 2.1.166 |
+
+## Fallback retry
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| API error fallback retry | Claude Code тепер повторює turn один раз на fallback-моделі коли API відхиляє з неочікуваною non-retryable помилкою; auth, rate-limit, request-size та transport помилки досі показуються негайно | 2.1.166 |
+
+## Виправлення (2.1.166)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Image processing error fix | Виправлено recurring помилку "image could not be processed" та зайве використання токенів коли непридатне зображення надсилалось в сесії | 2.1.166 |
+| Remote sessions stuck fix | Виправлено remote sessions що назавжди зависали при короткому backend збої під час реєстрації worker на startup | 2.1.166 |
+| Voice mode `/login` fix | Виправлено voice mode що вимагав `/login` для очистки застарілого auth check після перемикання `/voice` | 2.1.166 |
+| Background agent worktree crash-loop fix | Виправлено background agent sessions в git worktree що crash-loop-или з "No conversation found" при повторному відкритті з `claude agents` | 2.1.166 |
+| Duplicated thinking Ctrl+O fix | Виправлено дублювання thinking text в Ctrl+O transcript view під час стрімінгу | 2.1.166 |
+
+## Виправлення (2.1.169)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| ~30-50ms UI stall macOS fix | Виправлено ~30-50ms затримку UI на початку кожного turn для macOS користувачів з claude.ai credentials | 2.1.169 |
+| Remote Control reconnecting fix | Виправлено Remote Control що зависав на "reconnecting" після відновлення сесії коли OAuth token refresh стався одночасно | 2.1.169 |
+| Footer hints custom statusline fix | Виправлено відсутність footer hints (напр. "esc to interrupt") для користувачів з кастомним statusline | 2.1.169 |
+| Stale permission prompts remote reattach fix | Виправлено stale permission та dialog prompts що з'являлись знову при повторному підключенні до remote session чий worker помер поки очікував на них | 2.1.169 |
+| Background agents project-level `env` fix | Виправлено background agents що ігнорували project-level `env` values (напр. `ANTHROPIC_MODEL`) при dispatch на pre-warmed worker | 2.1.169 |
+| Background sessions preserve flags | Background sessions тепер зберігають `--ide`, `--chrome`, `--bare`, `--remote-control` та інші прапорці через retire→wake; respawn state validation посилено | 2.1.169 |
+| Background sessions shared-checkout edit block | Background sessions тепер повідомляються що shared-checkout edits заблоковані до входу в worktree, уникаючи відхиленого edit перед `EnterWorktree` | 2.1.169 |
+| "CLAUDE.md is too long" scales with context | Порог попередження "CLAUDE.md is too long" тепер масштабується з context window моделі | 2.1.169 |
+| CPU usage reduction streaming | Зменшено CPU використання під час стрімінгу відповідей та spinner animations | 2.1.169 |
+| `TaskCreate` reliability | Покращено надійність `TaskCreate`: malformed inputs автоматично виправляються, помилки валідації для ненавантажених tools включають schema | 2.1.169 |
+| Org disabled API key auth error message | Покращено повідомлення помилки коли організація вимкнула API key аутентифікацію, з підказками залежно від джерела активного API key | 2.1.169 |
+| Idle timeout Vertex/Foundry restored | Відновлено дефолтний 5-хвилинний idle timeout на Vertex/Foundry щоб stalled stream переривався замість нескінченного зависання; opt-out через `API_FORCE_IDLE_TIMEOUT=0` | 2.1.169 |
+| Skill tags color contrast fix | Покращено кольоровий контраст для skill tags в slash-command menu | 2.1.169 |
+| Promo credit claims guidance | Promo credit claims для Apple/Google-billed підписників без методу оплати тепер пояснюють де додати метод | 2.1.169 |
+| Tip: `claude agents` для concurrent sessions | Додано підказку що пропонує `claude agents` при запуску кількох паралельних сесій | 2.1.169 |

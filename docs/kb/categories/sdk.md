@@ -97,3 +97,10 @@
 | Workflow agents worktree isolation background fix | Виправлено Workflow agents з `isolation: "worktree"` в background sessions що були заблоковані від редагування файлів у власному worktree | 2.1.161 |
 | Interrupt Esc silent drop stream-json/SDK fix | Виправлено interrupt (Esc) надісланий на самому початку turn що мовчазно відкидався в stream-json/SDK sessions, залишаючи turn running без "Interrupted" feedback | 2.1.162 |
 | Remote Control footer pill | Remote Control тепер відображається як постійний footer pill з посиланням на сесію замість startup message | 2.1.162 |
+
+## Self-hosted runner
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `post-session` lifecycle hook | Новий хук для self-hosted runner — запускається після завершення сесії та перед видаленням workspace; для збереження uncommitted роботи або експорту логів | 2.1.169 |
+| Configurable SIGTERM→SIGKILL window | Child-process SIGTERM→SIGKILL window тепер конфігуровний (дефолт незмінний — 5с) | 2.1.169 |

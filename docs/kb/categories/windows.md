@@ -207,3 +207,8 @@
 | Windows permission rules backslashes/case fix [Win] | Виправлено Windows permission rules що ніколи не match коли шлях написаний з backslashes (`~\`, `\\server\share`) або case-variant paths | 2.1.162 |
 | Read deny rules hiding files from Glob/Grep [Win] | Виправлено Read deny rules що не ховали файли з Glob/Grep results | 2.1.162 |
 | Bash EEXIST session-env directory fix [Win] | Виправлено Bash команди з "EEXIST: file already exists" на session-env directory коли він має read-only атрибут або знаходиться всередині OneDrive | 2.1.163 |
+| PowerShell command validation hang fix [Win] | Виправлено PowerShell command validation що періодично зависав набагато довше за свій бюджет часу на Windows коли дочірні процеси вбитого процесу тримали його output pipes | 2.1.166 |
+| Git Credential Manager popup fix [Win] | Виправлено спливання Git Credential Manager "Connect to GitHub" на Windows при старті коли background git команди виконувались без cached credentials | 2.1.169 |
+| MCPB plugin cache spurious invalidation fix [Win] | Виправлено спорожнення plugin cache MCPB на Windows що спричиняло непотрібне повторне розпакування | 2.1.169 |
+| Agents view stale frame WSL fix [Win] | Виправлено stale/garbled frame що залишався після навігації назад від агента на WSL в Windows Terminal | 2.1.169 |
+| Auto-updater retry held process fix [Win] | Auto-updater на Windows тепер припиняє retry протягом сесії коли `claude.exe` утримується іншим процесом | 2.1.169 |

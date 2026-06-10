@@ -132,3 +132,9 @@
 | `.claude/skills` auto-load | Плагіни з `.claude/skills` директорій тепер завантажуються автоматично, без необхідності marketplace | 2.1.157 |
 | `claude plugin init <name>` | Створення шаблону нового плагіна в `.claude/skills` з базовою структурою файлів | 2.1.157 |
 | Видалено JetBrains plugin install suggestion | Прибрано пропозицію встановлення JetBrains plugin при старті | 2.1.160 |
+
+## Очищення та стабільність
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Plugin `.in_use` PID lock cleanup | Plugin `.in_use` PID lock files більше не накопичуються без межі; stale markers від crashed сесій тепер очищаються раз на день | 2.1.169 |

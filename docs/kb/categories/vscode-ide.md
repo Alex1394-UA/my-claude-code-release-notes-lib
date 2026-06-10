@@ -73,6 +73,12 @@
 | GPU acceleration disable tip [VSCode] | Додано підказку про вимкнення GPU acceleration термінала (або `/terminal-setup`) для виправлення garbled glyphs | 2.1.161 |
 | Windsurf → Devin Desktop rename [VSCode] | Windsurf перейменовано на Devin Desktop в `/ide` menu, `/terminal-setup` та `/scroll-speed` відповідно до ребрендингу редактора | 2.1.162 |
 
+## JetBrains IDE
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| JetBrains flickering fix [VSCode] | Виправлено мерехтіння в JetBrains IDE terminals (IntelliJ, PyCharm, WebStorm тощо) на 2026.1+ увімкненням synchronized output | 2.1.166 |
+
 ## Win32 ARM64
 
 | Можливість | Опис | Версія |

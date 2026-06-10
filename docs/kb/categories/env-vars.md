@@ -115,6 +115,9 @@
 | `CLAUDE_CODE_SUBAGENT_MODEL` teammate processes fix | Виправлено `CLAUDE_CODE_SUBAGENT_MODEL` що не застосовувався до teammate processes spawned agent teams | 2.1.147 |
 | ~~`CLAUDE_CODE_OPUS_4_6_FAST_MODE_OVERRIDE`~~ | [ВИДАЛЕНО] змінна більше не має ефекту (no-op); для fast mode на Opus 4.6 switch на `/model claude-opus-4-6[1m]` та `/fast on` | 2.1.154, 2.1.160 |
 | `CLAUDE_CODE_ALWAYS_ENABLE_EFFORT` 400 fix | Виправлено API 400 помилки на моделях що не підтримують effort параметр коли `CLAUDE_CODE_ALWAYS_ENABLE_EFFORT` встановлено | 2.1.154 |
+| `CLAUDE_CODE_SAFE_MODE` | Запуск Claude Code з усіма кастомізаціями вимкненими (CLAUDE.md, plugins, skills, hooks, MCP servers) для трублшутингу; також `--safe-mode` CLI прапорець | 2.1.169 |
+| `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` | Приховати bundled skills, workflows та built-in slash commands від моделі; також `disableBundledSkills` setting | 2.1.169 |
+| `API_FORCE_IDLE_TIMEOUT` | Примусовий idle timeout для stalled stream; `=0` для opt-out (за замовч. 5 хв на Vertex/Foundry відновлено) | 2.1.169 |
 
 ## Шляхи
 
