@@ -212,3 +212,5 @@
 | MCPB plugin cache spurious invalidation fix [Win] | Виправлено спорожнення plugin cache MCPB на Windows що спричиняло непотрібне повторне розпакування | 2.1.169 |
 | Agents view stale frame WSL fix [Win] | Виправлено stale/garbled frame що залишався після навігації назад від агента на WSL в Windows Terminal | 2.1.169 |
 | Auto-updater retry held process fix [Win] | Auto-updater на Windows тепер припиняє retry протягом сесії коли `claude.exe` утримується іншим процесом | 2.1.169 |
+| Mouse tracking disabled unsupported consoles [Win] | Вимкнено mouse tracking на Windows consoles що не повністю його підтримують | 2.1.172 |
+| Spurious sandbox dependencies warning fix [Win] | Виправлено хибне "sandbox dependencies missing" startup warning на Windows коли sandbox був увімкнений в settings | 2.1.173 |

@@ -132,6 +132,8 @@
 | `.claude/skills` auto-load | Плагіни з `.claude/skills` директорій тепер завантажуються автоматично, без необхідності marketplace | 2.1.157 |
 | `claude plugin init <name>` | Створення шаблону нового плагіна в `.claude/skills` з базовою структурою файлів | 2.1.157 |
 | Видалено JetBrains plugin install suggestion | Прибрано пропозицію встановлення JetBrains plugin при старті | 2.1.160 |
+| Пошуковий рядок в marketplace plugin browser | Додано пошуковий рядок при перегляді плагінів marketplace в `/plugin` | 2.1.172 |
+| `/plugin` marketplace cursor/esc fix | Виправлено `/plugin` marketplace list що втрачав cursor після виходу з довгого списку плагінів, та Esc з plugin browser що повертав на неправильну вкладку | 2.1.172 |
 
 ## Очищення та стабільність
 

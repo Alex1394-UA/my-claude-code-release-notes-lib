@@ -766,3 +766,31 @@
 | Promo credit claims guidance | Promo credit claims для Apple/Google-billed підписників без методу оплати тепер пояснюють де додати метод | 2.1.169 |
 | Tip: `claude agents` для concurrent sessions | Додано підказку що пропонує `claude agents` при запуску кількох паралельних сесій | 2.1.169 |
 | Sessions not saving transcripts inherited env fix | Виправлено сесії що не зберігали транскрипти (і не появлялись в `--resume`) коли запущені з VS Code integrated terminal або shell що успадкував змінні середовища Claude Code | 2.1.170 |
+
+## Моделі (2.1.172–2.1.173)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `availableModels` allowlists hiding 1M model rows fix | Виправлено `availableModels` що ховав `/model` picker's Opus та Sonnet 1M rows коли entries використовують version-specific IDs як `claude-opus-4-8` | 2.1.172 |
+| `/model` picker Bedrock wrong models fix | Виправлено `/model` picker на Bedrock що пропонував моделі які provider не обслуговує — вибір мовчки змінював модель сесії та підсвічував кілька рядків | 2.1.172 |
+| Model IDs doubled 1M suffix fix | Виправлено подвоєння 1M-context суфіксу (напр. `[1M][1m]`) коли `ANTHROPIC_DEFAULT_OPUS_MODEL` вже включає один | 2.1.172 |
+| `opusplan` 1M context in plan mode fix | Виправлено `opusplan` model setting що не мав 1M context в plan mode для entitled users; `opusplan[1m]` workaround тепер також правильно перемикається на Opus в plan mode | 2.1.172 |
+| Fable 5 `[1m]` suffix normalization | Виправлено normalization model names з `[1m]` suffix для Fable 5 — Fable 5 включає 1M context за замовчуванням, suffix тепер автоматично прибирається | 2.1.173 |
+
+## Контекст та пам'ять (2.1.172)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| 1M context sessions auto-compact without credits | Сесії що використовують 1M context без usage credits більше не застрягають назавжди — автоматичне стиснення назад під стандартний ліміт контексту | 2.1.172 |
+| Memory recall `CLAUDE_MEMORY_STORES` remote sessions fix | Виправлено memory recall що не знаходив mounted team memory stores (`CLAUDE_MEMORY_STORES`) в remote sessions | 2.1.172 |
+
+## Інтерактивність (2.1.172)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Multiple images processing error fix | Виправлено повторювану помилку "an image in the conversation could not be processed and was removed" коли розмова містила кілька зображень | 2.1.172 |
+| Performance improvements long conversations | Покращено продуктивність в довгих розмовах шляхом видалення надлишкової нормалізації повідомлень та уникнення повних трансформацій історії коли streaming tool-use state не змінився | 2.1.172 |
+| Reduced idle CPU `/goal` status chip | Зменшено idle CPU: `/goal` status chip більше не перемальовує термінал на 5 Hz поки idle, та менше UI перемальовувань під час паралельної роботи subagentів | 2.1.172 |
+| Chrome tool loading batched | Покращено завантаження Claude in Chrome tools — browser tools тепер завантажуються в одному batched виклику замість одного за раз | 2.1.172 |
+| Non-interactive refusal message improvement | Покращено повідомлення відмови Usage Policy в non-interactive mode — тепер пропонує розпочати нову сесію або змінити модель | 2.1.172 |
+| RC footer shortened | Скоротено Remote Control footer indicator до "/rc active"; ховається на вузьких терміналах | 2.1.172 |

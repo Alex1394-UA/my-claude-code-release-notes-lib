@@ -119,6 +119,12 @@
 | `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` | Приховати bundled skills, workflows та built-in slash commands від моделі; також `disableBundledSkills` setting | 2.1.169 |
 | `API_FORCE_IDLE_TIMEOUT` | Примусовий idle timeout для stalled stream; `=0` для opt-out (за замовч. 5 хв на Vertex/Foundry відновлено) | 2.1.169 |
 
+## API та аутентифікація (2.1.172)
+
+| Змінна | Опис | Версія |
+|--------|------|--------|
+| Bedrock AWS region з `~/.aws` config | Amazon Bedrock тепер читає AWS region з `~/.aws` config files коли `AWS_REGION` не встановлено, відповідно до AWS SDK precedence; `/status` показує джерело region | 2.1.172 |
+
 ## Шляхи
 
 | Змінна | Опис | Версія |
@@ -147,3 +153,4 @@
 | `CLAUDE_CODE_ENABLE_AUTO_MODE` | Увімкнення auto mode на Bedrock, Vertex та Foundry для Opus 4.7 та Opus 4.8 (`1`) | 2.1.158 |
 | `OTEL_RESOURCE_ATTRIBUTES` metric labels | Значення `OTEL_RESOURCE_ATTRIBUTES` тепер включаються як labels на metric datapoints для розрізнення usage metrics за кастомними dimensions (напр. team, repo) | 2.1.161 |
 | OTEL log events early emit fix | Виправлено OTEL log events (`user_prompt`, `api_request`, `tool_result`, `tool_decision`) що мовчазно відкидались коли emit відбувався до завершення telemetry initialization | 2.1.161 |
+| OTEL `claude_code.lines_of_code.count` model attribute | Додано атрибут `model` до OTEL metric `claude_code.lines_of_code.count` | 2.1.172 |

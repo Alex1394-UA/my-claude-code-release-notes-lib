@@ -58,6 +58,7 @@
 | Dynamic workflows | Новий тип задач: попросіть Claude створити workflow — він координує роботу через десятки до сотень агентів у фоні для більших та складніших задач; `/workflows` для перегляду виконань | 2.1.154 |
 | `.claude/skills` auto-load plugins | Плагіни з `.claude/skills` директорій автоматично завантажуються без marketplace; `claude plugin init <name>` для створення шаблону | 2.1.157 |
 | `\$` escape syntax | Навички та команди: `\$` escape syntax для включення літерального `$` перед цифрою в тілі команди | 2.1.163 |
+| Workflow validation `Date.now()`/`Math.random()` fix | Виправлено workflow validation що відхиляла скрипти де prompt strings або comments лише згадували `Date.now()`/`Math.random()` | 2.1.172 |
 
 ## Поля frontmatter
 
@@ -174,6 +175,7 @@
 | `/export-v2` | Експорт розмови (новий) | 2.2.0 |
 | `/release-notes` | Реліз-ноти | 0.2.37 |
 | `/code-review` | Code review з обраним рівнем зусилля (напр. `/code-review high`); `--comment` для inline GitHub PR comments; `--fix` для автоматичного застосування знахідок до working tree | 2.1.152 |
+| `/code-review` ultra visible without claude.ai | `/code-review` тепер залишає `ultra` опцію видимою коли не авторизовані в claude.ai, з поясненням що cloud review потребує claude.ai account | 2.1.172 |
 | `/powerup` | Інтерактивні уроки з анімованими демо для вивчення можливостей Claude Code | 2.1.90 |
 | `/team-onboarding` | Генерація teammate ramp-up guide з локального використання Claude Code | 2.1.101 |
 | `/proactive` | Аліас для `/loop` | 2.1.105 |
@@ -185,3 +187,9 @@
 | Skill frontmatter `disallowed-tools` | Skills та slash commands можуть встановлювати `disallowed-tools` в frontmatter для видалення tools під час активного skill | 2.1.152 |
 | ~~`/tag`~~ | [ВИДАЛЕНО] | 2.1.92 |
 | `/btw` "c to copy" | Скрипт `/btw` тепер має скорочення `c` для копіювання raw markdown відповіді в clipboard зі збереженням форматування | 2.1.163 |
+
+## Кастомні агенти (2.1.172)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Sub-agents spawn own sub-agents | Субагенти тепер можуть spawnити власних субагентів (до 5 рівнів вкладеності) | 2.1.172 |

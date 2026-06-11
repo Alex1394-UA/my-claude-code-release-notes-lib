@@ -278,6 +278,18 @@
 | Subscription-switch startup slot | Підказка перемикання підписки тепер показується в слоті startup announcements замість toast | 2.1.163 |
 | `claude agents` dispatch directory fix | `claude agents` dispatching з state-grouped view тепер стартує сесію в директорії з якої було відкрито agent view | 2.1.163 |
 
+## `claude agents` — виправлення (2.1.172)
+
+| Виправлення | Опис | Версія |
+|-------------|------|--------|
+| Agents view busy spinner fix | Виправлено agents view що залишав сесію під Working з busy spinner до 30 секунд після відповіді worker | 2.1.172 |
+| Background agents wrong directory settings fix | Виправлено background agents що могли читати налаштування проекту іншої директорії (`.mcp.json` approvals, trust) при dispatch на pre-warmed worker | 2.1.172 |
+| Background-session attach EAUTH fix | Виправлено background-session attach що failing з EAUTH для сесій запущених на старішій версії після auto-update daemon | 2.1.172 |
+| Background sub-agent stuck active fix | Виправлено background sub-agent що залишався stuck як "active" в agent panel після зупинки nested agent що він spawnив | 2.1.172 |
+| `/model` suggestions in agents dispatch fix | Виправлено `/model` suggestions в `claude agents` dispatch input що рендерились з оманливим slash prefix та показували моделі disabled для вашої org | 2.1.172 |
+| Up-arrow prompt history subagent fix | Виправлено up-arrow prompt history що показував промпти основного агента поки відкрито chat tab subagent | 2.1.172 |
+| `/loop` not promoted in remote | Припинено пропонування `/loop` в remote sessions, де pending loops не тримають container живим | 2.1.172 |
+
 ## Прапорці моделі — fallback
 
 | Прапорець | Опис | Версія |

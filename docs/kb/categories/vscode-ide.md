@@ -72,6 +72,7 @@
 | VSCode fast mode indicator Opus 4.8 fix | Виправлено відсутність fast mode indicator на Opus 4.8 в VS Code extension | 2.1.157 |
 | GPU acceleration disable tip [VSCode] | Додано підказку про вимкнення GPU acceleration термінала (або `/terminal-setup`) для виправлення garbled glyphs | 2.1.161 |
 | Windsurf → Devin Desktop rename [VSCode] | Windsurf перейменовано на Devin Desktop в `/ide` menu, `/terminal-setup` та `/scroll-speed` відповідно до ребрендингу редактора | 2.1.162 |
+| PowerShell tool calls raw JSON fix [VSCode] | Виправлено PowerShell tool calls що рендерились як raw JSON замість proper command display та permission dialog; також прибрано ANSI escape codes з displayed shell output | 2.1.172 |
 
 ## JetBrains IDE
 
