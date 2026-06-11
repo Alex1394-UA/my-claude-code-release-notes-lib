@@ -776,6 +776,7 @@
 | Model IDs doubled 1M suffix fix | Виправлено подвоєння 1M-context суфіксу (напр. `[1M][1m]`) коли `ANTHROPIC_DEFAULT_OPUS_MODEL` вже включає один | 2.1.172 |
 | `opusplan` 1M context in plan mode fix | Виправлено `opusplan` model setting що не мав 1M context в plan mode для entitled users; `opusplan[1m]` workaround тепер також правильно перемикається на Opus в plan mode | 2.1.172 |
 | Fable 5 `[1m]` suffix normalization | Виправлено normalization model names з `[1m]` suffix для Fable 5 — Fable 5 включає 1M context за замовчуванням, suffix тепер автоматично прибирається | 2.1.173 |
+| `[1m]` suffix leak third-party providers | Відомий клас багів: `[1m]` suffix може просочуватись в API-запит до non-Anthropic провайдерів (Bedrock [#49781](https://github.com/anthropics/claude-code/issues/49781), third-party адаптери); при використанні GLM/z.ai адаптерів суфікс відображається в UI але не відповідає реальному контекстному вікну моделі — косметичний metadata mismatch | — |
 
 ## Контекст та пам'ять (2.1.172)
 
