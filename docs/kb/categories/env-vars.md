@@ -124,6 +124,8 @@
 | Змінна | Опис | Версія |
 |--------|------|--------|
 | Bedrock AWS region з `~/.aws` config | Amazon Bedrock тепер читає AWS region з `~/.aws` config files коли `AWS_REGION` не встановлено, відповідно до AWS SDK precedence; `/status` показує джерело region | 2.1.172 |
+| `awsCredentialExport` кешування до `Expiration` | Облікові дані з `awsCredentialExport` тепер кешуються до їх `Expiration` замість фіксованої 1 години | 2.1.176 |
+| `ANTHROPIC_DEFAULT_*_MODEL` + `availableModels` | Alias model picks більше не перенаправляються до заблокованої моделі через `ANTHROPIC_DEFAULT_*_MODEL` env vars | 2.1.176 |
 
 ## Шляхи
 

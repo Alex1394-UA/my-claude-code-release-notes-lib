@@ -340,3 +340,23 @@
 | Виправлення | Опис | Версія |
 |-------------|------|--------|
 | `claude -p` slow Windows slash-command scan fix [Win] | Виправлено `claude -p` що працював повільно або зависав на Windows під час сканування slash-commands/skills (регресія з 2.1.161) | 2.1.169 |
+
+## `/cd` (2.1.176)
+
+| Виправлення | Опис | Версія |
+|-------------|------|--------|
+| `/cd` git branch fix | Виправлено `/cd` та worktree moves що залишали сесію з повідомленням git branch попередньої директорії | 2.1.176 |
+
+## `claude agents` — виправлення (2.1.176)
+
+| Виправлення | Опис | Версія |
+|-------------|------|--------|
+| `claude agents` back button detach fix | Виправлено `claude agents`: натискання ← в одному вікні більше не відокремлює інші вікна підключені до тієї ж сесії | 2.1.176 |
+| Background sessions "Working" forever fix | Виправлено backgrounded sessions що показували "Working" назавжди коли `/bg` mid-turn не мав що продовжувати | 2.1.176 |
+| Background agent PR URL search fix | Виправлено пошук по PR URL в `claude agents`: PRs створені під час scheduled wakeups або поки job був заблокований тепер з'являються в пошуку | 2.1.176 |
+| Agents view input text cursor fix [Win] | Виправлено відсутність текстового курсору в agents view input на Windows | 2.1.176 |
+| `claude --bg -cn` seeding fix | Виправлено `claude --bg -cn <name>` що не насідав ім'я сесії | 2.1.176 |
+| Background sessions Windows network paths fix [Win] | Виправлено background sessions що нейтралізують Windows network paths в persisted state перед respawn | 2.1.176 |
+| Background-session respawn malformed IDs fix | Виправлено respawn background sessions що відхиляв malformed resume IDs з пошкоджених state files | 2.1.176 |
+| Background-service daemon ReadOnly attribute fix [Win] | Виправлено Windows background-service daemon що не стартував коли `~/.claude/daemon` має ReadOnly атрибут | 2.1.176 |
+| Background sessions auto-update guidance | Background sessions тепер показують чіткішу підказку коли вікно відкрите через auto-update не може надіслати відповідь; `claude daemon status` пояснює version-skew поведінку | 2.1.176 |

@@ -214,3 +214,6 @@
 | Auto-updater retry held process fix [Win] | Auto-updater на Windows тепер припиняє retry протягом сесії коли `claude.exe` утримується іншим процесом | 2.1.169 |
 | Mouse tracking disabled unsupported consoles [Win] | Вимкнено mouse tracking на Windows consoles що не повністю його підтримують | 2.1.172 |
 | Spurious sandbox dependencies warning fix [Win] | Виправлено хибне "sandbox dependencies missing" startup warning на Windows коли sandbox був увімкнений в settings | 2.1.173 |
+| Agents view input text cursor fix [Win] | Виправлено відсутність текстового курсору в agents view input на Windows | 2.1.176 |
+| Background sessions network paths fix [Win] | Виправлено background sessions що нейтралізують Windows network paths в persisted state перед respawn | 2.1.176 |
+| Background-service daemon ReadOnly attribute fix [Win] | Виправлено Windows background-service daemon що не стартував коли `~/.claude/daemon` має ReadOnly атрибут | 2.1.176 |

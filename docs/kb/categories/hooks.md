@@ -107,6 +107,7 @@
 | `MessageDisplay` hook event | Новий тип хука `MessageDisplay` — дозволяє hooks трансформувати або ховати текст assistant message при відображенні | 2.1.152 |
 | Windows hooks explicit bash fix [Win] | Виправлено hooks на Windows що явно викликають bash (напр. `/usr/bin/bash script.sh`) що failing з "command not found" або "cannot execute binary file" | 2.1.161 |
 | Stop/SubagentStop `hookSpecificOutput.additionalContext` | Stop та SubagentStop хуки тепер можуть повертати `hookSpecificOutput.additionalContext` для надання зворотного зв'язку Claude та продовження turn без помилки hook error | 2.1.163 |
+| Hook `if` conditions Read/Edit/Write paths fix | Виправлено hook `if` умови для Read/Edit/Write tool paths: патерни як `Edit(src/**)`, `Read(~/.ssh/**)`, `Read(.env)` тепер збігаються коректно | 2.1.176 |
 
 ## Self-hosted runner lifecycle
 

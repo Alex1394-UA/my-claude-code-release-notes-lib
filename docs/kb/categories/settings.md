@@ -33,6 +33,7 @@
 | Custom themes | Кастомні теми з `/theme` або JSON файлами в `~/.claude/themes/`; плагіни можуть постачати теми через `themes/` директорію | 2.1.118 |
 | `/config` persist | `/config` settings (theme, editor mode, verbose, etc.) зберігаються в `~/.claude/settings.json` з правильним precedence project/local/policy | 2.1.119 |
 | `prUrlTemplate` | Налаштування URL для PR badge в footer (замість github.com) | 2.1.119 |
+| `footerLinksRegexes` | Regex-відповідності для link badges в footer row; конфігурується через user або managed settings | 2.1.176 |
 | PowerShell auto-approve | PowerShell tool команди можуть бути auto-approved в permission mode, аналогічно Bash поведінці | 2.1.119 |
 | `refreshInterval` status line | Перезапуск status line команди кожні N секунд | 2.1.97 |
 | `workspace.git_worktree` status line | JSON input для status line, встановлюється в git worktree | 2.1.97 |
@@ -203,3 +204,4 @@
 | Remote-managed settings invalid entry surface error | Remote-managed settings з неприпустимим entry тепер застосовують решту валідних поліцій та показують помилку валідації замість мовчазного відкидання всього payload | 2.1.169 |
 | `WebFetch` wildcard domain rules fix | Виправлено `WebFetch(domain:*.example.com)` wildcard domain rules що ніколи не збігалися з subdomains в allow, deny та ask position; також виправлено file permission rules з mid-pattern wildcards (напр. `Read(secrets-*/config.json)`) що відхилялись при startup | 2.1.172 |
 | `availableModels` restrictions not applied fix | Виправлено `availableModels` restrictions що не застосовувались до subagent model overrides, agent dispatch model picker та advisor model | 2.1.172 |
+| `availableModels` env var redirect fix | Alias model picks більше не перенаправляються до заблокованої моделі через `ANTHROPIC_DEFAULT_*_MODEL` env vars; `/fast` відмовляється перемикати для моделей поза allowlist | 2.1.176 |

@@ -52,6 +52,7 @@
 | `/fast` | Перемикання швидкого режиму | 2.1.36 |
 | Opus 4.8 fast mode | Fast mode на Opus 4.8 за 2x стандартної ціни з 2.5x швидкістю (було значно дорожче) | 2.1.154 |
 | Alt+P (Win/Linux), Option+P (macOS) | Перемикання моделі під час вводу | 2.0.65 |
+| `/fast` + `availableModels` | `/fast` відмовляється перемикати коли цільова модель поза `availableModels` allowlist | 2.1.176 |
 
 ## Моделі
 
@@ -795,3 +796,13 @@
 | Chrome tool loading batched | Покращено завантаження Claude in Chrome tools — browser tools тепер завантажуються в одному batched виклику замість одного за раз | 2.1.172 |
 | Non-interactive refusal message improvement | Покращено повідомлення відмови Usage Policy в non-interactive mode — тепер пропонує розпочати нову сесію або змінити модель | 2.1.172 |
 | RC footer shortened | Скоротено Remote Control footer indicator до "/rc active"; ховається на вузьких терміналах | 2.1.172 |
+
+## Інші (2.1.176)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Session titles language | Заголовки сесій тепер генеруються мовою розмови; `language` setting фіксує конкретну мову | 2.1.176 |
+| Auto mode Fable 5 fallback | Виправлено auto mode на Fable 5 для організацій без Opus 4.8 — класифікатор тепер відступає до найкращої доступної Opus моделі | 2.1.176 |
+| Linux sandbox symlink fix | Виправлено запуск sandbox на Linux коли `.claude/settings.json` є symlink з абсолютною ціллю | 2.1.176 |
+| `/copy` tmux SSH clipboard fix | Виправлено `/copy` та mouse-selection copy що не досягали system clipboard всередині tmux over SSH; tmux paste buffer не завантажувався на версіях старіших за 3.2 | 2.1.176 |
+| Cloud sessions auth method fix | Виправлено cloud sessions що failing з "Could not resolve authentication method" при тривалому простої перед claim | 2.1.176 |

@@ -97,6 +97,9 @@
 | Workflow agents worktree isolation background fix | Виправлено Workflow agents з `isolation: "worktree"` в background sessions що були заблоковані від редагування файлів у власному worktree | 2.1.161 |
 | Interrupt Esc silent drop stream-json/SDK fix | Виправлено interrupt (Esc) надісланий на самому початку turn що мовчазно відкидався в stream-json/SDK sessions, залишаючи turn running без "Interrupted" feedback | 2.1.162 |
 | Remote Control footer pill | Remote Control тепер відображається як постійний footer pill з посиланням на сесію замість startup message | 2.1.162 |
+| RC web/mobile model switch fix | Виправлено Remote Control: підключення з web/mobile мовчки перемикало модель сесії | 2.1.176 |
+| RC disconnect notifications human-readable fix | Виправлено notifications disconnect Remote Control: показували bare numeric code замість людського опису; connection failures більше не додають дубльований рядок в транскрипт | 2.1.176 |
+| RC account switch disconnect fix | Виправлено Remote Control sessions що не відключались при вході в інший акаунт | 2.1.176 |
 
 ## Self-hosted runner
 
