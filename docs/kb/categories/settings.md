@@ -206,3 +206,4 @@
 | `availableModels` restrictions not applied fix | Виправлено `availableModels` restrictions що не застосовувались до subagent model overrides, agent dispatch model picker та advisor model | 2.1.172 |
 | `availableModels` env var redirect fix | Alias model picks більше не перенаправляються до заблокованої моделі через `ANTHROPIC_DEFAULT_*_MODEL` env vars; `/fast` відмовляється перемикати для моделей поза allowlist | 2.1.176 |
 | `Tool(param:value)` permission rules | Синтаксис `Tool(param:value)` для permission rules — match параметрів інструменту (з `*` wildcard), напр. `Agent(model:opus)` для блокування Opus subagent-ів | 2.1.178 |
+| Sandbox `denyRead`/`allowRead` glob large directory fix | Виправлено sandbox `denyRead`/`allowRead` glob над великим directory tree що робив опис Bash tool необмеженим та сесію непридатною на Linux | 2.1.179 |

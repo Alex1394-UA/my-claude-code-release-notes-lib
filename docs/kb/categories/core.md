@@ -816,3 +816,14 @@
 | Nested `.claude/` directory collision resolution | При збігу імен в nested `.claude/` directories — agent, workflow та output-style найближчий до робочої директорії тепер пріоритетний; project-scope workflow saves тепер цілить найближчий існуючий `.claude/workflows/` | 2.1.178 |
 | `/copy` tmux SSH clipboard fix | Виправлено `/copy` та mouse-selection copy що не досягали system clipboard всередині tmux over SSH; tmux paste buffer не завантажувався на версіях старіших за 3.2 | 2.1.176 |
 | Cloud sessions auth method fix | Виправлено cloud sessions що failing з "Could not resolve authentication method" при тривалому простої перед claim | 2.1.176 |
+
+## Основні можливості (2.1.179)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Mid-stream connection drops partial response fix | Виправлено mid-stream connection drops: часткові відповіді тепер зберігаються замість показу сирої помилки, spinner більше не зависає на "running tool" | 2.1.179 |
+| Feedback survey single-digit capture fix | Виправлено feedback survey що захватував однозначну цифру як session rating одразу після завершення turn | 2.1.179 |
+| Welcome screen promo banner stacking fix | Виправлено welcome screen що показував кілька промо-банерів — тепер максимум один promo за сесію | 2.1.179 |
+| Ctrl+O subagent transcript fix | Виправлено Ctrl+O що не показував транскрипт subagent при його перегляді | 2.1.179 |
+| Prompt input focus return from subagent/footer fix | Виправлено клік на prompt input що не повертав фокус з subagent/footer panel | 2.1.179 |
+| Remote session background tasks stuck fix | Виправлено remote session background tasks що показувались застряглими "still running" між turns | 2.1.179 |
