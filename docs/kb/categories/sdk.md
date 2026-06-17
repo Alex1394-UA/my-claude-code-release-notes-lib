@@ -100,6 +100,8 @@
 | RC web/mobile model switch fix | Виправлено Remote Control: підключення з web/mobile мовчки перемикало модель сесії | 2.1.176 |
 | RC disconnect notifications human-readable fix | Виправлено notifications disconnect Remote Control: показували bare numeric code замість людського опису; connection failures більше не додають дубльований рядок в транскрипт | 2.1.176 |
 | RC account switch disconnect fix | Виправлено Remote Control sessions що не відключались при вході в інший акаунт | 2.1.176 |
+| RC error messages improvement | Покращено Remote Control error messages: connection failures тепер показують постійний червоний "/rc failed" indicator в footer; "not yet enabled" error тепер пояснює причину (gate, check failure, stale entitlement, або org policy) | 2.1.178 |
+| Statusline links custom URI schemes fix | Виправлено statusline links з кастомними URI schemes (напр. `vscode://`) що не відкривались при кліку в `claude agents` | 2.1.178 |
 
 ## Self-hosted runner
 

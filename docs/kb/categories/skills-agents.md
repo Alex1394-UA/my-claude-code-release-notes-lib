@@ -16,7 +16,7 @@
 | `user-invocable` | Видимість в slash-командах | — |
 | `${CLAUDE_SKILL_DIR}` | Змінна шляху skill | 2.1.69 |
 | YAML `allowed-tools` | Список замість рядка | 2.1.0 |
-| Вкладені `.claude/skills/` | Автодискаверія в піддиректоріях | 2.1.6 |
+| Вкладені `.claude/skills/` | Автодискаверія в піддиректоріях; nested skills завантажуються при роботі з файлами там; при збігу імен nested skill з'являється як `<dir>:<name>` | 2.1.6, 2.1.178 |
 | `paths:` frontmatter | Умовне завантаження | 2.1.0 |
 | Описи skill обмежені 250 символів | Зменшення контексту в `/skills` списку | 2.1.86 |
 | Описи skill cap 1536 символи | Ліміт listing піднято з 250 до 1536 символів; попередження при старті якщо описи обрізаються | 2.1.105 |
@@ -59,6 +59,9 @@
 | `.claude/skills` auto-load plugins | Плагіни з `.claude/skills` директорій автоматично завантажуються без marketplace; `claude plugin init <name>` для створення шаблону | 2.1.157 |
 | `\$` escape syntax | Навички та команди: `\$` escape syntax для включення літерального `$` перед цифрою в тілі команди | 2.1.163 |
 | Workflow validation `Date.now()`/`Math.random()` fix | Виправлено workflow validation що відхиляла скрипти де prompt strings або comments лише згадували `Date.now()`/`Math.random()` | 2.1.172 |
+| Workflow prompt keyword shimmer | Workflow prompt keyword тепер використовує purple shimmer highlight та trigerrить лише на явних фразах ("run a workflow", "workflow:"), не на будь-якій згадці слова | 2.1.178 |
+| Skill listing truncation показ кількості | Покращено попередження truncation списку skill — тепер показує скільки описів skill обрізаються | 2.1.178 |
+| Nested skills permission non-interactive fix | Виправлено nested `.claude/skills` skills з directory-qualified іменами що блокувалися permission prompts в non-interactive runs | 2.1.178 |
 
 ## Поля frontmatter
 
@@ -193,3 +196,4 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | Sub-agents spawn own sub-agents | Субагенти тепер можуть spawnити власних субагентів (до 5 рівнів вкладеності) | 2.1.172 |
+| Subagent transcript + progress fix | Виправлено: перегляд транскрипту subagent тепер показує tool results та живий прогрес; повідомлення надіслані під час завершення turn більше не dropping; backgrounding запущеного subagent (ctrl+b) більше не перезапускає з початку | 2.1.178 |

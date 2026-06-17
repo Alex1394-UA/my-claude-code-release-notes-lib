@@ -100,6 +100,7 @@
 | `/model` saves default, `s` session-only | `/model` тепер зберігає вибір як default для нових сесій; `s` в picker для switch лише поточної сесії | 2.1.153 |
 | `modelPicker:setAsDefault` → `modelPicker:thisSessionOnly` | Якщо ви customized `modelPicker:setAsDefault` keybinding, rename на `modelPicker:thisSessionOnly` (action `d` replaced by `s`) | 2.1.153 |
 | Vim `p` paste cursor fix | Виправлено vim mode `p` paste що вставляв на рядок нижче замість біля курсору коли register був yanked з `v$` | 2.1.160 |
+| Vim `u` undo per-command fix | Виправлено vim mode undo: `u` тепер крокує через NORMAL/VISUAL-mode команди по одній замість об'єднання швидких послідовних команд в один крок undo | 2.1.178 |
 
 ## Kitty keyboard protocol
 

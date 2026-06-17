@@ -277,6 +277,11 @@
 | / menu clearer descriptions | Покращено описи вбудованих команд та навичок в `/` menu | 2.1.163 |
 | Subscription-switch startup slot | Підказка перемикання підписки тепер показується в слоті startup announcements замість toast | 2.1.163 |
 | `claude agents` dispatch directory fix | `claude agents` dispatching з state-grouped view тепер стартує сесію в директорії з якої було відкрито agent view | 2.1.163 |
+| `claude agents` workers 401 custom gateway fix | Виправлено `claude agents` workers що failing з `401 Invalid bearer token` коли daemon стартував з shell з custom API gateway через `ANTHROPIC_BASE_URL` та `ANTHROPIC_AUTH_TOKEN` | 2.1.178 |
+| Compaction `--fallback-model` fix | Виправлено compaction що не поважав `--fallback-model`: тепер fallback-и до configured fallback model chain при overload або model-availability errors | 2.1.178 |
+| Linux sandbox `.claude/skills`/`.claude/hooks` symlink fix | Виправлено Linux sandbox що не стартував коли `.claude/skills` або `.claude/hooks` є symlink | 2.1.178 |
+| `/doctor` flat tree layout | Покращено `/doctor`: консистентний flat tree layout для всіх секцій, чіткіші status icons та highlighted command names | 2.1.178 |
+| `/bug` requires description | `/bug` тепер вимагає опис перед відправкою, та більше не використовує model-refusal текст як заголовок GitHub issue | 2.1.178 |
 
 ## `claude agents` — виправлення (2.1.172)
 

@@ -73,6 +73,7 @@
 | GPU acceleration disable tip [VSCode] | Додано підказку про вимкнення GPU acceleration термінала (або `/terminal-setup`) для виправлення garbled glyphs | 2.1.161 |
 | Windsurf → Devin Desktop rename [VSCode] | Windsurf перейменовано на Devin Desktop в `/ide` menu, `/terminal-setup` та `/scroll-speed` відповідно до ребрендингу редактора | 2.1.162 |
 | PowerShell tool calls raw JSON fix [VSCode] | Виправлено PowerShell tool calls що рендерились як raw JSON замість proper command display та permission dialog; також прибрано ANSI escape codes з displayed shell output | 2.1.172 |
+| Esc dismiss CJK IME fix [VSCode] | Виправлено натискання Esc для закриття CJK IME candidate window що скасовував запущений Claude task | 2.1.178 |
 
 ## JetBrains IDE
 

@@ -804,5 +804,15 @@
 | Session titles language | Заголовки сесій тепер генеруються мовою розмови; `language` setting фіксує конкретну мову | 2.1.176 |
 | Auto mode Fable 5 fallback | Виправлено auto mode на Fable 5 для організацій без Opus 4.8 — класифікатор тепер відступає до найкращої доступної Opus моделі | 2.1.176 |
 | Linux sandbox symlink fix | Виправлено запуск sandbox на Linux коли `.claude/settings.json` є symlink з абсолютною ціллю | 2.1.176 |
+
+## Основні можливості (2.1.178)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Auto mode subagent classifier | Покращено auto mode: spawn subagent-ів тепер оцінюється класифікатором перед запуском, закриваючи gap де subagent міг запитати заблоковану дію без review | 2.1.178 |
+| Crash fix stale websocket/OAuth FD env var | Виправлено краш (out-of-memory) коли CLI наслідував застарілий websocket/OAuth file-descriptor environment variable від батьківського процесу | 2.1.178 |
+| Chrome OAuth different account fix | Виправлено Claude in Chrome що мовчазно не підключався коли OAuth token належав іншому акаунту ніж Claude Code login | 2.1.178 |
+| Auth refresh stale cache fix | Виправлено model requests що продовжували fail з auth errors після refresh credentials поза сесією, через stale cached request configuration | 2.1.178 |
+| Nested `.claude/` directory collision resolution | При збігу імен в nested `.claude/` directories — agent, workflow та output-style найближчий до робочої директорії тепер пріоритетний; project-scope workflow saves тепер цілить найближчий існуючий `.claude/workflows/` | 2.1.178 |
 | `/copy` tmux SSH clipboard fix | Виправлено `/copy` та mouse-selection copy що не досягали system clipboard всередині tmux over SSH; tmux paste buffer не завантажувався на версіях старіших за 3.2 | 2.1.176 |
 | Cloud sessions auth method fix | Виправлено cloud sessions що failing з "Could not resolve authentication method" при тривалому простої перед claim | 2.1.176 |

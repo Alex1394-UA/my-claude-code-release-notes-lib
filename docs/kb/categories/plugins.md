@@ -140,3 +140,4 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | Plugin `.in_use` PID lock cleanup | Plugin `.in_use` PID lock files більше не накопичуються без межі; stale markers від crashed сесій тепер очищаються раз на день | 2.1.169 |
+| `CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE` install fix | Виправлено `CLAUDE_CODE_PLUGIN_KEEP_MARKETPLACE_ON_FAILURE=1` що перешкоджав свіжим marketplace install-ам від клонування | 2.1.178 |
