@@ -119,6 +119,13 @@
 | stdio `CLAUDE_CODE_SESSION_ID` на `--resume` | Stdio MCP сервери тепер отримують `CLAUDE_CODE_SESSION_ID` при `--resume` (як hooks та Bash) | 2.1.163 |
 | MCP server-level specs subagent `disallowedTools` fix | Виправлено MCP server-level specs (`mcp__server`, `mcp__server__*`, `mcp__*`) в subagent `disallowedTools` що мовчазно ігнорувалися | 2.1.178 |
 
+## Налаштування (2.1.181)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| MCP OAuth browser page покращення | MCP OAuth browser page оновлено до візуального стилю Claude Code, автоматично закривається при успіху | 2.1.181 |
+| `claude mcp get`/`list` tools/list fail status fix | `claude mcp get`/`list` більше не показують `✓ Connected` коли tools/list не вдався — тепер `! Connected · tools fetch failed` з деталями помилки | 2.1.181 |
+
 ## Області видимості
 
 | Область | Файл | Версія |

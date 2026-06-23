@@ -119,12 +119,19 @@
 | `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` | Приховати bundled skills, workflows та built-in slash commands від моделі; також `disableBundledSkills` setting | 2.1.169 |
 | `API_FORCE_IDLE_TIMEOUT` | Примусовий idle timeout для stalled stream; `=0` для opt-out (за замовч. 5 хв на Vertex/Foundry відновлено) | 2.1.169 |
 
+## Поведінка (2.1.181)
+
+| Змінна | Опис | Версія |
+|--------|------|--------|
+| `CLAUDE_CLIENT_PRESENCE_FILE` | Вказує на marker-файл для придушення mobile push-повідомлень поки ви за машиною | 2.1.181 |
+
 ## API та аутентифікація (2.1.172)
 
 | Змінна | Опис | Версія |
 |--------|------|--------|
 | Bedrock AWS region з `~/.aws` config | Amazon Bedrock тепер читає AWS region з `~/.aws` config files коли `AWS_REGION` не встановлено, відповідно до AWS SDK precedence; `/status` показує джерело region | 2.1.172 |
 | `awsCredentialExport` кешування до `Expiration` | Облікові дані з `awsCredentialExport` тепер кешуються до їх `Expiration` замість фіксованої 1 години | 2.1.176 |
+| `awsCredentialExport` short lifetime refresh fix | Виправлено AWS `awsCredentialExport` credentials з коротким часом життя що викликали refresh кожну хвилину; тепер приймається JSON формат від `aws configure export-credentials` | 2.1.181 |
 | `ANTHROPIC_DEFAULT_*_MODEL` + `availableModels` | Alias model picks більше не перенаправляються до заблокованої моделі через `ANTHROPIC_DEFAULT_*_MODEL` env vars | 2.1.176 |
 
 ## Шляхи

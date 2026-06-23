@@ -218,3 +218,12 @@
 | Background sessions network paths fix [Win] | Виправлено background sessions що нейтралізують Windows network paths в persisted state перед respawn | 2.1.176 |
 | Background-service daemon ReadOnly attribute fix [Win] | Виправлено Windows background-service daemon що не стартував коли `~/.claude/daemon` має ReadOnly атрибут | 2.1.176 |
 | Mouse-wheel WSL2 Win Terminal/VS Code fix [Win] | Виправлено mouse-wheel scrolling в WSL2 під Windows Terminal та VS Code (регресія з 2.1.172) | 2.1.179 |
+
+## Інше Windows-специфічне (2.1.181)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Write/Edit 0-байт/обрізані файли network drives fix [Win] | Виправлено Write/Edit що створювали 0-байт або обрізані файли на network drives та cloud-synced папках | 2.1.181 |
+| ExitWorktree відмова видалення чистого worktree fix [Win] | Виправлено ExitWorktree що відмовлявся видалити чистий worktree з "Could not verify worktree state" коли bare `git` не можна резолвити на Windows | 2.1.181 |
+| Agent creation EEXIST Windows/OneDrive fix [Win] | Виправлено помилку створення агента "EEXIST: file already exists" коли agents directory вже існує (Windows/OneDrive) | 2.1.181 |
+| Settings symlink ENOENT fix [Win] | Виправлено зміни налаштувань (`/effort`, `/model`) що падали з ENOENT коли `~/.claude/settings.json` є відносним symlink під symlinked `~/.claude` | 2.1.181 |

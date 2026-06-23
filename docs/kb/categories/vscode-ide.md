@@ -75,6 +75,12 @@
 | PowerShell tool calls raw JSON fix [VSCode] | Виправлено PowerShell tool calls що рендерились як raw JSON замість proper command display та permission dialog; також прибрано ANSI escape codes з displayed shell output | 2.1.172 |
 | Esc dismiss CJK IME fix [VSCode] | Виправлено натискання Esc для закриття CJK IME candidate window що скасовував запущений Claude task | 2.1.178 |
 
+## Функції VS Code (2.1.181)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| IDE selection line numbers off-by-one fix | Виправлено номери рядків виділення в context reminders що були зміщені на один (IntelliJ та VS Code) | 2.1.181 |
+
 ## JetBrains IDE
 
 | Можливість | Опис | Версія |

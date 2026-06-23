@@ -827,3 +827,34 @@
 | Ctrl+O subagent transcript fix | Виправлено Ctrl+O що не показував транскрипт subagent при його перегляді | 2.1.179 |
 | Prompt input focus return from subagent/footer fix | Виправлено клік на prompt input що не повертав фокус з subagent/footer panel | 2.1.179 |
 | Remote session background tasks stuck fix | Виправлено remote session background tasks що показувались застряглими "still running" між turns | 2.1.179 |
+
+## Основні можливості (2.1.181)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Bundled Bun 1.4 | Оновлено вбудований Bun runtime до версії 1.4 | 2.1.181 |
+| Покращення стрімінгу довгих абзаців | Текст довгих абзаців тепер з'являється рядок за рядком замість очікування першого line break | 2.1.181 |
+| Автоматичний повтор під час mid-thinking розриву | Розрив API-з'єднання під час thinking тепер автоматично повторюється замість показу "Connection closed while thinking" | 2.1.181 |
+| Покращення панелі субагентів | Idle субагенти автоховаються через 30с, список обмежений 5 рядками з підказками скролінгу, підказки клавіш у footer | 2.1.181 |
+| Fullscreen URL відкриття через Cmd+click/Ctrl+click | Відкриття URL у fullscreen mode тепер вимагає Cmd+click (macOS) / Ctrl+click, відповідаючи нативній поведінці терміналу | 2.1.181 |
+| "Improved N memories" без переліку файлів | Рядок "Improved N memories" більше не перелічує окремі файли поза verbose mode | 2.1.181 |
+| Prompt caching на кастомному BASE_URL/Foundry fix | Виправлено непрацювання prompt caching при кастомному `ANTHROPIC_BASE_URL` та на Foundry через per-request attestation token що змінюється кожен turn | 2.1.181 |
+| Write/Edit 0-байт/обрізані файли на network drives fix | Виправлено Write/Edit що створювали 0-байт або обрізані файли на network drives та cloud-synced папках | 2.1.181 |
+| macOS `open`/`osascript`/browser auth error -600 fix | Виправлено помилку -600 при виклику `open`, `osascript` та browser-based auth flows на macOS додаванням Apple Events entitlement | 2.1.181 |
+| Startup regression ~120ms fix | Виправлено regression (~120ms за запуск у свіжих середовищах, введений в 2.1.169) — перший промпт більше не чекає на managed-settings fetch коли немає MCP серверів | 2.1.181 |
+| Startup блокування 15с на повільній мережі fix | Виправлено блокування startup з пустим терміналом до 15 секунд коли account settings fetch повільний на деградованій мережі | 2.1.181 |
+| Startup crash corrupted `.claude.json` fix | Виправлено краш startup (`TypeError: Cannot read properties of null`) коли `.claude.json` містить пошкоджені null project entries | 2.1.181 |
+| macOS TUI freezing при старті fix | Виправлено заморожування TUI на macOS на початку сесії (Ctrl+C unresponsive) коли Spotlight зайнятий реіндексацією | 2.1.181 |
+| Idle сесії втрача історії fix | Виправлено втрату історії тривалих idle сесій коли інший процес Claude Code запускав 30-денне очищення транскриптів | 2.1.181 |
+| `/recap` та conversation forks попередня модель fix | Виправлено `/recap` та conversation forks що використовували попередню модель одразу після перемикання моделі | 2.1.181 |
+| Субагент "Thinking" тривалість батьківського агента fix | Виправлено відображення тривалості "Thinking" субагента що показувало elapsed time батьківського агента замість власного | 2.1.181 |
+| Заблоковані субагенти "waiting" замість ticking fix | Виправлено субагентів заблокованих на nested agent що показували ticking elapsed time замість "waiting" в панелі агентів | 2.1.181 |
+| API retry indicator залишається на екрані fix | Виправлено індикатор повтору API ("Retrying in 0s · attempt N/10") що залишався на екрані після успішного повтору | 2.1.181 |
+| Ctrl+C fullscreen clipboard overwrite fix | Виправлено Ctrl+C у fullscreen після нативної вибірки терміналу (modifier+drag) що перезаписував clipboard попереднім виділенням | 2.1.181 |
+| Ctrl+V "No image found" замість вставки тексту fix | Виправлено Ctrl+V що показував "No image found in clipboard" замість вставки коли clipboard містить текст | 2.1.181 |
+| AskUserQuestion preview обрізання fix | Виправлено обрізання preview контенту AskUserQuestion на краю діалогу замість word-wrapping | 2.1.181 |
+| AskUserQuestion multi-select "Other" drop fix | Виправлено мовчазне скидання введеного "Other" free-text при відправці multi-select AskUserQuestion | 2.1.181 |
+| Tab-indented код рендеринг Write preview fix | Виправлено некоректний відступ коду з tab-ами при рендерингу прев'ю Write (create-file) | 2.1.181 |
+| Промпти в черзі без підсвітки fix | Виправлено відсутність full-width background highlight для промптів поставлених в чергу mid-turn | 2.1.181 |
+| Spinner pulse incorrect glyph in Ghostty fix | Виправлено dwelling activity spinner на неправильному розмірі glyph у Ghostty | 2.1.181 |
+| `/copy` та copy-on-select Linux clipboard detection fix | Виправлено `/copy` та copy-on-select на Linux що не виявляли clipboard utility встановлений після старту Claude Code | 2.1.181 |

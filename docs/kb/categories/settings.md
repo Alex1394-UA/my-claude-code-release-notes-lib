@@ -207,3 +207,10 @@
 | `availableModels` env var redirect fix | Alias model picks більше не перенаправляються до заблокованої моделі через `ANTHROPIC_DEFAULT_*_MODEL` env vars; `/fast` відмовляється перемикати для моделей поза allowlist | 2.1.176 |
 | `Tool(param:value)` permission rules | Синтаксис `Tool(param:value)` для permission rules — match параметрів інструменту (з `*` wildcard), напр. `Agent(model:opus)` для блокування Opus subagent-ів | 2.1.178 |
 | Sandbox `denyRead`/`allowRead` glob large directory fix | Виправлено sandbox `denyRead`/`allowRead` glob над великим directory tree що робив опис Bash tool необмеженим та сесію непридатною на Linux | 2.1.179 |
+
+## Налаштування (2.1.181)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `sandbox.allowAppleEvents` | Opt-in налаштування що дозволяє sandboxed командам відправляти Apple Events на macOS | 2.1.181 |
+| Settings symlink ENOENT fix | Виправлено зміни налаштувань (`/effort`, `/model`) що падали з ENOENT коли `~/.claude/settings.json` є відносним symlink під symlinked `~/.claude` | 2.1.181 |

@@ -364,4 +364,13 @@
 | Background sessions Windows network paths fix [Win] | Виправлено background sessions що нейтралізують Windows network paths в persisted state перед respawn | 2.1.176 |
 | Background-session respawn malformed IDs fix | Виправлено respawn background sessions що відхиляв malformed resume IDs з пошкоджених state files | 2.1.176 |
 | Background-service daemon ReadOnly attribute fix [Win] | Виправлено Windows background-service daemon що не стартував коли `~/.claude/daemon` має ReadOnly атрибут | 2.1.176 |
+
+## CLI (2.1.181)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `/config key=value` syntax | Новий синтаксис `/config key=value` для встановлення будь-якого налаштування з prompt (напр. `/config thinking=false`); працює в interactive, `-p` та Remote Control | 2.1.181 |
+| `claude mcp get`/`list` tools/list fail status fix | Виправлено `claude mcp get`/`list` що показували `✓ Connected` коли tools/list не вдався — тепер показують `! Connected · tools fetch failed` з деталями помилки | 2.1.181 |
+| `/remote-control` stale "connecting…" fix | Виправлено `/remote-control` що залишав рядок "connecting…" — тепер підтверджує в транскрипті після з'єднання | 2.1.181 |
+| `/stats` дати щодня поза UTC fix | Виправлено "Most active day" та daily token chart що показували на один день раніше в UTC-негативних часових зонах | 2.1.181 |
 | Background sessions auto-update guidance | Background sessions тепер показують чіткішу підказку коли вікно відкрите через auto-update не може надіслати відповідь; `claude daemon status` пояснює version-skew поведінку | 2.1.176 |
