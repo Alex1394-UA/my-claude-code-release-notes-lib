@@ -220,3 +220,11 @@
 | Ключ | Опис | Версія |
 |------|------|--------|
 | `attribution.sessionUrl` | Прибирає посилання на claude.ai сесію з комітів та PR в web та Remote Control сесіях | 2.1.183 |
+
+## Налаштування (2.1.186)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `teammateMode: "iterm2"` | Налаштування для tmux teammate panes через iTerm2; попередження коли auto mode не знаходить CLI `it2` | 2.1.186 |
+| `respondToBashCommands` | Встановіть `false` для вимкнення автоматичної відповіді Claude на `!` bash команди (поведінка за замовч. змінено в 2.1.186) | 2.1.186 |
+| `Agent(type)` deny rules fix | Виправлено `Agent(type)` deny rules та `Agent(x,y)` allowed-types обмеження що не застосовувались для spawn іменованих субагентів | 2.1.186 |

@@ -214,3 +214,14 @@
 | User-level skills дублікат в autocomplete fix | Виправлено user-level skills що з'являлися кілька разів в slash-command autocomplete коли увімкнено кілька плагінів | 2.1.183 |
 | tmux teammate panes slow shell init fix | Виправлено невдалу запуск tmux teammate panes коли shell має повільну ініціалізацію rc-файлів | 2.1.183 |
 | tmux teammate panes keystroke leak fix | Виправлено витік натискань клавіш під час spawn агента в нову tmux pane замість leader prompt | 2.1.183 |
+
+## Навички та Агенти (2.1.186)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `/workflows` status filtering | Натисніть `f` в `/workflows` для фільтрування за статусом в detailed view агентів | 2.1.186 |
+| Натискання `x` на завершеному субагенті fix | Виправлено натискання `x` на завершеному субагенті в панелі агентів що не закривав його | 2.1.186 |
+| Agent teams tmux/pane `--effort` inheritance | Виправлено teammates запущених через tmux/pane backends що не успадковували `--effort` рівень лідера | 2.1.186 |
+| Workflow `agent({schema})` validation loop fix | Виправлено Workflow `agent({schema})` субагенти що зациклювалися на повторних невдачах валідації схеми — тепер переривають після 5 спроб | 2.1.186 |
+| Skill frontmatter case-insensitive keys | Покращено: `display-name`, `default-enabled`, `fallback`, `metadata.*` ключі тепер приймають kebab-case, snake_case та camelCase | 2.1.186 |
+| Malformed SKILL.md YAML handling | Покращено обробку malformed YAML frontmatter в `SKILL.md` — навичка завантажується з пустими метаданими замість мовчазного невдалого завантаження | 2.1.186 |

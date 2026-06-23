@@ -381,3 +381,18 @@
 |---------|------|--------|
 | `/config --help` | Додає перелік усіх доступних скорочень для `/config key=value` | 2.1.183 |
 | `/config` toggle поведінка | Enter та Space обидва змінюють вибране налаштування, Esc тепер зберігає та закриває замість скасування | 2.1.183 |
+
+## CLI (2.1.186)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `claude mcp login <name>` | Автентифікація MCP серверів з CLI без відкриття інтерактивного `/mcp` меню; `--no-browser` для завершення через SSH (stdin redirect) | 2.1.186 |
+| `claude mcp logout <name>` | Вихід з MCP сервера з CLI | 2.1.186 |
+| `/login` AWS refresh credentials | Новий запис "Claude Platform on AWS - refresh credentials" в `/login` коли `awsAuthRefresh` сконфігуровано | 2.1.186 |
+| Виправлено `--tools` feature-gated tools | Виправлено `--tools` що дозволяв feature-gated інструменти проходити до завантаження flags при холодному першому запускі | 2.1.186 |
+| Background job status stale "needs input" fix | Виправлено статус фонової задачі в `claude agents` що показував застаріле "needs input" після відповіді | 2.1.186 |
+| Background session dark-theme flash fix | Виправлено спалах dark-теми при відкритті фонової сесії з `claude agents` на світлому терміналі | 2.1.186 |
+| Mouse-selected text highlighted after delete fix | Виправлено text виділений мишею що залишався підсвіченим після видалення в `claude agents` | 2.1.186 |
+| Background session screen residue fix | Виправлено відкриття фонової сесії з `claude agents` що залишав попередній екран зафарбований | 2.1.186 |
+| `claude mcp get`/`remove` typo suggestion | Покращено `claude mcp get` та `claude mcp remove` — пропонують найближче налаштоване ім'я сервера при помилці та обрізають довгі списки | 2.1.186 |
+| `/review <pr>` engine change | `/review <pr>` тепер використовує той самий engine що `/code-review medium` | 2.1.186 |

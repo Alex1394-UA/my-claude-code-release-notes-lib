@@ -133,6 +133,8 @@
 | `claude plugin init <name>` | Створення шаблону нового плагіна в `.claude/skills` з базовою структурою файлів | 2.1.157 |
 | Видалено JetBrains plugin install suggestion | Прибрано пропозицію встановлення JetBrains plugin при старті | 2.1.160 |
 | Пошуковий рядок в marketplace plugin browser | Додано пошуковий рядок при перегляді плагінів marketplace в `/plugin` | 2.1.172 |
+| `/plugin` Installed "Skills" секція | Додано секцію "Skills" на вкладці Installed в `/plugin` для перегляду навичок з плагінів | 2.1.186 |
+| `/plugin` Installed "more above" indicator fix | Виправлено `/plugin` Installed що показував індикатор "more above" коли вже прокручено до верху | 2.1.186 |
 | `/plugin` marketplace cursor/esc fix | Виправлено `/plugin` marketplace list що втрачав cursor після виходу з довгого списку плагінів, та Esc з plugin browser що повертав на неправильну вкладку | 2.1.172 |
 
 ## Очищення та стабільність
