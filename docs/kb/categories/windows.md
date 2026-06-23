@@ -227,3 +227,9 @@
 | ExitWorktree відмова видалення чистого worktree fix [Win] | Виправлено ExitWorktree що відмовлявся видалити чистий worktree з "Could not verify worktree state" коли bare `git` не можна резолвити на Windows | 2.1.181 |
 | Agent creation EEXIST Windows/OneDrive fix [Win] | Виправлено помилку створення агента "EEXIST: file already exists" коли agents directory вже існує (Windows/OneDrive) | 2.1.181 |
 | Settings symlink ENOENT fix [Win] | Виправлено зміни налаштувань (`/effort`, `/model`) що падали з ENOENT коли `~/.claude/settings.json` є відносним symlink під symlinked `~/.claude` | 2.1.181 |
+
+## Термінал та рендеринг (2.1.183)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Fullscreen TUI corruption fix [Win] | Виправлено пошкодження fullscreen TUI (statusline посередині екрану, дубльовані рядки спіннера, злитий текст) у Windows Terminal під навантаженням глибоко вкладених subagent-ів | 2.1.183 |

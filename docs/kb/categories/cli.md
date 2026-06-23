@@ -374,3 +374,10 @@
 | `/remote-control` stale "connecting…" fix | Виправлено `/remote-control` що залишав рядок "connecting…" — тепер підтверджує в транскрипті після з'єднання | 2.1.181 |
 | `/stats` дати щодня поза UTC fix | Виправлено "Most active day" та daily token chart що показували на один день раніше в UTC-негативних часових зонах | 2.1.181 |
 | Background sessions auto-update guidance | Background sessions тепер показують чіткішу підказку коли вікно відкрите через auto-update не може надіслати відповідь; `claude daemon status` пояснює version-skew поведінку | 2.1.176 |
+
+## CLI (2.1.183)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `/config --help` | Додає перелік усіх доступних скорочень для `/config key=value` | 2.1.183 |
+| `/config` toggle поведінка | Enter та Space обидва змінюють вибране налаштування, Esc тепер зберігає та закриває замість скасування | 2.1.183 |

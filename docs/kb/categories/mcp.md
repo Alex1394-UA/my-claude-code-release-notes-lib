@@ -126,6 +126,12 @@
 | MCP OAuth browser page покращення | MCP OAuth browser page оновлено до візуального стилю Claude Code, автоматично закривається при успіху | 2.1.181 |
 | `claude mcp get`/`list` tools/list fail status fix | `claude mcp get`/`list` більше не показують `✓ Connected` коли tools/list не вдався — тепер `! Connected · tools fetch failed` з деталями помилки | 2.1.181 |
 
+## Налаштування (2.1.183)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| MCP auth-stub tools не передаються моделі в headless/SDK | Виправлено MCP сервери що вимагають автентифікації та відкривали auth-stub інструменти моделі в headless/SDK режимі | 2.1.183 |
+
 ## Області видимості
 
 | Область | Файл | Версія |

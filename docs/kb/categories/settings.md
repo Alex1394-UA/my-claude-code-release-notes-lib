@@ -214,3 +214,9 @@
 |------|------|--------|
 | `sandbox.allowAppleEvents` | Opt-in налаштування що дозволяє sandboxed командам відправляти Apple Events на macOS | 2.1.181 |
 | Settings symlink ENOENT fix | Виправлено зміни налаштувань (`/effort`, `/model`) що падали з ENOENT коли `~/.claude/settings.json` є відносним symlink під symlinked `~/.claude` | 2.1.181 |
+
+## Налаштування (2.1.183)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `attribution.sessionUrl` | Прибирає посилання на claude.ai сесію з комітів та PR в web та Remote Control сесіях | 2.1.183 |

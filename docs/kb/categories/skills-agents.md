@@ -206,3 +206,11 @@
 | Foreground subagents обмеження вкладеності fix | Виправлено foreground subagents що spawnили необмежені nested ланцюги — тепер поважують той самий ліміт 5 рівнів вкладеності як background subagents | 2.1.181 |
 | Субагент "Thinking" тривалість батьківського агента fix | Виправлено відображення тривалості "Thinking" субагента що показувало elapsed time батьківського агента замість власного | 2.1.181 |
 | Заблоковані субагенти "waiting" замість ticking fix | Виправлено субагентів заблокованих на nested agent що показували ticking elapsed time замість "waiting" в панелі агентів | 2.1.181 |
+
+## Навички та Агенти (2.1.183)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| User-level skills дублікат в autocomplete fix | Виправлено user-level skills що з'являлися кілька разів в slash-command autocomplete коли увімкнено кілька плагінів | 2.1.183 |
+| tmux teammate panes slow shell init fix | Виправлено невдалу запуск tmux teammate panes коли shell має повільну ініціалізацію rc-файлів | 2.1.183 |
+| tmux teammate panes keystroke leak fix | Виправлено витік натискань клавіш під час spawn агента в нову tmux pane замість leader prompt | 2.1.183 |

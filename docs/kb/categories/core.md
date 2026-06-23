@@ -858,3 +858,20 @@
 | Промпти в черзі без підсвітки fix | Виправлено відсутність full-width background highlight для промптів поставлених в чергу mid-turn | 2.1.181 |
 | Spinner pulse incorrect glyph in Ghostty fix | Виправлено dwelling activity spinner на неправильному розмірі glyph у Ghostty | 2.1.181 |
 | `/copy` та copy-on-select Linux clipboard detection fix | Виправлено `/copy` та copy-on-select на Linux що не виявляли clipboard utility встановлений після старту Claude Code | 2.1.181 |
+
+## Основні можливості (2.1.183)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Auto mode безпека: блокування деструктивних git команд | `git reset --hard`, `git checkout -- .`, `git clean -fd`, `git stash drop` блокуються коли користувач не просив відкидати локальні зміни | 2.1.183 |
+| Auto mode безпека: блокування `git commit --amend` | `git commit --amend` блокується коли коміт не був зроблений агентом в поточній сесії | 2.1.183 |
+| Auto mode безпека: блокування infra-destroy команд | `terraform destroy`, `pulumi destroy`, `cdk destroy` блокуються якщо не запитано конкретний стек | 2.1.183 |
+| Попередження про застарілу модель | Попередження на stderr коли запитана модель застаріла або автоматично оновлена до новішої; працює в print mode (`-p`) та тепер охоплює моделі з agent frontmatter | 2.1.183 |
+| Прибрано рядок "setup issues" при старті | Рядок "setup issues" під логотипом прибрано — для перевірки конфігурації запустіть `/doctor` або `--debug` | 2.1.183 |
+| Виправлено `thinking.disabled.display` 400 помилки | Виправлено API 400 помилки при конфігурації `thinking.disabled.display` під час spawn subagent-ів та генерації заголовків сесій | 2.1.183 |
+| Виправлено WebSearch пусті результати в subagent-ах | Виправлено WebSearch що повертав порожні результати в subagent-ах | 2.1.183 |
+| Виправлено курсор stranded у vim mode | Виправлено курсор терміналу що залишався над prompt після навігації по історії в vim mode з увімкненим нативним курсором | 2.1.183 |
+| Повторний запит при thinking-only відповіді | Виправлено ходи що завершувалися без видимого виводу коли модель повертала лише thinking block — Claude тепер повторно запитує один раз | 2.1.183 |
+| Фонові задачі teammate не вбиваються | Виправлено фонові задачі розпочаті teammate що завершувалися коли teammate закінчував хід | 2.1.183 |
+| Scheduled/webhook тригери не класифікуються як клавіатурний ввід | Виправлено доставку scheduled task та webhook тригерів що трактуються як клавіатурний ввід — тепер класифікуються як task notifications та не можуть затвердити pending action або встановити заголовок сесії в auto mode | 2.1.183 |
+| Focus mode без timing lines хуків | Виправлено focus mode що показував "Ran N PostToolUse hooks" timing рядки під кожною відповіддю | 2.1.183 |
