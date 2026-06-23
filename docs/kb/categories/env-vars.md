@@ -118,7 +118,7 @@
 | `CLAUDE_CODE_SAFE_MODE` | Запуск Claude Code з усіма кастомізаціями вимкненими (CLAUDE.md, plugins, skills, hooks, MCP servers) для трублшутингу; також `--safe-mode` CLI прапорець | 2.1.169 |
 | `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` | Приховати bundled skills, workflows та built-in slash commands від моделі; також `disableBundledSkills` setting | 2.1.169 |
 | `API_FORCE_IDLE_TIMEOUT` | Примусовий idle timeout для stalled stream; `=0` для opt-out (за замовч. 5 хв на Vertex/Foundry відновлено) | 2.1.169 |
-| `CLAUDE_CODE_MAX_RETRIES` cap 15 | `CLAUDE_CODE_MAX_RETRIES` тепер обмежується максимум 15; дляattended сесій використовуйте `CLAUDE_CODE_RETRY_WATCHDOG` | 2.1.186 |
+| `CLAUDE_CODE_MAX_RETRIES` cap 15 | `CLAUDE_CODE_MAX_RETRIES` тепер обмежується максимум 15; для unattended сесій використовуйте `CLAUDE_CODE_RETRY_WATCHDOG` | 2.1.186 |
 
 ## Поведінка (2.1.181)
 
