@@ -396,3 +396,13 @@
 | Background session screen residue fix | Виправлено відкриття фонової сесії з `claude agents` що залишав попередній екран зафарбований | 2.1.186 |
 | `claude mcp get`/`remove` typo suggestion | Покращено `claude mcp get` та `claude mcp remove` — пропонують найближче налаштоване ім'я сервера при помилці та обрізають довгі списки | 2.1.186 |
 | `/review <pr>` engine change | `/review <pr>` тепер використовує той самий engine що `/code-review medium` | 2.1.186 |
+
+## CLI (2.1.187)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `--bg`/`--background` в `--help` | Виправлено `claude --help` що не показував прапорці `--bg`/`--background` | 2.1.187 |
+| `--resume` "No conversation found" fix | Виправлено `--resume` що failing з "No conversation found" коли оригінальний `-p` запуск не producував жодних model turns | 2.1.187 |
+| `--json-schema` structured output fix | Виправлено `--json-schema`: модель більше не може повторно викликати `StructuredOutput` нескінченно після успішного виклику, а наступні повороти надійно повертають структурований вивід | 2.1.187 |
+| `/install-github-app` optional workflow | GitHub Actions workflow setup тепер опціональний — можна встановити лише GitHub App та пропустити workflow/secret кроки | 2.1.187 |
+| `/update` Remote Control hanging fix | Виправлено `/update` через Remote Control що зависав коли startup trust dialog мав би показатися | 2.1.187 |

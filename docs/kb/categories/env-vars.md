@@ -120,6 +120,12 @@
 | `API_FORCE_IDLE_TIMEOUT` | Примусовий idle timeout для stalled stream; `=0` для opt-out (за замовч. 5 хв на Vertex/Foundry відновлено) | 2.1.169 |
 | `CLAUDE_CODE_MAX_RETRIES` cap 15 | `CLAUDE_CODE_MAX_RETRIES` тепер обмежується максимум 15; для unattended сесій використовуйте `CLAUDE_CODE_RETRY_WATCHDOG` | 2.1.186 |
 
+## Таймаути та ліміти (2.1.187)
+
+| Змінна | Опис | Версія |
+|--------|------|--------|
+| `CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT` | Таймаут для remote MCP tool calls без відповіді (за замовч. 5 хв, після чого abort з помилкою) | 2.1.187 |
+
 ## Поведінка (2.1.181)
 
 | Змінна | Опис | Версія |

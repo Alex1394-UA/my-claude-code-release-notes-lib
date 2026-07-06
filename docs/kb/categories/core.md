@@ -898,3 +898,15 @@
 | Виправлено відсутність вартості сесії | Виправлено відсутність відображення вартості сесії для Enterprise та Team підписників з usage-based оплатою | 2.1.186 |
 | Покращення пам'яті: компактний MEMORY.md | Агент тепер нагадує компактити індекс `MEMORY.md` при наближенні до ліміту розміру | 2.1.186 |
 | Фонові субагенти показують permission prompts | Фонові субагенти тепер відображають permission prompts в основній сесії замість автоматичної відмови; діалог показує який агент запитує, Esc відмовляє лише цей tool | 2.1.186 |
+
+## Основні можливості (2.1.187)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Org-configured model restrictions | Org-налаштовані обмеження моделей в model picker, `--model`, `/model` та `ANTHROPIC_MODEL`; повідомлення "restricted by your organization's settings" при виборі заблокованої моделі | 2.1.187 |
+| Mouse click select menus fullscreen | Клік мишею тепер працює в select menus (permission prompts, `/model`, `/config` тощо) в fullscreen mode | 2.1.187 |
+| Paste Korean/CJK mojibake fix [Win] | Виправлено вставлений Korean/CJK текст що перетворювався на mojibake в терміналах що доставляють paste як per-byte extended-key events | 2.1.187 |
+| Channel connections drop fix | Виправлено розрив channel connections після навігації до agents view та назад, а також після `/bg`, `/tui` або `/update` | 2.1.187 |
+| Cmd+click URLs fullscreen Ghostty fix | Виправлено Cmd+click що не відкривав URL в fullscreen mode в Ghostty на macOS | 2.1.187 |
+| Remote sessions startup speed fix | Виправлено Claude Code Remote sessions що стартували на ~2.7с довше після додавання agent proxy CA system-trust install | 2.1.187 |
+| `/btw` ←/→ arrow navigation | `/btw` тепер підтримує ←/→ arrow навігацію для перегляду попередніх відповідей | 2.1.187 |

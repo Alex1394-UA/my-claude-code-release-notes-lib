@@ -135,6 +135,12 @@
 | Пошуковий рядок в marketplace plugin browser | Додано пошуковий рядок при перегляді плагінів marketplace в `/plugin` | 2.1.172 |
 | `/plugin` Installed "Skills" секція | Додано секцію "Skills" на вкладці Installed в `/plugin` для перегляду навичок з плагінів | 2.1.186 |
 | `/plugin` Installed "more above" indicator fix | Виправлено `/plugin` Installed що показував індикатор "more above" коли вже прокручено до верху | 2.1.186 |
+
+## Можливості (2.1.187)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `/plugin` surface unused plugins | `/plugin` тепер показує плагіни якими ви давно не користувалися для можливого очищення | 2.1.187 |
 | `/plugin` marketplace cursor/esc fix | Виправлено `/plugin` marketplace list що втрачав cursor після виходу з довгого списку плагінів, та Esc з plugin browser що повертав на неправильну вкладку | 2.1.172 |
 
 ## Очищення та стабільність

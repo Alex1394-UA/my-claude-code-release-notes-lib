@@ -225,3 +225,13 @@
 | Workflow `agent({schema})` validation loop fix | Виправлено Workflow `agent({schema})` субагенти що зациклювалися на повторних невдачах валідації схеми — тепер переривають після 5 спроб | 2.1.186 |
 | Skill frontmatter case-insensitive keys | Покращено: `display-name`, `default-enabled`, `fallback`, `metadata.*` ключі тепер приймають kebab-case, snake_case та camelCase | 2.1.186 |
 | Malformed SKILL.md YAML handling | Покращено обробку malformed YAML frontmatter в `SKILL.md` — навичка завантажується з пустими метаданими замість мовчазного невдалого завантаження | 2.1.186 |
+
+## Навички та Агенти (2.1.187)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Workflow `agent({schema})` structured output fix | Виправлено workflow `agent({schema})` та `--json-schema`: модель більше не може повторно викликати `StructuredOutput` нескінченно, follow-up повороти надійно повертають structured output | 2.1.187 |
+| Background jobs stuck "working" fix | Виправлено background jobs в agents view що застрягали в стані "working" назавжди коли агент завершував turn без structured output | 2.1.187 |
+| Agent stop notifications attribution fix | Виправлено agent stop notifications що не коректно вказували хто зупинив агента; покращено формулювання ("finished"/"stopped" замість "came to rest") | 2.1.187 |
+| Subagent depth tracking fix | Виправлено відстеження глибини субагентів: відновлені субагенти тепер відновлюють оригінальну spawn depth, а forked субагенти тепер рахуються до depth cap | 2.1.187 |
+| Leaked agent worktree registrations fix | Виправлено витік реєстрацій worktree вбитих агентів: locked `.git/worktrees/` entries тепер автоматично очищаються | 2.1.187 |

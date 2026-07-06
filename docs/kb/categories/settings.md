@@ -228,3 +228,9 @@
 | `teammateMode: "iterm2"` | Налаштування для tmux teammate panes через iTerm2; попередження коли auto mode не знаходить CLI `it2` | 2.1.186 |
 | `respondToBashCommands` | Встановіть `false` для вимкнення автоматичної відповіді Claude на `!` bash команди (поведінка за замовч. змінено в 2.1.186) | 2.1.186 |
 | `Agent(type)` deny rules fix | Виправлено `Agent(type)` deny rules та `Agent(x,y)` allowed-types обмеження що не застосовувались для spawn іменованих субагентів | 2.1.186 |
+
+## Налаштування (2.1.187)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `sandbox.credentials` | Блокування sandboxed команд від читання credential файлів та секретних змінних середовища | 2.1.187 |
