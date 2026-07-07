@@ -245,3 +245,15 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | `/login` URL truncated wrap fix [Win] | Виправлено `/login` URL що обрізався при переносі через рядки в Windows Terminal | 2.1.191 |
+
+## PowerShell (2.1.196)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| PowerShell `git diff`/`git grep`/`egrep`/`fgrep` exit 1 fix [Win] | Виправлено PowerShell `git diff`, `git grep`, `egrep`, `fgrep` та quoted patterns з `|` що reported як failures коли exit 1, тепер matching Bash behavior | 2.1.196 |
+
+## Інше Windows-специфічне (2.1.196)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Background sessions survive process stop/restart/update [Win] | Background shells передаються замість kill при зупинці, рестарті або оновленні процесу сесії на Windows | 2.1.196 |

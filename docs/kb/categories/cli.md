@@ -433,3 +433,21 @@
 | Backgrounding спurious cancel fix | Виправлено спurious скасування при backgrounding (←←) з повідомленням "N background tasks would be abandoned" коли всі запущені задачі переносяться в нову сесію | 2.1.193 |
 | Pinned background agents re-prompt fix | Виправлено повторний запит "Continue from where you left off" для pinned background агентів після кожного автооновлення | 2.1.193 |
 | `/add-dir` покращення повідомлення | Покращено повідомлення `/add-dir` коли директорія вже є робочою директорією | 2.1.193 |
+
+## Команди управління (2.1.196)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `claude mcp list`/`get` security fix | `claude mcp list` та `claude mcp get` більше не запускають `.mcp.json` сервери що repo self-approved через committed `.claude/settings.json`; недовірені workspace показують `⏸ Pending approval` | 2.1.196 |
+
+## CLI (2.1.196)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| Background job wake transcript deletion fix | Виправлено wake background job що назавжди видаляв транскрипт та перезапускав оригінальний промпт коли probe misread реальний транскрипт; файл тепер відкладається, ніколи не видаляється | 2.1.196 |
+| `claude agents` side panel focus fix | Виправлено зависання keyboard focus при відкритті агента в agents view, втрату subagent types при кожному відкритті, та неправильний статус сесій що активно працюють | 2.1.196 |
+| `claude agents --dangerously-skip-permissions` bypass fix | Виправлено `--dangerously-skip-permissions` що мовчазки відступав до auto mode замість показу bypass disclaimer та застосування bypass до spawn-утих агентів | 2.1.196 |
+| `/cd` special characters resume list fix | Виправлено `/cd` сесії що повторно з'являлись у списку resume старої директорії після non-graceful exit коли шлях містив special characters | 2.1.196 |
+| Background session reliability improvement | Довготривалі команди та workflows тепер виживають зупинку, рестарт або оновлення процесу сесії — shell-и передаються замість kill | 2.1.196 |
+| Background agents auto-resume after daemon restart | Workers убиті restart daemon автоматично відновлюються з місця зупинки при наступному відкритті agents view | 2.1.196 |
+| `claude agents` session status improvement | Завершені сесії більше не перемикаються між "Done" та "Needs your input"; зупинені агенти позначаються "Needs attention"; результати що згадують PR мають клікабельне посилання | 2.1.196 |

@@ -248,3 +248,9 @@
 | Ключ | Опис | Версія |
 |------|------|--------|
 | `autoMode.classifyAllShell` | Маршрутизація всіх Bash/PowerShell команд через auto-mode класифікатор замість лише patternів довільного виконання коду | 2.1.193 |
+
+## Managed/Enterprise (2.1.196)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| Organization default models [Managed] | Адміни встановлюють модель за замовчуванням для org в console; користувачі що не обрали власну модель бачать "Org default" або "Role default" в `/model` picker | 2.1.196 |

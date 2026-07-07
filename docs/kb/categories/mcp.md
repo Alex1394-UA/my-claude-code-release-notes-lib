@@ -160,6 +160,12 @@
 |-----------|------|--------|
 | `headersHelper` auto re-run on 401/403 | `headersHelper` тепер автоматично повторно запускається та перепідключається коли tool call повертає 401 або 403 | 2.1.193 |
 
+## Налаштування (2.1.196)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| MCP OAuth `scopes_supported` catalog fix | Виправлено MCP OAuth що запитував повний `scopes_supported` catalog від authorization server коли scope не вказано, спричиняючи `invalid_scope` помилки на GitLab self-hosted та інших enterprise IdPs | 2.1.196 |
+
 ## Області видимості та додавання серверів
 
 | Область | Файл | Версія |

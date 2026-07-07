@@ -128,3 +128,16 @@
 |-----------|-------------|--------|
 | Shift+non-ASCII Kitty protocol fix | Виправлено dropping Shift+non-ASCII символів (напр. Shift+ä → Ä) в терміналах з Kitty keyboard protocol (WezTerm, Ghostty, kitty) | 2.1.166 |
 | Up/Down arrows wrapped rows fix | Виправлено Up/Down arrows що перескакували до history повз wrapped рядки довгого input — тепер спочатку проходять через кожен visual рядок, history recall входить з ближнього краю | 2.1.169 |
+
+## Навігація та управління (2.1.196)
+
+| Скорочення | Виправлення | Версія |
+|-----------|-------------|--------|
+| Esc Esc rewind menu fix | Виправлено Esc Esc на idle prompt що не відкривав rewind menu (регресія); для зупинки фонових агентів використовуйте Ctrl+C або Ctrl+X Ctrl+K | 2.1.196 |
+| Agents view одинарний `←` | Відкриття agents view з foreground сесії тепер вимагає одного `←` замість двох, узгоджуючись з поведінкою в background sessions | 2.1.196 |
+
+## Голосовий режим (2.1.196)
+
+| Скорочення | Виправлення | Версія |
+|-----------|-------------|--------|
+| Voice dictation spaces/спонтанний запис fix | Виправлено voice dictation що ковтав пробіли та спонтанно починав запис під час дуже швидкого набору коли voice mode увімкнений | 2.1.196 |

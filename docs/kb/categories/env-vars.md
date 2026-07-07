@@ -189,3 +189,9 @@
 |--------|------|--------|
 | `OTEL_LOG_ASSISTANT_RESPONSES` | Керування логуванням тексту відповіді моделі через OTEL; при нестандартному значенні слідує за `OTEL_LOG_USER_PROMPTS`, встановіть `0` для вимкнення | 2.1.193 |
 | `claude_code.assistant_response` OTEL event | Новий OTEL log event з текстом відповіді моделі; замасковано якщо змінна не встановлено | 2.1.193 |
+
+## Поведінка (2.1.196)
+
+| Змінна | Опис | Версія |
+|--------|------|--------|
+| `CLAUDE_ENABLE_STREAM_WATCHDOG=0` | Вимкнення streaming idle watchdog що увімкнено за замовчуванням для всіх провайдерів — abort та retry при 5 хв тиші стріму; var was previously opt-in only | 2.1.196 |
