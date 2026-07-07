@@ -406,3 +406,12 @@
 | `--json-schema` structured output fix | Виправлено `--json-schema`: модель більше не може повторно викликати `StructuredOutput` нескінченно після успішного виклику, а наступні повороти надійно повертають структурований вивід | 2.1.187 |
 | `/install-github-app` optional workflow | GitHub Actions workflow setup тепер опціональний — можна встановити лише GitHub App та пропустити workflow/secret кроки | 2.1.187 |
 | `/update` Remote Control hanging fix | Виправлено `/update` через Remote Control що зависав коли startup trust dialog мав би показатися | 2.1.187 |
+
+## CLI (2.1.191)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `/rewind` resume before `/clear` | `/rewind` тепер підтримує відновлення розмови з стану до виконання `/clear` | 2.1.191 |
+| `/login` URL truncated Windows Terminal fix [Win] | Виправлено `/login` URL що обрізався при переносі через рядки в Windows Terminal | 2.1.191 |
+| `claude agents` builtin commands prompt text fix | Виправлено `claude agents` що надсилав вбудовані slash команди (напр. `/usage`) як prompt text до background sessions замість підказки | 2.1.191 |
+| `claude agents` job rows pasted image paths fix | Виправлено `claude agents` job rows що показували повні шляхи замість `[Image #N]` placeholder для вставлених зображень | 2.1.191 |

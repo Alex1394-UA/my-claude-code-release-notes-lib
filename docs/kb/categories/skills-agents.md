@@ -235,3 +235,10 @@
 | Agent stop notifications attribution fix | Виправлено agent stop notifications що не коректно вказували хто зупинив агента; покращено формулювання ("finished"/"stopped" замість "came to rest") | 2.1.187 |
 | Subagent depth tracking fix | Виправлено відстеження глибини субагентів: відновлені субагенти тепер відновлюють оригінальну spawn depth, а forked субагенти тепер рахуються до depth cap | 2.1.187 |
 | Leaked agent worktree registrations fix | Виправлено витік реєстрацій worktree вбитих агентів: locked `.git/worktrees/` entries тепер автоматично очищаються | 2.1.187 |
+
+## Навички та Агенти (2.1.191)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Background agents stop permanent fix | Виправлено фонових агентів що "воскресали" після зупинки — зупинка з tasks panel тепер остаточна | 2.1.191 |
+| Agent panel row jump scrolling fix | Виправлено стрибок агент-панелі на один ряд при скролі списку за межу overflow | 2.1.191 |

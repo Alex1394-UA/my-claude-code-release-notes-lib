@@ -910,3 +910,14 @@
 | Cmd+click URLs fullscreen Ghostty fix | Виправлено Cmd+click що не відкривав URL в fullscreen mode в Ghostty на macOS | 2.1.187 |
 | Remote sessions startup speed fix | Виправлено Claude Code Remote sessions що стартували на ~2.7с довше після додавання agent proxy CA system-trust install | 2.1.187 |
 | `/btw` ←/→ arrow navigation | `/btw` тепер підтримує ←/→ arrow навігацію для перегляду попередніх відповідей | 2.1.187 |
+
+## Основні можливості (2.1.191)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Scroll position jump fix during streaming | Виправлено стрибок позиції скролу вниз під час читання раніше output під час стрімінгової відповіді | 2.1.191 |
+| `/voice` policy restriction message | Виправлено `/voice` що показував generic "not available" замість пояснення обмеження коли вимкнений через організаційну політику | 2.1.191 |
+| Cmd+click fullscreen Ghostty ssh/tmux fix | Виправлено Cmd+click що не відкривав посилання в fullscreen mode в Ghostty через ssh або tmux | 2.1.191 |
+| Welcome splash art overflow 80×24 fix | Виправлено overflow welcome splash art в стандартному macOS Terminal (80×24) | 2.1.191 |
+| Streaming CPU reduction ~37% | Зменшено використання CPU на ~37% під час стрімінгових відповідей шляхом коалесценції текстових оновлень до 100ms | 2.1.191 |
+| Long-session memory growth fix | Виправлено зростання пам'яті в довгих сесіях від кешу термінального output | 2.1.191 |

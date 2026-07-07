@@ -1,6 +1,6 @@
 # Knowledge Base Metadata
 
-last_processed: 2.1.187
+last_processed: 2.1.191
 last_updated: 2026-07-06
 seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 
@@ -59,3 +59,4 @@ seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 | 2026-06-23 | 2.1.185 | core | ~1 запис додано, 0 депрекацій |
 | 2026-06-23 | 2.1.186 | core, cli, settings, mcp, skills-agents, plugins, env-vars | ~37 записів додано, 0 депрекацій |
 | 2026-07-06 | 2.1.187 | core, cli, settings, env-vars, mcp, skills-agents, plugins, vscode-ide, windows, keybindings | ~22 записи додано, 0 депрекацій |
+| 2026-07-06 | 2.1.191 | core, cli, settings, mcp, hooks, skills-agents, keybindings, windows | ~20 записи додано, 0 депрекацій |

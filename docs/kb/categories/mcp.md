@@ -146,6 +146,14 @@
 |-----------|------|--------|
 | Remote MCP tool idle timeout | Remote MCP tool calls що не відповідають 5 хвилин тепер abort з помилкою замість нескінченного зависання; налаштовується через `CLAUDE_CODE_MCP_TOOL_IDLE_TIMEOUT` | 2.1.187 |
 
+## Налаштування (2.1.191)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| MCP capability discovery retry | Capability discovery (`tools/list`, `prompts/list`, `resources/list`) тепер повторює при transient network помилках з коротким backoff | 2.1.191 |
+| MCP OAuth transient retry | MCP OAuth discovery та token requests тепер повторюють один раз при transient network помилках; headless середовища пропускають browser popup та переходять одразу до paste-the-URL промпту | 2.1.191 |
+| MCP HTTP 404 error messages improvement | HTTP 404 помилки тепер показують URL та вказують на MCP конфіг замість generic error message | 2.1.191 |
+
 ## Області видимості та додавання серверів
 
 | Область | Файл | Версія |

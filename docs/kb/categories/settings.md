@@ -234,3 +234,11 @@
 | Ключ | Опис | Версія |
 |------|------|--------|
 | `sandbox.credentials` | Блокування sandboxed команд від читання credential файлів та секретних змінних середовища | 2.1.187 |
+
+## Налаштування (2.1.191)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `/permissions` Recently-denied tab persistence | Схвалення відхилення в `/permissions` Recently-denied tab тепер зберігається при закритті замість мовчазного скидання | 2.1.191 |
+| `forceRemoteSettingsRefresh` MDM/file policy fix [Managed] | `forceRemoteSettingsRefresh` тепер працює при встановці через MDM або file policy; fetch відправляє `Cache-Control: no-cache` для запобігнення stale responses від проксі | 2.1.191 |
+| Sandbox network permission dialog session memory | Дозволи "Yes" для sandbox network permission dialog тепер запам'ятовуються на решту сесії замість повторного промпту при кожному з'єднанні | 2.1.191 |
