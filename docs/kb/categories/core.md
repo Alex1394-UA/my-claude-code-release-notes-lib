@@ -921,3 +921,12 @@
 | Welcome splash art overflow 80×24 fix | Виправлено overflow welcome splash art в стандартному macOS Terminal (80×24) | 2.1.191 |
 | Streaming CPU reduction ~37% | Зменшено використання CPU на ~37% під час стрімінгових відповідей шляхом коалесценції текстових оновлень до 100ms | 2.1.191 |
 | Long-session memory growth fix | Виправлено зростання пам'яті в довгих сесіях від кешу термінального output | 2.1.191 |
+
+## Основні можливості (2.1.193)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Auto-mode причини відмови | Причини відмови auto mode тепер відображаються в транскрипті, toast-повідомленні та `/permissions` Recently-denied tab | 2.1.193 |
+| Autocomplete шляхів файлів у bash mode (`!`) | Bash mode (`!`) тепер має живий autocomplete шляхів файлів | 2.1.193 |
+| Сповіщення при старті про MCP автентифікацію | Стартове повідомлення з підказкою `/mcp` коли MCP сервери потребують автентифікації | 2.1.193 |
+| Memory-pressure reaping фонових shell команд | Автоматичне звільнення простоючих фонових shell команд під memory pressure; вимкнути через `CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP=1` | 2.1.193 |

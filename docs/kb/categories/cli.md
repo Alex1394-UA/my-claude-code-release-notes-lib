@@ -415,3 +415,12 @@
 | `/login` URL truncated Windows Terminal fix [Win] | Виправлено `/login` URL що обрізався при переносі через рядки в Windows Terminal | 2.1.191 |
 | `claude agents` builtin commands prompt text fix | Виправлено `claude agents` що надсилав вбудовані slash команди (напр. `/usage`) як prompt text до background sessions замість підказки | 2.1.191 |
 | `claude agents` job rows pasted image paths fix | Виправлено `claude agents` job rows що показували повні шляхи замість `[Image #N]` placeholder для вставлених зображень | 2.1.191 |
+
+## CLI (2.1.193)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `/model` та інші UI stale state after `/login` fix | Виправлено `/model` та інші UI-елементи що залежать від клієнтських даних та показували застарілий/порожній стан одразу після `/login` | 2.1.193 |
+| Backgrounding спurious cancel fix | Виправлено спurious скасування при backgrounding (←←) з повідомленням "N background tasks would be abandoned" коли всі запущені задачі переносяться в нову сесію | 2.1.193 |
+| Pinned background agents re-prompt fix | Виправлено повторний запит "Continue from where you left off" для pinned background агентів після кожного автооновлення | 2.1.193 |
+| `/add-dir` покращення повідомлення | Покращено повідомлення `/add-dir` коли директорія вже є робочою директорією | 2.1.193 |

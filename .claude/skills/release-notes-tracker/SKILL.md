@@ -15,6 +15,8 @@ Incrementally maintain a modular knowledge base of Claude Code features.
 
 ---
 
+> **Файли категорій знаходяться в піддиректорії `categories/`.** Завжди використовуйте шлях `docs/kb/categories/<file>.md`, а не `docs/kb/<file>.md`. meta.md, index.md та references/ лежать у `docs/kb/` корені.
+
 ## Workflow
 
 ### Step 1: Визначити що нового

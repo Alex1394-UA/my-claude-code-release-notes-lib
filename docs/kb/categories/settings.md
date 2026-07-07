@@ -242,3 +242,9 @@
 | `/permissions` Recently-denied tab persistence | Схвалення відхилення в `/permissions` Recently-denied tab тепер зберігається при закритті замість мовчазного скидання | 2.1.191 |
 | `forceRemoteSettingsRefresh` MDM/file policy fix [Managed] | `forceRemoteSettingsRefresh` тепер працює при встановці через MDM або file policy; fetch відправляє `Cache-Control: no-cache` для запобігнення stale responses від проксі | 2.1.191 |
 | Sandbox network permission dialog session memory | Дозволи "Yes" для sandbox network permission dialog тепер запам'ятовуються на решту сесії замість повторного промпту при кожному з'єднанні | 2.1.191 |
+
+## Налаштування (2.1.193)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `autoMode.classifyAllShell` | Маршрутизація всіх Bash/PowerShell команд через auto-mode класифікатор замість лише patternів довільного виконання коду | 2.1.193 |

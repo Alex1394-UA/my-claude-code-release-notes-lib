@@ -170,3 +170,16 @@
 | `OTEL_RESOURCE_ATTRIBUTES` metric labels | Значення `OTEL_RESOURCE_ATTRIBUTES` тепер включаються як labels на metric datapoints для розрізнення usage metrics за кастомними dimensions (напр. team, repo) | 2.1.161 |
 | OTEL log events early emit fix | Виправлено OTEL log events (`user_prompt`, `api_request`, `tool_result`, `tool_decision`) що мовчазно відкидались коли emit відбувався до завершення telemetry initialization | 2.1.161 |
 | OTEL `claude_code.lines_of_code.count` model attribute | Додано атрибут `model` до OTEL metric `claude_code.lines_of_code.count` | 2.1.172 |
+
+## Поведінка (2.1.193)
+
+| Змінна | Опис | Версія |
+|--------|------|--------|
+| `CLAUDE_CODE_DISABLE_BG_SHELL_PRESSURE_REAP` | Вимкнення автоматичного звільнення простоючих фонових shell команд під memory pressure (`1` для вимкнення) | 2.1.193 |
+
+## Телеметрія та OTEL (2.1.193)
+
+| Змінна | Опис | Версія |
+|--------|------|--------|
+| `OTEL_LOG_ASSISTANT_RESPONSES` | Керування логуванням тексту відповіді моделі через OTEL; при нестандартному значенні слідує за `OTEL_LOG_USER_PROMPTS`, встановіть `0` для вимкнення | 2.1.193 |
+| `claude_code.assistant_response` OTEL event | Новий OTEL log event з текстом відповіді моделі; замасковано якщо змінна не встановлено | 2.1.193 |

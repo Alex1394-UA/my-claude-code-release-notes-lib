@@ -154,6 +154,12 @@
 | MCP OAuth transient retry | MCP OAuth discovery та token requests тепер повторюють один раз при transient network помилках; headless середовища пропускають browser popup та переходять одразу до paste-the-URL промпту | 2.1.191 |
 | MCP HTTP 404 error messages improvement | HTTP 404 помилки тепер показують URL та вказують на MCP конфіг замість generic error message | 2.1.191 |
 
+## Налаштування (2.1.193)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `headersHelper` auto re-run on 401/403 | `headersHelper` тепер автоматично повторно запускається та перепідключається коли tool call повертає 401 або 403 | 2.1.193 |
+
 ## Області видимості та додавання серверів
 
 | Область | Файл | Версія |
