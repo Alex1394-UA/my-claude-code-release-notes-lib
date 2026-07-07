@@ -171,6 +171,12 @@
 | OTEL log events early emit fix | Виправлено OTEL log events (`user_prompt`, `api_request`, `tool_result`, `tool_decision`) що мовчазно відкидались коли emit відбувався до завершення telemetry initialization | 2.1.161 |
 | OTEL `claude_code.lines_of_code.count` model attribute | Додано атрибут `model` до OTEL metric `claude_code.lines_of_code.count` | 2.1.172 |
 
+## Поведінка (2.1.195)
+
+| Змінна | Опис | Версія |
+|--------|------|--------|
+| `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` | Вимкнення mouse click/drag/hover у fullscreen mode з збереженням wheel scroll (`1` для вимкнення) | 2.1.195 |
+
 ## Поведінка (2.1.193)
 
 | Змінна | Опис | Версія |

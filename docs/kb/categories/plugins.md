@@ -136,6 +136,13 @@
 | `/plugin` Installed "Skills" секція | Додано секцію "Skills" на вкладці Installed в `/plugin` для перегляду навичок з плагінів | 2.1.186 |
 | `/plugin` Installed "more above" indicator fix | Виправлено `/plugin` Installed що показував індикатор "more above" коли вже прокручено до верху | 2.1.186 |
 
+## Можливості (2.1.195)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| External plugins project settings consent fix | Виправлено external plugins увімкнені лише через project `.claude/settings.json` що вимагали явного підтвердження install при кожному завантаженні | 2.1.195 |
+| `/plugin` Enable/Disable name mismatch fix | Виправлено `/plugin` Enable/Disable що не працювали коли `plugin.json` `name` відрізняється від marketplace entry name | 2.1.195 |
+
 ## Можливості (2.1.193)
 
 | Можливість | Опис | Версія |

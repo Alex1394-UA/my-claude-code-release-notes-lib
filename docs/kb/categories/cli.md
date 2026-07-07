@@ -416,6 +416,15 @@
 | `claude agents` builtin commands prompt text fix | Виправлено `claude agents` що надсилав вбудовані slash команди (напр. `/usage`) як prompt text до background sessions замість підказки | 2.1.191 |
 | `claude agents` job rows pasted image paths fix | Виправлено `claude agents` job rows що показували повні шляхи замість `[Image #N]` placeholder для вставлених зображень | 2.1.191 |
 
+## CLI (2.1.195)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| Background jobs disappearing from `claude agents` fix | Виправлено зникнення background jobs з `claude agents` або втрату даних коли вони записані новішою версією Claude Code | 2.1.195 |
+| Crashed background task blank screen fix | Виправлено відкриття crashed background task що показував пустий екран до 5 секунд замість негайного рестарту | 2.1.195 |
+| Background agent daemons unreachable fix | Виправлено background agent daemons що працювали unreachable коли control socket не стартував, блокуючи рестарти | 2.1.195 |
+| `claude agents` completed list vertical fill | `claude agents` completed list заповнює весь доступний вертикальний простір; на коротких терміналах заголовок стискається щоб живі сесії залишались видимими | 2.1.195 |
+
 ## CLI (2.1.193)
 
 | Команда | Опис | Версія |
