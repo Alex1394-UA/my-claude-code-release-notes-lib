@@ -202,3 +202,12 @@
 | Re-invoking already-loaded skill duplicate fix | Виправлено повторний виклик вже завантаженого skill що додавав дублікат копію його інструкцій в контекст | 2.1.202 |
 | `/workflows` agent list layout improvement | Покращено layout списку агентів `/workflows`: ширші назви, окрема колонка часу, коротші назви моделей, без per-row лічильників tool-calls | 2.1.202 |
 | `/review <pr>` швидкий single-pass review | `/review <pr>` повернуто до швидкого single-pass review; для multi-agent review з обраним рівнем зусильля використовуйте `/code-review <level> <pr#>` | 2.1.202 |
+
+## Навички та Агенти (2.1.203)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `claude agents` silent subagent stop fix | Виправлено повернення в `claude agents` що мовчки зупиняло running subagents — їхня робота тепер зберігається при switch | 2.1.203 |
+| Worktree subagents parent checkout fix | Виправлено worktree-ізольовані subagents що виконували shell команди в батьківському checkout замість власного worktree | 2.1.203 |
+| `TaskStop`/`TaskOutput` cross-agent background fix | Виправлено `TaskStop` та `TaskOutput` що не могли знайти background agents створені іншим агентом — помилки тепер показують список running агентів з id та описом | 2.1.203 |
+| Subagent re-delegation reduction | Покращено поведінку subagent-ів — агенти тепер менш схильні повністю делегувати своє завдання іншому subagent | 2.1.203 |

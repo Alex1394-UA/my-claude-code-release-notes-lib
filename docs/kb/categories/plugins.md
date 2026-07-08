@@ -182,3 +182,9 @@
 |-----------|------|--------|
 | `claude agents --plugin-dir <dir>` flag placement fix | Виправлено `claude agents --plugin-dir <dir>` що не показував agents та skills плагіна в agent view коли прапорець розташований після `agents` | 2.1.200 |
 | Project-scoped plugins git worktree fix | Виправлено project-scoped plugins що не завантажувались коректно з git worktrees того ж репозиторію | 2.1.200 |
+
+## Можливості (2.1.203)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| LSP-only plugins disuse flagging fix | Виправлено плагіни що працюють лише через LSP та хибно позначалися як непридатні коли їхні language servers надавали diagnostics або відповідали на навігаційні запити | 2.1.203 |

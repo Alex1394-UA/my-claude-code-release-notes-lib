@@ -133,6 +133,12 @@
 | mTLS handshake transient failures fix | Виправлено transient mTLS handshake помилки коли settings повторно застосовувались під час in-place ротації клієнтського сертифікату | 2.1.202 |
 | MCP error messages `url` without `type` improvement | Покращено повідомлення помилки MCP: коли server config має `url` але не має `type`, пропонує `"type": "http"` замість оманливого "command: expected string" | 2.1.202 |
 
+## Налаштування (2.1.203)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| MCP `roots/list` з додатковими робочими директоріями | Додаткові робочі директорії сесії тепер включаються в MCP `roots/list`, з `notifications/roots/list_changed` що надсилається при зміні набору | 2.1.203 |
+
 ## Налаштування (2.1.181)
 
 | Можливість | Опис | Версія |

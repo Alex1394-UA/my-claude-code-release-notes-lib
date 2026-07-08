@@ -192,3 +192,9 @@
 | Ключ | Опис | Версія |
 |------|------|--------|
 | `dynamicWorkflowSize` | Нове налаштування в `/config` для керування розміром dynamic workflows (small/medium/large — кількість агентів); рекомендована підказка, не жорсткий ліміт | 2.1.202 |
+
+## Налаштування (2.1.203)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `effortLevel` background sessions fix | Виправлено background sessions що ігнорували зміни `effortLevel` в settings.json при fork через daemon | 2.1.203 |

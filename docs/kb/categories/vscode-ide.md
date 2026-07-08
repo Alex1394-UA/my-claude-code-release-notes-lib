@@ -87,6 +87,12 @@
 |-----------|------|--------|
 | Permission mode "Manual" в IDE | Дефолтний permission mode змінено на "Manual" у VS Code та JetBrains | 2.1.200 |
 
+## Функції VS Code (2.1.203)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| "Enable Remote Control for all sessions" toggle | Нова перемикач в Settings VS Code extension для вмикання Remote Control для всіх сесій | 2.1.203 |
+
 ## Функції VS Code (2.1.187)
 
 | Можливість | Опис | Версія |

@@ -1,6 +1,6 @@
 # CLI команди та прапорці
 
-> Попередні версії: [rotated/cli_v2.1.203.md](rotated/cli_v2.1.203.md)
+> Попередні версії: [rotated/cli_v2.1.202.md](rotated/cli_v2.1.202.md)
 
 ## Основні команди
 
@@ -284,6 +284,16 @@
 | Linux sandbox `.claude/skills`/`.claude/hooks` symlink fix | Виправлено Linux sandbox що не стартував коли `.claude/skills` або `.claude/hooks` є symlink | 2.1.178 |
 | `/doctor` flat tree layout | Покращено `/doctor`: консистентний flat tree layout для всіх секцій, чіткіші status icons та highlighted command names | 2.1.178 |
 | `/bug` requires description | `/bug` тепер вимагає опис перед відправкою, та більше не використовує model-refusal текст як заголовок GitHub issue | 2.1.178 |
+
+## CLI (2.1.202)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `/rename` background sessions fix | Виправлено `/rename` на background sessions що відкатувався при рестарті job, ламаючи адресацію сесії за новим іменем | 2.1.202 |
+| Sign-in URL clickable over SSH fix | Виправлено URL логіну від `claude auth login` та `claude mcp login --no-browser` що не надійно клікався при перенесенні через SSH — тепер емітиться як єдиний hyperlink | 2.1.202 |
+| `claude agents` opening chat crash fix | Виправлено відкриття чату з `claude agents` що іноді failing з "currently running as a background agent" з подальшим crash-loop/respawn worker | 2.1.202 |
+| Resume by name slow with worktrees fix | Виправлено відновлення сесії за іменем або відкриття resume picker що займали хвилини та споживали багато пам'яті в репозиторіях з багатьма git worktrees | 2.1.202 |
+| Installer/updater download retry on proxy drop | Виправлено завантаження installer/updater що одразу failing з "aborted" коли proxy або мережа обриває з'єднання — transient drops тепер retry | 2.1.202 |
 
 ## CLI (2.1.203)
 

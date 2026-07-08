@@ -139,3 +139,9 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | `SessionStart`/`Setup`/`SubagentStart` stderr visibility | Виправлено хуки `SessionStart`, `Setup` та `SubagentStart` що мовчки приховували stderr при виході з code 2 — помилка тепер показується в транскрипті | 2.1.199 |
+
+## Налаштування хуків (2.1.203)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| WorktreeCreate hook non-git directory fix | Виправлено background sessions запущені з non-git директорії що не могли редагувати файли коли був настроєний `WorktreeCreate` hook | 2.1.203 |

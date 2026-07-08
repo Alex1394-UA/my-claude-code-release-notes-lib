@@ -220,3 +220,5 @@
 | Background sessions network paths fix [Win] | Виправлено background sessions що нейтралізують Windows network paths в persisted state перед respawn | 2.1.176 |
 | Background-service daemon ReadOnly attribute fix [Win] | Виправлено Windows background-service daemon що не стартував коли `~/.claude/daemon` має ReadOnly атрибут | 2.1.176 |
 | Mouse-wheel WSL2 Win Terminal/VS Code fix [Win] | Виправлено mouse-wheel scrolling в WSL2 під Windows Terminal та VS Code (регресія з 2.1.172) | 2.1.179 |
+| Background agents stale PATH fix [Win] | Виправлено background agents що успадковували застарілий `PATH` з daemon замість dispatching shell, що призводило до відсутніх інструментів | 2.1.203 |
+| `/clear` background task output empty file fix [Win] | Виправлено `/clear` що назавжди замінював output background tasks на порожній файл на Windows | 2.1.203 |

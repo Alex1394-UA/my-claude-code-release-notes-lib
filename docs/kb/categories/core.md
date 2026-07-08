@@ -122,3 +122,19 @@
 | Remote Control images/files without caption fix | Виправлено зображення та файли надіслані з Remote Control без caption що мовчки відкидались | 2.1.202 |
 | `/remote-control` permission mode fix | Виправлено `/remote-control` сесії що показували неправильний permission mode в mobile/web apps | 2.1.202 |
 | Voice dictation unbounded loop fix | Виправлено voice dictation що повторювався в безмежному циклі коли мікрофон або аудіо-рекордер failing — повторні невдалі спроби запису тепер призупиняють voice input | 2.1.202 |
+
+## Основні можливості (2.1.203)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Попередження про спливання логіну | Попередження коли сесія логіну ось-ось спливе, щоб користувач міг переавтентифікуватися до переривання background sessions | 2.1.203 |
+| Сірий значок ⏸ у manual permission mode | Сірий значок ⏸ у footer коли увімкнено manual permission mode — активний режим завжди видимий | 2.1.203 |
+| macOS background agents stall fix | Виправлено затримку 15–20 секунд при відкритті/перемиканні background agent sessions на macOS через хибне визначення нестачі пам'яті (регресія з 2.1.196) | 2.1.203 |
+| Background sessions stale token recovery | Виправлено background sessions що ставали назавжди unresponsive до attach/replies/stop коли session token daemon-а застарівав — сесія тепер відновлюється автоматично | 2.1.203 |
+| Context-usage indicator CPU regression fix | Виправлено регресію пам'яті та CPU за turn в інтерактивних сесіях — індикатор контексту більше не переаналізує весь транскрипт після кожного turn | 2.1.203 |
+| Daemon auto-upgrade killing sessions fix | Виправлено помилку автооновлення daemon що мовчки вбивала всі running background sessions | 2.1.203 |
+| Content jumping on scroll fix | Виправлено стрибки контенту при прокрутці вгору через довгу історію транскрипту | 2.1.203 |
+| Terminal flickering bash mode fix | Виправлено мерехтіння терміналу та стрибки при введенні в bash mode коли показувалась підказка shell-history | 2.1.203 |
+| Escape codes `^[[I` / `^[[O` on reattach fix | Виправлено друк літеральних escape-кодів `^[[I` / `^[[O` при повторному підключенні до background session | 2.1.203 |
+| Streaming responsiveness improvement | Покращено responsiveness під час стрімінгу довгих відповідей — live-preview оновлення більше не перемальовують весь екран | 2.1.203 |
+| Бінарний розмір та startup memory -7MB | Розмір binary зменшено на ~7MB та startup memory на ~7MB завдяки lazy loading великої bundled dependency | 2.1.203 |

@@ -207,3 +207,10 @@
 | Змінна | Опис | Версія |
 |--------|------|--------|
 | `workflow.run_id` / `workflow.name` OTel attributes | Нові OpenTelemetry атрибути в telemetry workflow-агентів для відновлення діяльності workflow-запуску з OTel-даних | 2.1.202 |
+
+## Поведінка (2.1.203)
+
+| Змінна | Опис | Версія |
+|--------|------|--------|
+| `ANTHROPIC_BASE_URL` background sessions drop fix | Виправлено background та agent-view sessions що втрачали shell-exported `ANTHROPIC_BASE_URL`, що відправляло API ключі на default endpoint з помилкою 401 | 2.1.203 |
+| `CLAUDE_CODE_DISABLE_MOUSE` / `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` attached sessions fix | Виправлено attached background sessions що ігнорували `CLAUDE_CODE_DISABLE_MOUSE` та `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` opt-out | 2.1.203 |
