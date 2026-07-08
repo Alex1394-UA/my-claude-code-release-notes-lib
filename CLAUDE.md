@@ -1,3 +1,8 @@
+## Project Overview
+
+Modular knowledge base of Claude Code features, incrementally maintained from release notes via `release-notes-tracker` skill.
+**State:** `docs/kb/meta.md` | **Structure:** `docs/kb/categories/` (active + `rotated/` archives), `docs/kb/releases/`
+
 ## Project-specific Search Preferences
 
 | Priority | Tool | When | Cost |
