@@ -1044,3 +1044,9 @@
 | Background sessions sleep/wake fix | Виправлено зупинку background sessions під час сну/пробудження або повторного відкриття застарілої сесії | 2.1.200 |
 | Background sessions stall respawn re-run fix | Виправлено повторний запуск відміненого повороту (Esc) після перезапуску застарілої сесії | 2.1.200 |
 | tmux 3.4+ flicker fix | Виправлено мерехтіння рендерингу під tmux 3.4+ увімкненням synchronized terminal output | 2.1.200 |
+
+## Моделі (2.1.201)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Sonnet 5: прибрано mid-conversation system role | Сесії Claude Sonnet 5 більше не використовують роль `system` посередині розмови для нагадувань harness | 2.1.201 |
