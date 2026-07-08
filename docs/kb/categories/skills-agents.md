@@ -279,3 +279,13 @@
 | Idle субагенти згортання в expandable summary | Зайві idle субагенти згортаються в розкривний summary рядок замість зникнення з панелі агентів | 2.1.199 |
 | `SendMessage` misrouting fix | Виправлено `SendMessage` що мовчки маршрутизував на неправильного агента коли respawn-утий агент використовував попереднє ім'я — тепер виявляє невідповідність та просить перенаправити | 2.1.199 |
 | Remote sessions flapping Working/Idle fix | Виправлено remote sessions що кратко перемикались між Working та Idle в агент-панелі при завершенні background агента | 2.1.199 |
+
+## Навички та Агенти (2.1.200)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Background agents daemon.lock PID reuse fix | Виправлено background agents що ніколи не запускались знову після крашу що залишив stale `daemon.lock` з PID повторно використаним ОС | 2.1.200 |
+| Background-agent daemon handover build recency | Виправлено handover daemon так що старіший білд після перевстановлення не може перехопити daemon; актуальність білду визначається за вбудованим timestamp версії | 2.1.200 |
+| Background-agent roster corruption fixes | Виправлено кілька проблем: transient corruption назавжди вимикав orphan cleanup, старіші binaries не зберігали поля записані новішими версіями, та socket auth tokens втрачались під час рестарту daemon | 2.1.200 |
+| Subagents rate limit empty result fix | Виправлено субагентів обірваних rate limit до генерації тексту — тепер повертають помилку замість порожнього результату | 2.1.200 |
+| Control bytes в agent view fix | Виправлено потрапляння control bytes від background-agent output в термінал в agent view | 2.1.200 |

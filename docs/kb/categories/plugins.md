@@ -175,3 +175,10 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | Plugin dependency version pins fix | Виправлено версійні піни залежностей плагінів що ігнорувалися коли marketplace додано як локальна папка з git repo | 2.1.196 |
+
+## Можливості (2.1.200)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `claude agents --plugin-dir <dir>` flag placement fix | Виправлено `claude agents --plugin-dir <dir>` що не показував agents та skills плагіна в agent view коли прапорець розташований після `agents` | 2.1.200 |
+| Project-scoped plugins git worktree fix | Виправлено project-scoped plugins що не завантажувались коректно з git worktrees того ж репозиторію | 2.1.200 |

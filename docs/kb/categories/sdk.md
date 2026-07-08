@@ -103,6 +103,12 @@
 | RC error messages improvement | Покращено Remote Control error messages: connection failures тепер показують постійний червоний "/rc failed" indicator в footer; "not yet enabled" error тепер пояснює причину (gate, check failure, stale entitlement, або org policy) | 2.1.178 |
 | Statusline links custom URI schemes fix | Виправлено statusline links з кастомними URI schemes (напр. `vscode://`) що не відкривались при кліку в `claude agents` | 2.1.178 |
 
+## SDK (2.1.198)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Workflow progress view SDK/desktop fix | Виправлено workflow progress view що втрачав найранішіх агентів зі списку поки лічильник фаз залишався коректним в SDK та desktop-app сесіях | 2.1.198 |
+
 ## Self-hosted runner
 
 | Можливість | Опис | Версія |

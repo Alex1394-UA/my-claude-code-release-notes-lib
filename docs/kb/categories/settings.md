@@ -273,3 +273,10 @@
 | Ключ | Опис | Версія |
 |------|------|--------|
 | Corrupted config file backup on reset | При скиданні пошкодженого config файлу з startup recovery dialog — файл тепер резервно копіюється перед знищенням | 2.1.199 |
+
+## Налаштування (2.1.200)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `permissions.defaultMode` = "Manual" | Режим дозволів за замовчуванням змінено на "Manual" у CLI, `--help`, VS Code та JetBrains | 2.1.200 |
+| `--permission-mode manual` та `"defaultMode": "manual"` | Прапорець `--permission-mode manual` та значення `"defaultMode": "manual"` у settings.json приймаються поруч із `default` | 2.1.200 |

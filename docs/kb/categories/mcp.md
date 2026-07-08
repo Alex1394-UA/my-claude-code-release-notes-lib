@@ -119,6 +119,13 @@
 | stdio `CLAUDE_CODE_SESSION_ID` на `--resume` | Stdio MCP сервери тепер отримують `CLAUDE_CODE_SESSION_ID` при `--resume` (як hooks та Bash) | 2.1.163 |
 | MCP server-level specs subagent `disallowedTools` fix | Виправлено MCP server-level specs (`mcp__server`, `mcp__server__*`, `mcp__*`) в subagent `disallowedTools` що мовчазно ігнорувалися | 2.1.178 |
 
+## Налаштування (2.1.200)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `disabledMcpServers`/`enabledMcpServers` non-array crash fix | Виправлено краш при старті коли `disabledMcpServers` або `enabledMcpServers` в `.claude.json` встановлено не як масив | 2.1.200 |
+| `/mcp` server list focus для screen readers | Виправлено `/mcp` server list що не відстежував фокус для screen readers та magnifiers | 2.1.200 |
+
 ## Налаштування (2.1.181)
 
 | Можливість | Опис | Версія |

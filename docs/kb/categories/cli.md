@@ -482,3 +482,10 @@
 | `claude --dangerously-skip-permissions daemon` fix | Виправлено обробку `daemon <subcommand>` при `--dangerously-skip-permissions` — більше не трактують як chat prompt | 2.1.199 |
 | Session transcript growth fix | Виправлено непотрібне зростання файлу транскрипту при відкритті або відновленні сесії без нових повідомлень | 2.1.199 |
 | `claude agents` PR links format | Рядки сесій `claude agents` тепер показують посилання на PR як `#N` без зайвої мітки "PR" | 2.1.199 |
+
+## CLI (2.1.200)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `--permission-mode manual` | Прапорець `--permission-mode manual` приймається поруч із `default` | 2.1.200 |
+| Install script OOM повідомлення | Скрипт встановлення пояснює коли installation зупинено через нестачу пам'яті системи | 2.1.200 |
