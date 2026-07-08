@@ -146,7 +146,7 @@ Incrementally maintain a modular knowledge base of Claude Code features.
 
 Якщо `docs/kb/` не існує:
 1. Створи структуру директорій (включаючи `categories/rotated/`)
-2. Насідай з `docs/CLAUDE-CODE-OPTIONS-GUIDE.md` (читай guide, розбий по секціях)
+2. Заповни початковими даними з `docs/CLAUDE-CODE-OPTIONS-GUIDE.md` (прочитай guide, розбий його зміст по секціях категорій)
 3. Створи `meta.md` з `last_processed: "2.1.85"` (без `file_rotation.*` полів — вони додаються при першій ротации в Step 6.5)
 4. Створи `index.md` з вказівниками на категорії
 5. Нічого не видаляти — всі дані зберігаються
