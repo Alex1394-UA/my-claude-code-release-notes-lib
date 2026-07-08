@@ -195,3 +195,9 @@
 | Змінна | Опис | Версія |
 |--------|------|--------|
 | `CLAUDE_ENABLE_STREAM_WATCHDOG=0` | Вимкнення streaming idle watchdog що увімкнено за замовчуванням для всіх провайдерів — abort та retry при 5 хв тиші стріму; var was previously opt-in only | 2.1.196 |
+
+## Поведінка (2.1.199)
+
+| Змінна | Опис | Версія |
+|--------|------|--------|
+| `CLAUDE_CODE_RETRY_WATCHDOG` retry count increase | `CLAUDE_CODE_RETRY_WATCHDOG` тепер підвищує дефолтну кількість повторів для non-capacity transient помилок до 300 та знімає обмеження 15 на `CLAUDE_CODE_MAX_RETRIES` | 2.1.199 |

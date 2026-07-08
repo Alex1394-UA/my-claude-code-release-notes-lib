@@ -61,7 +61,8 @@
 | Workflow validation `Date.now()`/`Math.random()` fix | Виправлено workflow validation що відхиляла скрипти де prompt strings або comments лише згадували `Date.now()`/`Math.random()` | 2.1.172 |
 | Workflow prompt keyword shimmer | Workflow prompt keyword тепер використовує purple shimmer highlight та trigerrить лише на явних фразах ("run a workflow", "workflow:"), не на будь-якій згадці слова | 2.1.178 |
 | Skill listing truncation показ кількості | Покращено попередження truncation списку skill — тепер показує скільки описів skill обрізаються | 2.1.178 |
-| Nested skills permission non-interactive fix | Виправлено nested `.claude/skills` skills з directory-qualified іменами що блокувалися permission prompts в non-interactive runs | 2.1.178 |
+| Nested skills permission non-interactive fix | Виправлено nested `.claude/skills` skills з directory-qualified іменами що блокувалися permission prompts in non-interactive runs | 2.1.178 |
+| Stacked slash-skill invocations | `/skill-a /skill-b do XYZ` завантажує всі leading skills (до 5), не лише перший | 2.1.199 |
 
 ## Поля frontmatter
 
@@ -256,3 +257,25 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | `/code-review` workflow оптимізація | Об'єднано п'ять cleanup-finderів в один, скорочивши використання токенів приблизно на 25% | 2.1.196 |
+
+## Навички та Агенти (2.1.198)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| /dataviz skill | Новий skill для керівництва дизайном графіків та дашбордів з валідатором колірної палітри | 2.1.198 |
+| Explore agent model inheritance | Вбудований Explore agent тепер успадковує модель основної сесії (обмежено до opus) замість запуску на haiku | 2.1.198 |
+| Agent teams API error reporting fix | Виправлено agent teams: teammate що вмирає від API помилки тепер звітує "failed" лідеру; повідомлення застряглому teammate будить його для негайного повтору | 2.1.198 |
+| Workflow progress view SDK/desktop fix | Виправлено workflow progress view що втрачав найранішіх агентів зі списку поки лічильник фаз залишався коректним в SDK та desktop-app сесіях | 2.1.198 |
+| Conditional rules symlink fix | Виправлено .claude/rules/ умовні правила що не завантажувались коли цільовий файл досягався через symlinked шлях | 2.1.198 |
+| Subagent message handling | Субагенти тепер трактують повідомлення від агента що їх запустив як нормальне завдання; повідомлення агента ніколи не трактється як затвердження користувача | 2.1.198 |
+| ~~/agents wizard~~ | [ВИДАЛЕНО] — майстер /agents видалено; попросіть Claude створити або керувати субагентами, або редагуйте .claude/agents/ напряму | 2.1.198 |
+
+## Навички та Агенти (2.1.199)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Субагенти повертають partial work при rate limit | Виправлено субагентів обірваних rate limit або server error — тепер повертають часткову роботу батьківському агенту замість мовчазної відмови | 2.1.199 |
+| Субагенти API errors як успішні result fix | Виправлено субагентів що звітували API помилки (напр. usage limit) як успішні результати — помилка тепер передається батьківському агенту | 2.1.199 |
+| Idle субагенти згортання в expandable summary | Зайві idle субагенти згортаються в розкривний summary рядок замість зникнення з панелі агентів | 2.1.199 |
+| `SendMessage` misrouting fix | Виправлено `SendMessage` що мовчки маршрутизував на неправильного агента коли respawn-утий агент використовував попереднє ім'я — тепер виявляє невідповідність та просить перенаправити | 2.1.199 |
+| Remote sessions flapping Working/Idle fix | Виправлено remote sessions що кратко перемикались між Working та Idle в агент-панелі при завершенні background агента | 2.1.199 |

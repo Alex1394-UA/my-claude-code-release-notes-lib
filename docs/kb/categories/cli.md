@@ -451,3 +451,34 @@
 | Background session reliability improvement | Довготривалі команди та workflows тепер виживають зупинку, рестарт або оновлення процесу сесії — shell-и передаються замість kill | 2.1.196 |
 | Background agents auto-resume after daemon restart | Workers убиті restart daemon автоматично відновлюються з місця зупинки при наступному відкритті agents view | 2.1.196 |
 | `claude agents` session status improvement | Завершені сесії більше не перемикаються між "Done" та "Needs your input"; зупинені агенти позначаються "Needs attention"; результати що згадують PR мають клікабельне посилання | 2.1.196 |
+
+## CLI (2.1.197)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| — | Версія 2.1.197 містить лише зміну дефолтної моделі (див. core.md) | 2.1.197 |
+
+## CLI (2.1.198)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `claude agents` notification hook integration | Сесії в `claude agents` що потребують input або завершені тепер спрацьовують Notification hook (`agent_needs_input` / `agent_completed`) | 2.1.198 |
+| Background agents auto commit/push/PR | Фонові агенти запущені з `claude agents` тепер автоматично комітять, пушать та відкривають draft PR коли завершують роботу з кодом у worktree | 2.1.198 |
+| `/diff` refresh fix | Виправлено `/diff` панель що не оновлювалась при перемиканні гілок або комітах поза сесією | 2.1.198 |
+| `/desktop` worktree exit fix | Виправлено `/desktop` що failing з "Cannot determine working directory" після входу та виходу з worktree | 2.1.198 |
+| `claude attach` ← fix | Виправлено натискання `←` всередині `claude attach <id>` що виходив до shell замість відкриття agent view | 2.1.198 |
+| `claude --bg` + `--print` rejection | `claude --bg` з `--print`/`-p` тепер відхиляється на старті — конфліктуючі прапорці замість мовчазного створення неприєднуємої сесії | 2.1.198 |
+| `/branch` fork name fix | Виправлено `/branch` що виводив ім'я форку з compaction summary замість першого реального промпту | 2.1.198 |
+| `/login` з agents view | `/login` тепер відкриває sign-in dialog з `claude agents` view замість повідомлення що він недоступний | 2.1.198 |
+
+## CLI (2.1.199)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Background-agent daemon self-kill fix | Виправлено background-agent daemon на Linux що вбивав себе та всіх running агентів кожні ~50с після unclean shutdown з пошкодженим worker record | 2.1.199 |
+| Background agents SSH cold-start fix | Виправлено background agents що не могли холодно стартувати через SSH на macOS з "Could not switch to audit session" (регресія з 2.1.196) | 2.1.199 |
+| `claude stop` race respawn fix | Виправлено `claude stop` що мовчки скасовувався коли змагався з respawn background-агента — respawn тепер поважує stop | 2.1.199 |
+| Background job progress stalling fix | Виправлено індикатори прогресу background job що зупинялись на хвилини під час виконання довгих команд | 2.1.199 |
+| `claude --dangerously-skip-permissions daemon` fix | Виправлено обробку `daemon <subcommand>` при `--dangerously-skip-permissions` — більше не трактують як chat prompt | 2.1.199 |
+| Session transcript growth fix | Виправлено непотрібне зростання файлу транскрипту при відкритті або відновленні сесії без нових повідомлень | 2.1.199 |
+| `claude agents` PR links format | Рядки сесій `claude agents` тепер показують посилання на PR як `#N` без зайвої мітки "PR" | 2.1.199 |

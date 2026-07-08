@@ -126,3 +126,16 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | Comma-separated hook matchers fix | Виправлено хуки з comma-separated matchers (напр. `"Bash,PowerShell"`) що мовчазно ніколи не спрацьовували | 2.1.191 |
+
+## Notification події (2.1.198)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `agent_needs_input` notification event | Notification hook спрацьовує коли сесія в `claude agents` потребує input від користувача | 2.1.198 |
+| `agent_completed` notification event | Notification hook спрацьовує коли сесія в `claude agents` завершує роботу | 2.1.198 |
+
+## Вихідні дані хуків (2.1.199)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `SessionStart`/`Setup`/`SubagentStart` stderr visibility | Виправлено хуки `SessionStart`, `Setup` та `SubagentStart` що мовчки приховували stderr при виході з code 2 — помилка тепер показується в транскрипті | 2.1.199 |

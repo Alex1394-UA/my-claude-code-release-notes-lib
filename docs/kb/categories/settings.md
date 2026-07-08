@@ -254,3 +254,22 @@
 | Ключ | Опис | Версія |
 |------|------|--------|
 | Organization default models [Managed] | Адміни встановлюють модель за замовчуванням для org в console; користувачі що не обрали власну модель бачать "Org default" або "Role default" в `/model` picker | 2.1.196 |
+
+## Managed/Enterprise (2.1.198)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `anthropicAws` gateway provider | Gateway: додано Claude Platform on AWS (`anthropicAws`) як upstream провайдер; відповіді "model not found" тепер просувають ланцюг failover | 2.1.198 |
+| `awsAuthRefresh` auto-refresh | Виправлено Claude Platform on AWS та Mantle сесії що завершувались з "Please run /login" при закінченні STS токену — `awsAuthRefresh` тепер запускається автоматично | 2.1.198 |
+
+## Sandbox (2.1.198)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| Excessive background classifier requests fix | Виправлено надмірні запити background класифікатора коли sandboxed процеси повторно звертались до одного мережевого хосту | 2.1.198 |
+
+## Налаштування (2.1.199)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| Corrupted config file backup on reset | При скиданні пошкодженого config файлу з startup recovery dialog — файл тепер резервно копіюється перед знищенням | 2.1.199 |
