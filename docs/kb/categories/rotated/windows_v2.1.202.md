@@ -2,8 +2,6 @@
 
 > Також дивіться основні категорії — Windows-можливості дублюються там з тегом [Win].
 
-> Попередні версії: [rotated/windows_v2.1.202.md](rotated/windows_v2.1.202.md)
-
 ## Встановлення та запуск
 
 | Можливість | Опис | Версія |
@@ -42,7 +40,7 @@
 | CJK timestamp | Виправлення відображення | 2.1.47 |
 | Line-by-line streaming вимкнено | Через проблеми рендерингу | 2.1.81 |
 | Shift+Enter Win Terminal 1.25 | Виправлення замість newline | 2.1.89 |
-| `cmd+delete` fix | Видалення до початку рядка на Windows Terminal (та інших терміналах) | 2.1.91 |
+| `cmd+delete` fix | Виправлено видалення до початку рядка на Windows Terminal (та інших терміналах) | 2.1.91 |
 | Keyboard mode exit | Виправлення залипання Enhanced Keyboard | 2.1.85 |
 | Виправлення input lag | Затримка вводу | 1.0.117, 1.0.119, 1.0.120 |
 
@@ -116,7 +114,7 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | Cloud sync false modify | Виправлення з Antivirus/OneDrive | 2.1.7 |
-| Sandbox temp paths | Виправлення escape sequences in temp | 2.1.7 |
+| Sandbox temp paths | Виправлення escape sequences в temp | 2.1.7 |
 | Credential corruption | Виправлення при багатьох сесіях | 2.1.59 |
 | Config backups | Збереження в `~/.claude/backups/` | 2.1.47 |
 | Bash temp directory | Виправлення пробілів у шляху | 2.1.47 |
@@ -176,7 +174,7 @@
 | PowerShell tool default Bedrock/Vertex/Foundry [Win] | PowerShell tool тепер увімкнений за замовчуванням на Windows для Bedrock, Vertex та Foundry користувачів; opt-out з `CLAUDE_CODE_USE_POWERSHELL_TOOL=0` | 2.1.143 |
 | PowerShell `-ExecutionPolicy Bypass` [Win] | PowerShell tool тепер передає `-ExecutionPolicy Bypass`; opt-out з `CLAUDE_CODE_POWERSHELL_RESPECT_EXECUTION_POLICY=1` | 2.1.143 |
 | `claude agents` right-click paste fix [Win] | Виправлено right-click paste в `claude agents` на Windows Terminal та WSL | 2.1.143 |
-| `claude agents` repeated PowerShell processes fix [Win] | Виправлено agent view що спавнів повторні PowerShell процеси на Windows при спискуванні сесій | 2.1.143 |
+| `claude agents` repeated PowerShell processes fix [Win] | Виправлено agent view що спавнив повторні PowerShell процеси на Windows при спискуванні сесій | 2.1.143 |
 | Attached background sessions stale-fragment fix [Win] | Виправлено stale-fragment rendering при скролі в attached background sessions на Windows Terminal | 2.1.143 |
 | `claude agents` ← while streaming fix [Win] | Виправлено unresponsive agents list при натисканні ← в `claude agents` поки response стрімиться на Windows | 2.1.143 |
 | Scrolling attached background sessions fix [Win] | Виправлено скролінг в attached background sessions на Windows — PgUp/PgDn, mouse wheel та Ctrl+O transcript navigation тепер працюють | 2.1.144 |
@@ -200,7 +198,7 @@
 | Windows update "exe in use" fix [Win] | Виправлено помилки оновлення на Windows що показували generic error замість підказки закрити інші сесії та повторити | 2.1.154 |
 | WSL image paste `alt+v` fix | Виправлено image paste (`alt+v`) в WSL | 2.1.157 |
 | WSL screenshot paste Windows 11 | Підтримка screenshot paste на Windows 11 в WSL | 2.1.157 |
-| WSL drag images from Windows Explorer | Можливість перетягувати зображення з Windows Explorer in WSL | 2.1.157 |
+| WSL drag images from Windows Explorer | Можливість перетягувати зображення з Windows Explorer в WSL | 2.1.157 |
 | Copy-on-select WSL clipboard fix [Win] | Виправлено copy-on-select що не писав в Windows clipboard на WSL — тепер використовує PowerShell interop замість OSC 52, який MobaXterm не підтримує | 2.1.160 |
 | Directory deletion after `claude rm` fix [Win] | Виправлено issue де directory background session не могла бути видалена після `claude rm` поки background daemon не вийшов | 2.1.160 |
 | Esc/arrow keys unresponsive background sessions fix [Win] | Виправлено Esc, arrow keys та typing що ставали unresponsive на Windows при attached до background session або в agent view під високим CPU навантаженням | 2.1.160 |
@@ -220,3 +218,42 @@
 | Background sessions network paths fix [Win] | Виправлено background sessions що нейтралізують Windows network paths в persisted state перед respawn | 2.1.176 |
 | Background-service daemon ReadOnly attribute fix [Win] | Виправлено Windows background-service daemon що не стартував коли `~/.claude/daemon` має ReadOnly атрибут | 2.1.176 |
 | Mouse-wheel WSL2 Win Terminal/VS Code fix [Win] | Виправлено mouse-wheel scrolling в WSL2 під Windows Terminal та VS Code (регресія з 2.1.172) | 2.1.179 |
+
+## Інше Windows-специфічне (2.1.181)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Write/Edit 0-байт/обрізані файли network drives fix [Win] | Виправлено Write/Edit що створювали 0-байт або обрізані файли на network drives та cloud-synced папках | 2.1.181 |
+| ExitWorktree відмова видалення чистого worktree fix [Win] | Виправлено ExitWorktree що відмовлявся видалити чистий worktree з "Could not verify worktree state" коли bare `git` не можна резолвити на Windows | 2.1.181 |
+| Agent creation EEXIST Windows/OneDrive fix [Win] | Виправлено помилку створення агента "EEXIST: file already exists" коли agents directory вже існує (Windows/OneDrive) | 2.1.181 |
+| Settings symlink ENOENT fix [Win] | Виправлено зміни налаштувань (`/effort`, `/model`) що падали з ENOENT коли `~/.claude/settings.json` є відносним symlink під symlinked `~/.claude` | 2.1.181 |
+
+## Термінал та рендеринг (2.1.183)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Fullscreen TUI corruption fix [Win] | Виправлено пошкодження fullscreen TUI (statusline посередині екрану, дубльовані рядки спіннера, злитий текст) у Windows Terminal під навантаженням глибоко вкладених subagent-ів | 2.1.183 |
+
+## Термінал та рендеринг (2.1.187)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Paste Korean/CJK mojibake fix [Win] | Виправлено вставлений Korean/CJK текст що перетворювався на mojibake в терміналах що доставляють paste як per-byte extended-key events | 2.1.187 |
+
+## Термінал та рендеринг (2.1.191)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `/login` URL truncated wrap fix [Win] | Виправлено `/login` URL що обрізався при переносі через рядки в Windows Terminal | 2.1.191 |
+
+## PowerShell (2.1.196)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| PowerShell `git diff`/`git grep`/`egrep`/`fgrep` exit 1 fix [Win] | Виправлено PowerShell `git diff`, `git grep`, `egrep`, `fgrep` та quoted patterns з `|` що reported як failures коли exit 1, тепер matching Bash behavior | 2.1.196 |
+
+## Інше Windows-специфічне (2.1.196)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Background sessions survive process stop/restart/update [Win] | Background shells передаються замість kill при зупинці, рестарті або оновленні процесу сесії на Windows | 2.1.196 |

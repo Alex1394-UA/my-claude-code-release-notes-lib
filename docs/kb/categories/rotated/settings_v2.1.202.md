@@ -3,8 +3,6 @@
 > Розташування: `~/.claude/settings.json` (user), `.claude/settings.json` (project), `.claude/settings.local.json` (local)
 > Зміни набувають чинності миттєво (1.0.90)
 
-> Попередні версії: [rotated/settings_v2.1.202.md](rotated/settings_v2.1.202.md)
-
 ## Загальні
 
 | Ключ | Опис | Версія |
@@ -34,8 +32,8 @@
 | `sessionTimeout` | Таймаут автозавершення сесії (мс) | 2.2.3 |
 | Custom themes | Кастомні теми з `/theme` або JSON файлами в `~/.claude/themes/`; плагіни можуть постачати теми через `themes/` директорію | 2.1.118 |
 | `/config` persist | `/config` settings (theme, editor mode, verbose, etc.) зберігаються в `~/.claude/settings.json` з правильним precedence project/local/policy | 2.1.119 |
-| `prUrlTemplate` | Налаштування URL для PR badge in footer (замість github.com) | 2.1.119 |
-| `footerLinksRegexes` | Regex-відповідності для link badges in footer row; конфігурується через user або managed settings | 2.1.176 |
+| `prUrlTemplate` | Налаштування URL для PR badge в footer (замість github.com) | 2.1.119 |
+| `footerLinksRegexes` | Regex-відповідності для link badges в footer row; конфігурується через user або managed settings | 2.1.176 |
 | PowerShell auto-approve | PowerShell tool команди можуть бути auto-approved в permission mode, аналогічно Bash поведінці | 2.1.119 |
 | `refreshInterval` status line | Перезапуск status line команди кожні N секунд | 2.1.97 |
 | `workspace.git_worktree` status line | JSON input для status line, встановлюється в git worktree | 2.1.97 |
@@ -162,7 +160,7 @@
 | Settings symlink hot-reload regression fix | Виправлено regression в settings hot-reload де symlinked settings files causing misattributed change events та spurious `ConfigChange` hooks | 2.1.140 |
 | Remote managed settings 401 retry fix | Виправлено remote managed settings що не retrying на 401 — тепер retries один раз з force-refreshed token | 2.1.140 |
 | `extraKnownMarketplaces` persistence fix | Виправлено managed `extraKnownMarketplaces` auto-update policy що не persisting до `known_marketplaces.json` | 2.1.140 |
-| `spinnerVerbs` turn-completion fix | Виправлено `spinnerVerbs` setting що не honored in turn-completion messages | 2.1.141 |
+| `spinnerVerbs` turn-completion fix | Виправлено `spinnerVerbs` setting що не honored в turn-completion messages | 2.1.141 |
 | "Allowed by PermissionRequest hook" repeating fix | Виправлено "Allowed by PermissionRequest hook" що repeating once per tool call під collapsed read/search group | 2.1.141 |
 | Desktop/3P apiKeyHelper inheritance fix | Виправлено desktop та third-party provider sessions що incorrectly inheriting `apiKeyHelper`/`ANTHROPIC_AUTH_TOKEN` від host managed-settings | 2.1.141 |
 | `worktree.bgIsolation: "none"` | Дозволяє background sessions редагувати робочу копію напряму без EnterWorktree, для репозиторіїв де worktrees непрактичні | 2.1.143 |
@@ -186,6 +184,102 @@
 | Windows permission rules backslashes/case fix | Виправлено Windows permission rules що ніколи не match коли шлях написаний з backslashes (`~\`, `\\server\share`) або case-variant paths | 2.1.162 |
 | `requiredMinimumVersion` / `requiredMaximumVersion` | Managed settings для версіонування: Claude Code відмовляється стартувати якщо версія поза допустимим діапазоном і спрямовує користувача до затвердженої версії | 2.1.163 |
 | Org-managed permission rules startup race fix | Виправлено org-managed permission rules що не застосовувались протягом усієї сесії коли managed settings fetch завершувався під час startup на свіжій config directory | 2.1.163 |
+
+## Моделі — fallback
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `fallbackModel` | Налаштування до трьох fallback-моделей, що використовуються послідовно коли основна модель перевантажена або недоступна | 2.1.166 |
+| Glob patterns у deny rules | Підтримка glob-патернів у позиції назви інструменту в deny-правилах (`"*"` забороняє всі інструменти); allow-правила відхиляють non-MCP globs, невідомі назви в deny rules викликають попередження при старті | 2.1.166 |
+| Managed settings invalid entry fix | Один неприпустимий entry в managed settings більше не відключає застосування решти валідних політик | 2.1.166 |
+| Managed-settings `${VAR}` fix | `allowedMcpServers`/`deniedMcpServers` предикати тепер коректно збігаються коли використовують `${VAR}` посилання | 2.1.166 |
+
+## Налаштування (2.1.169)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `disableBundledSkills` | Приховати bundled skills, workflows та built-in slash commands від моделі; також `CLAUDE_CODE_DISABLE_BUNDLED_SKILLS` env var | 2.1.169 |
+| Enterprise MCP policies reconnect fix | Виправлено `allowedMcpServers`/`deniedMcpServers` що не застосовувались при reconnect, IDE-typed configs, `--mcp-config` servers під час першої сесії після install, або до завантаження remote settings; також виправлено повільний cold start для org без remote settings | 2.1.169 |
+| Untrusted settings OTEL cert fix | Виправлено можливість non-trusted project settings встановлювати OTEL client-certificate paths без підтвердження довіри | 2.1.169 |
+| Remote-managed settings invalid entry surface error | Remote-managed settings з неприпустимим entry тепер застосовують решту валідних поліцій та показують помилку валідації замість мовчазного відкидання всього payload | 2.1.169 |
+| `WebFetch` wildcard domain rules fix | Виправлено `WebFetch(domain:*.example.com)` wildcard domain rules що ніколи не збігалися з subdomains в allow, deny та ask position; також виправлено file permission rules з mid-pattern wildcards (напр. `Read(secrets-*/config.json)`) що відхилялись при startup | 2.1.172 |
+| `availableModels` restrictions not applied fix | Виправлено `availableModels` restrictions що не застосовувались до subagent model overrides, agent dispatch model picker та advisor model | 2.1.172 |
+| `availableModels` env var redirect fix | Alias model picks більше не перенаправляються до заблокованої моделі через `ANTHROPIC_DEFAULT_*_MODEL` env vars; `/fast` відмовляється перемикати для моделей поза allowlist | 2.1.176 |
+| `Tool(param:value)` permission rules | Синтаксис `Tool(param:value)` для permission rules — match параметрів інструменту (з `*` wildcard), напр. `Agent(model:opus)` для блокування Opus subagent-ів | 2.1.178 |
+| Sandbox `denyRead`/`allowRead` glob large directory fix | Виправлено sandbox `denyRead`/`allowRead` glob над великим directory tree що робив опис Bash tool необмеженим та сесію непридатною на Linux | 2.1.179 |
+
+## Налаштування (2.1.181)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `sandbox.allowAppleEvents` | Opt-in налаштування що дозволяє sandboxed командам відправляти Apple Events на macOS | 2.1.181 |
+| Settings symlink ENOENT fix | Виправлено зміни налаштувань (`/effort`, `/model`) що падали з ENOENT коли `~/.claude/settings.json` є відносним symlink під symlinked `~/.claude` | 2.1.181 |
+
+## Налаштування (2.1.183)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `attribution.sessionUrl` | Прибирає посилання на claude.ai сесію з комітів та PR в web та Remote Control сесіях | 2.1.183 |
+
+## Налаштування (2.1.186)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `teammateMode: "iterm2"` | Налаштування для tmux teammate panes через iTerm2; попередження коли auto mode не знаходить CLI `it2` | 2.1.186 |
+| `respondToBashCommands` | Встановіть `false` для вимкнення автоматичної відповіді Claude на `!` bash команди (поведінка за замовч. змінено в 2.1.186) | 2.1.186 |
+| `Agent(type)` deny rules fix | Виправлено `Agent(type)` deny rules та `Agent(x,y)` allowed-types обмеження що не застосовувались для spawn іменованих субагентів | 2.1.186 |
+
+## Налаштування (2.1.187)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `sandbox.credentials` | Блокування sandboxed команд від читання credential файлів та секретних змінних середовища | 2.1.187 |
+
+## Налаштування (2.1.191)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `/permissions` Recently-denied tab persistence | Схвалення відхилення в `/permissions` Recently-denied tab тепер зберігається при закритті замість мовчазного скидання | 2.1.191 |
+| `forceRemoteSettingsRefresh` MDM/file policy fix [Managed] | `forceRemoteSettingsRefresh` тепер працює при встановці через MDM або file policy; fetch відправляє `Cache-Control: no-cache` для запобігнення stale responses від проксі | 2.1.191 |
+| Sandbox network permission dialog session memory | Дозволи "Yes" для sandbox network permission dialog тепер запам'ятовуються на решту сесії замість повторного промпту при кожному з'єднанні | 2.1.191 |
+
+## Налаштування (2.1.193)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `autoMode.classifyAllShell` | Маршрутизація всіх Bash/PowerShell команд через auto-mode класифікатор замість лише patternів довільного виконання коду | 2.1.193 |
+
+## Managed/Enterprise (2.1.196)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| Organization default models [Managed] | Адміни встановлюють модель за замовчуванням для org в console; користувачі що не обрали власну модель бачать "Org default" або "Role default" в `/model` picker | 2.1.196 |
+
+## Managed/Enterprise (2.1.198)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `anthropicAws` gateway provider | Gateway: додано Claude Platform on AWS (`anthropicAws`) як upstream провайдер; відповіді "model not found" тепер просувають ланцюг failover | 2.1.198 |
+| `awsAuthRefresh` auto-refresh | Виправлено Claude Platform on AWS та Mantle сесії що завершувались з "Please run /login" при закінченні STS токену — `awsAuthRefresh` тепер запускається автоматично | 2.1.198 |
+
+## Sandbox (2.1.198)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| Excessive background classifier requests fix | Виправлено надмірні запити background класифікатора коли sandboxed процеси повторно звертались до одного мережевого хосту | 2.1.198 |
+
+## Налаштування (2.1.199)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| Corrupted config file backup on reset | При скиданні пошкодженого config файлу з startup recovery dialog — файл тепер резервно копіюється перед знищенням | 2.1.199 |
+
+## Налаштування (2.1.200)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `permissions.defaultMode` = "Manual" | Режим дозволів за замовчуванням змінено на "Manual" у CLI, `--help`, VS Code та JetBrains | 2.1.200 |
+| `--permission-mode manual` та `"defaultMode": "manual"` | Прапорець `--permission-mode manual` та значення `"defaultMode": "manual"` у settings.json приймаються поруч із `default` | 2.1.200 |
 
 ## Налаштування (2.1.202)
 

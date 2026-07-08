@@ -1,7 +1,5 @@
 # Навички, Агенти та Команди
 
-> Попередні версії: [rotated/skills-agents_v2.1.202.md](rotated/skills-agents_v2.1.202.md)
-
 ## Навички (Skills)
 
 | Можливість | Опис | Версія |
@@ -193,6 +191,104 @@
 | Skill frontmatter `disallowed-tools` | Skills та slash commands можуть встановлювати `disallowed-tools` в frontmatter для видалення tools під час активного skill | 2.1.152 |
 | ~~`/tag`~~ | [ВИДАЛЕНО] | 2.1.92 |
 | `/btw` "c to copy" | Скрипт `/btw` тепер має скорочення `c` для копіювання raw markdown відповіді в clipboard зі збереженням форматування | 2.1.163 |
+
+## Кастомні агенти (2.1.172)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Sub-agents spawn own sub-agents | Субагенти тепер можуть spawnити власних субагентів (до 5 рівнів вкладеності) | 2.1.172 |
+| Subagent transcript + progress fix | Виправлено: перегляд транскрипту subagent тепер показує tool results та живий прогрес; повідомлення надіслані під час завершення turn більше не dropping; backgrounding запущеного subagent (ctrl+b) більше не перезапускає з початку | 2.1.178 |
+
+## Навички та Агенти (2.1.181)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Покращення панелі субагентів | Idle субагенти автоховаються через 30с, список обмежений 5 рядками з підказками скролінгу, підказки клавіш у footer | 2.1.181 |
+| Foreground subagents обмеження вкладеності fix | Виправлено foreground subagents що spawnили необмежені nested ланцюги — тепер поважують той самий ліміт 5 рівнів вкладеності як background subagents | 2.1.181 |
+| Субагент "Thinking" тривалість батьківського агента fix | Виправлено відображення тривалості "Thinking" субагента що показувало elapsed time батьківського агента замість власного | 2.1.181 |
+| Заблоковані субагенти "waiting" замість ticking fix | Виправлено субагентів заблокованих на nested agent що показували ticking elapsed time замість "waiting" в панелі агентів | 2.1.181 |
+
+## Навички та Агенти (2.1.183)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| User-level skills дублікат в autocomplete fix | Виправлено user-level skills що з'являлися кілька разів в slash-command autocomplete коли увімкнено кілька плагінів | 2.1.183 |
+| tmux teammate panes slow shell init fix | Виправлено невдалу запуск tmux teammate panes коли shell має повільну ініціалізацію rc-файлів | 2.1.183 |
+| tmux teammate panes keystroke leak fix | Виправлено витік натискань клавіш під час spawn агента в нову tmux pane замість leader prompt | 2.1.183 |
+
+## Навички та Агенти (2.1.186)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `/workflows` status filtering | Натисніть `f` в `/workflows` для фільтрування за статусом в detailed view агентів | 2.1.186 |
+| Натискання `x` на завершеному субагенті fix | Виправлено натискання `x` на завершеному субагенті в панелі агентів що не закривав його | 2.1.186 |
+| Agent teams tmux/pane `--effort` inheritance | Виправлено teammates запущених через tmux/pane backends що не успадковували `--effort` рівень лідера | 2.1.186 |
+| Workflow `agent({schema})` validation loop fix | Виправлено Workflow `agent({schema})` субагенти що зациклювалися на повторних невдачах валідації схеми — тепер переривають після 5 спроб | 2.1.186 |
+| Skill frontmatter case-insensitive keys | Покращено: `display-name`, `default-enabled`, `fallback`, `metadata.*` ключі тепер приймають kebab-case, snake_case та camelCase | 2.1.186 |
+| Malformed SKILL.md YAML handling | Покращено обробку malformed YAML frontmatter в `SKILL.md` — навичка завантажується з пустими метаданими замість мовчазного невдалого завантаження | 2.1.186 |
+
+## Навички та Агенти (2.1.187)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Workflow `agent({schema})` structured output fix | Виправлено workflow `agent({schema})` та `--json-schema`: модель більше не може повторно викликати `StructuredOutput` нескінченно, follow-up повороти надійно повертають structured output | 2.1.187 |
+| Background jobs stuck "working" fix | Виправлено background jobs в agents view що застрягали в стані "working" назавжди коли агент завершував turn без structured output | 2.1.187 |
+| Agent stop notifications attribution fix | Виправлено agent stop notifications що не коректно вказували хто зупинив агента; покращено формулювання ("finished"/"stopped" замість "came to rest") | 2.1.187 |
+| Subagent depth tracking fix | Виправлено відстеження глибини субагентів: відновлені субагенти тепер відновлюють оригінальну spawn depth, а forked субагенти тепер рахуються до depth cap | 2.1.187 |
+| Leaked agent worktree registrations fix | Виправлено витік реєстрацій worktree вбитих агентів: locked `.git/worktrees/` entries тепер автоматично очищаються | 2.1.187 |
+
+## Навички та Агенти (2.1.191)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Background agents stop permanent fix | Виправлено фонових агентів що "воскресали" після зупинки — зупинка з tasks panel тепер остаточна | 2.1.191 |
+| Agent panel row jump scrolling fix | Виправлено стрибок агент-панелі на один ряд при скролі списку за межу overflow | 2.1.191 |
+
+## Навички та Агенти (2.1.193)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Backgrounding main turn phantom subagent fix | Виправлено фіктивний "general-purpose (resumed)" субагент що запускався при backgrounding основного повороту | 2.1.193 |
+| Agent panel sibling agents fix | Виправлено агент-панель що ховала sibling-агентів при перегляді субагента | 2.1.193 |
+| Background agents launch result improvement | Результат запуску background агента більше не інструктує Claude "завершити відповідь" — він продовжує працювати над іншими задачами поки агент запущений | 2.1.193 |
+
+## Навички та Агенти (2.1.196)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `/code-review` workflow оптимізація | Об'єднано п'ять cleanup-finderів в один, скорочивши використання токенів приблизно на 25% | 2.1.196 |
+
+## Навички та Агенти (2.1.198)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| /dataviz skill | Новий skill для керівництва дизайном графіків та дашбордів з валідатором колірної палітри | 2.1.198 |
+| Explore agent model inheritance | Вбудований Explore agent тепер успадковує модель основної сесії (обмежено до opus) замість запуску на haiku | 2.1.198 |
+| Agent teams API error reporting fix | Виправлено agent teams: teammate що вмирає від API помилки тепер звітує "failed" лідеру; повідомлення застряглому teammate будить його для негайного повтору | 2.1.198 |
+| Workflow progress view SDK/desktop fix | Виправлено workflow progress view що втрачав найранішіх агентів зі списку поки лічильник фаз залишався коректним в SDK та desktop-app сесіях | 2.1.198 |
+| Conditional rules symlink fix | Виправлено .claude/rules/ умовні правила що не завантажувались коли цільовий файл досягався через symlinked шлях | 2.1.198 |
+| Subagent message handling | Субагенти тепер трактують повідомлення від агента що їх запустив як нормальне завдання; повідомлення агента ніколи не трактється як затвердження користувача | 2.1.198 |
+| ~~/agents wizard~~ | [ВИДАЛЕНО] — майстер /agents видалено; попросіть Claude створити або керувати субагентами, або редагуйте .claude/agents/ напряму | 2.1.198 |
+
+## Навички та Агенти (2.1.199)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Субагенти повертають partial work при rate limit | Виправлено субагентів обірваних rate limit або server error — тепер повертають часткову роботу батьківському агенту замість мовчазної відмови | 2.1.199 |
+| Субагенти API errors як успішні result fix | Виправлено субагентів що звітували API помилки (напр. usage limit) як успішні результати — помилка тепер передається батьківському агенту | 2.1.199 |
+| Idle субагенти згортання в expandable summary | Зайві idle субагенти згортаються в розкривний summary рядок замість зникнення з панелі агентів | 2.1.199 |
+| `SendMessage` misrouting fix | Виправлено `SendMessage` що мовчки маршрутизував на неправильного агента коли respawn-утий агент використовував попереднє ім'я — тепер виявляє невідповідність та просить перенаправити | 2.1.199 |
+| Remote sessions flapping Working/Idle fix | Виправлено remote sessions що кратко перемикались між Working та Idle в агент-панелі при завершенні background агента | 2.1.199 |
+
+## Навички та Агенти (2.1.200)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Background agents daemon.lock PID reuse fix | Виправлено background agents що ніколи не запускались знову після крашу що залишив stale `daemon.lock` з PID повторно використаним ОС | 2.1.200 |
+| Background-agent daemon handover build recency | Виправлено handover daemon так що старіший білд після перевстановлення не може перехопити daemon; актуальність білду визначається за вбудованим timestamp версії | 2.1.200 |
+| Background-agent roster corruption fixes | Виправлено кілька проблем: transient corruption назавжди вимикав orphan cleanup, старіші binaries не зберігали поля записані новішими версіями, та socket auth tokens втрачались під час рестарту daemon | 2.1.200 |
+| Subagents rate limit empty result fix | Виправлено субагентів обірваних rate limit до генерації тексту — тепер повертають помилку замість порожнього результату | 2.1.200 |
+| Control bytes в agent view fix | Виправлено потрапляння control bytes від background-agent output в термінал в agent view | 2.1.200 |
 
 ## Навички та Агенти (2.1.202)
 

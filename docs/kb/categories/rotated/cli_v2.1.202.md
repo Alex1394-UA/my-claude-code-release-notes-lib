@@ -1,7 +1,5 @@
 # CLI команди та прапорці
 
-> Попередні версії: [rotated/cli_v2.1.202.md](rotated/cli_v2.1.202.md)
-
 ## Основні команди
 
 | Команда | Опис | Версія |
@@ -39,10 +37,10 @@
 | `Stale agent worktree cleanup` | Очищення worktrees чий PR було squash-merged (більше не зберігаються назавжди) | 2.1.105 |
 | `EnterWorktree duplicate text fix` | Виправлено дублювання тексту "Creating worktree" в EnterWorktree/ExitWorktree | 2.1.105 |
 | `Resume hint fix` | Виправлено відсутність підказки "Resume this session..." при виході після `/resume`, `--worktree` або `/branch` | 2.1.105 |
-| `Resume malformed text crash fix | Виправлено краш при відновленні сесії з malformed text blocks | 2.1.105 |
+| `Resume malformed text crash fix` | Виправлено краш при відновленні сесії з malformed text blocks | 2.1.105 |
 | `/resume` current dir default | `/resume` picker тепер показує сесії поточної директорії за замовч.; `Ctrl+A` для всіх проектів | 2.1.108 |
 | `--resume` loses custom name | Виправлено втрату кастомного імені та кольору при `claude --resume <session-id>` | 2.1.108 |
-| `--teleport` escape codes fix | Виправлено появу escape sequences in prompt input після `--teleport` | 2.1.108 |
+| `--teleport` escape codes fix | Виправлено появу escape sequences в prompt input після `--teleport` | 2.1.108 |
 | `--teleport` precondition errors | Виправлено мовчазний вихід при помилках передумов (dirty git tree, session not found) | 2.1.108 |
 | `--resume` truncating fix | Виправлено обрізання сесій при самодостатніх повідомленнях в транскрипті | 2.1.108 |
 | `/tui` команда | `/tui` та `tui` setting — flicker-free rendering в тій же сесії (`/tui fullscreen`) | 2.1.110 |
@@ -203,7 +201,7 @@
 | `claude auth logout` | Вихід | 2.1.41 |
 | `claude plugin install` | Встановити плагін | 2.0.12 |
 | `claude plugin validate` | Валідація плагіна | 2.0.12 |
-| `claude plugin validate` expanded fields | `claude plugin validate` тепер приймає `$schema`, `version` та `description` на top-level `marketplace.json` та `$schema` in `plugin.json` | 2.1.120 |
+| `claude plugin validate` expanded fields | `claude plugin validate` тепер приймає `$schema`, `version` та `description` на top-level `marketplace.json` та `$schema` в `plugin.json` | 2.1.120 |
 | `claude agents` | Список всіх агентів | 2.1.49 |
 | ~~`claude config`~~ | [ЗАСТАРІЛО] використовуйте settings.json | 1.0.7 |
 | `claude install` | Встановлення/оновлення | — |
@@ -233,7 +231,7 @@
 | `claude agents` `agent` setting | Поле `agent` в `settings.json` тепер поважається для dispatched sessions; `--agent <name>` для перевизначення | 2.1.157 |
 | `EnterWorktree` mid-session switching | `EnterWorktree` тепер дозволяє перемикатися між worktrees керованими Claude в межах сесії | 2.1.157 |
 | Claude worktrees left unlocked | Worktrees керовані Claude тепер залишаються розблокованими після завершення агента, щоб `git worktree remove`/`prune` могли їх очистити | 2.1.157 |
-| `claude agents` completed sessions retirement fix | Виправлено завершені сесії в `claude agents` що не retire-лись коли idle subagent все ще був parked або мав leak-нути backgrounded shell | 2.1.157 |
+| `claude agents` completed sessions retirement fix | Виправлено завершені сесії в `claude agents` що не retire-ились коли idle subagent все ще був parked або мав leak-нути backgrounded shell | 2.1.157 |
 | `claude agents` Esc cancel fix | Виправлено натискання Esc в `claude agents` що не скасовувало повільне "opening…", залишаючи список unresponsive | 2.1.157 |
 | Background agent worktrees orphan fix | Виправлено orphaning background agent worktrees під `.claude/worktrees/` після 30-денної job retention sweep | 2.1.157 |
 | Background sessions sleep/wake date fix | Виправлено background sessions повторно attached після sleep/wake що не повідомляли моделі правильну дату | 2.1.157 |
@@ -284,6 +282,213 @@
 | Linux sandbox `.claude/skills`/`.claude/hooks` symlink fix | Виправлено Linux sandbox що не стартував коли `.claude/skills` або `.claude/hooks` є symlink | 2.1.178 |
 | `/doctor` flat tree layout | Покращено `/doctor`: консистентний flat tree layout для всіх секцій, чіткіші status icons та highlighted command names | 2.1.178 |
 | `/bug` requires description | `/bug` тепер вимагає опис перед відправкою, та більше не використовує model-refusal текст як заголовок GitHub issue | 2.1.178 |
+
+## `claude agents` — виправлення (2.1.172)
+
+| Виправлення | Опис | Версія |
+|-------------|------|--------|
+| Agents view busy spinner fix | Виправлено agents view що залишав сесію під Working з busy spinner до 30 секунд після відповіді worker | 2.1.172 |
+| Background agents wrong directory settings fix | Виправлено background agents що могли читати налаштування проекту іншої директорії (`.mcp.json` approvals, trust) при dispatch на pre-warmed worker | 2.1.172 |
+| Background-session attach EAUTH fix | Виправлено background-session attach що failing з EAUTH для сесій запущених на старішій версії після auto-update daemon | 2.1.172 |
+| Background sub-agent stuck active fix | Виправлено background sub-agent що залишався stuck як "active" в agent panel після зупинки nested agent що він spawnив | 2.1.172 |
+| `/model` suggestions in agents dispatch fix | Виправлено `/model` suggestions в `claude agents` dispatch input що рендерились з оманливим slash prefix та показували моделі disabled для вашої org | 2.1.172 |
+| Up-arrow prompt history subagent fix | Виправлено up-arrow prompt history що показував промпти основного агента поки відкрито chat tab subagent | 2.1.172 |
+| `/loop` not promoted in remote | Припинено пропонування `/loop` в remote sessions, де pending loops не тримають container живим | 2.1.172 |
+
+## Прапорці моделі — fallback
+
+| Прапорець | Опис | Версія |
+|----------|------|--------|
+| `--fallback-model` | Налаштування fallback-моделі для CLI; тепер працює також в інтерактивних сесіях (раніше лише `-p`) | 2.1.166 |
+
+## `claude update`
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `claude update` цільова версія | `claude update` тепер оголошує цільову версію перед завантаженням замість мовчазного завантаження | 2.1.166 |
+
+## `claude agents` — виправлення
+
+| Виправлення | Опис | Версія |
+|-------------|------|--------|
+| `claude agents` URL фільтр | Введення URL в список `claude agents` тепер фільтрує до сесії, чий перший промпт містив цей URL | 2.1.166 |
+| `/doctor` remote session fix | Виправлено `/doctor` що показував суперечливий "Not inside a remote session" коли запущено в remote session | 2.1.166 |
+| Multiline prompt cursor fix | Виправлено курсор що залишався в кінці першого рядка при наборі багаторядкового промпту в `claude agents` dispatch та reply inputs | 2.1.166 |
+| Blank lines background agent rows fix | Виправлено порожні рядки між background agent rows в task list на терміналах без Unicode підтримки | 2.1.166 |
+
+## `--safe-mode`
+
+| Прапорець | Опис | Версія |
+|----------|------|--------|
+| `--safe-mode` | Запуск з усіма кастомізаціями вимкненими (CLAUDE.md, plugins, skills, hooks, MCP servers) для трублшутингу | 2.1.169 |
+
+## `/cd`
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `/cd` | Перехід сесії в нову робочу директорію без порушення prompt cache mid-session | 2.1.169 |
+
+## `/workflows`
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `/workflows` під час turn | `/workflows` тепер відкривається миттєво навіть під час активного turn | 2.1.169 |
+
+## `claude agents --json` (2.1.169)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `claude agents --json` fix | Виправлено omitting blocked та just-dispatched background sessions; додано `--all` для включення completed sessions, нові поля `id` та `state` | 2.1.169 |
+
+## Виправлення CLI (2.1.169)
+
+| Виправлення | Опис | Версія |
+|-------------|------|--------|
+| `claude -p` slow Windows slash-command scan fix [Win] | Виправлено `claude -p` що працював повільно або зависав на Windows під час сканування slash-commands/skills (регресія з 2.1.161) | 2.1.169 |
+
+## `/cd` (2.1.176)
+
+| Виправлення | Опис | Версія |
+|-------------|------|--------|
+| `/cd` git branch fix | Виправлено `/cd` та worktree moves що залишали сесію з повідомленням git branch попередньої директорії | 2.1.176 |
+
+## `claude agents` — виправлення (2.1.176)
+
+| Виправлення | Опис | Версія |
+|-------------|------|--------|
+| `claude agents` back button detach fix | Виправлено `claude agents`: натискання ← в одному вікні більше не відокремлює інші вікна підключені до тієї ж сесії | 2.1.176 |
+| Background sessions "Working" forever fix | Виправлено backgrounded sessions що показували "Working" назавжди коли `/bg` mid-turn не мав що продовжувати | 2.1.176 |
+| Background agent PR URL search fix | Виправлено пошук по PR URL в `claude agents`: PRs створені під час scheduled wakeups або поки job був заблокований тепер з'являються в пошуку | 2.1.176 |
+| Agents view input text cursor fix [Win] | Виправлено відсутність текстового курсору в agents view input на Windows | 2.1.176 |
+| `claude --bg -cn` seeding fix | Виправлено `claude --bg -cn <name>` що не насідав ім'я сесії | 2.1.176 |
+| Background sessions Windows network paths fix [Win] | Виправлено background sessions що нейтралізують Windows network paths в persisted state перед respawn | 2.1.176 |
+| Background-session respawn malformed IDs fix | Виправлено respawn background sessions що відхиляв malformed resume IDs з пошкоджених state files | 2.1.176 |
+| Background-service daemon ReadOnly attribute fix [Win] | Виправлено Windows background-service daemon що не стартував коли `~/.claude/daemon` має ReadOnly атрибут | 2.1.176 |
+
+## CLI (2.1.181)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `/config key=value` syntax | Новий синтаксис `/config key=value` для встановлення будь-якого налаштування з prompt (напр. `/config thinking=false`); працює в interactive, `-p` та Remote Control | 2.1.181 |
+| `claude mcp get`/`list` tools/list fail status fix | Виправлено `claude mcp get`/`list` що показували `✓ Connected` коли tools/list не вдався — тепер показують `! Connected · tools fetch failed` з деталями помилки | 2.1.181 |
+| `/remote-control` stale "connecting…" fix | Виправлено `/remote-control` що залишав рядок "connecting…" — тепер підтверджує в транскрипті після з'єднання | 2.1.181 |
+| `/stats` дати щодня поза UTC fix | Виправлено "Most active day" та daily token chart що показували на один день раніше в UTC-негативних часових зонах | 2.1.181 |
+| Background sessions auto-update guidance | Background sessions тепер показують чіткішу підказку коли вікно відкрите через auto-update не може надіслати відповідь; `claude daemon status` пояснює version-skew поведінку | 2.1.176 |
+
+## CLI (2.1.183)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `/config --help` | Додає перелік усіх доступних скорочень для `/config key=value` | 2.1.183 |
+| `/config` toggle поведінка | Enter та Space обидва змінюють вибране налаштування, Esc тепер зберігає та закриває замість скасування | 2.1.183 |
+
+## CLI (2.1.186)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `claude mcp login <name>` | Автентифікація MCP серверів з CLI без відкриття інтерактивного `/mcp` меню; `--no-browser` для завершення через SSH (stdin redirect) | 2.1.186 |
+| `claude mcp logout <name>` | Вихід з MCP сервера з CLI | 2.1.186 |
+| `/login` AWS refresh credentials | Новий запис "Claude Platform on AWS - refresh credentials" в `/login` коли `awsAuthRefresh` сконфігуровано | 2.1.186 |
+| Виправлено `--tools` feature-gated tools | Виправлено `--tools` що дозволяв feature-gated інструменти проходити до завантаження flags при холодному першому запускі | 2.1.186 |
+| Background job status stale "needs input" fix | Виправлено статус фонової задачі в `claude agents` що показував застаріле "needs input" після відповіді | 2.1.186 |
+| Background session dark-theme flash fix | Виправлено спалах dark-теми при відкритті фонової сесії з `claude agents` на світлому терміналі | 2.1.186 |
+| Mouse-selected text highlighted after delete fix | Виправлено text виділений мишею що залишався підсвіченим після видалення в `claude agents` | 2.1.186 |
+| Background session screen residue fix | Виправлено відкриття фонової сесії з `claude agents` що залишав попередній екран зафарбований | 2.1.186 |
+| `claude mcp get`/`remove` typo suggestion | Покращено `claude mcp get` та `claude mcp remove` — пропонують найближче налаштоване ім'я сервера при помилці та обрізають довгі списки | 2.1.186 |
+| `/review <pr>` engine change | `/review <pr>` тепер використовує той самий engine що `/code-review medium` | 2.1.186 |
+
+## CLI (2.1.187)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `--bg`/`--background` в `--help` | Виправлено `claude --help` що не показував прапорці `--bg`/`--background` | 2.1.187 |
+| `--resume` "No conversation found" fix | Виправлено `--resume` що failing з "No conversation found" коли оригінальний `-p` запуск не producував жодних model turns | 2.1.187 |
+| `--json-schema` structured output fix | Виправлено `--json-schema`: модель більше не може повторно викликати `StructuredOutput` нескінченно після успішного виклику, а наступні повороти надійно повертають структурований вивід | 2.1.187 |
+| `/install-github-app` optional workflow | GitHub Actions workflow setup тепер опціональний — можна встановити лише GitHub App та пропустити workflow/secret кроки | 2.1.187 |
+| `/update` Remote Control hanging fix | Виправлено `/update` через Remote Control що зависав коли startup trust dialog мав би показатися | 2.1.187 |
+
+## CLI (2.1.191)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `/rewind` resume before `/clear` | `/rewind` тепер підтримує відновлення розмови з стану до виконання `/clear` | 2.1.191 |
+| `/login` URL truncated Windows Terminal fix [Win] | Виправлено `/login` URL що обрізався при переносі через рядки в Windows Terminal | 2.1.191 |
+| `claude agents` builtin commands prompt text fix | Виправлено `claude agents` що надсилав вбудовані slash команди (напр. `/usage`) як prompt text до background sessions замість підказки | 2.1.191 |
+| `claude agents` job rows pasted image paths fix | Виправлено `claude agents` job rows що показували повні шляхи замість `[Image #N]` placeholder для вставлених зображень | 2.1.191 |
+
+## CLI (2.1.195)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| Background jobs disappearing from `claude agents` fix | Виправлено зникнення background jobs з `claude agents` або втрату даних коли вони записані новішою версією Claude Code | 2.1.195 |
+| Crashed background task blank screen fix | Виправлено відкриття crashed background task що показував пустий екран до 5 секунд замість негайного рестарту | 2.1.195 |
+| Background agent daemons unreachable fix | Виправлено background agent daemons що працювали unreachable коли control socket не стартував, блокуючи рестарти | 2.1.195 |
+| `claude agents` completed list vertical fill | `claude agents` completed list заповнює весь доступний вертикальний простір; на коротких терміналах заголовок стискається щоб живі сесії залишались видимими | 2.1.195 |
+
+## CLI (2.1.193)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `/model` та інші UI stale state after `/login` fix | Виправлено `/model` та інші UI-елементи що залежать від клієнтських даних та показували застарілий/порожній стан одразу після `/login` | 2.1.193 |
+| Backgrounding спurious cancel fix | Виправлено спurious скасування при backgrounding (←←) з повідомленням "N background tasks would be abandoned" коли всі запущені задачі переносяться в нову сесію | 2.1.193 |
+| Pinned background agents re-prompt fix | Виправлено повторний запит "Continue from where you left off" для pinned background агентів після кожного автооновлення | 2.1.193 |
+| `/add-dir` покращення повідомлення | Покращено повідомлення `/add-dir` коли директорія вже є робочою директорією | 2.1.193 |
+
+## Команди управління (2.1.196)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `claude mcp list`/`get` security fix | `claude mcp list` та `claude mcp get` більше не запускають `.mcp.json` сервери що repo self-approved через committed `.claude/settings.json`; недовірені workspace показують `⏸ Pending approval` | 2.1.196 |
+
+## CLI (2.1.196)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| Background job wake transcript deletion fix | Виправлено wake background job що назавжди видаляв транскрипт та перезапускав оригінальний промпт коли probe misread реальний транскрипт; файл тепер відкладається, ніколи не видаляється | 2.1.196 |
+| `claude agents` side panel focus fix | Виправлено зависання keyboard focus при відкритті агента в agents view, втрату subagent types при кожному відкритті, та неправильний статус сесій що активно працюють | 2.1.196 |
+| `claude agents --dangerously-skip-permissions` bypass fix | Виправлено `--dangerously-skip-permissions` що мовчазки відступав до auto mode замість показу bypass disclaimer та застосування bypass до spawn-утих агентів | 2.1.196 |
+| `/cd` special characters resume list fix | Виправлено `/cd` сесії що повторно з'являлись у списку resume старої директорії після non-graceful exit коли шлях містив special characters | 2.1.196 |
+| Background session reliability improvement | Довготривалі команди та workflows тепер виживають зупинку, рестарт або оновлення процесу сесії — shell-и передаються замість kill | 2.1.196 |
+| Background agents auto-resume after daemon restart | Workers убиті restart daemon автоматично відновлюються з місця зупинки при наступному відкритті agents view | 2.1.196 |
+| `claude agents` session status improvement | Завершені сесії більше не перемикаються між "Done" та "Needs your input"; зупинені агенти позначаються "Needs attention"; результати що згадують PR мають клікабельне посилання | 2.1.196 |
+
+## CLI (2.1.197)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| — | Версія 2.1.197 містить лише зміну дефолтної моделі (див. core.md) | 2.1.197 |
+
+## CLI (2.1.198)
+
+| Команда | Опис | Версія |
+|---------|------|--------|
+| `claude agents` notification hook integration | Сесії в `claude agents` що потребують input або завершені тепер спрацьовують Notification hook (`agent_needs_input` / `agent_completed`) | 2.1.198 |
+| Background agents auto commit/push/PR | Фонові агенти запущені з `claude agents` тепер автоматично комітять, пушать та відкривають draft PR коли завершують роботу з кодом у worktree | 2.1.198 |
+| `/diff` refresh fix | Виправлено `/diff` панель що не оновлювалась при перемиканні гілок або комітах поза сесією | 2.1.198 |
+| `/desktop` worktree exit fix | Виправлено `/desktop` що failing з "Cannot determine working directory" після входу та виходу з worktree | 2.1.198 |
+| `claude attach` ← fix | Виправлено натискання `←` всередині `claude attach <id>` що виходив до shell замість відкриття agent view | 2.1.198 |
+| `claude --bg` + `--print` rejection | `claude --bg` з `--print`/`-p` тепер відхиляється на старті — конфліктуючі прапорці замість мовчазного створення неприєднуємої сесії | 2.1.198 |
+| `/branch` fork name fix | Виправлено `/branch` що виводив ім'я форку з compaction summary замість першого реального промпту | 2.1.198 |
+| `/login` з agents view | `/login` тепер відкриває sign-in dialog з `claude agents` view замість повідомлення що він недоступний | 2.1.198 |
+
+## CLI (2.1.199)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Background-agent daemon self-kill fix | Виправлено background-agent daemon на Linux що вбивав себе та всіх running агентів кожні ~50с після unclean shutdown з пошкодженим worker record | 2.1.199 |
+| Background agents SSH cold-start fix | Виправлено background agents що не могли холодно стартувати через SSH на macOS з "Could not switch to audit session" (регресія з 2.1.196) | 2.1.199 |
+| `claude stop` race respawn fix | Виправлено `claude stop` що мовчки скасовувався коли змагався з respawn background-агента — respawn тепер поважує stop | 2.1.199 |
+| Background job progress stalling fix | Виправлено індикатори прогресу background job що зупинялись на хвилини під час виконання довгих команд | 2.1.199 |
+| `claude --dangerously-skip-permissions daemon` fix | Виправлено обробку `daemon <subcommand>` при `--dangerously-skip-permissions` — більше не трактують як chat prompt | 2.1.199 |
+| Session transcript growth fix | Виправлено непотрібне зростання файлу транскрипту при відкритті або відновленні сесії без нових повідомлень | 2.1.199 |
+| `claude agents` PR links format | Рядки сесій `claude agents` тепер показують посилання на PR як `#N` без зайвої мітки "PR" | 2.1.199 |
+
+## CLI (2.1.200)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `--permission-mode manual` | Прапорець `--permission-mode manual` приймається поруч із `default` | 2.1.200 |
+| Install script OOM повідомлення | Скрипт встановлення пояснює коли installation зупинено через нестачу пам'яті системи | 2.1.200 |
 
 ## CLI (2.1.202)
 

@@ -4,6 +4,16 @@ last_processed: 2.1.202
 last_updated: 2026-07-08
 seeded_from: docs/CLAUDE-CODE-OPTIONS-GUIDE.md
 
+## File Rotation
+
+| Категорія | Остання ротация | Файл архіву |
+|-----------|-----------------|-------------|
+| core | v2.1.202 | rotated/core_v2.1.202.md |
+| cli | v2.1.202 | rotated/cli_v2.1.202.md |
+| settings | v2.1.202 | rotated/settings_v2.1.202.md |
+| skills-agents | v2.1.202 | rotated/skills-agents_v2.1.202.md |
+| windows | v2.1.202 | rotated/windows_v2.1.202.md |
+
 ## Відстежувані невідповідності (Release Notes vs Reality)
 
 | Дата виявлення | Реліз | Твердження | Фактичний стан | Issue(s) | Статус |
