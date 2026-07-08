@@ -280,3 +280,9 @@
 |------|------|--------|
 | `permissions.defaultMode` = "Manual" | Режим дозволів за замовчуванням змінено на "Manual" у CLI, `--help`, VS Code та JetBrains | 2.1.200 |
 | `--permission-mode manual` та `"defaultMode": "manual"` | Прапорець `--permission-mode manual` та значення `"defaultMode": "manual"` у settings.json приймаються поруч із `default` | 2.1.200 |
+
+## Налаштування (2.1.202)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| `dynamicWorkflowSize` | Нове налаштування в `/config` для керування розміром dynamic workflows (small/medium/large — кількість агентів); рекомендована підказка, не жорсткий ліміт | 2.1.202 |

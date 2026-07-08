@@ -1050,3 +1050,13 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | Sonnet 5: прибрано mid-conversation system role | Сесії Claude Sonnet 5 більше не використовують роль `system` посередині розмови для нагадувань harness | 2.1.201 |
+
+## Основні можливості (2.1.202)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Ctrl+R history search crash fix | Виправлено краш inline Ctrl+R history search при прийнятті або скасуванні під час сканування файлу історії | 2.1.202 |
+| Remote Control commands fix | Виправлено команди надіслані з Remote Control (mobile/web) в інтерактивну сесію що failing з "Unknown command" | 2.1.202 |
+| Remote Control images/files without caption fix | Виправлено зображення та файли надіслані з Remote Control без caption що мовчки відкидались | 2.1.202 |
+| `/remote-control` permission mode fix | Виправлено `/remote-control` сесії що показували неправильний permission mode в mobile/web apps | 2.1.202 |
+| Voice dictation unbounded loop fix | Виправлено voice dictation що повторювався в безмежному циклі коли мікрофон або аудіо-рекордер failing — повторні невдалі спроби запису тепер призупиняють voice input | 2.1.202 |

@@ -489,3 +489,13 @@
 |-----------|------|--------|
 | `--permission-mode manual` | Прапорець `--permission-mode manual` приймається поруч із `default` | 2.1.200 |
 | Install script OOM повідомлення | Скрипт встановлення пояснює коли installation зупинено через нестачу пам'яті системи | 2.1.200 |
+
+## CLI (2.1.202)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `/rename` background sessions fix | Виправлено `/rename` на background sessions що відкатувався при рестарті job, ламаючи адресацію сесії за новим іменем | 2.1.202 |
+| Sign-in URL clickable over SSH fix | Виправлено URL логіну від `claude auth login` та `claude mcp login --no-browser` що не надійно клікався при перенесенні через SSH — тепер емітиться як єдиний hyperlink | 2.1.202 |
+| `claude agents` opening chat crash fix | Виправлено відкриття чату з `claude agents` що іноді failing з "currently running as a background agent" з подальшим crash-loop/respawn worker | 2.1.202 |
+| Resume by name slow with worktrees fix | Виправлено відновлення сесії за іменем або відкриття resume picker що займали хвилини та споживали багато пам'яті в репозиторіях з багатьма git worktrees | 2.1.202 |
+| Installer/updater download retry on proxy drop | Виправлено завантаження installer/updater що одразу failing з "aborted" коли proxy або мережа обриває з'єднання — transient drops тепер retry | 2.1.202 |

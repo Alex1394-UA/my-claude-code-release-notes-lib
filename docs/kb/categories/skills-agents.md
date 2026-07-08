@@ -289,3 +289,12 @@
 | Background-agent roster corruption fixes | Виправлено кілька проблем: transient corruption назавжди вимикав orphan cleanup, старіші binaries не зберігали поля записані новішими версіями, та socket auth tokens втрачались під час рестарту daemon | 2.1.200 |
 | Subagents rate limit empty result fix | Виправлено субагентів обірваних rate limit до генерації тексту — тепер повертають помилку замість порожнього результату | 2.1.200 |
 | Control bytes в agent view fix | Виправлено потрапляння control bytes від background-agent output в термінал в agent view | 2.1.200 |
+
+## Навички та Агенти (2.1.202)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Workflow scripts unicode quote escapes fix | Виправлено workflow scripts з unicode quote escapes в рядках що пошкоджувались перед парсингом; помилки парсингу workflow тепер показують проблемний рядок замість звинувачення TypeScript | 2.1.202 |
+| Re-invoking already-loaded skill duplicate fix | Виправлено повторний виклик вже завантаженого skill що додавав дублікат копію його інструкцій в контекст | 2.1.202 |
+| `/workflows` agent list layout improvement | Покращено layout списку агентів `/workflows`: ширші назви, окрема колонка часу, коротші назви моделей, без per-row лічильників tool-calls | 2.1.202 |
+| `/review <pr>` швидкий single-pass review | `/review <pr>` повернуто до швидкого single-pass review; для multi-agent review з обраним рівнем зусильля використовуйте `/code-review <level> <pr#>` | 2.1.202 |

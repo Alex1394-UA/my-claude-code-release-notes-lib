@@ -201,3 +201,9 @@
 | Змінна | Опис | Версія |
 |--------|------|--------|
 | `CLAUDE_CODE_RETRY_WATCHDOG` retry count increase | `CLAUDE_CODE_RETRY_WATCHDOG` тепер підвищує дефолтну кількість повторів для non-capacity transient помилок до 300 та знімає обмеження 15 на `CLAUDE_CODE_MAX_RETRIES` | 2.1.199 |
+
+## Телеметрія та OTEL (2.1.202)
+
+| Змінна | Опис | Версія |
+|--------|------|--------|
+| `workflow.run_id` / `workflow.name` OTel attributes | Нові OpenTelemetry атрибути в telemetry workflow-агентів для відновлення діяльності workflow-запуску з OTel-даних | 2.1.202 |

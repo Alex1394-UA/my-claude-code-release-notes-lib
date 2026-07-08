@@ -126,6 +126,13 @@
 | `disabledMcpServers`/`enabledMcpServers` non-array crash fix | Виправлено краш при старті коли `disabledMcpServers` або `enabledMcpServers` в `.claude.json` встановлено не як масив | 2.1.200 |
 | `/mcp` server list focus для screen readers | Виправлено `/mcp` server list що не відстежував фокус для screen readers та magnifiers | 2.1.200 |
 
+## Налаштування (2.1.202)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| mTLS handshake transient failures fix | Виправлено transient mTLS handshake помилки коли settings повторно застосовувались під час in-place ротації клієнтського сертифікату | 2.1.202 |
+| MCP error messages `url` without `type` improvement | Покращено повідомлення помилки MCP: коли server config має `url` але не має `type`, пропонує `"type": "http"` замість оманливого "command: expected string" | 2.1.202 |
+
 ## Налаштування (2.1.181)
 
 | Можливість | Опис | Версія |
