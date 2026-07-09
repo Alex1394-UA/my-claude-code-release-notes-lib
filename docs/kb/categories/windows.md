@@ -222,3 +222,5 @@
 | Mouse-wheel WSL2 Win Terminal/VS Code fix [Win] | Виправлено mouse-wheel scrolling в WSL2 під Windows Terminal та VS Code (регресія з 2.1.172) | 2.1.179 |
 | Background agents stale PATH fix [Win] | Виправлено background agents що успадковували застарілий `PATH` з daemon замість dispatching shell, що призводило до відсутніх інструментів | 2.1.203 |
 | `/clear` background task output empty file fix [Win] | Виправлено `/clear` що назавжди замінював output background tasks на порожній файл на Windows | 2.1.203 |
+| Worktree removal NTFS junction/symlink escape fix [Win] | Виправлено видалення worktree що видаляло файли поза межами worktree коли всередині існував NTFS junction або directory symlink | 2.1.205 |
+| Crash при видаленні робочої директорії fix [Win] | Виправлено краш на Windows коли директорія з якої запущено Claude видаляється, блокується або відмонтується під час виконання команди | 2.1.205 |

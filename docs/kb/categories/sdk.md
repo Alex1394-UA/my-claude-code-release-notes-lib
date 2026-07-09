@@ -102,6 +102,8 @@
 | RC account switch disconnect fix | Виправлено Remote Control sessions що не відключались при вході в інший акаунт | 2.1.176 |
 | RC error messages improvement | Покращено Remote Control error messages: connection failures тепер показують постійний червоний "/rc failed" indicator в footer; "not yet enabled" error тепер пояснює причину (gate, check failure, stale entitlement, або org policy) | 2.1.178 |
 | Statusline links custom URI schemes fix | Виправлено statusline links з кастомними URI schemes (напр. `vscode://`) що не відкривались при кліку в `claude agents` | 2.1.178 |
+| Remote Control stale статус фонових задач fix | Виправлено stale статус "Running" фонових задач у web та mobile Remote Control панелях — повний стан задач тепер передається при кожній зміні членства | 2.1.205 |
+| Cowork VM-mode login fix | Виправлено local-agent сесії в Cowork VM-mode що не стартували з "Not logged in · Please run /login" на CLI 2.1.203+ | 2.1.205 |
 
 ## SDK (2.1.198)
 

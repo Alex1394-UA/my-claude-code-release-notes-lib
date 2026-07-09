@@ -1,6 +1,6 @@
 # Навички, Агенти та Команди
 
-> Попередні версії: [rotated/skills-agents_v2.1.202.md](rotated/skills-agents_v2.1.202.md), [rotated/skills-agents_v2.1.205.md](rotated/skills-agents_v2.1.205.md)
+> Попередні версії: [rotated/skills-agents_v2.1.202.md](rotated/skills-agents_v2.1.202.md)
 
 ## Навички (Skills)
 
@@ -193,6 +193,24 @@
 | Skill frontmatter `disallowed-tools` | Skills та slash commands можуть встановлювати `disallowed-tools` в frontmatter для видалення tools під час активного skill | 2.1.152 |
 | ~~`/tag`~~ | [ВИДАЛЕНО] | 2.1.92 |
 | `/btw` "c to copy" | Скрипт `/btw` тепер має скорочення `c` для копіювання raw markdown відповіді в clipboard зі збереженням форматування | 2.1.163 |
+
+## Навички та Агенти (2.1.202)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Workflow scripts unicode quote escapes fix | Виправлено workflow scripts з unicode quote escapes в рядках що пошкоджувались перед парсингом; помилки парсингу workflow тепер показують проблемний рядок замість звинувачення TypeScript | 2.1.202 |
+| Re-invoking already-loaded skill duplicate fix | Виправлено повторний виклик вже завантаженого skill що додавав дублікат копію його інструкцій в контекст | 2.1.202 |
+| `/workflows` agent list layout improvement | Покращено layout списку агентів `/workflows`: ширші назви, окрема колонка часу, коротші назви моделей, без per-row лічильників tool-calls | 2.1.202 |
+| `/review <pr>` швидкий single-pass review | `/review <pr>` повернуто до швидкого single-pass review; для multi-agent review з обраним рівнем зусильля використовуйте `/code-review <level> <pr#>` | 2.1.202 |
+
+## Навички та Агенти (2.1.203)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `claude agents` silent subagent stop fix | Виправлено повернення в `claude agents` що мовчки зупиняло running subagents — їхня робота тепер зберігається при switch | 2.1.203 |
+| Worktree subagents parent checkout fix | Виправлено worktree-ізольовані subagents що виконували shell команди в батьківському checkout замість власного worktree | 2.1.203 |
+| `TaskStop`/`TaskOutput` cross-agent background fix | Виправлено `TaskStop` та `TaskOutput` що не могли знайти background agents створені іншим агентом — помилки тепер показують список running агентів з id та описом | 2.1.203 |
+| Subagent re-delegation reduction | Покращено поведінку subagent-ів — агенти тепер менш схильні повністю делегувати своє завдання іншому subagent | 2.1.203 |
 
 ## Навички та Агенти (2.1.205)
 

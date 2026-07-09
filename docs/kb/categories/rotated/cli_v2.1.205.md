@@ -1,6 +1,6 @@
 # CLI команди та прапорці
 
-> Попередні версії: [rotated/cli_v2.1.203.md](rotated/cli_v2.1.203.md), [rotated/cli_v2.1.205.md](rotated/cli_v2.1.205.md)
+> Попередні версії: [rotated/cli_v2.1.203.md](rotated/cli_v2.1.203.md)
 
 ## Основні команди
 
@@ -284,6 +284,25 @@
 | Linux sandbox `.claude/skills`/`.claude/hooks` symlink fix | Виправлено Linux sandbox що не стартував коли `.claude/skills` або `.claude/hooks` є symlink | 2.1.178 |
 | `/doctor` flat tree layout | Покращено `/doctor`: консистентний flat tree layout для всіх секцій, чіткіші status icons та highlighted command names | 2.1.178 |
 | `/bug` requires description | `/bug` тепер вимагає опис перед відправкою, та більше не використовує model-refusal текст як заголовок GitHub issue | 2.1.178 |
+
+## CLI (2.1.203)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `claude agents` silent subagent stop fix | Виправлено повернення в `claude agents` що мовчки зупиняло running subagents та перезапускало prompt з початку — їхня робота тепер зберігається | 2.1.203 |
+| Background agents stale PATH fix [Win] | Виправлено background agents що успадковували застарілий `PATH` з daemon замість dispatching shell, що призводило до відсутніх інструментів на Windows | 2.1.203 |
+| Bash "argument list too long" with worktrees fix | Виправлено Bash що failing з "argument list too long" в репозиторіях з багатьма git worktrees | 2.1.203 |
+| Worktree subagents parent checkout fix | Виправлено worktree-ізольовані subagents що іноді виконували shell команди в батьківському checkout замість власного worktree | 2.1.203 |
+| Worktree nested repos fix | Виправлено створення worktree що відхиляло nested repositories в multi-repo workspaces, що лишало background sessions без можливості ізоляції та редагування | 2.1.203 |
+| Background agents crash-loop deleted dir fix | Виправлено background agents що crash-looping коли їхня робоча директорія була видалена, замінена файлом або стала недійсним шляхом — тепер fail один раз з чіткою помилкою | 2.1.203 |
+| `claude agents` composer slash command fix | Виправлено `claude agents` composer що відкидав введене повідомлення коли slash команда недоступна | 2.1.203 |
+| `claude agents` duplicate open crash fix | Виправлено краш списку агентів при відкритті зупиненої сесії яка вже відкрита в іншій сесії | 2.1.203 |
+| Background sessions "Needs input" after answer fix | Виправлено background sessions що показували "Needs input" в списку агентів після того як питання вже було відповіддю | 2.1.203 |
+| Background agent startup error visibility fix | Виправлено помилки старту background agents що показували лише "exit_with_message" замість фактичної помилки | 2.1.203 |
+| `/exit` false warning background agents fix | Виправлено `/exit` що хибно попереджав про running background agents після завершення всіх іменованих агентів | 2.1.203 |
+| `@` picker git worktrees fix | Виправлено `@` directory picker в `claude agents` що не показував registered git worktrees | 2.1.203 |
+| `claude agents` organized empty view | Порожній вигляд `claude agents` тепер завжди показує організовані секції (Needs input / Working / Completed) з описами | 2.1.203 |
+| Startup warnings → `/doctor` та `/status` | Pop-up warning-и при старті ("claude command missing or broken") прибрано — тепер з'являються в `/doctor` та `/status` | 2.1.203 |
 
 ## CLI (2.1.205)
 
