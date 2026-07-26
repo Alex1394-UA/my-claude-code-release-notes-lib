@@ -200,3 +200,10 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | Disused plugin LSP tips fix | Виправлено хибні поради «disused plugin» та викривлену disuse telemetry для LSP плагінів | 2.1.206 |
+
+## Можливості (2.1.207)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Plugin hooks `${user_config.*}` shell-injection fix | `${user_config.*}` в shell-form commands plugin hooks/monitors/MCP headersHelper тепер відхиляється (shell-injection fix); hooks: використовуйте exec form (`args` array) або `$CLAUDE_PLUGIN_OPTION_<KEY>`; monitors та headersHelper: читайте значення всередині скрипта | 2.1.207 |
+| `pluginConfigs` не з project settings | Plugin option values (`pluginConfigs`) більше не читаються з project-level `.claude/settings.json`; лише user, `--settings` та managed settings враховуються | 2.1.207 |

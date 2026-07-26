@@ -159,3 +159,14 @@
 | Desktop sessions stuck running fix | Виправлено desktop sessions що застрягали у стані «running» після slash command надісланої під час turn | 2.1.206 |
 | `/status` дубльоване попередження fix | Виправлено `/status` що виводив одне й те саме broken-install попередження двічі | 2.1.206 |
 | `/doctor` Homebrew update check fix | Виправлено `/doctor` update check що порівнював Homebrew інсталяції з cask channel замість settings channel | 2.1.206 |
+
+## Основні можливості (2.1.207)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Streaming terminal freeze fix | Виправлено зависання термінала та відставання натискань клавіш під час стрімінгу відповідей з дуже довгими списками, таблицями, абзацами або блоками коду | 2.1.207 |
+| Prompt-injection хибні попередження fix | Виправлено хибні prompt-injection попередження що спрацьовували від безпечних system-generated оновлень розмови | 2.1.207 |
+| Auto-updater launcher overwrite fix | Виправлено auto-updater що перезаписував custom launcher script або symlink у `~/.local/bin/claude` на кожному релізі; `/doctor` тепер повідомляє про externally managed launcher | 2.1.207 |
+| Transcript jump fix | Виправлено стрибок транскрипту вище початку відповіді після завершення стрімінгу | 2.1.207 |
+| Bedrock/Vertex/AWS default Opus 4.8 | Bedrock, Vertex та Claude Platform on AWS тепер за замовчуванням використовують Claude Opus 4.8 | 2.1.207 |
+| Auto mode default на Bedrock/Vertex/Foundry | Auto mode тепер доступний без `CLAUDE_CODE_ENABLE_AUTO_MODE` opt-in на Bedrock, Vertex AI та Foundry; вимикається через `disableAutoMode` в settings | 2.1.207 |

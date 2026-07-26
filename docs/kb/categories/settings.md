@@ -198,3 +198,14 @@
 | Ключ | Опис | Версія |
 |------|------|--------|
 | `effortLevel` background sessions fix | Виправлено background sessions що ігнорували зміни `effortLevel` в settings.json при fork через daemon | 2.1.203 |
+
+## Налаштування (2.1.207)
+
+| Ключ | Опис | Версія |
+|------|------|--------|
+| Remote managed settings consent fix | Виправлено remote managed settings з non-interactive запуску (`claude -p`, SDK) що назавжди записувались як погоджені без показу security consent dialog | 2.1.207 |
+| Compound `cd` `/dev/null` redirect permission fix | Виправлено compound commands з `cd` що просили permission коли єдиним перенаправленням виводу був до `/dev/null` | 2.1.207 |
+| `extensions.worktreeConfig` cleanup fix | Виправлено `extensions.worktreeConfig` що залишався в `.git/config` репозиторію (ламаючи go-git інструменти як `tea`) після видалення останнього `worktree.sparsePaths` worktree | 2.1.207 |
+| Malformed bracket patterns fix | Виправлено malformed bracket patterns в rules globs, skill paths, `.ignore` та `.worktreeinclude` що ламали file reads, suggestions та worktree creation | 2.1.207 |
+| `autoMode` не з settings.local.json | Auto mode більше не читає `autoMode` з `.claude/settings.local.json` (repo-resident); використовуйте `~/.claude/settings.json` | 2.1.207 |
+| `disableAutoMode` | Новий ключ settings для вимкнення auto mode на Bedrock, Vertex AI та Foundry (замість `CLAUDE_CODE_ENABLE_AUTO_MODE` opt-in) | 2.1.207 |

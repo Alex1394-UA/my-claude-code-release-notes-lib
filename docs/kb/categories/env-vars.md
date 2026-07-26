@@ -221,3 +221,10 @@
 |--------|------|--------|
 | `CLAUDE_CODE_EXTRA_BODY` background workers fix | Виправлено `CLAUDE_CODE_EXTRA_BODY` що мовчки ігнорувався `claude agents` / `--bg` background workers; shell-exported override тепер слідує за dispatching session | 2.1.206 |
 | Bedrock `awsCredentialExport` startup hang fix | Виправлено багатохвилинний startup hang при використанні `awsCredentialExport` helper на мережах з обмеженим egress | 2.1.206 |
+
+## Поведінка (2.1.207)
+
+| Змінна | Опис | Версія |
+|--------|------|--------|
+| Bedrock AWS SSO credentials fix | Виправлено Bedrock що постійно запитував нові AWS SSO credentials з IAM Identity Center на кожному API request | 2.1.207 |
+| AWS credential resolution stall fix [Win] | Виправлено indefinite hang на Windows коли AWS credential resolution stalls (stuck `credential_process`); 60-second stall guard тепер спрацьовує замість нескінченного очікування | 2.1.207 |

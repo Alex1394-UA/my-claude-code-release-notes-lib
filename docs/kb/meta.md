@@ -1,6 +1,6 @@
 # Knowledge Base Metadata
 
-last_processed: 2.1.206
+last_processed: 2.1.207
 last_updated: 2026-07-26
 
 ## File Rotation
@@ -8,10 +8,10 @@ last_updated: 2026-07-26
 | Категорія | Остання ротация | Файл архіву |
 |-----------|-----------------|-------------|
 | core | v2.1.202 | rotated/core_v2.1.202.md |
-| cli | v2.1.206 | rotated/cli_v2.1.206.md |
+| cli | v2.1.207 | rotated/cli_v2.1.207.md |
 | settings | v2.1.202 | rotated/settings_v2.1.202.md |
-| skills-agents | v2.1.205 | rotated/skills-agents_v2.1.205.md |
-| windows | v2.1.206 | rotated/windows_v2.1.206.md |
+| skills-agents | v2.1.207 | rotated/skills-agents_v2.1.207.md |
+| windows | v2.1.207 | rotated/windows_v2.1.207.md |
 
 ## Відстежувані невідповідності (Release Notes vs Reality)
 
@@ -81,3 +81,4 @@ last_updated: 2026-07-26
 | 2026-07-08 | 2.1.204 | hooks | ~1 запис додано, 0 депрекацій |
 | 2026-07-09 | 2.1.205 | core, cli, skills-agents, windows, plugins, mcp, sdk | ~24 записи додано, 0 депрекацій |
 | 2026-07-26 | 2.1.206 | cli, core, skills-agents, mcp, env-vars, plugins, windows, keybindings | ~29 записів додано, 0 депрекацій |
+| 2026-07-26 | 2.1.207 | core, settings, skills-agents, cli, env-vars, sdk, plugins, hooks, windows | ~27 записів додано, 0 депрекацій |

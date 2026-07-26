@@ -104,6 +104,8 @@
 | Statusline links custom URI schemes fix | Виправлено statusline links з кастомними URI schemes (напр. `vscode://`) що не відкривались при кліку в `claude agents` | 2.1.178 |
 | Remote Control stale статус фонових задач fix | Виправлено stale статус "Running" фонових задач у web та mobile Remote Control панелях — повний стан задач тепер передається при кожній зміні членства | 2.1.205 |
 | Cowork VM-mode login fix | Виправлено local-agent сесії в Cowork VM-mode що не стартували з "Not logged in · Please run /login" на CLI 2.1.203+ | 2.1.205 |
+| RC task status updates loss fix | Виправлено Remote Control task status updates що втрачались коли з'єднання відновлювалось після network interruption або credential refresh | 2.1.207 |
+| RC desktop background progress fix | Виправлено Remote Control sessions hosted by desktop app що не показували background agent та workflow progress на mobile та web | 2.1.207 |
 
 ## SDK (2.1.198)
 

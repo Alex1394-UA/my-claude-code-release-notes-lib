@@ -1,6 +1,6 @@
 # CLI команди та прапорці
 
-> Попередні версії: [rotated/cli_v2.1.203.md](rotated/cli_v2.1.203.md), [rotated/cli_v2.1.205.md](rotated/cli_v2.1.205.md), [rotated/cli_v2.1.206.md](rotated/cli_v2.1.206.md), [rotated/cli_v2.1.207.md](rotated/cli_v2.1.207.md)
+> Попередні версії: [rotated/cli_v2.1.203.md](rotated/cli_v2.1.203.md), [rotated/cli_v2.1.205.md](rotated/cli_v2.1.205.md), [rotated/cli_v2.1.206.md](rotated/cli_v2.1.206.md)
 
 ## Основні команди
 
@@ -284,6 +284,19 @@
 | Linux sandbox `.claude/skills`/`.claude/hooks` symlink fix | Виправлено Linux sandbox що не стартував коли `.claude/skills` або `.claude/hooks` є symlink | 2.1.178 |
 | `/doctor` flat tree layout | Покращено `/doctor`: консистентний flat tree layout для всіх секцій, чіткіші status icons та highlighted command names | 2.1.178 |
 | `/bug` requires description | `/bug` тепер вимагає опис перед відправкою, та більше не використовує model-refusal текст як заголовок GitHub issue | 2.1.178 |
+
+## CLI (2.1.206)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `/cd` пропозиції шляхів | `/cd` тепер пропонує шляхи директорій як `/add-dir` | 2.1.206 |
+| `/login` public gateway endpoints | `/login` тепер підтримує Anthropic-operated public gateway endpoints | 2.1.206 |
+| `EnterWorktree` confirmation поза worktrees | `EnterWorktree` тепер запитує підтвердження перед входом у git worktree поза директорією `.claude/worktrees/` проекту | 2.1.206 |
+| Expired login хибна помилка моделі fix | Виправлено expired login що викликав збій кожної моделі з хибним повідомленням «There's an issue with the selected model» замість пропонування `/login` | 2.1.206 |
+| `--resume`/`--continue` keyboard input fix | Виправлено `claude --resume` та `--continue` що не реагували на ввід з клавіатури під час запуску | 2.1.206 |
+| `--permission-prompt-tool` MCP crash fix | Виправлено `--permission-prompt-tool` що вказував на MCP сервер та завершувався помилкою «MCP tool not found» на cold start до завершення підключення сервера | 2.1.206 |
+| `claude rm` daemon roster fix | Виправлено `claude rm` що залишав видалений job у daemon roster, через що рядок знову з'являвся у `claude agents` | 2.1.206 |
+| `/remote-control` без входу fix | Виправлено `/remote-control` що показував «Unknown command» без входу — тепер пояснює як увійти | 2.1.206 |
 
 ## CLI (2.1.207)
 

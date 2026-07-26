@@ -151,3 +151,9 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | `SessionStart` hook streaming fix | Виправлено відсутність стрімінгу подій під час `SessionStart` хуків у headless-сесіях, що могло призвести до завершення remote workers через idle timeout під час виконання хуку | 2.1.204 |
+
+## Налаштування хуків (2.1.207)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Plugin hooks exec form для `${user_config.*}` | Plugin hooks: `${user_config.*}` в shell-form commands тепер відхиляється; використовуйте exec form (`args` array) або `$CLAUDE_PLUGIN_OPTION_<KEY>` | 2.1.207 |
