@@ -214,3 +214,10 @@
 |--------|------|--------|
 | `ANTHROPIC_BASE_URL` background sessions drop fix | Виправлено background та agent-view sessions що втрачали shell-exported `ANTHROPIC_BASE_URL`, що відправляло API ключі на default endpoint з помилкою 401 | 2.1.203 |
 | `CLAUDE_CODE_DISABLE_MOUSE` / `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` attached sessions fix | Виправлено attached background sessions що ігнорували `CLAUDE_CODE_DISABLE_MOUSE` та `CLAUDE_CODE_DISABLE_MOUSE_CLICKS` opt-out | 2.1.203 |
+
+## Поведінка (2.1.206)
+
+| Змінна | Опис | Версія |
+|--------|------|--------|
+| `CLAUDE_CODE_EXTRA_BODY` background workers fix | Виправлено `CLAUDE_CODE_EXTRA_BODY` що мовчки ігнорувався `claude agents` / `--bg` background workers; shell-exported override тепер слідує за dispatching session | 2.1.206 |
+| Bedrock `awsCredentialExport` startup hang fix | Виправлено багатохвилинний startup hang при використанні `awsCredentialExport` helper на мережах з обмеженим egress | 2.1.206 |

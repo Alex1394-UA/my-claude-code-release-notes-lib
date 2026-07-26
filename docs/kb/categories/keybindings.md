@@ -165,3 +165,11 @@
 | Скорочення | Виправлення | Версія |
 |-----------|-------------|--------|
 | Left arrow behavior change | Ліва стрілка більше не закриває перегляд background tasks, diff та workflow detail — замість цього натисніть Esc | 2.1.203 |
+
+## Навігація та управління (2.1.206)
+
+| Скорочення | Виправлення | Версія |
+|-----------|-------------|--------|
+| Ліва стрілка workflow detail fix | Виправлено ліву стрілку що не виходила назад з phase або agent у workflow detail view | 2.1.206 |
+| Jump-to-bottom pill macOS fix | Виправлено fullscreen jump-to-bottom pill що пропонував Ctrl+End на macOS, не показував rebound chords та переносив через транскрипт | 2.1.206 |
+| Ctrl+X agents view removal | Agents view: `Ctrl+X` тепер назавжди видаляє завершену сесію | 2.1.206 |

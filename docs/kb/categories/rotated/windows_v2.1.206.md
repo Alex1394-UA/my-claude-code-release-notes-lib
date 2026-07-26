@@ -2,7 +2,7 @@
 
 > Також дивіться основні категорії — Windows-можливості дублюються там з тегом [Win].
 
-> Попередні версії: [rotated/windows_v2.1.202.md](rotated/windows_v2.1.202.md), [rotated/windows_v2.1.206.md](rotated/windows_v2.1.206.md)
+> Попередні версії: [rotated/windows_v2.1.202.md](rotated/windows_v2.1.202.md)
 
 ## Встановлення та запуск
 
