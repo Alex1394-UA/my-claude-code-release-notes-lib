@@ -3,15 +3,22 @@
 last_processed: 2.1.207
 last_updated: 2026-07-26
 
-## File Rotation
+## Архівування
 
-| Категорія | Остання ротация | Файл архіву |
-|-----------|-----------------|-------------|
-| core | v2.1.202 | rotated/core_v2.1.202.md |
-| cli | v2.1.207 | rotated/cli_v2.1.207.md |
-| settings | v2.1.202 | rotated/settings_v2.1.202.md |
-| skills-agents | v2.1.207 | rotated/skills-agents_v2.1.207.md |
-| windows | v2.1.207 | rotated/windows_v2.1.207.md |
+| Категорія | Останній архів | Файл архіву |
+|-----------|----------------|-------------|
+| core | v2.1.207 | archived/core_v2.1.207.md |
+| cli | v2.1.207 | archived/cli_v2.1.207.md |
+| settings | v2.1.207 | archived/settings_v2.1.207.md |
+| skills-agents | v2.1.207 | archived/skills-agents_v2.1.207.md |
+| windows | v2.1.207 | archived/windows_v2.1.207.md |
+| env-vars | v2.1.207 | archived/env-vars_v2.1.207.md |
+| hooks | v2.1.207 | archived/hooks_v2.1.207.md |
+| keybindings | v2.1.207 | archived/keybindings_v2.1.207.md |
+| mcp | v2.1.207 | archived/mcp_v2.1.207.md |
+| plugins | v2.1.207 | archived/plugins_v2.1.207.md |
+| sdk | v2.1.207 | archived/sdk_v2.1.207.md |
+| vscode-ide | v2.1.207 | archived/vscode-ide_v2.1.207.md |
 
 ## Відстежувані невідповідності (Release Notes vs Reality)
 
