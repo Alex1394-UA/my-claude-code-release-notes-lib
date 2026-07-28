@@ -1,6 +1,6 @@
 ---
 name: release-notes-tracker
-description: Incrementally maintain a modular knowledge base of Claude Code features from release notes. Use this skill whenever the user pastes release notes content, asks to update the knowledge base, mentions new Claude Code versions, says "онови базу" (update base), or wants to track new features. Also trigger when the user runs /release-notes and asks to process the output. Do NOT trigger for general questions about Claude Code features (those should just read the KB files directly).
+description: Maintain a modular KB of Claude Code features from release notes. Trigger when the user pastes notes, says «онови базу»/«онови базу до X.Y.Z»/«опрацюй останній реліз», mentions new versions or tracks features. Not for general feature questions.
 ---
 
 # Release Notes Tracker
@@ -26,7 +26,11 @@ Incrementally maintain a modular knowledge base of Claude Code features.
 
 Якщо meta.md не існує — це перший запуск, насідай KB з `docs/CLAUDE-CODE-OPTIONS-GUIDE.md` (див. "First-Time Setup" внизу).
 
-Реліз-ноти надходять від: вставка в чат, `/release-notes` output, або шлях до файлу.
+**Джерело release notes (primary):** витягни notes потрібної версії САМ з офіційного changelog `https://code.claude.com/docs/en/changelog.md` через crawl4ai (режим `md` у тимчасовий файл, потім `Grep` номеру версії → `Read` розділу між тегами `<Update label="X.Y.Z">…</Update>`). Коли користувач каже «онови базу до X.Y.Z» або «опрацюй останній реліз» — витягуй сам, **без копіпасту**.
+
+Чому так: з версії 2.1.208 вбудована `/release-notes` більше не інжектить changelog у контекст моделі (запис у `cli.md`), тож її вивід у чат не потрапляє. Офіційний changelog — джерело істини, логічніше черпати його напряму.
+
+**Fallback:** якщо користувач вставив notes в чат або дав шлях до файлу — використовуй їх напряму.
 
 ### Step 2: Розібрати та категоризувати
 
@@ -52,20 +56,22 @@ Incrementally maintain a modular knowledge base of Claude Code features.
 
 Це економить контекст і запобігає завантаженню файлів цілком.
 
+> **Для parallel-режиму** (великі релізи, Step 3) цей крок можна пропустити — паралельні агенти самі читають свій файл категорії й перевіряють дублікати.
+
 ### Step 3: Оновити файли категорій
 
-Для кожної зміненої категорії:
+**Механізм вставки (однаковий для обох режимів нижче):** версійні секції ЗГРУПОВАНІ за версією, а не за тематикою. Для кожної тематики з новими записами створюй НОВУ версійну секцію `## <тематика> (X.Y.Z)` у **самому кінці файлу** (після останньої наявної секції), з повною таблицею. НЕ додавай рядки у вже існуючу секцію тієї ж тематики — кожна версія отримує власний блок. Заголовок файлу (`#`) та blockquote (`> Архів`) лишай недоторканими на початку.
 
-1. Прочитай поточний файл (тільки зараз, коли додаєш в нього)
-2. **Перевір на дублікати** — перед додаванням шукай запис з тим самим ідентифікатором + версією. Якщо знайшов — пропусти
-3. Додай нові записи в **кінець відповідного підрозділу** (не в кінець файлу)
-4. Формат: `| `identifier` | Опис українською | X.Y.Z |`
-5. При депрекації: ~~закреслення~~ або `[ЗАСТАРІЛО]` замість видалення
-6. Сортуй по версії (нові внизу)
+Формат рядка: ``| `identifier` | Опис українською | X.Y.Z |``. При депрекації — ~~закреслення~~ або `[ЗАСТАРІЛО]` замість видалення. Формат таблиць — див. `references/file-formats.md` (читай on-demand).
 
-Формат таблиць та приклади — див. `references/file-formats.md` (читай on-demand, один раз перед першим редагуванням).
+**Перевір на дублікати:** перед додаванням шукай запис з тим самим ідентифікатором + версією; якщо знайшов — пропусти.
 
 ⚠️ **При формуванні опису кожного запису** — перевіряй текст на анґліцизми (англійський корінь + українське закінчення через дефіс, напр. "invoke-є", "match-ила"). Див. `references/anglicisms.md` за таблицею замін та списком прийнятих IT-позичок. Якщо заміна невідома — використовуй прийняту позичку (кешувати, рендерити, стрімити тощо).
+
+**Два режими залежно від розміру релізу:**
+
+- **Дрібний реліз (1–3 категорії) — inline.** Прочитай хвіст файлу категорії (Step 2.5), додай нові версійні секції в кінець через Edit.
+- **Великий реліз (10+ категорій) — паралельні агенти.** Головний (ти) категоризує пункти й **сам** формує описи українською (з перевіркою на анґліцизми), потім spawn паралельних агентів через Agent tool — по одному на файл категорії. Кожен агент отримує готові записи (id + опис) + інструкцію створити версійні секції в кінці файлу й перевірити дублікати. **Агенти НЕ перекладають** — описи вже готові, вони лише формують таблицю. Під ultracode — використовуй параметризований шаблон `references/workflow_parallel_update.js` (дані через `args`, див. References).
 
 ### Step 4: Валідація
 
@@ -174,3 +180,4 @@ Incrementally maintain a modular knowledge base of Claude Code features.
 - `references/category-map.md` — що куди категоризувати (читай on-demand)
 - `references/file-formats.md` — шаблони форматів файлів (читай on-demand)
 - `references/anglicisms.md` — словник анґліцизмів та українських замін для Step 4.5 (читай on-demand)
+- `references/workflow_parallel_update.js` — параметризований шаблон Workflow для великих релізів під ultracode (10+ категорій): паралельне оновлення категорій, дані подаються через `args`. Для дрібних релізів (1–3 записи) використовуй inline-редагування
