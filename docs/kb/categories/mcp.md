@@ -2,3 +2,11 @@
 
 > Архів (notes до 2.1.207): [archived/mcp_v2.1.207.md](archived/mcp_v2.1.207.md)
 > Тут — notes починаючи з версії 2.1.208
+
+## Налаштування (2.1.208)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| MCP stdio stderr memory leak fix | Виправлено витік пам'яті: MCP stdio сервер накопичував до 64 MB stderr на сервер у довгих сесіях | 2.1.208 |
+| Tool-pool caching fix | Кешування tool-pool зменшує CPU-навантаження за tool-call у print/SDK сесіях з великим числом MCP інструментів | 2.1.208 |
+| MCP empty URL "not configured" | MCP сервери з порожнім URL показуються як "not configured" у `/mcp` замість помилки конфігу | 2.1.208 |

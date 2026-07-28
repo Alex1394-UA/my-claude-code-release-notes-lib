@@ -1,172 +1,68 @@
 # Основні можливості
 
-> Режим мислення, рівні зусилля, план-режим, швидкий режим, моделі, контекст/пам'ять, інтерактивність
-> Попередні версії: [rotated/core_v2.1.202.md](rotated/core_v2.1.202.md)
+> Архів (notes до 2.1.207): [archived/core_v2.1.207.md](archived/core_v2.1.207.md)
+> Тут — notes починаючи з версії 2.1.208
 
-## Режим мислення
-
-| Можливість | Опис | Версія |
-|-----------|------|--------|
-| `think` / `think harder` / `ultrathink` | Ввімкнення режиму мислення | 0.2.44 |
-| Tab (sticky) | Перемикання thinking (зберігається між сесіями) | 2.0.0 |
-| Alt+T | Перемикання thinking | 2.0.71 |
-| `/t` | Тимчасове вимкнення thinking для одного промпту | 1.0.115 |
-| `/config` | Постійне налаштування thinking | 2.0.67 |
-| Увімкнено за замовч. для Opus 4.5+ | Thinking увімкнений по дефолту | 2.0.67 |
-| `DISABLE_INTERLEAVED_THINKING` | Вимкнути interleaved thinking | 1.0.1 |
-
-## Рівні зусилля
+## Доступність (2.1.208)
 
 | Можливість | Опис | Версія |
 |-----------|------|--------|
-| `/effort auto\|low\|medium\|high` | Встановлення рівня зусилля | 2.1.72 |
-| Символи: ○ (low), ◐ (medium), ● (high) | Візуальні індикатори зусилля | 2.1.72 |
-| `ultrathink` | Високе зусилля для наступного повороту | 2.1.68 |
-| `/effort` працює під час відповіді | Зміна зусилля поки Claude відповідає | 2.1.73 |
-| Opus 4.6 default = medium | Для планів Max/Team | 2.1.68 |
-| `effort:` у frontmatter skill/agent | Рівень зусилля для навички | 2.1.80 |
-| Default effort = high | Для API-key, Bedrock/Vertex/Foundry, Team, Enterprise (`/effort` для зміни) | 2.1.94 |
-| `Claude Opus 4.7 xhigh` | Новий рівень зусилля `xhigh` для Opus 4.7 — між `high` та `max`, доступний через `/effort`, `--effort` та model picker; інші моделі fallback до `high` | 2.1.111 |
-| `/effort` інтерактивний слайдер | `/effort` без аргументів відкриває інтерактивний слайдер з навігацією стрелками та Enter для підтвердження | 2.1.111 |
-| Default effort high Pro/Max | Default effort для Pro/Max підписників на Opus 4.6 та Sonnet 4.6 тепер `high` (було `medium`) | 2.1.117 |
-| `/effort` слайдер "Faster"/"Smarter" | Мітки слайдера `/effort` перейменовані з "Speed"/"Intelligence" на "Faster"/"Smarter" | 2.1.154 |
+| Screen reader mode | Режим з простим текстовим виводом для користувачів screen reader | 2.1.208 |
 
-## План-режим
+## Інтерактивність (2.1.208)
 
 | Можливість | Опис | Версія |
 |-----------|------|--------|
-| `/plan [опис]` | Вхід у план-режим з опціональним описом | 2.1.72 |
-| Shift+Tab | Швидке "авто-прийняття редагувань" | 2.1.2 |
-| Зворотний зв'язок при відхиленні | Ітеративне вдосконалення плану | 2.0.57 |
-| План-режим зберігається після compact | Не зникає при стисненні контексту | 2.1.20 |
-| `showClearContextOnPlanAccept: true` | Показувати "очистити контекст" | 2.1.81 |
-| План-режим у remote sessions | Виправлено втрату плану після рестарту контейнера | 2.1.91 |
-| Hide "Refine with Ultraplan" | Не показується коли org/auth не може досягти Claude Code на web | 2.1.101 |
-| Plan файли з іменами промптів | Файли планів називаються за вашою назвою промпту (напр. `fix-auth-race-snug-otter.md`) замість випадкових слів | 2.1.111 |
+| Mouse-click multi-select | Підтримка кліку мишею для multi-select меню та рядків "Other" у fullscreen-режимі | 2.1.208 |
+| Великі таблиці markdown | Таблиці понад 200 рядків обрізаються з повідомленням "… N more rows" замість зависання | 2.1.208 |
+| Task list UI responsiveness | Оновлення списку задач більше не перемальовує весь UI | 2.1.208 |
 
-## Швидкий режим
+## Швидкий режим (2.1.208)
 
 | Можливість | Опис | Версія |
 |-----------|------|--------|
-| Opus 4.6 Fast mode | Швидший вивід, та сама модель | 2.1.36 |
-| Fast mode Opus 4.7 default | Fast mode тепер використовує Opus 4.7 за замовчуванням (було Opus 4.6) | 2.1.142 |
-| `/fast` | Перемикання швидкого режиму | 2.1.36 |
-| Opus 4.8 fast mode | Fast mode на Opus 4.8 за 2x стандартної ціни з 2.5x швидкістю (було значно дорожче) | 2.1.154 |
-| Alt+P (Win/Linux), Option+P (macOS) | Перемикання моделі під час вводу | 2.0.65 |
-| `/fast` + `availableModels` | `/fast` відмовляється перемикати коли цільова модель поза `availableModels` allowlist | 2.1.176 |
+| Fast mode auto-restore | Швидкий режим автоматично відновлюється при поверненні до моделі що його підтримує (раніше залишався вимкненим) | 2.1.208 |
 
-## Моделі
+## Моделі (2.1.208)
 
 | Можливість | Опис | Версія |
 |-----------|------|--------|
-| `/model` | Вибір моделі з валідацією | 1.0.111 |
-| Opus 4, 4.1 видалені | Замінені на 4.6 в first-party API | 2.1.68 |
-| Sonnet 4.6 | Доступна | 2.1.45 |
-| Haiku 4.5 | Автоматично Sonnet в plan mode, Haiku в execution | 2.0.17 |
-| 1M контекст (Opus 4.6) | За замовчуванням для Max/Team/Enterprise | 2.1.75 |
-| `modelOverrides` | Кастомні ID моделей для провайдерів | 2.1.73 |
-| Bedrock/Vertex/Foundry | Opus 4.6 за замовчуванням | 2.1.73 |
-| Auto mode "unavailable for plan" | Повідомлення при вимкненому через план | 2.1.86 |
-| Auto mode без прапорця | Auto mode більше не потребує `--enable-auto-mode` для Max підписників з Opus 4.7 | 2.1.111 |
-| Opus 4.8 | Нова модель — default effort встановлено на `high`; підтримує `/effort xhigh` та fast mode за 2x стандартної ціни | 2.1.154 |
-| Claude Fable 5 | Mythos-клас модель, безпечна для загального використання; можливості перевершують будь-яку раніше загальнодоступну модель | 2.1.170 |
-| Claude Sonnet 5 | Нова модель — дефолтна в Claude Code з нативним 1M-токеновим контекстом; промоціональне ціноутворення $2/$10 за Mtok до 31 серпня | 2.1.197 |
+| Fable 5 consent decline focus | Промпт згоди usage-credits для Fable 5 починає з фокусу на опції відмови | 2.1.208 |
+| Bedrock streaming proxy fix | Виправлено оманливу помилку "Truncated event message" коли проксі змінює content-type — тепер називає content-type і вказує на проксі | 2.1.208 |
+| Bedrock SSO region regression fix | Виправлено регресію 2.1.207: Bedrock auth з AWS SSO з sso_ck region | 2.1.208 |
 
-## Контекст та пам'ять
+## Контекст та пам'ять (2.1.208)
 
 | Можливість | Опис | Версія |
 |-----------|------|--------|
-| Автоматичне стиснення (auto-compact) | Автоматичне стиснення контексту | 0.2.47 |
-| Автокомпакт thrash detection | Зупинка після 3 послідовних невдач з помилкою | 2.1.89 |
-| Миттєве стиснення | Без затримки при компактуванні | 2.0.64 |
-| `/compact` | Ручне стиснення контексту | 2.0.64 |
-| `/context` | Діагностика з практичними порадами | 1.0.86, 2.1.74 |
-| "Підсумувати звідси" | Часткове стиснення контексту | 2.1.32 |
-| Автоматична пам'ять | Збереження контексту в пам'ять | 2.1.32 |
-| `/memory` | Пряме редагування пам'яті | 1.0.94 |
-| ~~`#`~~ | [ВИДАЛЕНО] Швидкий запис у пам'ять | 2.0.70 |
-| `autoMemoryDirectory` | Кастомна директорія для пам'яті | 2.1.74 |
-| Файли пам'яті з hover/click | Підсвічування та відкриття при наведенні | 2.1.86 |
-| Session recap | Recap: контекст при поверненні до сесії, configurable в `/config`, `/recap` для ручного виклику | 2.1.108 |
-| Session recap telemetry-disabled | Recap увімкнено для користувачів з вимкненою телеметрією (Bedrock, Vertex, Foundry); opt-out через `/config` або `CLAUDE_CODE_ENABLE_AWAY_SUMMARY=0` | 2.1.110 |
-| Opus 4.7 context window fix | Виправлено завищені `/context` відсотки та передчасний autocompact для Opus 4.7 — рахував проти 200K замість нативного 1M | 2.1.117 |
-| Lean system prompt за замовчуванням | Скорочений системний промпт тепер використовується за замовчуванням для всіх моделей крім Haiku, Sonnet та Opus 4.7 і старіших | 2.1.154 |
+| Context window reset fix | Виправлено хибне скидання контекстного вікна (та auto-compact індикатора) до 200k після CLI auto-update | 2.1.208 |
+| Transcript size reduction | Розмір транскрипту зменшено до 79x у сесіях з частими редагуваннями; обмежено використання диска чекпойнтами | 2.1.208 |
+| File edit read cache bound | Кеш читання файлів обмежено до 16 MB замість утримання до 1000 повних файлів | 2.1.208 |
+| Memory leak pasted images fix | Виправлено витік: вставлені зображення утримувались до кінця життя екрана після peek replies | 2.1.208 |
+| Memory leak MCP stderr fix | Виправлено витік: MCP stdio сервер накопичував до 64 MB stderr на сервер | 2.1.208 |
+| Memory leak LSP docs fix | Виправлено витік: LSP документи залишались відкритими назавжди (тепер LRU з лімітом 50) | 2.1.208 |
+| Memory leak tool-result fix | Виправлено необмежене зростання пам'яті від великих tool-result payloads у headless/SDK сесіях | 2.1.208 |
+| Memory blowup long lines fix | Виправлено витік пам'яті при читанні файлів з дуже довгими рядками через offset/limit — тепер повертає чисту помилку | 2.1.208 |
+| Resume memory usage fix | Зменшено споживання пам'яті при відновленні сесій з background agents або forks з великих розмов | 2.1.208 |
 
-## Інтерактивність
+## Інші команди (2.1.208)
 
 | Можливість | Опис | Версія |
 |-----------|------|--------|
-| Enter | Черга повідомлень поки Claude працює | 0.2.75 |
-| Реальночасне steer-повідомлення | Відправка повідомлень під час роботи Claude | 1.0.108 |
-| AskUserQuestion | Інтерактивні питання користувачу | 2.0.21 |
-| Ctrl+B | Фоновий запуск bash/агентів (уніфіковано) | 1.0.71, 2.1.0 |
-| Ctrl+F → Ctrl+X Ctrl+K | Зупинка фонових агентів | 2.1.49 |
-| Фонові агенти | Агенти працюють у фоні | 2.0.60 |
-| Escape | Переривання Claude (подвійне для агентів) | 0.2.70, 2.1.83 |
-| Auto mode кордони | Виправлено ігнорування явних кордонів користувача ("не пуш", "чекай X перед Y") | 2.1.90 |
-| Subagent stall timeout | Subagents що зависають mid-stream тепер fail з чіткою помилкою після 10 хвилин замість мовчазного зависання | 2.1.113 |
-| Platform binary spawn | CLI тепер запускає нативний Claude Code binary (через per-platform optional dependency) замість bundled JavaScript | 2.1.113 |
-| AskUserQuestion зарезервовано для реальних рішень | Claude тепер використовує AskUserQuestion лише для рішень що дійсно не може прийняти самостійно, замість запитів коли вже достатньо контексту | 2.1.154 |
-
-## Інші команди
-
-| Можливість | Опис | Версія |
-|-----------|------|--------|
-
-## Основні можливості (2.1.202)
-
-| Можливість | Опис | Версія |
-|-----------|------|--------|
-| Ctrl+R history search crash fix | Виправлено краш inline Ctrl+R history search при прийнятті або скасуванні під час сканування файлу історії | 2.1.202 |
-| Remote Control commands fix | Виправлено команди надіслані з Remote Control (mobile/web) в інтерактивну сесію що failing з "Unknown command" | 2.1.202 |
-| Remote Control images/files without caption fix | Виправлено зображення та файли надіслані з Remote Control без caption що мовчки відкидались | 2.1.202 |
-| `/remote-control` permission mode fix | Виправлено `/remote-control` сесії що показували неправильний permission mode в mobile/web apps | 2.1.202 |
-| Voice dictation unbounded loop fix | Виправлено voice dictation що повторювався в безмежному циклі коли мікрофон або аудіо-рекордер failing — повторні невдалі спроби запису тепер призупиняють voice input | 2.1.202 |
-
-## Основні можливості (2.1.203)
-
-| Можливість | Опис | Версія |
-|-----------|------|--------|
-| Попередження про спливання логіну | Попередження коли сесія логіну ось-ось спливе, щоб користувач міг переавтентифікуватися до переривання background sessions | 2.1.203 |
-| Сірий значок ⏸ у manual permission mode | Сірий значок ⏸ у footer коли увімкнено manual permission mode — активний режим завжди видимий | 2.1.203 |
-| macOS background agents stall fix | Виправлено затримку 15–20 секунд при відкритті/перемиканні background agent sessions на macOS через хибне визначення нестачі пам'яті (регресія з 2.1.196) | 2.1.203 |
-| Background sessions stale token recovery | Виправлено background sessions що ставали назавжди unresponsive до attach/replies/stop коли session token daemon-а застарівав — сесія тепер відновлюється автоматично | 2.1.203 |
-| Context-usage indicator CPU regression fix | Виправлено регресію пам'яті та CPU за turn в інтерактивних сесіях — індикатор контексту більше не переаналізує весь транскрипт після кожного turn | 2.1.203 |
-| Daemon auto-upgrade killing sessions fix | Виправлено помилку автооновлення daemon що мовчки вбивала всі running background sessions | 2.1.203 |
-| Content jumping on scroll fix | Виправлено стрибки контенту при прокрутці вгору через довгу історію транскрипту | 2.1.203 |
-| Terminal flickering bash mode fix | Виправлено мерехтіння терміналу та стрибки при введенні в bash mode коли показувалась підказка shell-history | 2.1.203 |
-| Escape codes `^[[I` / `^[[O` on reattach fix | Виправлено друк літеральних escape-кодів `^[[I` / `^[[O` при повторному підключенні до background session | 2.1.203 |
-| Streaming responsiveness improvement | Покращено responsiveness під час стрімінгу довгих відповідей — live-preview оновлення більше не перемальовують весь екран | 2.1.203 |
-| Бінарний розмір та startup memory -7MB | Розмір binary зменшено на ~7MB та startup memory на ~7MB завдяки lazy loading великої bundled dependency | 2.1.203 |
-
-## Основні можливості (2.1.205)
-
-| Можливість | Опис | Версія |
-|-----------|------|--------|
-| Auto mode блокування зміни транскриптів | Auto mode: нове правило що блокує втручання у файли транскриптів сесії | 2.1.205 |
-| Auto mode запит перед `rm -rf` | Auto mode: запит підтвердження перед `rm -rf` для змінної що не може бути розпізнана з контексту | 2.1.205 |
-| Сповіщення фонових задач без людського вводу | Сповіщення фонових задач тепер явно вказують що людського вводу не було, запобігаючи діям на підставі вигаданих підтверджень у транскрипті | 2.1.205 |
-| `/doctor` → повна діагностика, `/checkup` аліас | `/doctor` перетворено на повну діагностику з можливістю виправлення проблем; `/checkup` — аліас | 2.1.205 |
-| File watcher crash fix | Виправлено краш коли file watcher закривався під час активного сканування директорії | 2.1.205 |
-
-## Основні можливості (2.1.206)
-
-| Можливість | Опис | Версія |
-|-----------|------|--------|
-| `/doctor` перевірка CLAUDE.md | `/doctor` тепер пропонує скоротити checked-in `CLAUDE.md` файли, вилучаючи контент що Claude може вивести з кодової бази | 2.1.206 |
-| `/model` picker хибна ціна fix | Виправлено `/model` picker що показував ціну іншої моделі ніж у рядку; прибрано first-party list prices для providers що їх не виставляють | 2.1.206 |
-| `/model` picker зміщені рядки fix | Виправлено server-provided model rows що зміщувались у `/model` picker коли entitlement або allowlist обмеження прибирало рядок відносно якого вони позиціонувались | 2.1.206 |
-| Desktop sessions stuck running fix | Виправлено desktop sessions що застрягали у стані «running» після slash command надісланої під час turn | 2.1.206 |
-| `/status` дубльоване попередження fix | Виправлено `/status` що виводив одне й те саме broken-install попередження двічі | 2.1.206 |
-| `/doctor` Homebrew update check fix | Виправлено `/doctor` update check що порівнював Homebrew інсталяції з cask channel замість settings channel | 2.1.206 |
-
-## Основні можливості (2.1.207)
-
-| Можливість | Опис | Версія |
-|-----------|------|--------|
-| Streaming terminal freeze fix | Виправлено зависання термінала та відставання натискань клавіш під час стрімінгу відповідей з дуже довгими списками, таблицями, абзацами або блоками коду | 2.1.207 |
-| Prompt-injection хибні попередження fix | Виправлено хибні prompt-injection попередження що спрацьовували від безпечних system-generated оновлень розмови | 2.1.207 |
-| Auto-updater launcher overwrite fix | Виправлено auto-updater що перезаписував custom launcher script або symlink у `~/.local/bin/claude` на кожному релізі; `/doctor` тепер повідомляє про externally managed launcher | 2.1.207 |
-| Transcript jump fix | Виправлено стрибок транскрипту вище початку відповіді після завершення стрімінгу | 2.1.207 |
-| Bedrock/Vertex/AWS default Opus 4.8 | Bedrock, Vertex та Claude Platform on AWS тепер за замовчуванням використовують Claude Opus 4.8 | 2.1.207 |
-| Auto mode default на Bedrock/Vertex/Foundry | Auto mode тепер доступний без `CLAUDE_CODE_ENABLE_AUTO_MODE` opt-in на Bedrock, Vertex AI та Foundry; вимикається через `disableAutoMode` в settings | 2.1.207 |
+| `/usage` rate-limited fallback | При rate-limit endpoint `/usage` показує останні відомі бари з приміткою "as of" замість помилки | 2.1.208 |
+| `/usage` stale cached bars fix | Виправлено показ застарілих закешованих bars заміж свіжіших даних у `/usage` | 2.1.208 |
+| Background agent replies saved fix | Текст відповідей фоновому агенту зберігається при невдалій доставці та доставляється при restart сесії | 2.1.208 |
+| GOAWAY crash fix | Виправлено краш supervised/background сесій коли сервер закривав HTTP/2 з'єднання GOAWAY під час активних запитів | 2.1.208 |
+| Edit tool modified file fix | Виправлено Edit на файлах змінених після читання, якщо цільовий текст все одно збігається | 2.1.208 |
+| Read/Grep/Glob fixes | Виправлено: Read показував порожні файли як "shorter than offset", Grep мовчав при некоректному regex, Grep count недораховував при пагінації, Glob крашив при null byte в pattern/path/cwd | 2.1.208 |
+| `apiKeyHelper` error visibility fix | Помилки `apiKeyHelper` скрипта тепер видно за 3 спроби замість ~10 мовчазних retry з помилкою 401 | 2.1.208 |
+| Orphaned background tasks fix | Сиротілі background tasks при resume тепер згортаються в одне підсумкове повідомлення замість повторів "No completion record was found" | 2.1.208 |
+| Agent tool no-tools error | Agent tool з порожнім списком інструментів (субагент без `tools`) тепер повертає зрозумілу помилку з переліком невідомих елементів | 2.1.208 |
+| Workflow save dialog path fix | Діалог збереження workflow тепер показує `CLAUDE_CONFIG_DIR` замість `~/.claude/workflows/` для user-scope | 2.1.208 |
+| Permission rules slowdown fix | Виправлено багатосекундне сповільнення за хід у сесіях з багатьма permission deny/ask rules | 2.1.208 |
+| Tool-pool caching | Кешування tool-pool зменшує CPU-навантаження за tool-call у print/SDK сесіях з багатьма MCP інструментами | 2.1.208 |
+| Stopped agent transcript fix | Прикріплення до зупиненого background агента показує транскрипт одразу замість порожнього екрана "Session is starting" | 2.1.208 |
+| Daemon version mismatch fix | Старіший daemon більше не мовчки перезапускає workers які породжені новішою версією | 2.1.208 |
+| Agent view Ctrl+X worktree fix | Ctrl+X видаляє лише worktrees з перейменованими гілками, ніколи не знищує unpushed commits, зберігає рядок сесії при keep | 2.1.208 |
+| Catastrophic removals prompting | Команди з `$(…)`/backticks/`<(…)` що можуть викликати катастрофічне видалення тепер запитують підтвердження в plan/auto mode | 2.1.208 |
+| Completed agents stay listed | Завершені background агенти залишаються в `/tasks` до очищення замість зникнення одразу | 2.1.208 |
