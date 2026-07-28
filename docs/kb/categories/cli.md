@@ -37,3 +37,11 @@
 |-----------|------|--------|
 | claude attach session transitions fix | Виправлено помилки «job not found» та «agent is still starting» у claude attach під час переходів сесії — attach чекає поки daemon стабілізується, а resize терміналу під час повільного attach застосовується після завершення | 2.1.210 |
 | claude agents --effort ultracode fix | claude agents --effort ultracode більше не скидає значення мовчки — воно тепер доходить до розгорнутих сесій | 2.1.210 |
+
+## Основні команди (2.1.211)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `--forward-subagent-text` | Новий прапорець: включає текст та роздуми субагентів у stream-json вивід | 2.1.211 |
+| `/usage-credits` confirmation | `/usage-credits` тепер питає підтвердження перед надсиланням запиту адміністраторам організації | 2.1.211 |
+| Headless print-mode Windows stdin fix [Win] | Виправлено краш або мовчазний вихід headless print-mode сесій на Windows, коли stdin недоступний для читання | 2.1.211 |
