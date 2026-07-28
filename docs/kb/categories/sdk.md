@@ -24,3 +24,17 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | SDK MCP initialize connecting fix | SDK MCP сервери зареєстровані через initialize control request більше не чекають наступного ходу для початку з’єднання | 2.1.210 |
+
+## Remote Control (2.1.212)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Workflow agent grid empty Remote Control fix | Виправлено порожнє відображення сітки workflow-агентів для Remote Control клієнтів, що приєднуються до сесії посеред виконання | 2.1.212 |
+
+## Пакети (2.1.212)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `ExitWorktree` after resume print/SDK fix | Виправлено збій `ExitWorktree` з «no active EnterWorktree session» після поновлення сесії з `--continue`/`--resume` у print/SDK-режимі | 2.1.212 |
+| Streaming control requests early complete fix | Виправлено позначення control-запитів streaming-режиму завершеними до кінця обробника, що могло втратити запит при рестарті сесії | 2.1.212 |
+| Headless `set_model` mid-turn | Headless/SDK-сесії тепер застосовують control-запит `set_model` посеред ходу; наступний раунд моделі бере нову модель, не чекаючи наступного ходу | 2.1.212 |

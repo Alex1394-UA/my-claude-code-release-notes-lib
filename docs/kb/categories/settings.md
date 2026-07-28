@@ -46,3 +46,11 @@
 |-----------|------|--------|
 | «always allow» save at repo root | Правила дозволів «always allow» тепер зберігаються у корені репозиторію — погодження, видані в git worktree, зберігаються між сесіями та worktree | 2.1.211 |
 | Permission previews bidi/zero-width neutralize fix | Виправлено нейтралізацію символів bidirectional-override, нульової ширини та подібних до лапок у попередньому перегляді дозволів, переданих до chat-каналів — ввід інструментів більше не може візуально змінити повідомлення про погодження | 2.1.211 |
+
+## Загальні (2.1.212)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Worktree creation symlink `.claude/worktrees` fix | Виправлено створення worktree після symlink у репозиторії `.claude/worktrees`, що могло створювати файли поза репозиторієм | 2.1.212 |
+| Hosted sessions mTLS/CA/OAuth ignore fix | Виправлено збій hosted (host-managed) сесій при startup, коли repository settings налаштовували mTLS-сертифікати, CA-набори або OAuth scopes; ці transport-налаштування тепер ігноруються з попередженням | 2.1.212 |
+| Enterprise `forceLoginMethod` enforcement | Enterprise `forceLoginMethod` тепер застосовується для VS Code extension, SDK, `setup-token` та `install-github-app` логінів, не лише термінала | 2.1.212 |

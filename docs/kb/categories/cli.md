@@ -45,3 +45,26 @@
 | `--forward-subagent-text` | Новий прапорець: включає текст та роздуми субагентів у stream-json вивід | 2.1.211 |
 | `/usage-credits` confirmation | `/usage-credits` тепер питає підтвердження перед надсиланням запиту адміністраторам організації | 2.1.211 |
 | Headless print-mode Windows stdin fix [Win] | Виправлено краш або мовчазний вихід headless print-mode сесій на Windows, коли stdin недоступний для читання | 2.1.211 |
+
+## Основні команди (2.1.212)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `/fork` → background + `/subtask` | `/fork` тепер копіює розмову у нову фонову сесію (окремий рядок у `claude agents`), поки ви продовжуєте роботу; внутрішньосесійний субагент перенесено у `/subtask` | 2.1.212 |
+| `/resume` agent view picker | `/resume` в agent view тепер відкриває picker минулих сесій (включно з видаленими зі списку) і відновлює вибір як фонову сесію | 2.1.212 |
+| Shell mode `!` path autocomplete fix | Виправлено невиконання shell-режимом (`!`) команд зі шляхами файлів, поки відкрито спливаюче автодоповнення шляху | 2.1.212 |
+| `/ultrareview` PR refs fix | Виправлено відхилення `/ultrareview` посилань на PR (`#123`, `PR 123`, вставлені URL); підказки помилок тепер називають команду яку ви ввели | 2.1.212 |
+| `/ultrareview <branch>` origin fetch fix | Виправлено неотримання гілки з origin у `/ultrareview <branch>`; пропонує найближчу назву при опечатках | 2.1.212 |
+| `/ultrareview` billing after `/clear` fix | Виправлено пропуск підтвердження білінгу `/ultrareview` у новій розмові після `/clear` | 2.1.212 |
+| `/ultrareview` Claude Desktop hint fix | Виправлено помилку «not a git repository» `/ultrareview` на Claude Desktop — пропонує теку репозиторію проекту замість термінальних команд | 2.1.212 |
+| `/fork` name after prompt | `/fork` тепер називає копію за вашим промптом, коли сесія без заголовка, щоб рядок упізнавали в agent view | 2.1.212 |
+| `/btw` reopen side-question panel | bare `/btw` тепер повторно відкриває панель side-question на останньому обміні для перегляду раніших відповідей | 2.1.212 |
+
+## Команди управління (2.1.212)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `claude auto-mode reset` | Нова підкоманда: відновлює типову конфігурацію auto-mode з промптом підтвердження (`--yes` щоб пропустити) | 2.1.212 |
+| `claude agents --json` «Needs input» | `claude agents --json` та agent view показують сесії, що чекають на sandbox/MCP/managed-settings промпт, як «Needs input» замість «Working» | 2.1.212 |
+| Auth panel title → «Authentication» | Заголовок панелі статусу автентифікації змінено з «Cloud authentication» на «Authentication» | 2.1.212 |
+| SIGTERM Bash orphan print/SDK fix | Виправлено orphaning дерева процесів команди при SIGTERM під час Bash у print/SDK-режимі; CLI перериває хід, вбиває дерево, виходить з кодом 143 | 2.1.212 |

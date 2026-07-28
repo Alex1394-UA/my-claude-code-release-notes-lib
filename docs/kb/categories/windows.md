@@ -23,3 +23,9 @@
 | Claude in Chrome setup pages Windows fix [Win] | Виправлено відкриття сторінок налаштування Claude in Chrome у браузері на Windows | 2.1.211 |
 | Headless print-mode stdin fix [Win] | Виправлено краш або мовчазний вихід headless print-mode сесій на Windows, коли stdin недоступний для читання | 2.1.211 |
 | Synced skill/plugin dir naming [Win] | Посилено іменування synced-директорій навичок і плагінів на Windows | 2.1.211 |
+
+## Шляхи та файлова система (2.1.212)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `/background` + `claude --bg` PowerShell 7 fix [Win] | Виправлено збій `/background` та `claude --bg` з «EUNKNOWN: unknown error, uv_spawn» на Windows, коли Group Policy блокує PowerShell 5.1; daemon тепер віддає перевагу PowerShell 7 | 2.1.212 |

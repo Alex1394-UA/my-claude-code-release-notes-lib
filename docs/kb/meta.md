@@ -1,6 +1,6 @@
 # Knowledge Base Metadata
 
-last_processed: 2.1.211
+last_processed: 2.1.212
 last_updated: 2026-07-28
 
 ## Архівування
@@ -93,3 +93,4 @@ last_updated: 2026-07-28
 | 2026-07-28 | 2.1.209 | cli | ~1 запис додано, 0 депрекацій |
 | 2026-07-28 | 2.1.210 | core, cli, settings, hooks, mcp, skills-agents, sdk, env-vars, plugins, windows | ~35 записів додано, 0 депрекацій |
 | 2026-07-28 | 2.1.211 | core, cli, env-vars, hooks, settings, mcp, plugins, skills-agents, keybindings, windows, vscode-ide | ~39 записів додано, 0 депрекацій |
+| 2026-07-28 | 2.1.212 | core, cli, env-vars, hooks, settings, mcp, plugins, skills-agents, keybindings, windows, sdk | ~49 записів додано, 1 депрекація (`Task` `mode`) |
