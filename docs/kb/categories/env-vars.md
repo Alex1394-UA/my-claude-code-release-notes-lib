@@ -15,3 +15,9 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | `CLAUDE_CODE_MAX_OUTPUT_TOKENS` sci-notation fix | Виправлено мовчазне використання mantissa наукової нотації (`1e6` ставало `1`); стосується і подібних env vars | 2.1.208 |
+
+## Поведінка (2.1.210)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN ghost frames fix | Повернення в agents view з сесії більше не лишає накладні ghost-фрейми за CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN=1 | 2.1.210 |

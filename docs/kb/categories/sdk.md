@@ -18,3 +18,9 @@
 | Можливість | Опис | Версія |
 |-----------|------|--------|
 | RC terminal-hosted background visibility fix | Виправлено Remote Control clients що прикріплювались до terminal-hosted session і не бачили background agents та workflow progress до старту/стопу task | 2.1.208 |
+
+## Пакети (2.1.210)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| SDK MCP initialize connecting fix | SDK MCP сервери зареєстровані через initialize control request більше не чекають наступного ходу для початку з’єднання | 2.1.210 |

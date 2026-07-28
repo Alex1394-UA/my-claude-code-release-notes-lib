@@ -1,6 +1,6 @@
 # Knowledge Base Metadata
 
-last_processed: 2.1.208
+last_processed: 2.1.210
 last_updated: 2026-07-28
 
 ## Архівування
@@ -90,3 +90,5 @@ last_updated: 2026-07-28
 | 2026-07-26 | 2.1.206 | cli, core, skills-agents, mcp, env-vars, plugins, windows, keybindings | ~29 записів додано, 0 депрекацій |
 | 2026-07-26 | 2.1.207 | core, settings, skills-agents, cli, env-vars, sdk, plugins, hooks, windows | ~27 записів додано, 0 депрекацій |
 | 2026-07-28 | 2.1.208 | core, cli, settings, env-vars, keybindings, sdk, mcp, hooks, plugins, windows | ~65 записів додано, 0 депрекацій |
+| 2026-07-28 | 2.1.209 | cli | ~1 запис додано, 0 депрекацій |
+| 2026-07-28 | 2.1.210 | core, cli, settings, hooks, mcp, skills-agents, sdk, env-vars, plugins, windows | ~35 записів додано, 0 депрекацій |

@@ -24,3 +24,16 @@
 | MCP empty URL "not configured" | MCP сервери з порожнім URL тепер показуються як "not configured" у `/mcp` замість помилки конфігу | 2.1.208 |
 | `/upgrade` login flow fix | Виправлено `/upgrade` що показував login flow замість upgrade URL коли браузер не відкривався | 2.1.208 |
 | `/release-notes` context injection fix | Виправлено потрапляння всього changelog у контекст моделі — "Show all" раніше вставляв весь changelog у кожен наступний запит | 2.1.208 |
+
+## Основні команди (2.1.209)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| /model діалоги в claude agents fix | Виправлено блокування /model та інших діалогів у background-сесіях claude agents — скасовано надто широкий guard | 2.1.209 |
+
+## Основні команди (2.1.210)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| claude attach session transitions fix | Виправлено помилки «job not found» та «agent is still starting» у claude attach під час переходів сесії — attach чекає поки daemon стабілізується, а resize терміналу під час повільного attach застосовується після завершення | 2.1.210 |
+| claude agents --effort ultracode fix | claude agents --effort ultracode більше не скидає значення мовчки — воно тепер доходить до розгорнутих сесій | 2.1.210 |

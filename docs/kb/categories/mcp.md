@@ -10,3 +10,9 @@
 | MCP stdio stderr memory leak fix | Виправлено витік пам'яті: MCP stdio сервер накопичував до 64 MB stderr на сервер у довгих сесіях | 2.1.208 |
 | Tool-pool caching fix | Кешування tool-pool зменшує CPU-навантаження за tool-call у print/SDK сесіях з великим числом MCP інструментів | 2.1.208 |
 | MCP empty URL "not configured" | MCP сервери з порожнім URL показуються як "not configured" у `/mcp` замість помилки конфігу | 2.1.208 |
+
+## Налаштування (2.1.210)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Plugin MCP re-sync teardown fix | Plugin-provided MCP сервери більше не знищуються під час повторної синхронізації MCP серверів посеред сесії | 2.1.210 |
