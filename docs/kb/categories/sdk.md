@@ -38,3 +38,15 @@
 | `ExitWorktree` after resume print/SDK fix | Виправлено збій `ExitWorktree` з «no active EnterWorktree session» після поновлення сесії з `--continue`/`--resume` у print/SDK-режимі | 2.1.212 |
 | Streaming control requests early complete fix | Виправлено позначення control-запитів streaming-режиму завершеними до кінця обробника, що могло втратити запит при рестарті сесії | 2.1.212 |
 | Headless `set_model` mid-turn | Headless/SDK-сесії тепер застосовують control-запит `set_model` посеред ходу; наступний раунд моделі бере нову модель, не чекаючи наступного ходу | 2.1.212 |
+
+## Remote Control (2.1.214)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Remote Control «session ready» push not enabled fix | Виправлено спрацьовування push-сповіщення «session ready» Remote Control для сесій, де Remote Control явно не увімкнено | 2.1.214 |
+
+## Пакети (2.1.214)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| stream-json exit truncation slow consumers fix | Виправлено обрізання stream-json виводу при exit для повільних SDK/pipeline consumers — exit drain тепер масштабується з queued bytes замість flat 2s cap | 2.1.214 |

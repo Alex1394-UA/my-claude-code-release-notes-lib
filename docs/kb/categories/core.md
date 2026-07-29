@@ -176,3 +176,19 @@
 | WebSearch «API Error» as results fix | Виправлено повернення тексту «API Error» як результатів пошуку або контенту сторінки при перевантаженні API web search/fetch | 2.1.212 |
 | Web search/fetch retry 529 | Покращено надійність web search/fetch — повтор 529-помилок та rate-limited запитів з обмеженим backoff | 2.1.212 |
 | tmux 2.1.200 note correction | Виправлено ранішу ноту (2.1.200): tmux до 3.6 серії не має синхронізованого виводу; новіший tmux із підтримкою виявляється автоматично | 2.1.212 |
+
+## Контекст та пам'ять (2.1.214)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| ISO `modified` timestamp memory frontmatter | Додано ISO `modified` timestamp до frontmatter файлів пам'яті | 2.1.214 |
+| Memory frontmatter inline `#` truncation fix | Виправлено мовчазне обрізання значень frontmatter пам'яті на inline `#` при збереженні memory files | 2.1.214 |
+
+## Інші команди (2.1.214)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| EndConversation tool | Додано інструмент EndConversation: Claude може завершувати сесії з вкрай абузивними користувачами або jailbreak-спробами, як на claude.ai з 2025 | 2.1.214 |
+| Progress heartbeat long tool calls | Додано періодичний пульс поступу для довготривалих tool calls, що раніше мовчали | 2.1.214 |
+| GrowthBook null crash + flag wipe fix | Виправлено краш, коли GrowthBook feature обчислюється null, та баг, де malformed flag payload міг стерти кешовані feature flags | 2.1.214 |
+| Spurious «check your network» advisor warning fix | Виправлено хибне попередження «check your network», що з'являлось, поки advisor думав | 2.1.214 |

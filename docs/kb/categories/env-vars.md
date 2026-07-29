@@ -44,3 +44,14 @@
 | `CLAUDE_CODE_MCP_AUTO_BACKGROUND_MS` | Нова змінна: поріг автопереміщення MCP tool call у фон (типово 120000 мс); вимкнути — встановити 0 | 2.1.212 |
 | OpenTelemetry 411/400 Azure chunked fix | Виправлено відхилення OTel HTTP-експортів 411/400 Azure Monitor та іншими endpoints, що не приймають chunked transfer encoding | 2.1.212 |
 | OTLP trace_id/span_id with `TRACEPARENT` fix | Виправлено відсутність `trace_id`/`span_id` у OTLP event log records при встановленому `TRACEPARENT` у SDK/headless-режимі | 2.1.212 |
+
+## Поведінка (2.1.214)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `message.uuid`/`client_request_id`/`tool_source` OTel | Додано атрибути `message.uuid`, `client_request_id` та `tool_source` до OTel log events для message-level correlation та tool provenance | 2.1.214 |
+| `CLAUDE_CODE_OTEL_CONTENT_MAX_LENGTH` | Нова змінна: налаштовує ліміт 60 КБ обрізання content-атрибутів OpenTelemetry | 2.1.214 |
+| OTel log outside async context trace fix | Виправлено відсутність trace-контексту interaction span у OTel log events, емітованих поза async-контекстом ходу | 2.1.214 |
+| Feature flags stale OAuth rotate fix | Виправлено застарівання feature flags у довготривалих сесіях після ротації OAuth-токена | 2.1.214 |
+| Session cost/token telemetry double-counting fix | Виправлено подвійний підрахунок телеметрії вартості та токенів сесії на streams з кількома cumulative `message_delta` фреймами | 2.1.214 |
+| Keep-alive pooling disable after stale | Keep-alive connection pooling тепер вимикається після stale-connection помилки, тож retries відкривають свіжий сокет | 2.1.214 |

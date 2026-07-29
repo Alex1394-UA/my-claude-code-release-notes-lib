@@ -68,3 +68,18 @@
 | `claude agents --json` «Needs input» | `claude agents --json` та agent view показують сесії, що чекають на sandbox/MCP/managed-settings промпт, як «Needs input» замість «Working» | 2.1.212 |
 | Auth panel title → «Authentication» | Заголовок панелі статусу автентифікації змінено з «Cloud authentication» на «Authentication» | 2.1.212 |
 | SIGTERM Bash orphan print/SDK fix | Виправлено orphaning дерева процесів команди при SIGTERM під час Bash у print/SDK-режимі; CLI перериває хід, вбиває дерево, виходить з кодом 143 | 2.1.212 |
+
+## Основні команди (2.1.214)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Bash tool `pkill -f` self-match kill fix (Linux) | Виправлено вбивство Claude-сесії Bash tool, коли патерн `pkill -f` випадково збігався з власним процесом CLI (Linux) | 2.1.214 |
+| `/ultrareview` no merge base all tracked files fix | Виправлено відмову `/ultrareview` запускатись у репо без merge base — тепер пропонує рев'ю всіх tracked files | 2.1.214 |
+| `/install-github-app` + `/mcp` menu agent-view fix | Виправлено блокування `/install-github-app` та меню налаштувань `/mcp` у agent-view сесіях — тепер відмовляються лише у background-сесіях без термінала | 2.1.214 |
+
+## Команди управління (2.1.214)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `claude update`/`claude doctor` shell-config directory hang fix | Виправлено мовчазне зависання `claude update` та `claude doctor` і порожність секції System діагностики `/status`, коли shell-config path є текою | 2.1.214 |
+| `claude rc` workspace-trust home dir error improvement | Покращено помилку workspace-trust `claude rc` у home directory — каже, що trust там ніколи не зберігається, і радить запуск з проектної теки | 2.1.214 |

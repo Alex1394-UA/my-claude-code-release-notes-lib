@@ -47,3 +47,15 @@
 | SendMessage token usage reduction | Зменшено витрату токенів у міжагентних повідомленнях — тіла `SendMessage` більше не дублюються у replayed-історію та результати інструментів | 2.1.212 |
 | `←` footer «N done» pulse | Підказка `←` футера коротко пульсує «N done» при завершенні фонового агента, поки нічого не чекає вводу | 2.1.212 |
 | ~~Task tool `mode` parameter~~ | [ЗАСТАРІЛО] параметр `mode` інструменту Task (тепер ігнорується); субагенти успадковують permission mode батьківської сесії типово | 2.1.212 |
+
+## Кастомні агенти (2.1.214)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| Scheduled tasks own prompt untrusted fix | Виправлено відмову scheduled tasks приймати власний налаштований промпт як untrusted input — запущений промпт тепер доставляється як призначене завдання сесії | 2.1.214 |
+| Displaced background daemon successor socket fix | Виправлено видалення control socket наступника зміщеним background daemon при shutdown, що змушувало наступного клієнта вбивати здорового replacement daemon | 2.1.214 |
+| Background sessions idle keep daemon alive fix | Виправлено утримання background daemon та worker-процесу живими нескінчено фоновими сесіями, запаркованими через `←` або `/background` й залишеними idle | 2.1.214 |
+| Completed background sessions rm/impossible idle fix | Виправлено неможливість видалення завершених фонових сесій через `claude rm` або agent view після idle background service | 2.1.214 |
+| Background sessions non-git folder delete fix | Виправлено неможливість видалення з agents view фонових сесій, диспатчених з non-git теки | 2.1.214 |
+| Reopening stopped background session unreadable folder fix | Виправлено невідновлення збереженої розмови при повторному відкритті зупиненої фонової сесії, коли в session store є unreadable тека | 2.1.214 |
+| `subagentStatusLine` reasoning effort | Додано reasoning effort до payload `subagentStatusLine`, щоб кастомні agent rows рендерили модель та effort | 2.1.214 |
