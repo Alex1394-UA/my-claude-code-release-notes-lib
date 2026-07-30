@@ -59,3 +59,9 @@
 | Background sessions non-git folder delete fix | Виправлено неможливість видалення з agents view фонових сесій, диспатчених з non-git теки | 2.1.214 |
 | Reopening stopped background session unreadable folder fix | Виправлено невідновлення збереженої розмови при повторному відкритті зупиненої фонової сесії, коли в session store є unreadable тека | 2.1.214 |
 | `subagentStatusLine` reasoning effort | Додано reasoning effort до payload `subagentStatusLine`, щоб кастомні agent rows рендерили модель та effort | 2.1.214 |
+
+## Навички (Skills) (2.1.215)
+
+| Можливість | Опис | Версія |
+|-----------|------|--------|
+| `/verify`/`/code-review` manual invocation | Claude більше не запускає скіли `/verify` та `/code-review` самостійно — викликайте їх через `/verify` або `/code-review`, коли вони потрібні | 2.1.215 |
